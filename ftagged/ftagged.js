@@ -13,10 +13,10 @@ const toResolvedString = (strings, ...values) => []
     .concat(...Array.from(strings, (string, index) => [string, values[index]]))
     .join("");
 
-const isTaggedCall = arguments =>
-    ArrayIsArray(arguments) &&
-    ArrayIsArray(arguments[0]) &&
-    hasOwnProperty(arguments[0], "raw");
+const isTaggedCall = args =>
+    ArrayIsArray(args) &&
+    ArrayIsArray(args[0]) &&
+    hasOwnProperty(args[0], "raw");
 
 const fNamed = (...tag) => f =>
     ObjectDefineProperty(f, "name", { value: toResolvedString(...tag) });
