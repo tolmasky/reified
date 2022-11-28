@@ -27,30 +27,37 @@ const isTaggedCall = args =>
     ArrayIsArray(args[0]) &&
     hasOwnProperty(args[0], "raw");
 
-const fNamed = (...tag) => f =>
+const ƒ = (...tag) => f =>
     ObjectDefineProperty(f, "name", { value: toResolvedString(...tag) });
 
-const ƒ = fNamed;
+module.exports.ƒ = ƒ;
 
-module.exports.fNamed = fNamed;
-module.exports.ƒ = fNamed;
-
-const taggableBase = implementation => given((
+const taggableBase = (tagged, untagged) => given((
     body = function (...args)
     {
         return isTaggedCall(args) ?
-            (...rest) => implementation.call(this, toResolvedString(...args), ...rest) :
-            implementation.call(this, false, ...args);
+            untagged ?
+                tagged.call(this, toResolvedString(...args)) :
+                (...rest) => tagged.call(this, toResolvedString(...args), ...rest) :
+            untagged ? untagged.call(this, ...args) :
+            tagged.call(this, false, ...args);
     }) =>
-    isNormalFunction(implementation) ?
+    isNormalFunction(untagged || tagged) ?
         body :
         (...args) => body(...args));
 
-const taggable = taggableBase((tag, implementation) => tag ?
-    ƒ `${tag}` (taggableBase(implementation)) :
-    taggableBase(implementation));
+const taggable = taggableBase((tag, tagged, untagged) => tag ?
+    ƒ `${tag}` (taggableBase(tagged, untagged)) :
+    taggableBase(tagged, untagged));
 
 module.exports.taggable = taggable;
+
+// This takes a function that returns a funtion, and makes that return function
+// taggable. Unclear if this is what we have found ourselves wanting though.
+const ƒƒ = taggable `ƒƒ` ((name, f) => given((
+    taggablef = taggable (
+        tag => (...args) => ƒ `${tag}` (f(...args)),
+        f)) => name ? ƒ `${name}` (taggablef) : taggablef));
 
 const tagged = taggable `tagged` ((name, implementation) =>
     taggable `${name}` ((tag, ...rest) => !tag ?
