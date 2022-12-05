@@ -1,11 +1,11 @@
 {
-  "name": "ftagged",
+  "name": "@reified/f",
   "version": "1.0.0-alpha.6",
   "description": "",
   "main": "ftagged.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tolmasky/ftagged"
+    "url": "https://github.com/tolmasky/reified"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
