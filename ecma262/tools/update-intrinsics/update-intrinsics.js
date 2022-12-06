@@ -74,7 +74,7 @@ console.log(WellKnownIntrinsicsRegExp);
         .map(parseSignature)
         .filter(WKIO =>
             !WKIO.failed ||
-            warn(`Failure ${WKIO.signature}: ${WKIO.unrested} ${WKIO.errors[0].message}`));
+            warn(`Failure ${WKIO.signature}: ${WKIO.normalized} ${WKIO.errors[0].message}`));
 
     mkdirp(dirname(destination));
     write(destination, JSON.stringify(WellKnownIntrinsicObjects, null, 2), "utf-8");

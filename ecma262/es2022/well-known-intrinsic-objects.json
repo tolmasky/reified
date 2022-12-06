@@ -1106,6 +1106,28 @@
     ]
   },
   {
+    "type": "function",
+    "fullyQualifiedName": "AsyncFunction",
+    "fullyQualifiedKeyPath": [
+      "AsyncFunction"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "p"
+          ]
+        },
+        {
+          "children": [
+            "body"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
     "type": "object",
     "fullyQualifiedName": "AsyncFunction.length",
     "fullyQualifiedKeyPath": [
@@ -1138,6 +1160,28 @@
       "prototype",
       "@@toStringTag"
     ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "AsyncGeneratorFunction",
+    "fullyQualifiedKeyPath": [
+      "AsyncGeneratorFunction"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "p"
+          ]
+        },
+        {
+          "children": [
+            "body"
+          ]
+        }
+      ],
+      "optional": []
+    }
   },
   {
     "type": "object",
@@ -3547,6 +3591,28 @@
     ]
   },
   {
+    "type": "function",
+    "fullyQualifiedName": "Function",
+    "fullyQualifiedKeyPath": [
+      "Function"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "p"
+          ]
+        },
+        {
+          "children": [
+            "body"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
     "type": "object",
     "fullyQualifiedName": "Function.length",
     "fullyQualifiedKeyPath": [
@@ -3677,6 +3743,28 @@
         {
           "children": [
             "V"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "GeneratorFunction",
+    "fullyQualifiedKeyPath": [
+      "GeneratorFunction"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "p"
+          ]
+        },
+        {
+          "children": [
+            "body"
           ]
         }
       ],

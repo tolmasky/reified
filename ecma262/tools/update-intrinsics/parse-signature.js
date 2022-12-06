@@ -33,34 +33,44 @@ const toFullyQualifiedName = signature =>
         .replace(SetterRegExp, "")
         .replace(ParametersRegExp, ""));
 
-const toFormalParameters = (restElements, parameters) =>
+const toFormalParameters = (restElements, sequenceElements, parameters) =>
     parameters.map(({ name }) => given((
         identifierName = name.replace(/^_|_$/g, ""),
         isRestElement = restElements.has(name),
+        isSequenceElement = sequenceElements.has(name),
         bindingIdentifier = BindingIdentifier([identifierName])) =>
             isRestElement ?
                 BindingRestElement([bindingIdentifier]) :
+            isSequenceElement ?
+                BindingSequenceElement([identifierName]) :
                 bindingIdentifier));
 
 const matchAll = (string, regexp) => [...string.matchAll(regexp)];
 const toFunctionAttributes = given((
-    RestElementRegExp = /\.\.\.(_[^_]+_)/g) =>
+    RestElementRegExp = /\.\.\.(_[^_]+_)/g,
+    SequenceElementRegExp =
+        /_([a-zA-Z])\d+_(\s*,\s*_\1\d+_)*\s*,\s*…\s*,\s*_\1n_/g) =>
         signature => given((
             restElements = new Set(
                 matchAll(signature, RestElementRegExp)
                     .map(([, name]) => name)),
-            unrested = signature.replace(RestElementRegExp, (_, name) => name),
-            parsed = parseH1(toUnbracketedSignature(unrested))) =>
+            sequenceElements = new Set(
+                matchAll(signature, SequenceElementRegExp)
+                    .map(([, name]) => name)),
+            normalized = toUnbracketedSignature(signature
+                .replace(RestElementRegExp, (_, name) => name)
+                .replace(SequenceElementRegExp, (_, name) => `_${name}_`)),
+            parsed = parseH1(normalized)) =>(console.log(sequenceElements, " vs. ", restElements),
 ({
     ... (parsed.type === "failure" &&
-        ({ failed: true, signature, unrested, errors: parsed.errors })),
+        ({ failed: true, signature, normalized, errors: parsed.errors })),
 
     ["[[FormalParameters]]"]: parsed.type !== "failure" &&
     {
-        required: toFormalParameters(restElements, parsed.params),
-        optional: toFormalParameters(restElements, parsed.optionalParams)
+        required: toFormalParameters(restElements, sequenceElements, parsed.params),
+        optional: toFormalParameters(restElements, sequenceElements, parsed.optionalParams)
     }
-})));
+}))));
 
 const parseSignature = signature => given((
     type = classify(signature),
