@@ -2,13 +2,14 @@ const given = f => f();
 
 const BindingIdentifier = require("../../grammar/binding-identifier");
 const BindingRestElement = require("../../grammar/binding-rest-element");
+const BindingSequenceElement = require("../../grammar/binding-sequence-element");
 
 const { parseH1 } = require("ecmarkup/lib/header-parser");
 
 
 const GetterRegExp = /^get\s+/g;
 const SetterRegExp = /^set\s+/g;
-const ParametersRegExp = /\(.+$/g;
+const ParametersRegExp = /\s*\(.+$/g;
 
 const classify = given((
     pairs =
