@@ -1107,6 +1107,80 @@
   },
   {
     "type": "function",
+    "fullyQualifiedName": "%ArrayIteratorPrototype%.next",
+    "fullyQualifiedKeyPath": [
+      "%ArrayIteratorPrototype%",
+      "next"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "%ArrayIteratorPrototype%.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "%ArrayIteratorPrototype%",
+      "@@toStringTag"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%AsyncFromSyncIteratorPrototype%.next",
+    "fullyQualifiedKeyPath": [
+      "%AsyncFromSyncIteratorPrototype%",
+      "next"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%AsyncFromSyncIteratorPrototype%.return",
+    "fullyQualifiedKeyPath": [
+      "%AsyncFromSyncIteratorPrototype%",
+      "return"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%AsyncFromSyncIteratorPrototype%.throw",
+    "fullyQualifiedKeyPath": [
+      "%AsyncFromSyncIteratorPrototype%",
+      "throw"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
     "fullyQualifiedName": "AsyncFunction",
     "fullyQualifiedKeyPath": [
       "AsyncFunction"
@@ -1225,6 +1299,18 @@
       "prototype",
       "@@toStringTag"
     ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%AsyncIteratorPrototype%.@@asyncIterator",
+    "fullyQualifiedKeyPath": [
+      "%AsyncIteratorPrototype%",
+      "@@asyncIterator"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
   },
   {
     "type": "object",
@@ -3592,6 +3678,18 @@
   },
   {
     "type": "function",
+    "fullyQualifiedName": "%ForInIteratorPrototype%.next",
+    "fullyQualifiedKeyPath": [
+      "%ForInIteratorPrototype%",
+      "next"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
     "fullyQualifiedName": "Function",
     "fullyQualifiedKeyPath": [
       "Function"
@@ -3845,6 +3943,18 @@
           ]
         }
       ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%IteratorPrototype%.@@iterator",
+    "fullyQualifiedKeyPath": [
+      "%IteratorPrototype%",
+      "@@iterator"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
       "optional": []
     }
   },
@@ -4144,6 +4254,26 @@
     "fullyQualifiedKeyPath": [
       "Map",
       "prototype",
+      "@@toStringTag"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%MapIteratorPrototype%.next",
+    "fullyQualifiedKeyPath": [
+      "%MapIteratorPrototype%",
+      "next"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "%MapIteratorPrototype%.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "%MapIteratorPrototype%",
       "@@toStringTag"
     ]
   },
@@ -6830,6 +6960,26 @@
     ]
   },
   {
+    "type": "function",
+    "fullyQualifiedName": "%RegExpStringIteratorPrototype%.next",
+    "fullyQualifiedKeyPath": [
+      "%RegExpStringIteratorPrototype%",
+      "next"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "%RegExpStringIteratorPrototype%.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "%RegExpStringIteratorPrototype%",
+      "@@toStringTag"
+    ]
+  },
+  {
     "type": "setter",
     "fullyQualifiedName": "Object.prototype.__proto__",
     "fullyQualifiedKeyPath": [
@@ -7042,6 +7192,26 @@
     "fullyQualifiedKeyPath": [
       "Set",
       "prototype",
+      "@@toStringTag"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%SetIteratorPrototype%.next",
+    "fullyQualifiedKeyPath": [
+      "%SetIteratorPrototype%",
+      "next"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "%SetIteratorPrototype%.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "%SetIteratorPrototype%",
       "@@toStringTag"
     ]
   },
@@ -7907,6 +8077,26 @@
   },
   {
     "type": "function",
+    "fullyQualifiedName": "%StringIteratorPrototype%.next",
+    "fullyQualifiedKeyPath": [
+      "%StringIteratorPrototype%",
+      "next"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "%StringIteratorPrototype%.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "%StringIteratorPrototype%",
+      "@@toStringTag"
+    ]
+  },
+  {
+    "type": "function",
     "fullyQualifiedName": "Symbol",
     "fullyQualifiedKeyPath": [
       "Symbol"
@@ -8138,6 +8328,741 @@
     "fullyQualifiedName": "Symbol.prototype.@@toStringTag",
     "fullyQualifiedKeyPath": [
       "Symbol",
+      "prototype",
+      "@@toStringTag"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%ThrowTypeError%",
+    "fullyQualifiedKeyPath": [
+      "%ThrowTypeError%"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.from",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "from"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "mapfn"
+          ]
+        },
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.of",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "of"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            {
+              "children": [
+                "items"
+              ]
+            }
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "%TypedArray%.prototype",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "%TypedArray%.@@species",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "@@species"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.at",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "at"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "index"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "%TypedArray%.prototype.buffer",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "buffer"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "%TypedArray%.prototype.byteLength",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "byteLength"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "%TypedArray%.prototype.byteOffset",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "byteOffset"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "%TypedArray%.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.copyWithin",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "copyWithin"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "start"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.entries",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "entries"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.every",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "every"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.fill",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "fill"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.filter",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "filter"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.find",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "find"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.findIndex",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "findIndex"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.forEach",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "forEach"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.includes",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "includes"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.indexOf",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "indexOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.join",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "join"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "separator"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.keys",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "keys"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.lastIndexOf",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "lastIndexOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "%TypedArray%.prototype.length",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "length"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.map",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "map"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.reduce",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "reduce"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.reduceRight",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "reduceRight"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.reverse",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "reverse"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.set",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "set"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "offset"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.slice",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "slice"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.some",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "some"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.sort",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "sort"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "comparefn"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.subarray",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "subarray"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "begin"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.toLocaleString",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "toLocaleString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.toString",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "toString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.values",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "values"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "%TypedArray%.prototype.@@iterator",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
+      "prototype",
+      "@@iterator"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "%TypedArray%.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "%TypedArray%",
       "prototype",
       "@@toStringTag"
     ]

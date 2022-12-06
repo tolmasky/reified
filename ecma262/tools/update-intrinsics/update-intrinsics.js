@@ -24,16 +24,25 @@ const warn = message => (console.warn(message), false);
 const ExcludedTypes = new Set(["abstract operation", "internal method", "sdo"]);
 
 const deintrinsify = name => name.replace(/^%|%$/g, "");
-const toSectionIDXPathQuery = name => given((
-    deintrinsified = deintrinsify(name),
-    lowercased = deintrinsified.toLowerCase(),
-    dashcased = deintrinsified
-        .replace(/([a-z])([A-Z])/g, (_, lhs, rhs) => `${lhs}-${rhs}`)
-        .toLowerCase(),
-    IDs = [lowercased, dashcased].flatMap(ID => [`sec-${ID}`, `sec-get-${ID}`])) =>
-        `//emu-clause[${IDs
-            .map(ID => `starts-with(@id, "${ID}")`)
-            .join(" or ")}]`);
+const toSectionIDXPathQuery = given((
+    dashcased = name =>
+        name.replace(/([a-z])([A-Z])/g, (_, lhs, rhs) => `${lhs}-${rhs}`),
+    lowercased = name => name.toLowerCase(),
+    transforms = [deintrinsify, dashcased],
+    permutations = [0, 1, 2, 3].map(permutation => given((
+        filtered = transforms
+            .filter((_, index) => permutation & (1 << index))) =>
+        name => filtered
+            .reduce((name, transform) => transform(name), name)
+            .toLowerCase())),
+    toPermutedVariants = name =>
+        permutations.map(transform => transform(name))) =>
+        name => given((
+            IDs = toPermutedVariants(name)
+                .flatMap(ID => [`sec-${ID}`, `sec-get-${ID}`])) =>
+                    `//emu-clause[${IDs
+                        .map(ID => `starts-with(@id, "${ID}")`)
+                        .join(" or ")}]`));
 
 const toDestination = tag =>
     join(__dirname, "..", "..", tag, "well-known-intrinsic-objects.json");
@@ -61,7 +70,7 @@ module.exports = async function
 
     const WellKnownIntrinsicsRegExp = new RegExp(`^(?:[gs]et\\s+)?(?:${
         TopLevelWellKnownIntrinsicObjects
-            .map(({ IntrinsicName }) => deintrinsify(IntrinsicName))
+            .flatMap(({ IntrinsicName }) => [IntrinsicName, deintrinsify(IntrinsicName)])
             .join("|")})(\\.[^\\s]+|\\s*\\[[^\\]]+\\])*(\\s*\\(|$)`);
 
     const WellKnownIntrinsicObjects = TopLevelWellKnownIntrinsicObjects
