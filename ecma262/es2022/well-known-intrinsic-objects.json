@@ -1,15 +1,19 @@
 [
   {
     "type": "function",
-    "fullyQualifiedName": "Array",
-    "keyPath": [
-      "Array"
+    "fullyQualifiedName": "Array ",
+    "fullyQualifiedKeyPath": [
+      "Array "
     ],
     "[[FormalParameters]]": {
       "required": [
         {
           "children": [
-            "values"
+            {
+              "children": [
+                "values"
+              ]
+            }
           ]
         }
       ],
@@ -18,10 +22,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.from",
-    "keyPath": [
+    "fullyQualifiedName": "Array.from ",
+    "fullyQualifiedKeyPath": [
       "Array",
-      "from"
+      "from "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -47,10 +51,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.isArray",
-    "keyPath": [
+    "fullyQualifiedName": "Array.isArray ",
+    "fullyQualifiedKeyPath": [
       "Array",
-      "isArray"
+      "isArray "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -65,16 +69,20 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.of",
-    "keyPath": [
+    "fullyQualifiedName": "Array.of ",
+    "fullyQualifiedKeyPath": [
       "Array",
-      "of"
+      "of "
     ],
     "[[FormalParameters]]": {
       "required": [
         {
           "children": [
-            "items"
+            {
+              "children": [
+                "items"
+              ]
+            }
           ]
         }
       ],
@@ -84,25 +92,26 @@
   {
     "type": "object",
     "fullyQualifiedName": "Array.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype"
     ]
   },
   {
     "type": "getter",
-    "fullyQualifiedName": "Array [ @@species ]",
-    "keyPath": [
-      "Array [ @@species ]"
+    "fullyQualifiedName": "Array.@@species",
+    "fullyQualifiedKeyPath": [
+      "Array",
+      "@@species"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.at",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.at ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "at"
+      "at "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -117,17 +126,21 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.concat",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.concat ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "concat"
+      "concat "
     ],
     "[[FormalParameters]]": {
       "required": [
         {
           "children": [
-            "items"
+            {
+              "children": [
+                "items"
+              ]
+            }
           ]
         }
       ],
@@ -137,7 +150,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Array.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
       "constructor"
@@ -145,11 +158,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.copyWithin",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.copyWithin ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "copyWithin"
+      "copyWithin "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -175,11 +188,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.entries",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.entries ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "entries"
+      "entries "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -188,11 +201,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.every",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.every ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "every"
+      "every "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -213,11 +226,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.fill",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.fill ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "fill"
+      "fill "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -243,11 +256,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.filter",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.filter ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "filter"
+      "filter "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -268,11 +281,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.find",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.find ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "find"
+      "find "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -293,11 +306,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.findIndex",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.findIndex ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "findIndex"
+      "findIndex "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -318,11 +331,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.flat",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.flat ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "flat"
+      "flat "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -337,11 +350,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.flatMap",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.flatMap ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "flatMap"
+      "flatMap "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -362,11 +375,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.forEach",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.forEach ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "forEach"
+      "forEach "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -387,11 +400,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.includes",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.includes ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "includes"
+      "includes "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -412,11 +425,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.indexOf",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.indexOf ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "indexOf"
+      "indexOf "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -437,11 +450,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.join",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.join ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "join"
+      "join "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -456,11 +469,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.keys",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.keys ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "keys"
+      "keys "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -469,11 +482,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.lastIndexOf",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.lastIndexOf ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "lastIndexOf"
+      "lastIndexOf "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -494,11 +507,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.map",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.map ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "map"
+      "map "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -519,11 +532,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.pop",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.pop ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "pop"
+      "pop "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -532,17 +545,21 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.push",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.push ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "push"
+      "push "
     ],
     "[[FormalParameters]]": {
       "required": [
         {
           "children": [
-            "items"
+            {
+              "children": [
+                "items"
+              ]
+            }
           ]
         }
       ],
@@ -551,36 +568,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.reduce",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.reduce ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "reduce"
-    ],
-    "[[FormalParameters]]": {
-      "required": [
-        {
-          "children": [
-            "callbackfn"
-          ]
-        }
-      ],
-      "optional": [
-        {
-          "children": [
-            "initialValue"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "type": "function",
-    "fullyQualifiedName": "Array.prototype.reduceRight",
-    "keyPath": [
-      "Array",
-      "prototype",
-      "reduceRight"
+      "reduce "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -601,11 +593,36 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.reverse",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.reduceRight ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "reverse"
+      "reduceRight "
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.reverse ",
+    "fullyQualifiedKeyPath": [
+      "Array",
+      "prototype",
+      "reverse "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -614,11 +631,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.shift",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.shift ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "shift"
+      "shift "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -627,11 +644,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.slice",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.slice ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "slice"
+      "slice "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -651,11 +668,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.some",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.some ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "some"
+      "some "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -676,11 +693,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.sort",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.sort ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "sort"
+      "sort "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -695,11 +712,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.splice",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.splice ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "splice"
+      "splice "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -715,7 +732,11 @@
         },
         {
           "children": [
-            "items"
+            {
+              "children": [
+                "items"
+              ]
+            }
           ]
         }
       ],
@@ -724,11 +745,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.toLocaleString",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.toLocaleString ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "toLocaleString"
+      "toLocaleString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -748,11 +769,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.toString",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.toString ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "toString"
+      "toString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -761,17 +782,21 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.unshift",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.unshift ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "unshift"
+      "unshift "
     ],
     "[[FormalParameters]]": {
       "required": [
         {
           "children": [
-            "items"
+            {
+              "children": [
+                "items"
+              ]
+            }
           ]
         }
       ],
@@ -780,11 +805,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.values",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.values ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "values"
+      "values "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -793,11 +818,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Array.prototype.@@iterator",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.@@iterator ",
+    "fullyQualifiedKeyPath": [
       "Array",
       "prototype",
-      "@@iterator"
+      "@@iterator "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -806,17 +831,18 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "Array.prototype [ @@unscopables ]",
-    "keyPath": [
+    "fullyQualifiedName": "Array.prototype.@@unscopables",
+    "fullyQualifiedKeyPath": [
       "Array",
-      "prototype [ @@unscopables ]"
+      "prototype",
+      "@@unscopables"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "ArrayBuffer",
-    "keyPath": [
-      "ArrayBuffer"
+    "fullyQualifiedName": "ArrayBuffer ",
+    "fullyQualifiedKeyPath": [
+      "ArrayBuffer "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -831,10 +857,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "ArrayBuffer.isView",
-    "keyPath": [
+    "fullyQualifiedName": "ArrayBuffer.isView ",
+    "fullyQualifiedKeyPath": [
       "ArrayBuffer",
-      "isView"
+      "isView "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -850,22 +876,23 @@
   {
     "type": "object",
     "fullyQualifiedName": "ArrayBuffer.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "ArrayBuffer",
       "prototype"
     ]
   },
   {
     "type": "getter",
-    "fullyQualifiedName": "ArrayBuffer [ @@species ]",
-    "keyPath": [
-      "ArrayBuffer [ @@species ]"
+    "fullyQualifiedName": "ArrayBuffer.@@species",
+    "fullyQualifiedKeyPath": [
+      "ArrayBuffer",
+      "@@species"
     ]
   },
   {
     "type": "getter",
     "fullyQualifiedName": "ArrayBuffer.prototype.byteLength",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "ArrayBuffer",
       "prototype",
       "byteLength"
@@ -874,7 +901,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "ArrayBuffer.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "ArrayBuffer",
       "prototype",
       "constructor"
@@ -882,11 +909,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "ArrayBuffer.prototype.slice",
-    "keyPath": [
+    "fullyQualifiedName": "ArrayBuffer.prototype.slice ",
+    "fullyQualifiedKeyPath": [
       "ArrayBuffer",
       "prototype",
-      "slice"
+      "slice "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -906,17 +933,18 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "ArrayBuffer.prototype [ @@toStringTag ]",
-    "keyPath": [
+    "fullyQualifiedName": "ArrayBuffer.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
       "ArrayBuffer",
-      "prototype [ @@toStringTag ]"
+      "prototype",
+      "@@toStringTag"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "ArrayBuffer",
-    "keyPath": [
-      "ArrayBuffer"
+    "fullyQualifiedName": "ArrayBuffer ",
+    "fullyQualifiedKeyPath": [
+      "ArrayBuffer "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -931,10 +959,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "ArrayBuffer.isView",
-    "keyPath": [
+    "fullyQualifiedName": "ArrayBuffer.isView ",
+    "fullyQualifiedKeyPath": [
       "ArrayBuffer",
-      "isView"
+      "isView "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -950,22 +978,23 @@
   {
     "type": "object",
     "fullyQualifiedName": "ArrayBuffer.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "ArrayBuffer",
       "prototype"
     ]
   },
   {
     "type": "getter",
-    "fullyQualifiedName": "ArrayBuffer [ @@species ]",
-    "keyPath": [
-      "ArrayBuffer [ @@species ]"
+    "fullyQualifiedName": "ArrayBuffer.@@species",
+    "fullyQualifiedKeyPath": [
+      "ArrayBuffer",
+      "@@species"
     ]
   },
   {
     "type": "getter",
     "fullyQualifiedName": "ArrayBuffer.prototype.byteLength",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "ArrayBuffer",
       "prototype",
       "byteLength"
@@ -974,7 +1003,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "ArrayBuffer.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "ArrayBuffer",
       "prototype",
       "constructor"
@@ -982,11 +1011,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "ArrayBuffer.prototype.slice",
-    "keyPath": [
+    "fullyQualifiedName": "ArrayBuffer.prototype.slice ",
+    "fullyQualifiedKeyPath": [
       "ArrayBuffer",
       "prototype",
-      "slice"
+      "slice "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1006,16 +1035,17 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "ArrayBuffer.prototype [ @@toStringTag ]",
-    "keyPath": [
+    "fullyQualifiedName": "ArrayBuffer.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
       "ArrayBuffer",
-      "prototype [ @@toStringTag ]"
+      "prototype",
+      "@@toStringTag"
     ]
   },
   {
     "type": "object",
     "fullyQualifiedName": "AsyncGeneratorFunction.length",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "AsyncGeneratorFunction",
       "length"
     ]
@@ -1023,7 +1053,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "AsyncGeneratorFunction.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "AsyncGeneratorFunction",
       "prototype"
     ]
@@ -1031,7 +1061,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "AsyncGeneratorFunction.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "AsyncGeneratorFunction",
       "prototype",
       "constructor"
@@ -1040,7 +1070,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "AsyncGeneratorFunction.prototype.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "AsyncGeneratorFunction",
       "prototype",
       "prototype"
@@ -1048,25 +1078,26 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "AsyncGeneratorFunction.prototype [ @@toStringTag ]",
-    "keyPath": [
+    "fullyQualifiedName": "AsyncGeneratorFunction.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
       "AsyncGeneratorFunction",
-      "prototype [ @@toStringTag ]"
+      "prototype",
+      "@@toStringTag"
     ]
   },
   {
     "type": "object",
     "fullyQualifiedName": "Atomics",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Atomics"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Atomics.add",
-    "keyPath": [
+    "fullyQualifiedName": "Atomics.add ",
+    "fullyQualifiedKeyPath": [
       "Atomics",
-      "add"
+      "add "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1091,10 +1122,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Atomics.and",
-    "keyPath": [
+    "fullyQualifiedName": "Atomics.and ",
+    "fullyQualifiedKeyPath": [
       "Atomics",
-      "and"
+      "and "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1119,10 +1150,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Atomics.compareExchange",
-    "keyPath": [
+    "fullyQualifiedName": "Atomics.compareExchange ",
+    "fullyQualifiedKeyPath": [
       "Atomics",
-      "compareExchange"
+      "compareExchange "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1152,10 +1183,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Atomics.exchange",
-    "keyPath": [
+    "fullyQualifiedName": "Atomics.exchange ",
+    "fullyQualifiedKeyPath": [
       "Atomics",
-      "exchange"
+      "exchange "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1180,10 +1211,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Atomics.isLockFree",
-    "keyPath": [
+    "fullyQualifiedName": "Atomics.isLockFree ",
+    "fullyQualifiedKeyPath": [
       "Atomics",
-      "isLockFree"
+      "isLockFree "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1198,10 +1229,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Atomics.load",
-    "keyPath": [
+    "fullyQualifiedName": "Atomics.load ",
+    "fullyQualifiedKeyPath": [
       "Atomics",
-      "load"
+      "load "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1221,38 +1252,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Atomics.or",
-    "keyPath": [
+    "fullyQualifiedName": "Atomics.or ",
+    "fullyQualifiedKeyPath": [
       "Atomics",
-      "or"
-    ],
-    "[[FormalParameters]]": {
-      "required": [
-        {
-          "children": [
-            "typedArray"
-          ]
-        },
-        {
-          "children": [
-            "index"
-          ]
-        },
-        {
-          "children": [
-            "value"
-          ]
-        }
-      ],
-      "optional": []
-    }
-  },
-  {
-    "type": "function",
-    "fullyQualifiedName": "Atomics.store",
-    "keyPath": [
-      "Atomics",
-      "store"
+      "or "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1277,10 +1280,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Atomics.sub",
-    "keyPath": [
+    "fullyQualifiedName": "Atomics.store ",
+    "fullyQualifiedKeyPath": [
       "Atomics",
-      "sub"
+      "store "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1305,10 +1308,38 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Atomics.wait",
-    "keyPath": [
+    "fullyQualifiedName": "Atomics.sub ",
+    "fullyQualifiedKeyPath": [
       "Atomics",
-      "wait"
+      "sub "
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "typedArray"
+          ]
+        },
+        {
+          "children": [
+            "index"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Atomics.wait ",
+    "fullyQualifiedKeyPath": [
+      "Atomics",
+      "wait "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1338,10 +1369,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Atomics.notify",
-    "keyPath": [
+    "fullyQualifiedName": "Atomics.notify ",
+    "fullyQualifiedKeyPath": [
       "Atomics",
-      "notify"
+      "notify "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1366,10 +1397,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Atomics.xor",
-    "keyPath": [
+    "fullyQualifiedName": "Atomics.xor ",
+    "fullyQualifiedKeyPath": [
       "Atomics",
-      "xor"
+      "xor "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1394,16 +1425,17 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "Atomics [ @@toStringTag ]",
-    "keyPath": [
-      "Atomics [ @@toStringTag ]"
+    "fullyQualifiedName": "Atomics.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "Atomics",
+      "@@toStringTag"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "BigInt",
-    "keyPath": [
-      "BigInt"
+    "fullyQualifiedName": "BigInt ",
+    "fullyQualifiedKeyPath": [
+      "BigInt "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1418,10 +1450,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "BigInt.asIntN",
-    "keyPath": [
+    "fullyQualifiedName": "BigInt.asIntN ",
+    "fullyQualifiedKeyPath": [
       "BigInt",
-      "asIntN"
+      "asIntN "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1441,10 +1473,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "BigInt.asUintN",
-    "keyPath": [
+    "fullyQualifiedName": "BigInt.asUintN ",
+    "fullyQualifiedKeyPath": [
       "BigInt",
-      "asUintN"
+      "asUintN "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1465,7 +1497,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "BigInt.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "BigInt",
       "prototype"
     ]
@@ -1473,7 +1505,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "BigInt.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "BigInt",
       "prototype",
       "constructor"
@@ -1481,11 +1513,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "BigInt.prototype.toLocaleString",
-    "keyPath": [
+    "fullyQualifiedName": "BigInt.prototype.toLocaleString ",
+    "fullyQualifiedKeyPath": [
       "BigInt",
       "prototype",
-      "toLocaleString"
+      "toLocaleString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -1505,11 +1537,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "BigInt.prototype.toString",
-    "keyPath": [
+    "fullyQualifiedName": "BigInt.prototype.toString ",
+    "fullyQualifiedKeyPath": [
       "BigInt",
       "prototype",
-      "toString"
+      "toString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -1524,11 +1556,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "BigInt.prototype.valueOf",
-    "keyPath": [
+    "fullyQualifiedName": "BigInt.prototype.valueOf ",
+    "fullyQualifiedKeyPath": [
       "BigInt",
       "prototype",
-      "valueOf"
+      "valueOf "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -1537,17 +1569,18 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "BigInt.prototype [ @@toStringTag ]",
-    "keyPath": [
+    "fullyQualifiedName": "BigInt.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
       "BigInt",
-      "prototype [ @@toStringTag ]"
+      "prototype",
+      "@@toStringTag"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Boolean",
-    "keyPath": [
-      "Boolean"
+    "fullyQualifiedName": "Boolean ",
+    "fullyQualifiedKeyPath": [
+      "Boolean "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1563,7 +1596,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Boolean.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Boolean",
       "prototype"
     ]
@@ -1571,7 +1604,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Boolean.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Boolean",
       "prototype",
       "constructor"
@@ -1579,11 +1612,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Boolean.prototype.toString",
-    "keyPath": [
+    "fullyQualifiedName": "Boolean.prototype.toString ",
+    "fullyQualifiedKeyPath": [
       "Boolean",
       "prototype",
-      "toString"
+      "toString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -1592,11 +1625,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Boolean.prototype.valueOf",
-    "keyPath": [
+    "fullyQualifiedName": "Boolean.prototype.valueOf ",
+    "fullyQualifiedKeyPath": [
       "Boolean",
       "prototype",
-      "valueOf"
+      "valueOf "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -1605,9 +1638,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView",
-    "keyPath": [
-      "DataView"
+    "fullyQualifiedName": "DataView ",
+    "fullyQualifiedKeyPath": [
+      "DataView "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1634,7 +1667,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "DataView.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype"
     ]
@@ -1642,7 +1675,7 @@
   {
     "type": "getter",
     "fullyQualifiedName": "DataView.prototype.buffer",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
       "buffer"
@@ -1651,7 +1684,7 @@
   {
     "type": "getter",
     "fullyQualifiedName": "DataView.prototype.byteLength",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
       "byteLength"
@@ -1660,7 +1693,7 @@
   {
     "type": "getter",
     "fullyQualifiedName": "DataView.prototype.byteOffset",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
       "byteOffset"
@@ -1669,7 +1702,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "DataView.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
       "constructor"
@@ -1677,11 +1710,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.getBigInt64",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.getBigInt64 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "getBigInt64"
+      "getBigInt64 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1702,11 +1735,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.getBigUint64",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.getBigUint64 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "getBigUint64"
+      "getBigUint64 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1727,11 +1760,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.getFloat32",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.getFloat32 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "getFloat32"
+      "getFloat32 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1752,11 +1785,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.getFloat64",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.getFloat64 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "getFloat64"
+      "getFloat64 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1777,11 +1810,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.getInt8",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.getInt8 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "getInt8"
+      "getInt8 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1796,11 +1829,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.getInt16",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.getInt16 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "getInt16"
+      "getInt16 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1821,11 +1854,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.getInt32",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.getInt32 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "getInt32"
+      "getInt32 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1846,11 +1879,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.getUint8",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.getUint8 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "getUint8"
+      "getUint8 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1865,11 +1898,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.getUint16",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.getUint16 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "getUint16"
+      "getUint16 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1890,11 +1923,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.getUint32",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.getUint32 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "getUint32"
+      "getUint32 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1915,11 +1948,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.setBigInt64",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.setBigInt64 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "setBigInt64"
+      "setBigInt64 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1945,11 +1978,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.setBigUint64",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.setBigUint64 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "setBigUint64"
+      "setBigUint64 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -1975,11 +2008,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.setFloat32",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.setFloat32 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "setFloat32"
+      "setFloat32 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2005,11 +2038,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.setFloat64",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.setFloat64 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "setFloat64"
+      "setFloat64 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2035,95 +2068,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.setInt8",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.setInt8 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "setInt8"
-    ],
-    "[[FormalParameters]]": {
-      "required": [
-        {
-          "children": [
-            "byteOffset"
-          ]
-        },
-        {
-          "children": [
-            "value"
-          ]
-        }
-      ],
-      "optional": []
-    }
-  },
-  {
-    "type": "function",
-    "fullyQualifiedName": "DataView.prototype.setInt16",
-    "keyPath": [
-      "DataView",
-      "prototype",
-      "setInt16"
-    ],
-    "[[FormalParameters]]": {
-      "required": [
-        {
-          "children": [
-            "byteOffset"
-          ]
-        },
-        {
-          "children": [
-            "value"
-          ]
-        }
-      ],
-      "optional": [
-        {
-          "children": [
-            "littleEndian"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "type": "function",
-    "fullyQualifiedName": "DataView.prototype.setInt32",
-    "keyPath": [
-      "DataView",
-      "prototype",
-      "setInt32"
-    ],
-    "[[FormalParameters]]": {
-      "required": [
-        {
-          "children": [
-            "byteOffset"
-          ]
-        },
-        {
-          "children": [
-            "value"
-          ]
-        }
-      ],
-      "optional": [
-        {
-          "children": [
-            "littleEndian"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "type": "function",
-    "fullyQualifiedName": "DataView.prototype.setUint8",
-    "keyPath": [
-      "DataView",
-      "prototype",
-      "setUint8"
+      "setInt8 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2143,11 +2092,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.setUint16",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.setInt16 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "setUint16"
+      "setInt16 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2173,11 +2122,95 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "DataView.prototype.setUint32",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.setInt32 ",
+    "fullyQualifiedKeyPath": [
       "DataView",
       "prototype",
-      "setUint32"
+      "setInt32 "
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.setUint8 ",
+    "fullyQualifiedKeyPath": [
+      "DataView",
+      "prototype",
+      "setUint8 "
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.setUint16 ",
+    "fullyQualifiedKeyPath": [
+      "DataView",
+      "prototype",
+      "setUint16 "
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.setUint32 ",
+    "fullyQualifiedKeyPath": [
+      "DataView",
+      "prototype",
+      "setUint32 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2203,23 +2236,28 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "DataView.prototype [ @@toStringTag ]",
-    "keyPath": [
+    "fullyQualifiedName": "DataView.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
       "DataView",
-      "prototype [ @@toStringTag ]"
+      "prototype",
+      "@@toStringTag"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date",
-    "keyPath": [
-      "Date"
+    "fullyQualifiedName": "Date ",
+    "fullyQualifiedKeyPath": [
+      "Date "
     ],
     "[[FormalParameters]]": {
       "required": [
         {
           "children": [
-            "values"
+            {
+              "children": [
+                "values"
+              ]
+            }
           ]
         }
       ],
@@ -2228,10 +2266,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.now",
-    "keyPath": [
+    "fullyQualifiedName": "Date.now ",
+    "fullyQualifiedKeyPath": [
       "Date",
-      "now"
+      "now "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2240,10 +2278,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.parse",
-    "keyPath": [
+    "fullyQualifiedName": "Date.parse ",
+    "fullyQualifiedKeyPath": [
       "Date",
-      "parse"
+      "parse "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2259,17 +2297,17 @@
   {
     "type": "object",
     "fullyQualifiedName": "Date.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.UTC",
-    "keyPath": [
+    "fullyQualifiedName": "Date.UTC ",
+    "fullyQualifiedKeyPath": [
       "Date",
-      "UTC"
+      "UTC "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2316,7 +2354,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Date.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
       "constructor"
@@ -2324,11 +2362,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getDate",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getDate ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getDate"
+      "getDate "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2337,11 +2375,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getDay",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getDay ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getDay"
+      "getDay "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2350,11 +2388,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getFullYear",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getFullYear ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getFullYear"
+      "getFullYear "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2363,11 +2401,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getHours",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getHours ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getHours"
+      "getHours "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2376,11 +2414,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getMilliseconds",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getMilliseconds ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getMilliseconds"
+      "getMilliseconds "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2389,11 +2427,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getMinutes",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getMinutes ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getMinutes"
+      "getMinutes "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2402,11 +2440,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getMonth",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getMonth ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getMonth"
+      "getMonth "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2415,11 +2453,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getSeconds",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getSeconds ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getSeconds"
+      "getSeconds "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2428,11 +2466,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getTime",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getTime ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getTime"
+      "getTime "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2441,11 +2479,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getTimezoneOffset",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getTimezoneOffset ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getTimezoneOffset"
+      "getTimezoneOffset "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2454,11 +2492,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getUTCDate",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getUTCDate ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getUTCDate"
+      "getUTCDate "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2467,11 +2505,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getUTCDay",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getUTCDay ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getUTCDay"
+      "getUTCDay "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2480,11 +2518,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getUTCFullYear",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getUTCFullYear ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getUTCFullYear"
+      "getUTCFullYear "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2493,11 +2531,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getUTCHours",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getUTCHours ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getUTCHours"
+      "getUTCHours "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2506,11 +2544,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getUTCMilliseconds",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getUTCMilliseconds ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getUTCMilliseconds"
+      "getUTCMilliseconds "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2519,11 +2557,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getUTCMinutes",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getUTCMinutes ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getUTCMinutes"
+      "getUTCMinutes "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2532,11 +2570,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getUTCMonth",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getUTCMonth ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getUTCMonth"
+      "getUTCMonth "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2545,11 +2583,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.getUTCSeconds",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.getUTCSeconds ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "getUTCSeconds"
+      "getUTCSeconds "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2558,11 +2596,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.setDate",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.setDate ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "setDate"
+      "setDate "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2577,11 +2615,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.setFullYear",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.setFullYear ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "setFullYear"
+      "setFullYear "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2607,11 +2645,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.setHours",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.setHours ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "setHours"
+      "setHours "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2642,11 +2680,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.setMilliseconds",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.setMilliseconds ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "setMilliseconds"
+      "setMilliseconds "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2661,11 +2699,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.setMinutes",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.setMinutes ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "setMinutes"
+      "setMinutes "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2691,11 +2729,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.setMonth",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.setMonth ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "setMonth"
+      "setMonth "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2716,11 +2754,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.setSeconds",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.setSeconds ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "setSeconds"
+      "setSeconds "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2741,11 +2779,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.setTime",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.setTime ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "setTime"
+      "setTime "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2760,11 +2798,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.setUTCDate",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.setUTCDate ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "setUTCDate"
+      "setUTCDate "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2779,11 +2817,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.setUTCFullYear",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.setUTCFullYear ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "setUTCFullYear"
+      "setUTCFullYear "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2809,11 +2847,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.setUTCHours",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.setUTCHours ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "setUTCHours"
+      "setUTCHours "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2844,11 +2882,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.setUTCMilliseconds",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.setUTCMilliseconds ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "setUTCMilliseconds"
+      "setUTCMilliseconds "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2863,11 +2901,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.setUTCMinutes",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.setUTCMinutes ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "setUTCMinutes"
+      "setUTCMinutes "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2893,11 +2931,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.setUTCMonth",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.setUTCMonth ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "setUTCMonth"
+      "setUTCMonth "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2918,11 +2956,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.setUTCSeconds",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.setUTCSeconds ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "setUTCSeconds"
+      "setUTCSeconds "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2943,11 +2981,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.toDateString",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.toDateString ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "toDateString"
+      "toDateString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2956,11 +2994,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.toISOString",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.toISOString ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "toISOString"
+      "toISOString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -2969,11 +3007,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.toJSON",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.toJSON ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "toJSON"
+      "toJSON "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -2988,11 +3026,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.toLocaleDateString",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.toLocaleDateString ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "toLocaleDateString"
+      "toLocaleDateString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -3012,11 +3050,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.toLocaleString",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.toLocaleString ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "toLocaleString"
+      "toLocaleString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -3036,11 +3074,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.toLocaleTimeString",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.toLocaleTimeString ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "toLocaleTimeString"
+      "toLocaleTimeString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -3060,11 +3098,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.toString",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.toString ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "toString"
+      "toString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -3073,11 +3111,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.toTimeString",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.toTimeString ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "toTimeString"
+      "toTimeString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -3086,11 +3124,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.toUTCString",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.toUTCString ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "toUTCString"
+      "toUTCString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -3099,11 +3137,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.valueOf",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.valueOf ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "valueOf"
+      "valueOf "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -3112,11 +3150,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Date.prototype.@@toPrimitive",
-    "keyPath": [
+    "fullyQualifiedName": "Date.prototype.@@toPrimitive ",
+    "fullyQualifiedKeyPath": [
       "Date",
       "prototype",
-      "@@toPrimitive"
+      "@@toPrimitive "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3131,9 +3169,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "decodeURI",
-    "keyPath": [
-      "decodeURI"
+    "fullyQualifiedName": "decodeURI ",
+    "fullyQualifiedKeyPath": [
+      "decodeURI "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3148,9 +3186,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "decodeURIComponent",
-    "keyPath": [
-      "decodeURIComponent"
+    "fullyQualifiedName": "decodeURIComponent ",
+    "fullyQualifiedKeyPath": [
+      "decodeURIComponent "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3165,9 +3203,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "decodeURIComponent",
-    "keyPath": [
-      "decodeURIComponent"
+    "fullyQualifiedName": "decodeURIComponent ",
+    "fullyQualifiedKeyPath": [
+      "decodeURIComponent "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3182,9 +3220,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "encodeURI",
-    "keyPath": [
-      "encodeURI"
+    "fullyQualifiedName": "encodeURI ",
+    "fullyQualifiedKeyPath": [
+      "encodeURI "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3199,9 +3237,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "encodeURIComponent",
-    "keyPath": [
-      "encodeURIComponent"
+    "fullyQualifiedName": "encodeURIComponent ",
+    "fullyQualifiedKeyPath": [
+      "encodeURIComponent "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3216,9 +3254,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "encodeURIComponent",
-    "keyPath": [
-      "encodeURIComponent"
+    "fullyQualifiedName": "encodeURIComponent ",
+    "fullyQualifiedKeyPath": [
+      "encodeURIComponent "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3233,9 +3271,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Error",
-    "keyPath": [
-      "Error"
+    "fullyQualifiedName": "Error ",
+    "fullyQualifiedKeyPath": [
+      "Error "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3257,7 +3295,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Error.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Error",
       "prototype"
     ]
@@ -3265,7 +3303,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Error.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Error",
       "prototype",
       "constructor"
@@ -3274,7 +3312,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Error.prototype.message",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Error",
       "prototype",
       "message"
@@ -3283,7 +3321,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Error.prototype.name",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Error",
       "prototype",
       "name"
@@ -3291,11 +3329,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Error.prototype.toString",
-    "keyPath": [
+    "fullyQualifiedName": "Error.prototype.toString ",
+    "fullyQualifiedKeyPath": [
       "Error",
       "prototype",
-      "toString"
+      "toString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -3304,9 +3342,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "eval",
-    "keyPath": [
-      "eval"
+    "fullyQualifiedName": "eval ",
+    "fullyQualifiedKeyPath": [
+      "eval "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3322,7 +3360,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Function.length",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Function",
       "length"
     ]
@@ -3330,18 +3368,18 @@
   {
     "type": "object",
     "fullyQualifiedName": "Function.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Function",
       "prototype"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Function.prototype.apply",
-    "keyPath": [
+    "fullyQualifiedName": "Function.prototype.apply ",
+    "fullyQualifiedKeyPath": [
       "Function",
       "prototype",
-      "apply"
+      "apply "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3361,11 +3399,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Function.prototype.bind",
-    "keyPath": [
+    "fullyQualifiedName": "Function.prototype.bind ",
+    "fullyQualifiedKeyPath": [
       "Function",
       "prototype",
-      "bind"
+      "bind "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3376,7 +3414,11 @@
         },
         {
           "children": [
-            "args"
+            {
+              "children": [
+                "args"
+              ]
+            }
           ]
         }
       ],
@@ -3385,11 +3427,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Function.prototype.call",
-    "keyPath": [
+    "fullyQualifiedName": "Function.prototype.call ",
+    "fullyQualifiedKeyPath": [
       "Function",
       "prototype",
-      "call"
+      "call "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3400,7 +3442,11 @@
         },
         {
           "children": [
-            "args"
+            {
+              "children": [
+                "args"
+              ]
+            }
           ]
         }
       ],
@@ -3410,7 +3456,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Function.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Function",
       "prototype",
       "constructor"
@@ -3418,11 +3464,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Function.prototype.toString",
-    "keyPath": [
+    "fullyQualifiedName": "Function.prototype.toString ",
+    "fullyQualifiedKeyPath": [
       "Function",
       "prototype",
-      "toString"
+      "toString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -3431,11 +3477,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Function.prototype.@@hasInstance",
-    "keyPath": [
+    "fullyQualifiedName": "Function.prototype.@@hasInstance ",
+    "fullyQualifiedKeyPath": [
       "Function",
       "prototype",
-      "@@hasInstance"
+      "@@hasInstance "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3451,7 +3497,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "GeneratorFunction.length",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "GeneratorFunction",
       "length"
     ]
@@ -3459,7 +3505,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "GeneratorFunction.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "GeneratorFunction",
       "prototype"
     ]
@@ -3467,7 +3513,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "GeneratorFunction.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "GeneratorFunction",
       "prototype",
       "constructor"
@@ -3476,7 +3522,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "GeneratorFunction.prototype.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "GeneratorFunction",
       "prototype",
       "prototype"
@@ -3484,17 +3530,18 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "GeneratorFunction.prototype [ @@toStringTag ]",
-    "keyPath": [
+    "fullyQualifiedName": "GeneratorFunction.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
       "GeneratorFunction",
-      "prototype [ @@toStringTag ]"
+      "prototype",
+      "@@toStringTag"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "isFinite",
-    "keyPath": [
-      "isFinite"
+    "fullyQualifiedName": "isFinite ",
+    "fullyQualifiedKeyPath": [
+      "isFinite "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3509,9 +3556,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "isNaN",
-    "keyPath": [
-      "isNaN"
+    "fullyQualifiedName": "isNaN ",
+    "fullyQualifiedKeyPath": [
+      "isNaN "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3527,16 +3574,16 @@
   {
     "type": "object",
     "fullyQualifiedName": "JSON",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "JSON"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "JSON.parse",
-    "keyPath": [
+    "fullyQualifiedName": "JSON.parse ",
+    "fullyQualifiedKeyPath": [
       "JSON",
-      "parse"
+      "parse "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3557,10 +3604,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "JSON.stringify",
-    "keyPath": [
+    "fullyQualifiedName": "JSON.stringify ",
+    "fullyQualifiedKeyPath": [
       "JSON",
-      "stringify"
+      "stringify "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3586,16 +3633,17 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "JSON [ @@toStringTag ]",
-    "keyPath": [
-      "JSON [ @@toStringTag ]"
+    "fullyQualifiedName": "JSON.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "JSON",
+      "@@toStringTag"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Map",
-    "keyPath": [
-      "Map"
+    "fullyQualifiedName": "Map ",
+    "fullyQualifiedKeyPath": [
+      "Map "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -3611,25 +3659,26 @@
   {
     "type": "object",
     "fullyQualifiedName": "Map.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Map",
       "prototype"
     ]
   },
   {
     "type": "getter",
-    "fullyQualifiedName": "Map [ @@species ]",
-    "keyPath": [
-      "Map [ @@species ]"
+    "fullyQualifiedName": "Map.@@species",
+    "fullyQualifiedKeyPath": [
+      "Map",
+      "@@species"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Map.prototype.clear",
-    "keyPath": [
+    "fullyQualifiedName": "Map.prototype.clear ",
+    "fullyQualifiedKeyPath": [
       "Map",
       "prototype",
-      "clear"
+      "clear "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -3639,7 +3688,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Map.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Map",
       "prototype",
       "constructor"
@@ -3647,11 +3696,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Map.prototype.delete",
-    "keyPath": [
+    "fullyQualifiedName": "Map.prototype.delete ",
+    "fullyQualifiedKeyPath": [
       "Map",
       "prototype",
-      "delete"
+      "delete "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3666,11 +3715,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Map.prototype.entries",
-    "keyPath": [
+    "fullyQualifiedName": "Map.prototype.entries ",
+    "fullyQualifiedKeyPath": [
       "Map",
       "prototype",
-      "entries"
+      "entries "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -3679,11 +3728,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Map.prototype.forEach",
-    "keyPath": [
+    "fullyQualifiedName": "Map.prototype.forEach ",
+    "fullyQualifiedKeyPath": [
       "Map",
       "prototype",
-      "forEach"
+      "forEach "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3704,11 +3753,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Map.prototype.get",
-    "keyPath": [
+    "fullyQualifiedName": "Map.prototype.get ",
+    "fullyQualifiedKeyPath": [
       "Map",
       "prototype",
-      "get"
+      "get "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3723,11 +3772,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Map.prototype.has",
-    "keyPath": [
+    "fullyQualifiedName": "Map.prototype.has ",
+    "fullyQualifiedKeyPath": [
       "Map",
       "prototype",
-      "has"
+      "has "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3742,11 +3791,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Map.prototype.keys",
-    "keyPath": [
+    "fullyQualifiedName": "Map.prototype.keys ",
+    "fullyQualifiedKeyPath": [
       "Map",
       "prototype",
-      "keys"
+      "keys "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -3755,11 +3804,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Map.prototype.set",
-    "keyPath": [
+    "fullyQualifiedName": "Map.prototype.set ",
+    "fullyQualifiedKeyPath": [
       "Map",
       "prototype",
-      "set"
+      "set "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3780,7 +3829,7 @@
   {
     "type": "getter",
     "fullyQualifiedName": "Map.prototype.size",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Map",
       "prototype",
       "size"
@@ -3788,11 +3837,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Map.prototype.values",
-    "keyPath": [
+    "fullyQualifiedName": "Map.prototype.values ",
+    "fullyQualifiedKeyPath": [
       "Map",
       "prototype",
-      "values"
+      "values "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -3801,11 +3850,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Map.prototype.@@iterator",
-    "keyPath": [
+    "fullyQualifiedName": "Map.prototype.@@iterator ",
+    "fullyQualifiedKeyPath": [
       "Map",
       "prototype",
-      "@@iterator"
+      "@@iterator "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -3814,23 +3863,24 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "Map.prototype [ @@toStringTag ]",
-    "keyPath": [
+    "fullyQualifiedName": "Map.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
       "Map",
-      "prototype [ @@toStringTag ]"
+      "prototype",
+      "@@toStringTag"
     ]
   },
   {
     "type": "object",
     "fullyQualifiedName": "Math",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Math"
     ]
   },
   {
     "type": "object",
     "fullyQualifiedName": "Math.E",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Math",
       "E"
     ]
@@ -3838,7 +3888,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Math.LN10",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Math",
       "LN10"
     ]
@@ -3846,7 +3896,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Math.LN2",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Math",
       "LN2"
     ]
@@ -3854,7 +3904,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Math.LOG10E",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Math",
       "LOG10E"
     ]
@@ -3862,7 +3912,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Math.LOG2E",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Math",
       "LOG2E"
     ]
@@ -3870,7 +3920,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Math.PI",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Math",
       "PI"
     ]
@@ -3878,7 +3928,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Math.SQRT1_2",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Math",
       "SQRT1_2"
     ]
@@ -3886,24 +3936,25 @@
   {
     "type": "object",
     "fullyQualifiedName": "Math.SQRT2",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Math",
       "SQRT2"
     ]
   },
   {
     "type": "object",
-    "fullyQualifiedName": "Math [ @@toStringTag ]",
-    "keyPath": [
-      "Math [ @@toStringTag ]"
+    "fullyQualifiedName": "Math.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "Math",
+      "@@toStringTag"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.abs",
-    "keyPath": [
+    "fullyQualifiedName": "Math.abs ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "abs"
+      "abs "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3918,10 +3969,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.acos",
-    "keyPath": [
+    "fullyQualifiedName": "Math.acos ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "acos"
+      "acos "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3936,10 +3987,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.acosh",
-    "keyPath": [
+    "fullyQualifiedName": "Math.acosh ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "acosh"
+      "acosh "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3954,10 +4005,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.asin",
-    "keyPath": [
+    "fullyQualifiedName": "Math.asin ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "asin"
+      "asin "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3972,10 +4023,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.asinh",
-    "keyPath": [
+    "fullyQualifiedName": "Math.asinh ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "asinh"
+      "asinh "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -3990,10 +4041,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.atan",
-    "keyPath": [
+    "fullyQualifiedName": "Math.atan ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "atan"
+      "atan "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4008,10 +4059,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.atanh",
-    "keyPath": [
+    "fullyQualifiedName": "Math.atanh ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "atanh"
+      "atanh "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4026,10 +4077,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.atan2",
-    "keyPath": [
+    "fullyQualifiedName": "Math.atan2 ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "atan2"
+      "atan2 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4049,10 +4100,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.cbrt",
-    "keyPath": [
+    "fullyQualifiedName": "Math.cbrt ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "cbrt"
+      "cbrt "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4067,10 +4118,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.ceil",
-    "keyPath": [
+    "fullyQualifiedName": "Math.ceil ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "ceil"
+      "ceil "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4085,10 +4136,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.clz32",
-    "keyPath": [
+    "fullyQualifiedName": "Math.clz32 ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "clz32"
+      "clz32 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4103,10 +4154,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.cos",
-    "keyPath": [
+    "fullyQualifiedName": "Math.cos ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "cos"
+      "cos "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4121,10 +4172,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.cosh",
-    "keyPath": [
+    "fullyQualifiedName": "Math.cosh ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "cosh"
+      "cosh "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4139,10 +4190,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.exp",
-    "keyPath": [
+    "fullyQualifiedName": "Math.exp ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "exp"
+      "exp "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4157,10 +4208,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.expm1",
-    "keyPath": [
+    "fullyQualifiedName": "Math.expm1 ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "expm1"
+      "expm1 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4175,10 +4226,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.floor",
-    "keyPath": [
+    "fullyQualifiedName": "Math.floor ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "floor"
+      "floor "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4193,10 +4244,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.fround",
-    "keyPath": [
+    "fullyQualifiedName": "Math.fround ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "fround"
+      "fround "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4211,16 +4262,20 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.hypot",
-    "keyPath": [
+    "fullyQualifiedName": "Math.hypot ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "hypot"
+      "hypot "
     ],
     "[[FormalParameters]]": {
       "required": [
         {
           "children": [
-            "args"
+            {
+              "children": [
+                "args"
+              ]
+            }
           ]
         }
       ],
@@ -4229,10 +4284,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.imul",
-    "keyPath": [
+    "fullyQualifiedName": "Math.imul ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "imul"
+      "imul "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4252,10 +4307,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.log",
-    "keyPath": [
+    "fullyQualifiedName": "Math.log ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "log"
+      "log "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4270,10 +4325,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.log1p",
-    "keyPath": [
+    "fullyQualifiedName": "Math.log1p ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "log1p"
+      "log1p "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4288,10 +4343,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.log10",
-    "keyPath": [
+    "fullyQualifiedName": "Math.log10 ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "log10"
+      "log10 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4306,10 +4361,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.log2",
-    "keyPath": [
+    "fullyQualifiedName": "Math.log2 ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "log2"
+      "log2 "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4324,16 +4379,20 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.max",
-    "keyPath": [
+    "fullyQualifiedName": "Math.max ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "max"
+      "max "
     ],
     "[[FormalParameters]]": {
       "required": [
         {
           "children": [
-            "args"
+            {
+              "children": [
+                "args"
+              ]
+            }
           ]
         }
       ],
@@ -4342,16 +4401,20 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.min",
-    "keyPath": [
+    "fullyQualifiedName": "Math.min ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "min"
+      "min "
     ],
     "[[FormalParameters]]": {
       "required": [
         {
           "children": [
-            "args"
+            {
+              "children": [
+                "args"
+              ]
+            }
           ]
         }
       ],
@@ -4360,10 +4423,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.pow",
-    "keyPath": [
+    "fullyQualifiedName": "Math.pow ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "pow"
+      "pow "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4383,10 +4446,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.random",
-    "keyPath": [
+    "fullyQualifiedName": "Math.random ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "random"
+      "random "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -4395,10 +4458,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.round",
-    "keyPath": [
+    "fullyQualifiedName": "Math.round ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "round"
+      "round "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4413,10 +4476,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.sign",
-    "keyPath": [
+    "fullyQualifiedName": "Math.sign ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "sign"
+      "sign "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4431,10 +4494,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.sin",
-    "keyPath": [
+    "fullyQualifiedName": "Math.sin ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "sin"
+      "sin "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4449,10 +4512,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.sinh",
-    "keyPath": [
+    "fullyQualifiedName": "Math.sinh ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "sinh"
+      "sinh "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4467,10 +4530,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.sqrt",
-    "keyPath": [
+    "fullyQualifiedName": "Math.sqrt ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "sqrt"
+      "sqrt "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4485,10 +4548,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.tan",
-    "keyPath": [
+    "fullyQualifiedName": "Math.tan ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "tan"
+      "tan "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4503,10 +4566,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.tanh",
-    "keyPath": [
+    "fullyQualifiedName": "Math.tanh ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "tanh"
+      "tanh "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4521,10 +4584,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Math.trunc",
-    "keyPath": [
+    "fullyQualifiedName": "Math.trunc ",
+    "fullyQualifiedKeyPath": [
       "Math",
-      "trunc"
+      "trunc "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4539,9 +4602,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Number",
-    "keyPath": [
-      "Number"
+    "fullyQualifiedName": "Number ",
+    "fullyQualifiedKeyPath": [
+      "Number "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4557,17 +4620,17 @@
   {
     "type": "object",
     "fullyQualifiedName": "Number.EPSILON",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Number",
       "EPSILON"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Number.isFinite",
-    "keyPath": [
+    "fullyQualifiedName": "Number.isFinite ",
+    "fullyQualifiedKeyPath": [
       "Number",
-      "isFinite"
+      "isFinite "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4582,10 +4645,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Number.isInteger",
-    "keyPath": [
+    "fullyQualifiedName": "Number.isInteger ",
+    "fullyQualifiedKeyPath": [
       "Number",
-      "isInteger"
+      "isInteger "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4600,10 +4663,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Number.isNaN",
-    "keyPath": [
+    "fullyQualifiedName": "Number.isNaN ",
+    "fullyQualifiedKeyPath": [
       "Number",
-      "isNaN"
+      "isNaN "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4618,10 +4681,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Number.isSafeInteger",
-    "keyPath": [
+    "fullyQualifiedName": "Number.isSafeInteger ",
+    "fullyQualifiedKeyPath": [
       "Number",
-      "isSafeInteger"
+      "isSafeInteger "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4637,7 +4700,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Number.MAX_SAFE_INTEGER",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Number",
       "MAX_SAFE_INTEGER"
     ]
@@ -4645,7 +4708,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Number.MAX_VALUE",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Number",
       "MAX_VALUE"
     ]
@@ -4653,7 +4716,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Number.MIN_SAFE_INTEGER",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Number",
       "MIN_SAFE_INTEGER"
     ]
@@ -4661,7 +4724,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Number.MIN_VALUE",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Number",
       "MIN_VALUE"
     ]
@@ -4669,7 +4732,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Number.NaN",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Number",
       "NaN"
     ]
@@ -4677,17 +4740,17 @@
   {
     "type": "object",
     "fullyQualifiedName": "Number.NEGATIVE_INFINITY",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Number",
       "NEGATIVE_INFINITY"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Number.parseFloat",
-    "keyPath": [
+    "fullyQualifiedName": "Number.parseFloat ",
+    "fullyQualifiedKeyPath": [
       "Number",
-      "parseFloat"
+      "parseFloat "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4702,10 +4765,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Number.parseInt",
-    "keyPath": [
+    "fullyQualifiedName": "Number.parseInt ",
+    "fullyQualifiedKeyPath": [
       "Number",
-      "parseInt"
+      "parseInt "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4726,7 +4789,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Number.POSITIVE_INFINITY",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Number",
       "POSITIVE_INFINITY"
     ]
@@ -4734,7 +4797,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Number.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Number",
       "prototype"
     ]
@@ -4742,7 +4805,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Number.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Number",
       "prototype",
       "constructor"
@@ -4750,11 +4813,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Number.prototype.toExponential",
-    "keyPath": [
+    "fullyQualifiedName": "Number.prototype.toExponential ",
+    "fullyQualifiedKeyPath": [
       "Number",
       "prototype",
-      "toExponential"
+      "toExponential "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4769,11 +4832,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Number.prototype.toFixed",
-    "keyPath": [
+    "fullyQualifiedName": "Number.prototype.toFixed ",
+    "fullyQualifiedKeyPath": [
       "Number",
       "prototype",
-      "toFixed"
+      "toFixed "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4788,11 +4851,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Number.prototype.toLocaleString",
-    "keyPath": [
+    "fullyQualifiedName": "Number.prototype.toLocaleString ",
+    "fullyQualifiedKeyPath": [
       "Number",
       "prototype",
-      "toLocaleString"
+      "toLocaleString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -4812,11 +4875,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Number.prototype.toPrecision",
-    "keyPath": [
+    "fullyQualifiedName": "Number.prototype.toPrecision ",
+    "fullyQualifiedKeyPath": [
       "Number",
       "prototype",
-      "toPrecision"
+      "toPrecision "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4831,11 +4894,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Number.prototype.toString",
-    "keyPath": [
+    "fullyQualifiedName": "Number.prototype.toString ",
+    "fullyQualifiedKeyPath": [
       "Number",
       "prototype",
-      "toString"
+      "toString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -4850,11 +4913,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Number.prototype.valueOf",
-    "keyPath": [
+    "fullyQualifiedName": "Number.prototype.valueOf ",
+    "fullyQualifiedKeyPath": [
       "Number",
       "prototype",
-      "valueOf"
+      "valueOf "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -4863,9 +4926,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object",
-    "keyPath": [
-      "Object"
+    "fullyQualifiedName": "Object ",
+    "fullyQualifiedKeyPath": [
+      "Object "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -4880,10 +4943,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.assign",
-    "keyPath": [
+    "fullyQualifiedName": "Object.assign ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "assign"
+      "assign "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4894,7 +4957,11 @@
         },
         {
           "children": [
-            "sources"
+            {
+              "children": [
+                "sources"
+              ]
+            }
           ]
         }
       ],
@@ -4903,10 +4970,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.create",
-    "keyPath": [
+    "fullyQualifiedName": "Object.create ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "create"
+      "create "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4926,10 +4993,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.defineProperties",
-    "keyPath": [
+    "fullyQualifiedName": "Object.defineProperties ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "defineProperties"
+      "defineProperties "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4949,10 +5016,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.defineProperty",
-    "keyPath": [
+    "fullyQualifiedName": "Object.defineProperty ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "defineProperty"
+      "defineProperty "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4977,10 +5044,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.entries",
-    "keyPath": [
+    "fullyQualifiedName": "Object.entries ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "entries"
+      "entries "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -4995,10 +5062,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.freeze",
-    "keyPath": [
+    "fullyQualifiedName": "Object.freeze ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "freeze"
+      "freeze "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5013,10 +5080,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.fromEntries",
-    "keyPath": [
+    "fullyQualifiedName": "Object.fromEntries ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "fromEntries"
+      "fromEntries "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5031,10 +5098,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.getOwnPropertyDescriptor",
-    "keyPath": [
+    "fullyQualifiedName": "Object.getOwnPropertyDescriptor ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "getOwnPropertyDescriptor"
+      "getOwnPropertyDescriptor "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5054,10 +5121,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.getOwnPropertyDescriptors",
-    "keyPath": [
+    "fullyQualifiedName": "Object.getOwnPropertyDescriptors ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "getOwnPropertyDescriptors"
+      "getOwnPropertyDescriptors "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5072,10 +5139,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.getOwnPropertyNames",
-    "keyPath": [
+    "fullyQualifiedName": "Object.getOwnPropertyNames ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "getOwnPropertyNames"
+      "getOwnPropertyNames "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5090,10 +5157,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.getOwnPropertySymbols",
-    "keyPath": [
+    "fullyQualifiedName": "Object.getOwnPropertySymbols ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "getOwnPropertySymbols"
+      "getOwnPropertySymbols "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5108,10 +5175,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.getPrototypeOf",
-    "keyPath": [
+    "fullyQualifiedName": "Object.getPrototypeOf ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "getPrototypeOf"
+      "getPrototypeOf "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5126,10 +5193,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.hasOwn",
-    "keyPath": [
+    "fullyQualifiedName": "Object.hasOwn ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "hasOwn"
+      "hasOwn "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5149,10 +5216,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.is",
-    "keyPath": [
+    "fullyQualifiedName": "Object.is ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "is"
+      "is "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5172,10 +5239,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.isExtensible",
-    "keyPath": [
+    "fullyQualifiedName": "Object.isExtensible ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "isExtensible"
+      "isExtensible "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5190,10 +5257,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.isFrozen",
-    "keyPath": [
+    "fullyQualifiedName": "Object.isFrozen ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "isFrozen"
+      "isFrozen "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5208,10 +5275,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.isSealed",
-    "keyPath": [
+    "fullyQualifiedName": "Object.isSealed ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "isSealed"
+      "isSealed "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5226,10 +5293,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.keys",
-    "keyPath": [
+    "fullyQualifiedName": "Object.keys ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "keys"
+      "keys "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5244,10 +5311,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.preventExtensions",
-    "keyPath": [
+    "fullyQualifiedName": "Object.preventExtensions ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "preventExtensions"
+      "preventExtensions "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5263,17 +5330,17 @@
   {
     "type": "object",
     "fullyQualifiedName": "Object.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Object",
       "prototype"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.seal",
-    "keyPath": [
+    "fullyQualifiedName": "Object.seal ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "seal"
+      "seal "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5288,10 +5355,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.setPrototypeOf",
-    "keyPath": [
+    "fullyQualifiedName": "Object.setPrototypeOf ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "setPrototypeOf"
+      "setPrototypeOf "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5311,10 +5378,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.values",
-    "keyPath": [
+    "fullyQualifiedName": "Object.values ",
+    "fullyQualifiedKeyPath": [
       "Object",
-      "values"
+      "values "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5330,7 +5397,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Object.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Object",
       "prototype",
       "constructor"
@@ -5338,11 +5405,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.prototype.hasOwnProperty",
-    "keyPath": [
+    "fullyQualifiedName": "Object.prototype.hasOwnProperty ",
+    "fullyQualifiedKeyPath": [
       "Object",
       "prototype",
-      "hasOwnProperty"
+      "hasOwnProperty "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5357,11 +5424,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.prototype.isPrototypeOf",
-    "keyPath": [
+    "fullyQualifiedName": "Object.prototype.isPrototypeOf ",
+    "fullyQualifiedKeyPath": [
       "Object",
       "prototype",
-      "isPrototypeOf"
+      "isPrototypeOf "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5376,11 +5443,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.prototype.propertyIsEnumerable",
-    "keyPath": [
+    "fullyQualifiedName": "Object.prototype.propertyIsEnumerable ",
+    "fullyQualifiedKeyPath": [
       "Object",
       "prototype",
-      "propertyIsEnumerable"
+      "propertyIsEnumerable "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5395,11 +5462,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.prototype.toLocaleString",
-    "keyPath": [
+    "fullyQualifiedName": "Object.prototype.toLocaleString ",
+    "fullyQualifiedKeyPath": [
       "Object",
       "prototype",
-      "toLocaleString"
+      "toLocaleString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -5419,11 +5486,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.prototype.toString",
-    "keyPath": [
+    "fullyQualifiedName": "Object.prototype.toString ",
+    "fullyQualifiedKeyPath": [
       "Object",
       "prototype",
-      "toString"
+      "toString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -5432,11 +5499,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.prototype.valueOf",
-    "keyPath": [
+    "fullyQualifiedName": "Object.prototype.valueOf ",
+    "fullyQualifiedKeyPath": [
       "Object",
       "prototype",
-      "valueOf"
+      "valueOf "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -5446,7 +5513,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Object.prototype.__proto__",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Object",
       "prototype",
       "__proto__"
@@ -5455,7 +5522,7 @@
   {
     "type": "getter",
     "fullyQualifiedName": "Object.prototype.__proto__",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Object",
       "prototype",
       "__proto__"
@@ -5463,11 +5530,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.prototype.__defineGetter__",
-    "keyPath": [
+    "fullyQualifiedName": "Object.prototype.__defineGetter__ ",
+    "fullyQualifiedKeyPath": [
       "Object",
       "prototype",
-      "__defineGetter__"
+      "__defineGetter__ "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5487,11 +5554,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.prototype.__defineSetter__",
-    "keyPath": [
+    "fullyQualifiedName": "Object.prototype.__defineSetter__ ",
+    "fullyQualifiedKeyPath": [
       "Object",
       "prototype",
-      "__defineSetter__"
+      "__defineSetter__ "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5511,11 +5578,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.prototype.__lookupGetter__",
-    "keyPath": [
+    "fullyQualifiedName": "Object.prototype.__lookupGetter__ ",
+    "fullyQualifiedKeyPath": [
       "Object",
       "prototype",
-      "__lookupGetter__"
+      "__lookupGetter__ "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5530,11 +5597,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Object.prototype.__lookupSetter__",
-    "keyPath": [
+    "fullyQualifiedName": "Object.prototype.__lookupSetter__ ",
+    "fullyQualifiedKeyPath": [
       "Object",
       "prototype",
-      "__lookupSetter__"
+      "__lookupSetter__ "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5549,9 +5616,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "parseFloat",
-    "keyPath": [
-      "parseFloat"
+    "fullyQualifiedName": "parseFloat ",
+    "fullyQualifiedKeyPath": [
+      "parseFloat "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5566,9 +5633,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "parseInt",
-    "keyPath": [
-      "parseInt"
+    "fullyQualifiedName": "parseInt ",
+    "fullyQualifiedKeyPath": [
+      "parseInt "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5588,9 +5655,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Promise",
-    "keyPath": [
-      "Promise"
+    "fullyQualifiedName": "Promise ",
+    "fullyQualifiedKeyPath": [
+      "Promise "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5605,10 +5672,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Promise.all",
-    "keyPath": [
+    "fullyQualifiedName": "Promise.all ",
+    "fullyQualifiedKeyPath": [
       "Promise",
-      "all"
+      "all "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5623,10 +5690,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Promise.allSettled",
-    "keyPath": [
+    "fullyQualifiedName": "Promise.allSettled ",
+    "fullyQualifiedKeyPath": [
       "Promise",
-      "allSettled"
+      "allSettled "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5641,10 +5708,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Promise.any",
-    "keyPath": [
+    "fullyQualifiedName": "Promise.any ",
+    "fullyQualifiedKeyPath": [
       "Promise",
-      "any"
+      "any "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5660,17 +5727,17 @@
   {
     "type": "object",
     "fullyQualifiedName": "Promise.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Promise",
       "prototype"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Promise.race",
-    "keyPath": [
+    "fullyQualifiedName": "Promise.race ",
+    "fullyQualifiedKeyPath": [
       "Promise",
-      "race"
+      "race "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5685,10 +5752,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Promise.reject",
-    "keyPath": [
+    "fullyQualifiedName": "Promise.reject ",
+    "fullyQualifiedKeyPath": [
       "Promise",
-      "reject"
+      "reject "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5703,10 +5770,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Promise.resolve",
-    "keyPath": [
+    "fullyQualifiedName": "Promise.resolve ",
+    "fullyQualifiedKeyPath": [
       "Promise",
-      "resolve"
+      "resolve "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5721,18 +5788,19 @@
   },
   {
     "type": "getter",
-    "fullyQualifiedName": "Promise [ @@species ]",
-    "keyPath": [
-      "Promise [ @@species ]"
+    "fullyQualifiedName": "Promise.@@species",
+    "fullyQualifiedKeyPath": [
+      "Promise",
+      "@@species"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Promise.prototype.catch",
-    "keyPath": [
+    "fullyQualifiedName": "Promise.prototype.catch ",
+    "fullyQualifiedKeyPath": [
       "Promise",
       "prototype",
-      "catch"
+      "catch "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5748,7 +5816,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Promise.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Promise",
       "prototype",
       "constructor"
@@ -5756,11 +5824,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Promise.prototype.finally",
-    "keyPath": [
+    "fullyQualifiedName": "Promise.prototype.finally ",
+    "fullyQualifiedKeyPath": [
       "Promise",
       "prototype",
-      "finally"
+      "finally "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5775,11 +5843,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Promise.prototype.then",
-    "keyPath": [
+    "fullyQualifiedName": "Promise.prototype.then ",
+    "fullyQualifiedKeyPath": [
       "Promise",
       "prototype",
-      "then"
+      "then "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5799,17 +5867,18 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "Promise.prototype [ @@toStringTag ]",
-    "keyPath": [
+    "fullyQualifiedName": "Promise.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
       "Promise",
-      "prototype [ @@toStringTag ]"
+      "prototype",
+      "@@toStringTag"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Proxy",
-    "keyPath": [
-      "Proxy"
+    "fullyQualifiedName": "Proxy ",
+    "fullyQualifiedKeyPath": [
+      "Proxy "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5829,10 +5898,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Proxy.revocable",
-    "keyPath": [
+    "fullyQualifiedName": "Proxy.revocable ",
+    "fullyQualifiedKeyPath": [
       "Proxy",
-      "revocable"
+      "revocable "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5853,16 +5922,16 @@
   {
     "type": "object",
     "fullyQualifiedName": "Reflect",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Reflect"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Reflect.apply",
-    "keyPath": [
+    "fullyQualifiedName": "Reflect.apply ",
+    "fullyQualifiedKeyPath": [
       "Reflect",
-      "apply"
+      "apply "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5887,10 +5956,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Reflect.construct",
-    "keyPath": [
+    "fullyQualifiedName": "Reflect.construct ",
+    "fullyQualifiedKeyPath": [
       "Reflect",
-      "construct"
+      "construct "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5916,10 +5985,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Reflect.defineProperty",
-    "keyPath": [
+    "fullyQualifiedName": "Reflect.defineProperty ",
+    "fullyQualifiedKeyPath": [
       "Reflect",
-      "defineProperty"
+      "defineProperty "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5944,10 +6013,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Reflect.deleteProperty",
-    "keyPath": [
+    "fullyQualifiedName": "Reflect.deleteProperty ",
+    "fullyQualifiedKeyPath": [
       "Reflect",
-      "deleteProperty"
+      "deleteProperty "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5967,10 +6036,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Reflect.get",
-    "keyPath": [
+    "fullyQualifiedName": "Reflect.get ",
+    "fullyQualifiedKeyPath": [
       "Reflect",
-      "get"
+      "get "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -5996,10 +6065,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Reflect.getOwnPropertyDescriptor",
-    "keyPath": [
+    "fullyQualifiedName": "Reflect.getOwnPropertyDescriptor ",
+    "fullyQualifiedKeyPath": [
       "Reflect",
-      "getOwnPropertyDescriptor"
+      "getOwnPropertyDescriptor "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6019,10 +6088,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Reflect.getPrototypeOf",
-    "keyPath": [
+    "fullyQualifiedName": "Reflect.getPrototypeOf ",
+    "fullyQualifiedKeyPath": [
       "Reflect",
-      "getPrototypeOf"
+      "getPrototypeOf "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6037,10 +6106,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Reflect.has",
-    "keyPath": [
+    "fullyQualifiedName": "Reflect.has ",
+    "fullyQualifiedKeyPath": [
       "Reflect",
-      "has"
+      "has "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6060,10 +6129,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Reflect.isExtensible",
-    "keyPath": [
+    "fullyQualifiedName": "Reflect.isExtensible ",
+    "fullyQualifiedKeyPath": [
       "Reflect",
-      "isExtensible"
+      "isExtensible "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6078,10 +6147,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Reflect.ownKeys",
-    "keyPath": [
+    "fullyQualifiedName": "Reflect.ownKeys ",
+    "fullyQualifiedKeyPath": [
       "Reflect",
-      "ownKeys"
+      "ownKeys "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6096,10 +6165,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Reflect.preventExtensions",
-    "keyPath": [
+    "fullyQualifiedName": "Reflect.preventExtensions ",
+    "fullyQualifiedKeyPath": [
       "Reflect",
-      "preventExtensions"
+      "preventExtensions "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6114,10 +6183,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Reflect.set",
-    "keyPath": [
+    "fullyQualifiedName": "Reflect.set ",
+    "fullyQualifiedKeyPath": [
       "Reflect",
-      "set"
+      "set "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6148,10 +6217,10 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Reflect.setPrototypeOf",
-    "keyPath": [
+    "fullyQualifiedName": "Reflect.setPrototypeOf ",
+    "fullyQualifiedKeyPath": [
       "Reflect",
-      "setPrototypeOf"
+      "setPrototypeOf "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6171,23 +6240,39 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "Reflect [ @@toStringTag ]",
-    "keyPath": [
-      "Reflect [ @@toStringTag ]"
-    ]
-  },
-  {
-    "type": "object",
-    "fullyQualifiedName": "RegExp (Regular Expression) Objects",
-    "keyPath": [
-      "RegExp (Regular Expression) Objects"
+    "fullyQualifiedName": "Reflect.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "Reflect",
+      "@@toStringTag"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "RegExp",
-    "keyPath": [
-      "RegExp"
+    "fullyQualifiedName": "RegExp ",
+    "fullyQualifiedKeyPath": [
+      "RegExp "
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "Regular"
+          ]
+        },
+        {
+          "children": [
+            "Expression"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "RegExp ",
+    "fullyQualifiedKeyPath": [
+      "RegExp "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6208,22 +6293,23 @@
   {
     "type": "object",
     "fullyQualifiedName": "RegExp.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype"
     ]
   },
   {
     "type": "getter",
-    "fullyQualifiedName": "RegExp [ @@species ]",
-    "keyPath": [
-      "RegExp [ @@species ]"
+    "fullyQualifiedName": "RegExp.@@species",
+    "fullyQualifiedKeyPath": [
+      "RegExp",
+      "@@species"
     ]
   },
   {
     "type": "object",
     "fullyQualifiedName": "RegExp.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
       "constructor"
@@ -6231,11 +6317,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "RegExp.prototype.exec",
-    "keyPath": [
+    "fullyQualifiedName": "RegExp.prototype.exec ",
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
-      "exec"
+      "exec "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6251,7 +6337,7 @@
   {
     "type": "getter",
     "fullyQualifiedName": "RegExp.prototype.dotAll",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
       "dotAll"
@@ -6260,7 +6346,7 @@
   {
     "type": "getter",
     "fullyQualifiedName": "RegExp.prototype.flags",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
       "flags"
@@ -6269,7 +6355,7 @@
   {
     "type": "getter",
     "fullyQualifiedName": "RegExp.prototype.global",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
       "global"
@@ -6278,7 +6364,7 @@
   {
     "type": "getter",
     "fullyQualifiedName": "RegExp.prototype.hasIndices",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
       "hasIndices"
@@ -6287,7 +6373,7 @@
   {
     "type": "getter",
     "fullyQualifiedName": "RegExp.prototype.ignoreCase",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
       "ignoreCase"
@@ -6295,11 +6381,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "RegExp.prototype.@@match",
-    "keyPath": [
+    "fullyQualifiedName": "RegExp.prototype.@@match ",
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
-      "@@match"
+      "@@match "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6314,11 +6400,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "RegExp.prototype.@@matchAll",
-    "keyPath": [
+    "fullyQualifiedName": "RegExp.prototype.@@matchAll ",
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
-      "@@matchAll"
+      "@@matchAll "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6334,7 +6420,7 @@
   {
     "type": "getter",
     "fullyQualifiedName": "RegExp.prototype.multiline",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
       "multiline"
@@ -6342,11 +6428,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "RegExp.prototype.@@replace",
-    "keyPath": [
+    "fullyQualifiedName": "RegExp.prototype.@@replace ",
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
-      "@@replace"
+      "@@replace "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6366,11 +6452,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "RegExp.prototype.@@search",
-    "keyPath": [
+    "fullyQualifiedName": "RegExp.prototype.@@search ",
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
-      "@@search"
+      "@@search "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6386,7 +6472,7 @@
   {
     "type": "getter",
     "fullyQualifiedName": "RegExp.prototype.source",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
       "source"
@@ -6394,11 +6480,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "RegExp.prototype.@@split",
-    "keyPath": [
+    "fullyQualifiedName": "RegExp.prototype.@@split ",
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
-      "@@split"
+      "@@split "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6419,7 +6505,7 @@
   {
     "type": "getter",
     "fullyQualifiedName": "RegExp.prototype.sticky",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
       "sticky"
@@ -6427,11 +6513,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "RegExp.prototype.test",
-    "keyPath": [
+    "fullyQualifiedName": "RegExp.prototype.test ",
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
-      "test"
+      "test "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6446,11 +6532,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "RegExp.prototype.toString",
-    "keyPath": [
+    "fullyQualifiedName": "RegExp.prototype.toString ",
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
-      "toString"
+      "toString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -6460,26 +6546,26 @@
   {
     "type": "getter",
     "fullyQualifiedName": "RegExp.prototype.unicode",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "RegExp",
       "prototype",
       "unicode"
     ]
   },
   {
-    "type": "object",
-    "fullyQualifiedName": "set Object.prototype.__proto__",
-    "keyPath": [
-      "set Object",
+    "type": "setter",
+    "fullyQualifiedName": "Object.prototype.__proto__",
+    "fullyQualifiedKeyPath": [
+      "Object",
       "prototype",
       "__proto__"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Set",
-    "keyPath": [
-      "Set"
+    "fullyQualifiedName": "Set ",
+    "fullyQualifiedKeyPath": [
+      "Set "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -6495,25 +6581,26 @@
   {
     "type": "object",
     "fullyQualifiedName": "Set.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Set",
       "prototype"
     ]
   },
   {
     "type": "getter",
-    "fullyQualifiedName": "Set [ @@species ]",
-    "keyPath": [
-      "Set [ @@species ]"
+    "fullyQualifiedName": "Set.@@species",
+    "fullyQualifiedKeyPath": [
+      "Set",
+      "@@species"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Set.prototype.add",
-    "keyPath": [
+    "fullyQualifiedName": "Set.prototype.add ",
+    "fullyQualifiedKeyPath": [
       "Set",
       "prototype",
-      "add"
+      "add "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6528,11 +6615,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Set.prototype.clear",
-    "keyPath": [
+    "fullyQualifiedName": "Set.prototype.clear ",
+    "fullyQualifiedKeyPath": [
       "Set",
       "prototype",
-      "clear"
+      "clear "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -6542,7 +6629,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Set.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Set",
       "prototype",
       "constructor"
@@ -6550,11 +6637,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Set.prototype.delete",
-    "keyPath": [
+    "fullyQualifiedName": "Set.prototype.delete ",
+    "fullyQualifiedKeyPath": [
       "Set",
       "prototype",
-      "delete"
+      "delete "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6569,11 +6656,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Set.prototype.entries",
-    "keyPath": [
+    "fullyQualifiedName": "Set.prototype.entries ",
+    "fullyQualifiedKeyPath": [
       "Set",
       "prototype",
-      "entries"
+      "entries "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -6582,11 +6669,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Set.prototype.forEach",
-    "keyPath": [
+    "fullyQualifiedName": "Set.prototype.forEach ",
+    "fullyQualifiedKeyPath": [
       "Set",
       "prototype",
-      "forEach"
+      "forEach "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6607,11 +6694,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Set.prototype.has",
-    "keyPath": [
+    "fullyQualifiedName": "Set.prototype.has ",
+    "fullyQualifiedKeyPath": [
       "Set",
       "prototype",
-      "has"
+      "has "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6626,11 +6713,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Set.prototype.keys",
-    "keyPath": [
+    "fullyQualifiedName": "Set.prototype.keys ",
+    "fullyQualifiedKeyPath": [
       "Set",
       "prototype",
-      "keys"
+      "keys "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -6640,7 +6727,7 @@
   {
     "type": "getter",
     "fullyQualifiedName": "Set.prototype.size",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Set",
       "prototype",
       "size"
@@ -6648,11 +6735,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Set.prototype.values",
-    "keyPath": [
+    "fullyQualifiedName": "Set.prototype.values ",
+    "fullyQualifiedKeyPath": [
       "Set",
       "prototype",
-      "values"
+      "values "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -6661,11 +6748,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Set.prototype.@@iterator",
-    "keyPath": [
+    "fullyQualifiedName": "Set.prototype.@@iterator ",
+    "fullyQualifiedKeyPath": [
       "Set",
       "prototype",
-      "@@iterator"
+      "@@iterator "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -6674,17 +6761,18 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "Set.prototype [ @@toStringTag ]",
-    "keyPath": [
+    "fullyQualifiedName": "Set.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
       "Set",
-      "prototype [ @@toStringTag ]"
+      "prototype",
+      "@@toStringTag"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "SharedArrayBuffer",
-    "keyPath": [
-      "SharedArrayBuffer"
+    "fullyQualifiedName": "SharedArrayBuffer ",
+    "fullyQualifiedKeyPath": [
+      "SharedArrayBuffer "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6700,22 +6788,23 @@
   {
     "type": "object",
     "fullyQualifiedName": "SharedArrayBuffer.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "SharedArrayBuffer",
       "prototype"
     ]
   },
   {
     "type": "getter",
-    "fullyQualifiedName": "SharedArrayBuffer [ @@species ]",
-    "keyPath": [
-      "SharedArrayBuffer [ @@species ]"
+    "fullyQualifiedName": "SharedArrayBuffer.@@species",
+    "fullyQualifiedKeyPath": [
+      "SharedArrayBuffer",
+      "@@species"
     ]
   },
   {
     "type": "getter",
     "fullyQualifiedName": "SharedArrayBuffer.prototype.byteLength",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "SharedArrayBuffer",
       "prototype",
       "byteLength"
@@ -6724,7 +6813,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "SharedArrayBuffer.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "SharedArrayBuffer",
       "prototype",
       "constructor"
@@ -6732,11 +6821,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "SharedArrayBuffer.prototype.slice",
-    "keyPath": [
+    "fullyQualifiedName": "SharedArrayBuffer.prototype.slice ",
+    "fullyQualifiedKeyPath": [
       "SharedArrayBuffer",
       "prototype",
-      "slice"
+      "slice "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6756,17 +6845,18 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "SharedArrayBuffer.prototype [ @@toStringTag ]",
-    "keyPath": [
+    "fullyQualifiedName": "SharedArrayBuffer.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
       "SharedArrayBuffer",
-      "prototype [ @@toStringTag ]"
+      "prototype",
+      "@@toStringTag"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String",
-    "keyPath": [
-      "String"
+    "fullyQualifiedName": "String ",
+    "fullyQualifiedKeyPath": [
+      "String "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6781,16 +6871,20 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.fromCharCode",
-    "keyPath": [
+    "fullyQualifiedName": "String.fromCharCode ",
+    "fullyQualifiedKeyPath": [
       "String",
-      "fromCharCode"
+      "fromCharCode "
     ],
     "[[FormalParameters]]": {
       "required": [
         {
           "children": [
-            "codeUnits"
+            {
+              "children": [
+                "codeUnits"
+              ]
+            }
           ]
         }
       ],
@@ -6799,16 +6893,20 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.fromCodePoint",
-    "keyPath": [
+    "fullyQualifiedName": "String.fromCodePoint ",
+    "fullyQualifiedKeyPath": [
       "String",
-      "fromCodePoint"
+      "fromCodePoint "
     ],
     "[[FormalParameters]]": {
       "required": [
         {
           "children": [
-            "codePoints"
+            {
+              "children": [
+                "codePoints"
+              ]
+            }
           ]
         }
       ],
@@ -6818,17 +6916,17 @@
   {
     "type": "object",
     "fullyQualifiedName": "String.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.raw",
-    "keyPath": [
+    "fullyQualifiedName": "String.raw ",
+    "fullyQualifiedKeyPath": [
       "String",
-      "raw"
+      "raw "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6839,7 +6937,11 @@
         },
         {
           "children": [
-            "substitutions"
+            {
+              "children": [
+                "substitutions"
+              ]
+            }
           ]
         }
       ],
@@ -6848,11 +6950,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.at",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.at ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "at"
+      "at "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6867,11 +6969,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.charAt",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.charAt ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "charAt"
+      "charAt "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6886,11 +6988,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.charCodeAt",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.charCodeAt ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "charCodeAt"
+      "charCodeAt "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6905,11 +7007,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.codePointAt",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.codePointAt ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "codePointAt"
+      "codePointAt "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6924,17 +7026,21 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.concat",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.concat ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "concat"
+      "concat "
     ],
     "[[FormalParameters]]": {
       "required": [
         {
           "children": [
-            "args"
+            {
+              "children": [
+                "args"
+              ]
+            }
           ]
         }
       ],
@@ -6944,7 +7050,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "String.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
       "constructor"
@@ -6952,11 +7058,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.endsWith",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.endsWith ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "endsWith"
+      "endsWith "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -6977,11 +7083,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.includes",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.includes ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "includes"
+      "includes "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7002,11 +7108,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.indexOf",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.indexOf ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "indexOf"
+      "indexOf "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7027,11 +7133,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.lastIndexOf",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.lastIndexOf ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "lastIndexOf"
+      "lastIndexOf "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7052,11 +7158,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.localeCompare",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.localeCompare ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "localeCompare"
+      "localeCompare "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7082,11 +7188,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.match",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.match ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "match"
+      "match "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7101,11 +7207,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.matchAll",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.matchAll ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "matchAll"
+      "matchAll "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7120,11 +7226,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.normalize",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.normalize ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "normalize"
+      "normalize "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7139,11 +7245,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.padEnd",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.padEnd ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "padEnd"
+      "padEnd "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7164,11 +7270,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.padStart",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.padStart ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "padStart"
+      "padStart "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7189,11 +7295,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.repeat",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.repeat ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "repeat"
+      "repeat "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7208,11 +7314,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.replace",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.replace ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "replace"
+      "replace "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7232,11 +7338,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.replaceAll",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.replaceAll ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "replaceAll"
+      "replaceAll "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7256,11 +7362,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.search",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.search ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "search"
+      "search "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7275,11 +7381,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.slice",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.slice ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "slice"
+      "slice "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7299,11 +7405,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.split",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.split ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "split"
+      "split "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7323,11 +7429,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.startsWith",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.startsWith ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "startsWith"
+      "startsWith "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7348,11 +7454,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.substring",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.substring ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "substring"
+      "substring "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7372,11 +7478,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.toLocaleLowerCase",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.toLocaleLowerCase ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "toLocaleLowerCase"
+      "toLocaleLowerCase "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7396,11 +7502,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.toLocaleUpperCase",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.toLocaleUpperCase ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "toLocaleUpperCase"
+      "toLocaleUpperCase "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7420,11 +7526,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.toLowerCase",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.toLowerCase ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "toLowerCase"
+      "toLowerCase "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7433,11 +7539,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.toString",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.toString ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "toString"
+      "toString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7446,11 +7552,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.toUpperCase",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.toUpperCase ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "toUpperCase"
+      "toUpperCase "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7459,11 +7565,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.trim",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.trim ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "trim"
+      "trim "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7472,11 +7578,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.trimEnd",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.trimEnd ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "trimEnd"
+      "trimEnd "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7485,11 +7591,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.trimStart",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.trimStart ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "trimStart"
+      "trimStart "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7498,11 +7604,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.valueOf",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.valueOf ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "valueOf"
+      "valueOf "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7511,11 +7617,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "String.prototype.@@iterator",
-    "keyPath": [
+    "fullyQualifiedName": "String.prototype.@@iterator ",
+    "fullyQualifiedKeyPath": [
       "String",
       "prototype",
-      "@@iterator"
+      "@@iterator "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7524,9 +7630,9 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Symbol",
-    "keyPath": [
-      "Symbol"
+    "fullyQualifiedName": "Symbol ",
+    "fullyQualifiedKeyPath": [
+      "Symbol "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7542,17 +7648,17 @@
   {
     "type": "object",
     "fullyQualifiedName": "Symbol.asyncIterator",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "asyncIterator"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Symbol.for",
-    "keyPath": [
+    "fullyQualifiedName": "Symbol.for ",
+    "fullyQualifiedKeyPath": [
       "Symbol",
-      "for"
+      "for "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7568,7 +7674,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Symbol.hasInstance",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "hasInstance"
     ]
@@ -7576,7 +7682,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Symbol.isConcatSpreadable",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "isConcatSpreadable"
     ]
@@ -7584,17 +7690,17 @@
   {
     "type": "object",
     "fullyQualifiedName": "Symbol.iterator",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "iterator"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Symbol.keyFor",
-    "keyPath": [
+    "fullyQualifiedName": "Symbol.keyFor ",
+    "fullyQualifiedKeyPath": [
       "Symbol",
-      "keyFor"
+      "keyFor "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7610,7 +7716,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Symbol.match",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "match"
     ]
@@ -7618,7 +7724,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Symbol.matchAll",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "matchAll"
     ]
@@ -7626,7 +7732,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Symbol.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "prototype"
     ]
@@ -7634,7 +7740,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Symbol.replace",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "replace"
     ]
@@ -7642,7 +7748,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Symbol.search",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "search"
     ]
@@ -7650,7 +7756,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Symbol.species",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "species"
     ]
@@ -7658,7 +7764,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Symbol.split",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "split"
     ]
@@ -7666,7 +7772,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Symbol.toPrimitive",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "toPrimitive"
     ]
@@ -7674,7 +7780,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Symbol.toStringTag",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "toStringTag"
     ]
@@ -7682,7 +7788,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Symbol.unscopables",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "unscopables"
     ]
@@ -7690,7 +7796,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "Symbol.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "prototype",
       "constructor"
@@ -7699,7 +7805,7 @@
   {
     "type": "getter",
     "fullyQualifiedName": "Symbol.prototype.description",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "prototype",
       "description"
@@ -7707,11 +7813,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Symbol.prototype.toString",
-    "keyPath": [
+    "fullyQualifiedName": "Symbol.prototype.toString ",
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "prototype",
-      "toString"
+      "toString "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7720,11 +7826,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Symbol.prototype.valueOf",
-    "keyPath": [
+    "fullyQualifiedName": "Symbol.prototype.valueOf ",
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "prototype",
-      "valueOf"
+      "valueOf "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7733,11 +7839,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "Symbol.prototype.@@toPrimitive",
-    "keyPath": [
+    "fullyQualifiedName": "Symbol.prototype.@@toPrimitive ",
+    "fullyQualifiedKeyPath": [
       "Symbol",
       "prototype",
-      "@@toPrimitive"
+      "@@toPrimitive "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7752,17 +7858,18 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "Symbol.prototype [ @@toStringTag ]",
-    "keyPath": [
+    "fullyQualifiedName": "Symbol.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
       "Symbol",
-      "prototype [ @@toStringTag ]"
+      "prototype",
+      "@@toStringTag"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "WeakMap",
-    "keyPath": [
-      "WeakMap"
+    "fullyQualifiedName": "WeakMap ",
+    "fullyQualifiedKeyPath": [
+      "WeakMap "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7778,7 +7885,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "WeakMap.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "WeakMap",
       "prototype"
     ]
@@ -7786,7 +7893,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "WeakMap.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "WeakMap",
       "prototype",
       "constructor"
@@ -7794,11 +7901,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "WeakMap.prototype.delete",
-    "keyPath": [
+    "fullyQualifiedName": "WeakMap.prototype.delete ",
+    "fullyQualifiedKeyPath": [
       "WeakMap",
       "prototype",
-      "delete"
+      "delete "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7813,11 +7920,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "WeakMap.prototype.get",
-    "keyPath": [
+    "fullyQualifiedName": "WeakMap.prototype.get ",
+    "fullyQualifiedKeyPath": [
       "WeakMap",
       "prototype",
-      "get"
+      "get "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7832,11 +7939,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "WeakMap.prototype.has",
-    "keyPath": [
+    "fullyQualifiedName": "WeakMap.prototype.has ",
+    "fullyQualifiedKeyPath": [
       "WeakMap",
       "prototype",
-      "has"
+      "has "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7851,11 +7958,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "WeakMap.prototype.set",
-    "keyPath": [
+    "fullyQualifiedName": "WeakMap.prototype.set ",
+    "fullyQualifiedKeyPath": [
       "WeakMap",
       "prototype",
-      "set"
+      "set "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7875,17 +7982,18 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "WeakMap.prototype [ @@toStringTag ]",
-    "keyPath": [
+    "fullyQualifiedName": "WeakMap.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
       "WeakMap",
-      "prototype [ @@toStringTag ]"
+      "prototype",
+      "@@toStringTag"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "WeakSet",
-    "keyPath": [
-      "WeakSet"
+    "fullyQualifiedName": "WeakSet ",
+    "fullyQualifiedKeyPath": [
+      "WeakSet "
     ],
     "[[FormalParameters]]": {
       "required": [],
@@ -7901,18 +8009,18 @@
   {
     "type": "object",
     "fullyQualifiedName": "WeakSet.prototype",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "WeakSet",
       "prototype"
     ]
   },
   {
     "type": "function",
-    "fullyQualifiedName": "WeakSet.prototype.add",
-    "keyPath": [
+    "fullyQualifiedName": "WeakSet.prototype.add ",
+    "fullyQualifiedKeyPath": [
       "WeakSet",
       "prototype",
-      "add"
+      "add "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7928,7 +8036,7 @@
   {
     "type": "object",
     "fullyQualifiedName": "WeakSet.prototype.constructor",
-    "keyPath": [
+    "fullyQualifiedKeyPath": [
       "WeakSet",
       "prototype",
       "constructor"
@@ -7936,11 +8044,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "WeakSet.prototype.delete",
-    "keyPath": [
+    "fullyQualifiedName": "WeakSet.prototype.delete ",
+    "fullyQualifiedKeyPath": [
       "WeakSet",
       "prototype",
-      "delete"
+      "delete "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7955,11 +8063,11 @@
   },
   {
     "type": "function",
-    "fullyQualifiedName": "WeakSet.prototype.has",
-    "keyPath": [
+    "fullyQualifiedName": "WeakSet.prototype.has ",
+    "fullyQualifiedKeyPath": [
       "WeakSet",
       "prototype",
-      "has"
+      "has "
     ],
     "[[FormalParameters]]": {
       "required": [
@@ -7974,10 +8082,11 @@
   },
   {
     "type": "object",
-    "fullyQualifiedName": "WeakSet.prototype [ @@toStringTag ]",
-    "keyPath": [
+    "fullyQualifiedName": "WeakSet.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
       "WeakSet",
-      "prototype [ @@toStringTag ]"
+      "prototype",
+      "@@toStringTag"
     ]
   }
 ]

@@ -17,6 +17,7 @@ const { parseH1 } = require("ecmarkup/lib/header-parser");
 
 const downloadSpecification = require("../download-specification");
 const toFormalParameters = require("./to-formal-parameters");
+const parseSignature = require("./parse-signature");
 
 const warn = message => (console.warn(message), false);
 
@@ -25,7 +26,7 @@ const ExcludedTypes = new Set(["abstract operation", "internal method", "sdo"]);
 const toParsableSignature = signature => signature
     .replace(/\.\.\._/g, "_")
     .replace(
-        /(^[^\(\s]+)\s*\[\s*([^\]]+)\s*\]/g,
+        /(^[^\(\s]+)\s*\[\s*([^\]\s]+)\s*\]/g,
         (_, prefix, bracketed) => `${prefix}.${bracketed}`);
 
 const deintrinsify = name => name.replace(/^%|%$/g, "");
@@ -69,8 +70,10 @@ console.log(WellKnownIntrinsicsRegExp);
         .map(clause => XPathQuerySingle `./h1` (clause).textContent)
         .filter(contents => WellKnownIntrinsicsRegExp.test(contents) ? true : console.log("NO :", contents))
         .map(signature => (console.log("YES: ", signature), signature))
-        .map(parse)
-        .filter(WKIO => !!WKIO);
+        .map(parseSignature)
+        .filter(WKIO =>
+            !WKIO.failed ||
+            warn(`Failure ${WKIO.signature}: ${WKIO.unrested} ${WKIO.errors[0].message}`));
 
     mkdirp(dirname(destination));
     write(destination, JSON.stringify(WellKnownIntrinsicObjects, null, 2), "utf-8");
@@ -86,7 +89,9 @@ const toWellKnownIntrinsicObject = (type, fullyQualifiedName, attributes) =>
 
 // constructor
 // non-objects like "length"?
-const parse = signature =>
+// ToProperty(V) -> P
+const parse = signature => given((
+    normalized = toParsableSignature(signature)) =>
     signature.startsWith("get ") ?
         toWellKnownIntrinsicObject("getter", signature.replace(/^get\s+/g, "")) :
     /[^\)]$/.test(signature) ?
@@ -99,7 +104,7 @@ const parse = signature =>
                     toWellKnownIntrinsicObject("function", parsed.name,
                     {
                         ["[[FormalParameters]]"]: toFormalParameters(parsed)
-                    }));
+                    })));
 
 const toXPathResultArray = result => Array.from(
 ({
