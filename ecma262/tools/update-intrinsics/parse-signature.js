@@ -60,7 +60,7 @@ const toFunctionAttributes = given((
             normalized = toUnbracketedSignature(signature
                 .replace(RestElementRegExp, (_, name) => name)
                 .replace(SequenceElementRegExp, (_, name) => `_${name}_`)),
-            parsed = parseH1(normalized)) =>(console.log(sequenceElements, " vs. ", restElements),
+            parsed = parseH1(normalized)) =>
 ({
     ... (parsed.type === "failure" &&
         ({ failed: true, signature, normalized, errors: parsed.errors })),
@@ -70,7 +70,7 @@ const toFunctionAttributes = given((
         required: toFormalParameters(restElements, sequenceElements, parsed.params),
         optional: toFormalParameters(restElements, sequenceElements, parsed.optionalParams)
     }
-}))));
+})));
 
 const parseSignature = signature => given((
     type = classify(signature),

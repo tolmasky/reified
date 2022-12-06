@@ -63,7 +63,7 @@ module.exports = async function
         TopLevelWellKnownIntrinsicObjects
             .map(({ IntrinsicName }) => deintrinsify(IntrinsicName))
             .join("|")})(\\.[^\\s]+|\\s*\\[[^\\]]+\\])*(\\s*\\(|$)`);
-console.log(WellKnownIntrinsicsRegExp);
+
     const WellKnownIntrinsicObjects = TopLevelWellKnownIntrinsicObjects
         .flatMap(WKIO => XPathQueryAll
             `${toSectionIDXPathQuery(WKIO.IntrinsicName)}` (document))
