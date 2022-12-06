@@ -1,0 +1,7983 @@
+[
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array",
+    "keyPath": [
+      "Array"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "values"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.from",
+    "keyPath": [
+      "Array",
+      "from"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "items"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "mapfn"
+          ]
+        },
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.isArray",
+    "keyPath": [
+      "Array",
+      "isArray"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "arg"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.of",
+    "keyPath": [
+      "Array",
+      "of"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "items"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Array.prototype",
+    "keyPath": [
+      "Array",
+      "prototype"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "Array [ @@species ]",
+    "keyPath": [
+      "Array [ @@species ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.at",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "at"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "index"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.concat",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "concat"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "items"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Array.prototype.constructor",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.copyWithin",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "copyWithin"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "start"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.entries",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "entries"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.every",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "every"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.fill",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "fill"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.filter",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "filter"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.find",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "find"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.findIndex",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "findIndex"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.flat",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "flat"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "depth"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.flatMap",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "flatMap"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "mapperFunction"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.forEach",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "forEach"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.includes",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "includes"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.indexOf",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "indexOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.join",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "join"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "separator"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.keys",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "keys"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.lastIndexOf",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "lastIndexOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.map",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "map"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.pop",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "pop"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.push",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "push"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "items"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.reduce",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "reduce"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.reduceRight",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "reduceRight"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.reverse",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "reverse"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.shift",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "shift"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.slice",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "slice"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.some",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "some"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.sort",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "sort"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "comparefn"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.splice",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "splice"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "deleteCount"
+          ]
+        },
+        {
+          "children": [
+            "items"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.toLocaleString",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "toLocaleString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.toString",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "toString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.unshift",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "unshift"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "items"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.values",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "values"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Array.prototype.@@iterator",
+    "keyPath": [
+      "Array",
+      "prototype",
+      "@@iterator"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Array.prototype [ @@unscopables ]",
+    "keyPath": [
+      "Array",
+      "prototype [ @@unscopables ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "ArrayBuffer",
+    "keyPath": [
+      "ArrayBuffer"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "length"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "ArrayBuffer.isView",
+    "keyPath": [
+      "ArrayBuffer",
+      "isView"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "arg"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "ArrayBuffer.prototype",
+    "keyPath": [
+      "ArrayBuffer",
+      "prototype"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "ArrayBuffer [ @@species ]",
+    "keyPath": [
+      "ArrayBuffer [ @@species ]"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "ArrayBuffer.prototype.byteLength",
+    "keyPath": [
+      "ArrayBuffer",
+      "prototype",
+      "byteLength"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "ArrayBuffer.prototype.constructor",
+    "keyPath": [
+      "ArrayBuffer",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "ArrayBuffer.prototype.slice",
+    "keyPath": [
+      "ArrayBuffer",
+      "prototype",
+      "slice"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "ArrayBuffer.prototype [ @@toStringTag ]",
+    "keyPath": [
+      "ArrayBuffer",
+      "prototype [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "ArrayBuffer",
+    "keyPath": [
+      "ArrayBuffer"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "length"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "ArrayBuffer.isView",
+    "keyPath": [
+      "ArrayBuffer",
+      "isView"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "arg"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "ArrayBuffer.prototype",
+    "keyPath": [
+      "ArrayBuffer",
+      "prototype"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "ArrayBuffer [ @@species ]",
+    "keyPath": [
+      "ArrayBuffer [ @@species ]"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "ArrayBuffer.prototype.byteLength",
+    "keyPath": [
+      "ArrayBuffer",
+      "prototype",
+      "byteLength"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "ArrayBuffer.prototype.constructor",
+    "keyPath": [
+      "ArrayBuffer",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "ArrayBuffer.prototype.slice",
+    "keyPath": [
+      "ArrayBuffer",
+      "prototype",
+      "slice"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "ArrayBuffer.prototype [ @@toStringTag ]",
+    "keyPath": [
+      "ArrayBuffer",
+      "prototype [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "AsyncGeneratorFunction.length",
+    "keyPath": [
+      "AsyncGeneratorFunction",
+      "length"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "AsyncGeneratorFunction.prototype",
+    "keyPath": [
+      "AsyncGeneratorFunction",
+      "prototype"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "AsyncGeneratorFunction.prototype.constructor",
+    "keyPath": [
+      "AsyncGeneratorFunction",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "AsyncGeneratorFunction.prototype.prototype",
+    "keyPath": [
+      "AsyncGeneratorFunction",
+      "prototype",
+      "prototype"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "AsyncGeneratorFunction.prototype [ @@toStringTag ]",
+    "keyPath": [
+      "AsyncGeneratorFunction",
+      "prototype [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Atomics",
+    "keyPath": [
+      "Atomics"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Atomics.add",
+    "keyPath": [
+      "Atomics",
+      "add"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "typedArray"
+          ]
+        },
+        {
+          "children": [
+            "index"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Atomics.and",
+    "keyPath": [
+      "Atomics",
+      "and"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "typedArray"
+          ]
+        },
+        {
+          "children": [
+            "index"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Atomics.compareExchange",
+    "keyPath": [
+      "Atomics",
+      "compareExchange"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "typedArray"
+          ]
+        },
+        {
+          "children": [
+            "index"
+          ]
+        },
+        {
+          "children": [
+            "expectedValue"
+          ]
+        },
+        {
+          "children": [
+            "replacementValue"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Atomics.exchange",
+    "keyPath": [
+      "Atomics",
+      "exchange"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "typedArray"
+          ]
+        },
+        {
+          "children": [
+            "index"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Atomics.isLockFree",
+    "keyPath": [
+      "Atomics",
+      "isLockFree"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "size"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Atomics.load",
+    "keyPath": [
+      "Atomics",
+      "load"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "typedArray"
+          ]
+        },
+        {
+          "children": [
+            "index"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Atomics.or",
+    "keyPath": [
+      "Atomics",
+      "or"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "typedArray"
+          ]
+        },
+        {
+          "children": [
+            "index"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Atomics.store",
+    "keyPath": [
+      "Atomics",
+      "store"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "typedArray"
+          ]
+        },
+        {
+          "children": [
+            "index"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Atomics.sub",
+    "keyPath": [
+      "Atomics",
+      "sub"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "typedArray"
+          ]
+        },
+        {
+          "children": [
+            "index"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Atomics.wait",
+    "keyPath": [
+      "Atomics",
+      "wait"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "typedArray"
+          ]
+        },
+        {
+          "children": [
+            "index"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        },
+        {
+          "children": [
+            "timeout"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Atomics.notify",
+    "keyPath": [
+      "Atomics",
+      "notify"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "typedArray"
+          ]
+        },
+        {
+          "children": [
+            "index"
+          ]
+        },
+        {
+          "children": [
+            "count"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Atomics.xor",
+    "keyPath": [
+      "Atomics",
+      "xor"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "typedArray"
+          ]
+        },
+        {
+          "children": [
+            "index"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Atomics [ @@toStringTag ]",
+    "keyPath": [
+      "Atomics [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "BigInt",
+    "keyPath": [
+      "BigInt"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "BigInt.asIntN",
+    "keyPath": [
+      "BigInt",
+      "asIntN"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "bits"
+          ]
+        },
+        {
+          "children": [
+            "bigint"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "BigInt.asUintN",
+    "keyPath": [
+      "BigInt",
+      "asUintN"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "bits"
+          ]
+        },
+        {
+          "children": [
+            "bigint"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "BigInt.prototype",
+    "keyPath": [
+      "BigInt",
+      "prototype"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "BigInt.prototype.constructor",
+    "keyPath": [
+      "BigInt",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "BigInt.prototype.toLocaleString",
+    "keyPath": [
+      "BigInt",
+      "prototype",
+      "toLocaleString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "BigInt.prototype.toString",
+    "keyPath": [
+      "BigInt",
+      "prototype",
+      "toString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "radix"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "BigInt.prototype.valueOf",
+    "keyPath": [
+      "BigInt",
+      "prototype",
+      "valueOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "BigInt.prototype [ @@toStringTag ]",
+    "keyPath": [
+      "BigInt",
+      "prototype [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Boolean",
+    "keyPath": [
+      "Boolean"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Boolean.prototype",
+    "keyPath": [
+      "Boolean",
+      "prototype"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Boolean.prototype.constructor",
+    "keyPath": [
+      "Boolean",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Boolean.prototype.toString",
+    "keyPath": [
+      "Boolean",
+      "prototype",
+      "toString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Boolean.prototype.valueOf",
+    "keyPath": [
+      "Boolean",
+      "prototype",
+      "valueOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView",
+    "keyPath": [
+      "DataView"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "buffer"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        },
+        {
+          "children": [
+            "byteLength"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "DataView.prototype",
+    "keyPath": [
+      "DataView",
+      "prototype"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "DataView.prototype.buffer",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "buffer"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "DataView.prototype.byteLength",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "byteLength"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "DataView.prototype.byteOffset",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "byteOffset"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "DataView.prototype.constructor",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.getBigInt64",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "getBigInt64"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.getBigUint64",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "getBigUint64"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.getFloat32",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "getFloat32"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.getFloat64",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "getFloat64"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.getInt8",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "getInt8"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.getInt16",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "getInt16"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.getInt32",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "getInt32"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.getUint8",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "getUint8"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.getUint16",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "getUint16"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.getUint32",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "getUint32"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.setBigInt64",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "setBigInt64"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.setBigUint64",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "setBigUint64"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.setFloat32",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "setFloat32"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.setFloat64",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "setFloat64"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.setInt8",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "setInt8"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.setInt16",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "setInt16"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.setInt32",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "setInt32"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.setUint8",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "setUint8"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.setUint16",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "setUint16"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "DataView.prototype.setUint32",
+    "keyPath": [
+      "DataView",
+      "prototype",
+      "setUint32"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "byteOffset"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "littleEndian"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "DataView.prototype [ @@toStringTag ]",
+    "keyPath": [
+      "DataView",
+      "prototype [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date",
+    "keyPath": [
+      "Date"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "values"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.now",
+    "keyPath": [
+      "Date",
+      "now"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.parse",
+    "keyPath": [
+      "Date",
+      "parse"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "string"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Date.prototype",
+    "keyPath": [
+      "Date",
+      "prototype"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.UTC",
+    "keyPath": [
+      "Date",
+      "UTC"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "year"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "month"
+          ]
+        },
+        {
+          "children": [
+            "date"
+          ]
+        },
+        {
+          "children": [
+            "hours"
+          ]
+        },
+        {
+          "children": [
+            "minutes"
+          ]
+        },
+        {
+          "children": [
+            "seconds"
+          ]
+        },
+        {
+          "children": [
+            "ms"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Date.prototype.constructor",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getDate",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getDate"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getDay",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getDay"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getFullYear",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getFullYear"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getHours",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getHours"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getMilliseconds",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getMilliseconds"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getMinutes",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getMinutes"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getMonth",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getMonth"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getSeconds",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getSeconds"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getTime",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getTime"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getTimezoneOffset",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getTimezoneOffset"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getUTCDate",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getUTCDate"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getUTCDay",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getUTCDay"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getUTCFullYear",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getUTCFullYear"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getUTCHours",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getUTCHours"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getUTCMilliseconds",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getUTCMilliseconds"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getUTCMinutes",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getUTCMinutes"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getUTCMonth",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getUTCMonth"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.getUTCSeconds",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "getUTCSeconds"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.setDate",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "setDate"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "date"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.setFullYear",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "setFullYear"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "year"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "month"
+          ]
+        },
+        {
+          "children": [
+            "date"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.setHours",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "setHours"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "hour"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "min"
+          ]
+        },
+        {
+          "children": [
+            "sec"
+          ]
+        },
+        {
+          "children": [
+            "ms"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.setMilliseconds",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "setMilliseconds"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "ms"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.setMinutes",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "setMinutes"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "min"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "sec"
+          ]
+        },
+        {
+          "children": [
+            "ms"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.setMonth",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "setMonth"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "month"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "date"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.setSeconds",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "setSeconds"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "sec"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "ms"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.setTime",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "setTime"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "time"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.setUTCDate",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "setUTCDate"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "date"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.setUTCFullYear",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "setUTCFullYear"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "year"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "month"
+          ]
+        },
+        {
+          "children": [
+            "date"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.setUTCHours",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "setUTCHours"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "hour"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "min"
+          ]
+        },
+        {
+          "children": [
+            "sec"
+          ]
+        },
+        {
+          "children": [
+            "ms"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.setUTCMilliseconds",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "setUTCMilliseconds"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "ms"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.setUTCMinutes",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "setUTCMinutes"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "min"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "sec"
+          ]
+        },
+        {
+          "children": [
+            "ms"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.setUTCMonth",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "setUTCMonth"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "month"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "date"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.setUTCSeconds",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "setUTCSeconds"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "sec"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "ms"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.toDateString",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "toDateString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.toISOString",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "toISOString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.toJSON",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "toJSON"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "key"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.toLocaleDateString",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "toLocaleDateString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.toLocaleString",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "toLocaleString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.toLocaleTimeString",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "toLocaleTimeString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.toString",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "toString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.toTimeString",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "toTimeString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.toUTCString",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "toUTCString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.valueOf",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "valueOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Date.prototype.@@toPrimitive",
+    "keyPath": [
+      "Date",
+      "prototype",
+      "@@toPrimitive"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "hint"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "decodeURI",
+    "keyPath": [
+      "decodeURI"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "encodedURI"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "decodeURIComponent",
+    "keyPath": [
+      "decodeURIComponent"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "encodedURIComponent"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "decodeURIComponent",
+    "keyPath": [
+      "decodeURIComponent"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "encodedURIComponent"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "encodeURI",
+    "keyPath": [
+      "encodeURI"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "uri"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "encodeURIComponent",
+    "keyPath": [
+      "encodeURIComponent"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "uriComponent"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "encodeURIComponent",
+    "keyPath": [
+      "encodeURIComponent"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "uriComponent"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Error",
+    "keyPath": [
+      "Error"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "message"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "options"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Error.prototype",
+    "keyPath": [
+      "Error",
+      "prototype"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Error.prototype.constructor",
+    "keyPath": [
+      "Error",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Error.prototype.message",
+    "keyPath": [
+      "Error",
+      "prototype",
+      "message"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Error.prototype.name",
+    "keyPath": [
+      "Error",
+      "prototype",
+      "name"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Error.prototype.toString",
+    "keyPath": [
+      "Error",
+      "prototype",
+      "toString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "eval",
+    "keyPath": [
+      "eval"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Function.length",
+    "keyPath": [
+      "Function",
+      "length"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Function.prototype",
+    "keyPath": [
+      "Function",
+      "prototype"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Function.prototype.apply",
+    "keyPath": [
+      "Function",
+      "prototype",
+      "apply"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        },
+        {
+          "children": [
+            "argArray"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Function.prototype.bind",
+    "keyPath": [
+      "Function",
+      "prototype",
+      "bind"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        },
+        {
+          "children": [
+            "args"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Function.prototype.call",
+    "keyPath": [
+      "Function",
+      "prototype",
+      "call"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        },
+        {
+          "children": [
+            "args"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Function.prototype.constructor",
+    "keyPath": [
+      "Function",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Function.prototype.toString",
+    "keyPath": [
+      "Function",
+      "prototype",
+      "toString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Function.prototype.@@hasInstance",
+    "keyPath": [
+      "Function",
+      "prototype",
+      "@@hasInstance"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "V"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "GeneratorFunction.length",
+    "keyPath": [
+      "GeneratorFunction",
+      "length"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "GeneratorFunction.prototype",
+    "keyPath": [
+      "GeneratorFunction",
+      "prototype"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "GeneratorFunction.prototype.constructor",
+    "keyPath": [
+      "GeneratorFunction",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "GeneratorFunction.prototype.prototype",
+    "keyPath": [
+      "GeneratorFunction",
+      "prototype",
+      "prototype"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "GeneratorFunction.prototype [ @@toStringTag ]",
+    "keyPath": [
+      "GeneratorFunction",
+      "prototype [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "isFinite",
+    "keyPath": [
+      "isFinite"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "number"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "isNaN",
+    "keyPath": [
+      "isNaN"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "number"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "JSON",
+    "keyPath": [
+      "JSON"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "JSON.parse",
+    "keyPath": [
+      "JSON",
+      "parse"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "text"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "reviver"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "JSON.stringify",
+    "keyPath": [
+      "JSON",
+      "stringify"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "replacer"
+          ]
+        },
+        {
+          "children": [
+            "space"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "JSON [ @@toStringTag ]",
+    "keyPath": [
+      "JSON [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Map",
+    "keyPath": [
+      "Map"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "iterable"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Map.prototype",
+    "keyPath": [
+      "Map",
+      "prototype"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "Map [ @@species ]",
+    "keyPath": [
+      "Map [ @@species ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Map.prototype.clear",
+    "keyPath": [
+      "Map",
+      "prototype",
+      "clear"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Map.prototype.constructor",
+    "keyPath": [
+      "Map",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Map.prototype.delete",
+    "keyPath": [
+      "Map",
+      "prototype",
+      "delete"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "key"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Map.prototype.entries",
+    "keyPath": [
+      "Map",
+      "prototype",
+      "entries"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Map.prototype.forEach",
+    "keyPath": [
+      "Map",
+      "prototype",
+      "forEach"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Map.prototype.get",
+    "keyPath": [
+      "Map",
+      "prototype",
+      "get"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "key"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Map.prototype.has",
+    "keyPath": [
+      "Map",
+      "prototype",
+      "has"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "key"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Map.prototype.keys",
+    "keyPath": [
+      "Map",
+      "prototype",
+      "keys"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Map.prototype.set",
+    "keyPath": [
+      "Map",
+      "prototype",
+      "set"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "key"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "Map.prototype.size",
+    "keyPath": [
+      "Map",
+      "prototype",
+      "size"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Map.prototype.values",
+    "keyPath": [
+      "Map",
+      "prototype",
+      "values"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Map.prototype.@@iterator",
+    "keyPath": [
+      "Map",
+      "prototype",
+      "@@iterator"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Map.prototype [ @@toStringTag ]",
+    "keyPath": [
+      "Map",
+      "prototype [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Math",
+    "keyPath": [
+      "Math"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Math.E",
+    "keyPath": [
+      "Math",
+      "E"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Math.LN10",
+    "keyPath": [
+      "Math",
+      "LN10"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Math.LN2",
+    "keyPath": [
+      "Math",
+      "LN2"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Math.LOG10E",
+    "keyPath": [
+      "Math",
+      "LOG10E"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Math.LOG2E",
+    "keyPath": [
+      "Math",
+      "LOG2E"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Math.PI",
+    "keyPath": [
+      "Math",
+      "PI"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Math.SQRT1_2",
+    "keyPath": [
+      "Math",
+      "SQRT1_2"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Math.SQRT2",
+    "keyPath": [
+      "Math",
+      "SQRT2"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Math [ @@toStringTag ]",
+    "keyPath": [
+      "Math [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.abs",
+    "keyPath": [
+      "Math",
+      "abs"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.acos",
+    "keyPath": [
+      "Math",
+      "acos"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.acosh",
+    "keyPath": [
+      "Math",
+      "acosh"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.asin",
+    "keyPath": [
+      "Math",
+      "asin"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.asinh",
+    "keyPath": [
+      "Math",
+      "asinh"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.atan",
+    "keyPath": [
+      "Math",
+      "atan"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.atanh",
+    "keyPath": [
+      "Math",
+      "atanh"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.atan2",
+    "keyPath": [
+      "Math",
+      "atan2"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "y"
+          ]
+        },
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.cbrt",
+    "keyPath": [
+      "Math",
+      "cbrt"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.ceil",
+    "keyPath": [
+      "Math",
+      "ceil"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.clz32",
+    "keyPath": [
+      "Math",
+      "clz32"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.cos",
+    "keyPath": [
+      "Math",
+      "cos"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.cosh",
+    "keyPath": [
+      "Math",
+      "cosh"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.exp",
+    "keyPath": [
+      "Math",
+      "exp"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.expm1",
+    "keyPath": [
+      "Math",
+      "expm1"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.floor",
+    "keyPath": [
+      "Math",
+      "floor"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.fround",
+    "keyPath": [
+      "Math",
+      "fround"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.hypot",
+    "keyPath": [
+      "Math",
+      "hypot"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "args"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.imul",
+    "keyPath": [
+      "Math",
+      "imul"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        },
+        {
+          "children": [
+            "y"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.log",
+    "keyPath": [
+      "Math",
+      "log"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.log1p",
+    "keyPath": [
+      "Math",
+      "log1p"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.log10",
+    "keyPath": [
+      "Math",
+      "log10"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.log2",
+    "keyPath": [
+      "Math",
+      "log2"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.max",
+    "keyPath": [
+      "Math",
+      "max"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "args"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.min",
+    "keyPath": [
+      "Math",
+      "min"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "args"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.pow",
+    "keyPath": [
+      "Math",
+      "pow"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "base"
+          ]
+        },
+        {
+          "children": [
+            "exponent"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.random",
+    "keyPath": [
+      "Math",
+      "random"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.round",
+    "keyPath": [
+      "Math",
+      "round"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.sign",
+    "keyPath": [
+      "Math",
+      "sign"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.sin",
+    "keyPath": [
+      "Math",
+      "sin"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.sinh",
+    "keyPath": [
+      "Math",
+      "sinh"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.sqrt",
+    "keyPath": [
+      "Math",
+      "sqrt"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.tan",
+    "keyPath": [
+      "Math",
+      "tan"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.tanh",
+    "keyPath": [
+      "Math",
+      "tanh"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Math.trunc",
+    "keyPath": [
+      "Math",
+      "trunc"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Number",
+    "keyPath": [
+      "Number"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Number.EPSILON",
+    "keyPath": [
+      "Number",
+      "EPSILON"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Number.isFinite",
+    "keyPath": [
+      "Number",
+      "isFinite"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "number"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Number.isInteger",
+    "keyPath": [
+      "Number",
+      "isInteger"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "number"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Number.isNaN",
+    "keyPath": [
+      "Number",
+      "isNaN"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "number"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Number.isSafeInteger",
+    "keyPath": [
+      "Number",
+      "isSafeInteger"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "number"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Number.MAX_SAFE_INTEGER",
+    "keyPath": [
+      "Number",
+      "MAX_SAFE_INTEGER"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Number.MAX_VALUE",
+    "keyPath": [
+      "Number",
+      "MAX_VALUE"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Number.MIN_SAFE_INTEGER",
+    "keyPath": [
+      "Number",
+      "MIN_SAFE_INTEGER"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Number.MIN_VALUE",
+    "keyPath": [
+      "Number",
+      "MIN_VALUE"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Number.NaN",
+    "keyPath": [
+      "Number",
+      "NaN"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Number.NEGATIVE_INFINITY",
+    "keyPath": [
+      "Number",
+      "NEGATIVE_INFINITY"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Number.parseFloat",
+    "keyPath": [
+      "Number",
+      "parseFloat"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "string"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Number.parseInt",
+    "keyPath": [
+      "Number",
+      "parseInt"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "string"
+          ]
+        },
+        {
+          "children": [
+            "radix"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Number.POSITIVE_INFINITY",
+    "keyPath": [
+      "Number",
+      "POSITIVE_INFINITY"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Number.prototype",
+    "keyPath": [
+      "Number",
+      "prototype"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Number.prototype.constructor",
+    "keyPath": [
+      "Number",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Number.prototype.toExponential",
+    "keyPath": [
+      "Number",
+      "prototype",
+      "toExponential"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "fractionDigits"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Number.prototype.toFixed",
+    "keyPath": [
+      "Number",
+      "prototype",
+      "toFixed"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "fractionDigits"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Number.prototype.toLocaleString",
+    "keyPath": [
+      "Number",
+      "prototype",
+      "toLocaleString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Number.prototype.toPrecision",
+    "keyPath": [
+      "Number",
+      "prototype",
+      "toPrecision"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "precision"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Number.prototype.toString",
+    "keyPath": [
+      "Number",
+      "prototype",
+      "toString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "radix"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Number.prototype.valueOf",
+    "keyPath": [
+      "Number",
+      "prototype",
+      "valueOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object",
+    "keyPath": [
+      "Object"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.assign",
+    "keyPath": [
+      "Object",
+      "assign"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "sources"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.create",
+    "keyPath": [
+      "Object",
+      "create"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        },
+        {
+          "children": [
+            "Properties"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.defineProperties",
+    "keyPath": [
+      "Object",
+      "defineProperties"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        },
+        {
+          "children": [
+            "Properties"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.defineProperty",
+    "keyPath": [
+      "Object",
+      "defineProperty"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        },
+        {
+          "children": [
+            "P"
+          ]
+        },
+        {
+          "children": [
+            "Attributes"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.entries",
+    "keyPath": [
+      "Object",
+      "entries"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.freeze",
+    "keyPath": [
+      "Object",
+      "freeze"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.fromEntries",
+    "keyPath": [
+      "Object",
+      "fromEntries"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "iterable"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.getOwnPropertyDescriptor",
+    "keyPath": [
+      "Object",
+      "getOwnPropertyDescriptor"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        },
+        {
+          "children": [
+            "P"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.getOwnPropertyDescriptors",
+    "keyPath": [
+      "Object",
+      "getOwnPropertyDescriptors"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.getOwnPropertyNames",
+    "keyPath": [
+      "Object",
+      "getOwnPropertyNames"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.getOwnPropertySymbols",
+    "keyPath": [
+      "Object",
+      "getOwnPropertySymbols"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.getPrototypeOf",
+    "keyPath": [
+      "Object",
+      "getPrototypeOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.hasOwn",
+    "keyPath": [
+      "Object",
+      "hasOwn"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        },
+        {
+          "children": [
+            "P"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.is",
+    "keyPath": [
+      "Object",
+      "is"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value1"
+          ]
+        },
+        {
+          "children": [
+            "value2"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.isExtensible",
+    "keyPath": [
+      "Object",
+      "isExtensible"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.isFrozen",
+    "keyPath": [
+      "Object",
+      "isFrozen"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.isSealed",
+    "keyPath": [
+      "Object",
+      "isSealed"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.keys",
+    "keyPath": [
+      "Object",
+      "keys"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.preventExtensions",
+    "keyPath": [
+      "Object",
+      "preventExtensions"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Object.prototype",
+    "keyPath": [
+      "Object",
+      "prototype"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.seal",
+    "keyPath": [
+      "Object",
+      "seal"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.setPrototypeOf",
+    "keyPath": [
+      "Object",
+      "setPrototypeOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        },
+        {
+          "children": [
+            "proto"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.values",
+    "keyPath": [
+      "Object",
+      "values"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "O"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Object.prototype.constructor",
+    "keyPath": [
+      "Object",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.prototype.hasOwnProperty",
+    "keyPath": [
+      "Object",
+      "prototype",
+      "hasOwnProperty"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "V"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.prototype.isPrototypeOf",
+    "keyPath": [
+      "Object",
+      "prototype",
+      "isPrototypeOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "V"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.prototype.propertyIsEnumerable",
+    "keyPath": [
+      "Object",
+      "prototype",
+      "propertyIsEnumerable"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "V"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.prototype.toLocaleString",
+    "keyPath": [
+      "Object",
+      "prototype",
+      "toLocaleString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.prototype.toString",
+    "keyPath": [
+      "Object",
+      "prototype",
+      "toString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.prototype.valueOf",
+    "keyPath": [
+      "Object",
+      "prototype",
+      "valueOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Object.prototype.__proto__",
+    "keyPath": [
+      "Object",
+      "prototype",
+      "__proto__"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "Object.prototype.__proto__",
+    "keyPath": [
+      "Object",
+      "prototype",
+      "__proto__"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.prototype.__defineGetter__",
+    "keyPath": [
+      "Object",
+      "prototype",
+      "__defineGetter__"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "P"
+          ]
+        },
+        {
+          "children": [
+            "getter"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.prototype.__defineSetter__",
+    "keyPath": [
+      "Object",
+      "prototype",
+      "__defineSetter__"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "P"
+          ]
+        },
+        {
+          "children": [
+            "setter"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.prototype.__lookupGetter__",
+    "keyPath": [
+      "Object",
+      "prototype",
+      "__lookupGetter__"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "P"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Object.prototype.__lookupSetter__",
+    "keyPath": [
+      "Object",
+      "prototype",
+      "__lookupSetter__"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "P"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "parseFloat",
+    "keyPath": [
+      "parseFloat"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "string"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "parseInt",
+    "keyPath": [
+      "parseInt"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "string"
+          ]
+        },
+        {
+          "children": [
+            "radix"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Promise",
+    "keyPath": [
+      "Promise"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "executor"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Promise.all",
+    "keyPath": [
+      "Promise",
+      "all"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "iterable"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Promise.allSettled",
+    "keyPath": [
+      "Promise",
+      "allSettled"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "iterable"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Promise.any",
+    "keyPath": [
+      "Promise",
+      "any"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "iterable"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Promise.prototype",
+    "keyPath": [
+      "Promise",
+      "prototype"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Promise.race",
+    "keyPath": [
+      "Promise",
+      "race"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "iterable"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Promise.reject",
+    "keyPath": [
+      "Promise",
+      "reject"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "r"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Promise.resolve",
+    "keyPath": [
+      "Promise",
+      "resolve"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "x"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "Promise [ @@species ]",
+    "keyPath": [
+      "Promise [ @@species ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Promise.prototype.catch",
+    "keyPath": [
+      "Promise",
+      "prototype",
+      "catch"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "onRejected"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Promise.prototype.constructor",
+    "keyPath": [
+      "Promise",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Promise.prototype.finally",
+    "keyPath": [
+      "Promise",
+      "prototype",
+      "finally"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "onFinally"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Promise.prototype.then",
+    "keyPath": [
+      "Promise",
+      "prototype",
+      "then"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "onFulfilled"
+          ]
+        },
+        {
+          "children": [
+            "onRejected"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Promise.prototype [ @@toStringTag ]",
+    "keyPath": [
+      "Promise",
+      "prototype [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Proxy",
+    "keyPath": [
+      "Proxy"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "handler"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Proxy.revocable",
+    "keyPath": [
+      "Proxy",
+      "revocable"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "handler"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Reflect",
+    "keyPath": [
+      "Reflect"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Reflect.apply",
+    "keyPath": [
+      "Reflect",
+      "apply"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "thisArgument"
+          ]
+        },
+        {
+          "children": [
+            "argumentsList"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Reflect.construct",
+    "keyPath": [
+      "Reflect",
+      "construct"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "argumentsList"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "newTarget"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Reflect.defineProperty",
+    "keyPath": [
+      "Reflect",
+      "defineProperty"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "propertyKey"
+          ]
+        },
+        {
+          "children": [
+            "attributes"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Reflect.deleteProperty",
+    "keyPath": [
+      "Reflect",
+      "deleteProperty"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "propertyKey"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Reflect.get",
+    "keyPath": [
+      "Reflect",
+      "get"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "propertyKey"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "receiver"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Reflect.getOwnPropertyDescriptor",
+    "keyPath": [
+      "Reflect",
+      "getOwnPropertyDescriptor"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "propertyKey"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Reflect.getPrototypeOf",
+    "keyPath": [
+      "Reflect",
+      "getPrototypeOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Reflect.has",
+    "keyPath": [
+      "Reflect",
+      "has"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "propertyKey"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Reflect.isExtensible",
+    "keyPath": [
+      "Reflect",
+      "isExtensible"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Reflect.ownKeys",
+    "keyPath": [
+      "Reflect",
+      "ownKeys"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Reflect.preventExtensions",
+    "keyPath": [
+      "Reflect",
+      "preventExtensions"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Reflect.set",
+    "keyPath": [
+      "Reflect",
+      "set"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "propertyKey"
+          ]
+        },
+        {
+          "children": [
+            "V"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "receiver"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Reflect.setPrototypeOf",
+    "keyPath": [
+      "Reflect",
+      "setPrototypeOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "proto"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Reflect [ @@toStringTag ]",
+    "keyPath": [
+      "Reflect [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "RegExp (Regular Expression) Objects",
+    "keyPath": [
+      "RegExp (Regular Expression) Objects"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "RegExp",
+    "keyPath": [
+      "RegExp"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "pattern"
+          ]
+        },
+        {
+          "children": [
+            "flags"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "RegExp.prototype",
+    "keyPath": [
+      "RegExp",
+      "prototype"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "RegExp [ @@species ]",
+    "keyPath": [
+      "RegExp [ @@species ]"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "RegExp.prototype.constructor",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "RegExp.prototype.exec",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "exec"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "string"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "RegExp.prototype.dotAll",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "dotAll"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "RegExp.prototype.flags",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "flags"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "RegExp.prototype.global",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "global"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "RegExp.prototype.hasIndices",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "hasIndices"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "RegExp.prototype.ignoreCase",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "ignoreCase"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "RegExp.prototype.@@match",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "@@match"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "string"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "RegExp.prototype.@@matchAll",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "@@matchAll"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "string"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "RegExp.prototype.multiline",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "multiline"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "RegExp.prototype.@@replace",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "@@replace"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "string"
+          ]
+        },
+        {
+          "children": [
+            "replaceValue"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "RegExp.prototype.@@search",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "@@search"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "string"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "RegExp.prototype.source",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "source"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "RegExp.prototype.@@split",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "@@split"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "string"
+          ]
+        },
+        {
+          "children": [
+            "limit"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "RegExp.prototype.sticky",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "sticky"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "RegExp.prototype.test",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "test"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "S"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "RegExp.prototype.toString",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "toString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "RegExp.prototype.unicode",
+    "keyPath": [
+      "RegExp",
+      "prototype",
+      "unicode"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "set Object.prototype.__proto__",
+    "keyPath": [
+      "set Object",
+      "prototype",
+      "__proto__"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Set",
+    "keyPath": [
+      "Set"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "iterable"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Set.prototype",
+    "keyPath": [
+      "Set",
+      "prototype"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "Set [ @@species ]",
+    "keyPath": [
+      "Set [ @@species ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Set.prototype.add",
+    "keyPath": [
+      "Set",
+      "prototype",
+      "add"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Set.prototype.clear",
+    "keyPath": [
+      "Set",
+      "prototype",
+      "clear"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Set.prototype.constructor",
+    "keyPath": [
+      "Set",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Set.prototype.delete",
+    "keyPath": [
+      "Set",
+      "prototype",
+      "delete"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Set.prototype.entries",
+    "keyPath": [
+      "Set",
+      "prototype",
+      "entries"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Set.prototype.forEach",
+    "keyPath": [
+      "Set",
+      "prototype",
+      "forEach"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Set.prototype.has",
+    "keyPath": [
+      "Set",
+      "prototype",
+      "has"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Set.prototype.keys",
+    "keyPath": [
+      "Set",
+      "prototype",
+      "keys"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "Set.prototype.size",
+    "keyPath": [
+      "Set",
+      "prototype",
+      "size"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Set.prototype.values",
+    "keyPath": [
+      "Set",
+      "prototype",
+      "values"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Set.prototype.@@iterator",
+    "keyPath": [
+      "Set",
+      "prototype",
+      "@@iterator"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Set.prototype [ @@toStringTag ]",
+    "keyPath": [
+      "Set",
+      "prototype [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "SharedArrayBuffer",
+    "keyPath": [
+      "SharedArrayBuffer"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "length"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "SharedArrayBuffer.prototype",
+    "keyPath": [
+      "SharedArrayBuffer",
+      "prototype"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "SharedArrayBuffer [ @@species ]",
+    "keyPath": [
+      "SharedArrayBuffer [ @@species ]"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "SharedArrayBuffer.prototype.byteLength",
+    "keyPath": [
+      "SharedArrayBuffer",
+      "prototype",
+      "byteLength"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "SharedArrayBuffer.prototype.constructor",
+    "keyPath": [
+      "SharedArrayBuffer",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "SharedArrayBuffer.prototype.slice",
+    "keyPath": [
+      "SharedArrayBuffer",
+      "prototype",
+      "slice"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "SharedArrayBuffer.prototype [ @@toStringTag ]",
+    "keyPath": [
+      "SharedArrayBuffer",
+      "prototype [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String",
+    "keyPath": [
+      "String"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.fromCharCode",
+    "keyPath": [
+      "String",
+      "fromCharCode"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "codeUnits"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.fromCodePoint",
+    "keyPath": [
+      "String",
+      "fromCodePoint"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "codePoints"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "String.prototype",
+    "keyPath": [
+      "String",
+      "prototype"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.raw",
+    "keyPath": [
+      "String",
+      "raw"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "template"
+          ]
+        },
+        {
+          "children": [
+            "substitutions"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.at",
+    "keyPath": [
+      "String",
+      "prototype",
+      "at"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "index"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.charAt",
+    "keyPath": [
+      "String",
+      "prototype",
+      "charAt"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "pos"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.charCodeAt",
+    "keyPath": [
+      "String",
+      "prototype",
+      "charCodeAt"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "pos"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.codePointAt",
+    "keyPath": [
+      "String",
+      "prototype",
+      "codePointAt"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "pos"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.concat",
+    "keyPath": [
+      "String",
+      "prototype",
+      "concat"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "args"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "String.prototype.constructor",
+    "keyPath": [
+      "String",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.endsWith",
+    "keyPath": [
+      "String",
+      "prototype",
+      "endsWith"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchString"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "endPosition"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.includes",
+    "keyPath": [
+      "String",
+      "prototype",
+      "includes"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchString"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "position"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.indexOf",
+    "keyPath": [
+      "String",
+      "prototype",
+      "indexOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchString"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "position"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.lastIndexOf",
+    "keyPath": [
+      "String",
+      "prototype",
+      "lastIndexOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchString"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "position"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.localeCompare",
+    "keyPath": [
+      "String",
+      "prototype",
+      "localeCompare"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "that"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.match",
+    "keyPath": [
+      "String",
+      "prototype",
+      "match"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "regexp"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.matchAll",
+    "keyPath": [
+      "String",
+      "prototype",
+      "matchAll"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "regexp"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.normalize",
+    "keyPath": [
+      "String",
+      "prototype",
+      "normalize"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "form"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.padEnd",
+    "keyPath": [
+      "String",
+      "prototype",
+      "padEnd"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "maxLength"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fillString"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.padStart",
+    "keyPath": [
+      "String",
+      "prototype",
+      "padStart"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "maxLength"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fillString"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.repeat",
+    "keyPath": [
+      "String",
+      "prototype",
+      "repeat"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "count"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.replace",
+    "keyPath": [
+      "String",
+      "prototype",
+      "replace"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchValue"
+          ]
+        },
+        {
+          "children": [
+            "replaceValue"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.replaceAll",
+    "keyPath": [
+      "String",
+      "prototype",
+      "replaceAll"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchValue"
+          ]
+        },
+        {
+          "children": [
+            "replaceValue"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.search",
+    "keyPath": [
+      "String",
+      "prototype",
+      "search"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "regexp"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.slice",
+    "keyPath": [
+      "String",
+      "prototype",
+      "slice"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.split",
+    "keyPath": [
+      "String",
+      "prototype",
+      "split"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "separator"
+          ]
+        },
+        {
+          "children": [
+            "limit"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.startsWith",
+    "keyPath": [
+      "String",
+      "prototype",
+      "startsWith"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchString"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "position"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.substring",
+    "keyPath": [
+      "String",
+      "prototype",
+      "substring"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.toLocaleLowerCase",
+    "keyPath": [
+      "String",
+      "prototype",
+      "toLocaleLowerCase"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.toLocaleUpperCase",
+    "keyPath": [
+      "String",
+      "prototype",
+      "toLocaleUpperCase"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.toLowerCase",
+    "keyPath": [
+      "String",
+      "prototype",
+      "toLowerCase"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.toString",
+    "keyPath": [
+      "String",
+      "prototype",
+      "toString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.toUpperCase",
+    "keyPath": [
+      "String",
+      "prototype",
+      "toUpperCase"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.trim",
+    "keyPath": [
+      "String",
+      "prototype",
+      "trim"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.trimEnd",
+    "keyPath": [
+      "String",
+      "prototype",
+      "trimEnd"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.trimStart",
+    "keyPath": [
+      "String",
+      "prototype",
+      "trimStart"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.valueOf",
+    "keyPath": [
+      "String",
+      "prototype",
+      "valueOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "String.prototype.@@iterator",
+    "keyPath": [
+      "String",
+      "prototype",
+      "@@iterator"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Symbol",
+    "keyPath": [
+      "Symbol"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "description"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.asyncIterator",
+    "keyPath": [
+      "Symbol",
+      "asyncIterator"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Symbol.for",
+    "keyPath": [
+      "Symbol",
+      "for"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "key"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.hasInstance",
+    "keyPath": [
+      "Symbol",
+      "hasInstance"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.isConcatSpreadable",
+    "keyPath": [
+      "Symbol",
+      "isConcatSpreadable"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.iterator",
+    "keyPath": [
+      "Symbol",
+      "iterator"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Symbol.keyFor",
+    "keyPath": [
+      "Symbol",
+      "keyFor"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "sym"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.match",
+    "keyPath": [
+      "Symbol",
+      "match"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.matchAll",
+    "keyPath": [
+      "Symbol",
+      "matchAll"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.prototype",
+    "keyPath": [
+      "Symbol",
+      "prototype"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.replace",
+    "keyPath": [
+      "Symbol",
+      "replace"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.search",
+    "keyPath": [
+      "Symbol",
+      "search"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.species",
+    "keyPath": [
+      "Symbol",
+      "species"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.split",
+    "keyPath": [
+      "Symbol",
+      "split"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.toPrimitive",
+    "keyPath": [
+      "Symbol",
+      "toPrimitive"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.toStringTag",
+    "keyPath": [
+      "Symbol",
+      "toStringTag"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.unscopables",
+    "keyPath": [
+      "Symbol",
+      "unscopables"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.prototype.constructor",
+    "keyPath": [
+      "Symbol",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "getter",
+    "fullyQualifiedName": "Symbol.prototype.description",
+    "keyPath": [
+      "Symbol",
+      "prototype",
+      "description"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Symbol.prototype.toString",
+    "keyPath": [
+      "Symbol",
+      "prototype",
+      "toString"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Symbol.prototype.valueOf",
+    "keyPath": [
+      "Symbol",
+      "prototype",
+      "valueOf"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "Symbol.prototype.@@toPrimitive",
+    "keyPath": [
+      "Symbol",
+      "prototype",
+      "@@toPrimitive"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "hint"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "Symbol.prototype [ @@toStringTag ]",
+    "keyPath": [
+      "Symbol",
+      "prototype [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "WeakMap",
+    "keyPath": [
+      "WeakMap"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "iterable"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "WeakMap.prototype",
+    "keyPath": [
+      "WeakMap",
+      "prototype"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "WeakMap.prototype.constructor",
+    "keyPath": [
+      "WeakMap",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "WeakMap.prototype.delete",
+    "keyPath": [
+      "WeakMap",
+      "prototype",
+      "delete"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "key"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "WeakMap.prototype.get",
+    "keyPath": [
+      "WeakMap",
+      "prototype",
+      "get"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "key"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "WeakMap.prototype.has",
+    "keyPath": [
+      "WeakMap",
+      "prototype",
+      "has"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "key"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "WeakMap.prototype.set",
+    "keyPath": [
+      "WeakMap",
+      "prototype",
+      "set"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "key"
+          ]
+        },
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "WeakMap.prototype [ @@toStringTag ]",
+    "keyPath": [
+      "WeakMap",
+      "prototype [ @@toStringTag ]"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "WeakSet",
+    "keyPath": [
+      "WeakSet"
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "iterable"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "WeakSet.prototype",
+    "keyPath": [
+      "WeakSet",
+      "prototype"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "WeakSet.prototype.add",
+    "keyPath": [
+      "WeakSet",
+      "prototype",
+      "add"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "WeakSet.prototype.constructor",
+    "keyPath": [
+      "WeakSet",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "WeakSet.prototype.delete",
+    "keyPath": [
+      "WeakSet",
+      "prototype",
+      "delete"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "WeakSet.prototype.has",
+    "keyPath": [
+      "WeakSet",
+      "prototype",
+      "has"
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "WeakSet.prototype [ @@toStringTag ]",
+    "keyPath": [
+      "WeakSet",
+      "prototype [ @@toStringTag ]"
+    ]
+  }
+]

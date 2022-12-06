@@ -1,0 +1,22 @@
+{
+  "name": "update-intrinsics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "update-intrinsics.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Francisco Ryan Tolmasky I",
+    "email": "tolmasky@gmail.com",
+    "url": "https://tolmasky.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@esfx/disposable": "^1.0.0",
+    "ecmarkup": "^16.0.0",
+    "ftagged": "^1.0.0-alpha.6",
+    "jsdom": "^20.0.3"
+  }
+}
