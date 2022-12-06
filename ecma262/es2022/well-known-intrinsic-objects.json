@@ -1,6 +1,69 @@
 [
   {
     "type": "function",
+    "fullyQualifiedName": "AggregateError ",
+    "fullyQualifiedKeyPath": [
+      "AggregateError "
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "errors"
+          ]
+        },
+        {
+          "children": [
+            "message"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "options"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "AggregateError.prototype",
+    "fullyQualifiedKeyPath": [
+      "AggregateError",
+      "prototype"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "AggregateError.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "AggregateError",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "AggregateError.prototype.message",
+    "fullyQualifiedKeyPath": [
+      "AggregateError",
+      "prototype",
+      "message"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "AggregateError.prototype.name",
+    "fullyQualifiedKeyPath": [
+      "AggregateError",
+      "prototype",
+      "name"
+    ]
+  },
+  {
+    "type": "function",
     "fullyQualifiedName": "Array ",
     "fullyQualifiedKeyPath": [
       "Array "
@@ -1038,6 +1101,40 @@
     "fullyQualifiedName": "ArrayBuffer.prototype.@@toStringTag",
     "fullyQualifiedKeyPath": [
       "ArrayBuffer",
+      "prototype",
+      "@@toStringTag"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "AsyncFunction.length",
+    "fullyQualifiedKeyPath": [
+      "AsyncFunction",
+      "length"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "AsyncFunction.prototype",
+    "fullyQualifiedKeyPath": [
+      "AsyncFunction",
+      "prototype"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "AsyncFunction.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "AsyncFunction",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "AsyncFunction.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "AsyncFunction",
       "prototype",
       "@@toStringTag"
     ]
@@ -3356,6 +3453,98 @@
       ],
       "optional": []
     }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "FinalizationRegistry ",
+    "fullyQualifiedKeyPath": [
+      "FinalizationRegistry "
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "cleanupCallback"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "FinalizationRegistry.prototype",
+    "fullyQualifiedKeyPath": [
+      "FinalizationRegistry",
+      "prototype"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "FinalizationRegistry.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "FinalizationRegistry",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "FinalizationRegistry.prototype.register ",
+    "fullyQualifiedKeyPath": [
+      "FinalizationRegistry",
+      "prototype",
+      "register "
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "heldValue"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "unregisterToken"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "FinalizationRegistry.prototype.unregister ",
+    "fullyQualifiedKeyPath": [
+      "FinalizationRegistry",
+      "prototype",
+      "unregister "
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "unregisterToken"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "FinalizationRegistry.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "FinalizationRegistry",
+      "prototype",
+      "@@toStringTag"
+    ]
   },
   {
     "type": "object",
@@ -7985,6 +8174,62 @@
     "fullyQualifiedName": "WeakMap.prototype.@@toStringTag",
     "fullyQualifiedKeyPath": [
       "WeakMap",
+      "prototype",
+      "@@toStringTag"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "WeakRef ",
+    "fullyQualifiedKeyPath": [
+      "WeakRef "
+    ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "WeakRef.prototype",
+    "fullyQualifiedKeyPath": [
+      "WeakRef",
+      "prototype"
+    ]
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "WeakRef.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "WeakRef",
+      "prototype",
+      "constructor"
+    ]
+  },
+  {
+    "type": "function",
+    "fullyQualifiedName": "WeakRef.prototype.deref ",
+    "fullyQualifiedKeyPath": [
+      "WeakRef",
+      "prototype",
+      "deref "
+    ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "type": "object",
+    "fullyQualifiedName": "WeakRef.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "WeakRef",
       "prototype",
       "@@toStringTag"
     ]

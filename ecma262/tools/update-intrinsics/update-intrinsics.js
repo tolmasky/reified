@@ -23,16 +23,14 @@ const warn = message => (console.warn(message), false);
 
 const ExcludedTypes = new Set(["abstract operation", "internal method", "sdo"]);
 
-const toParsableSignature = signature => signature
-    .replace(/\.\.\._/g, "_")
-    .replace(
-        /(^[^\(\s]+)\s*\[\s*([^\]\s]+)\s*\]/g,
-        (_, prefix, bracketed) => `${prefix}.${bracketed}`);
-
 const deintrinsify = name => name.replace(/^%|%$/g, "");
 const toSectionIDXPathQuery = name => given((
-    forID = deintrinsify(name).toLowerCase(),
-    IDs = [`sec-${forID}`, `sec-get-${forID}`]) =>
+    deintrinsified = deintrinsify(name),
+    lowercased = deintrinsified.toLowerCase(),
+    dashcased = deintrinsified
+        .replace(/([a-z])([A-Z])/g, (_, lhs, rhs) => `${lhs}-${rhs}`)
+        .toLowerCase(),
+    IDs = [lowercased, dashcased].flatMap(ID => [`sec-${ID}`, `sec-get-${ID}`])) =>
         `//emu-clause[${IDs
             .map(ID => `starts-with(@id, "${ID}")`)
             .join(" or ")}]`);
@@ -41,6 +39,9 @@ const toDestination = tag =>
     join(__dirname, "..", "..", tag, "well-known-intrinsic-objects.json");
 
 
+// constructor
+// non-objects like "length"?
+// ToProperty(V) -> P
 module.exports = async function
 ({
     tag = "es2022"
@@ -86,25 +87,6 @@ const toWellKnownIntrinsicObject = (type, fullyQualifiedName, attributes) =>
     keyPath: fullyQualifiedName.split("."),
     ...attributes
 });
-
-// constructor
-// non-objects like "length"?
-// ToProperty(V) -> P
-const parse = signature => given((
-    normalized = toParsableSignature(signature)) =>
-    signature.startsWith("get ") ?
-        toWellKnownIntrinsicObject("getter", signature.replace(/^get\s+/g, "")) :
-    /[^\)]$/.test(signature) ?
-        toWellKnownIntrinsicObject("object", signature) :
-        given((
-            parsable = toParsableSignature(signature),
-            parsed = parseH1(parsable)) =>
-                parsed.type === "failure" ?
-                    warn(`Failure ${signature}: ${parsed.errors[0].message}`) :
-                    toWellKnownIntrinsicObject("function", parsed.name,
-                    {
-                        ["[[FormalParameters]]"]: toFormalParameters(parsed)
-                    })));
 
 const toXPathResultArray = result => Array.from(
 ({
