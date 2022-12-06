@@ -62,15 +62,27 @@ module.exports = async function
     const { window: { document } } = new JSDOM(specification);
 
     const TopLevelWellKnownIntrinsicObjects =
-        toTableRows("table-well-known-intrinsic-objects", document)
-            .flatMap(row => given((
-                [IntrinsicName, GlobalName, documentation] =
-                    toTableCellTextContents(row)) =>
-                        ({ IntrinsicName, GlobalName, documentation })));
+        fromTable("table-well-known-intrinsic-objects", document);
+
+    const ConcreteTypedArraySubclasses =
+        fromTable("table-the-typedarray-constructors", document)
+            .map(({ IntrinsicName }) => IntrinsicName.match(/^([^\s]+)/g)[0]);
+
+    const toConcreteTypedArrays =
+        ({ fullyQualifiedName, fullyQualifiedKeyPath, ...rest }) =>
+            ConcreteTypedArraySubclasses.map(name =>
+            ({
+                fullyQualifiedName:
+                    fullyQualifiedName.replace("%TypedArray%", name),
+                fullyQualifiedKeyPath:
+                    [name, ...fullyQualifiedKeyPath.slice(1)],
+                ...rest
+            }));
 
     const WellKnownIntrinsicsRegExp = new RegExp(`^(?:[gs]et\\s+)?(?:${
         TopLevelWellKnownIntrinsicObjects
-            .flatMap(({ IntrinsicName }) => [IntrinsicName, deintrinsify(IntrinsicName)])
+            .flatMap(({ IntrinsicName }) =>
+                [IntrinsicName, deintrinsify(IntrinsicName)])
             .join("|")})(\\.[^\\s]+|\\s*\\[[^\\]]+\\])*(\\s*\\(|$)`);
 
     const WellKnownIntrinsicObjects = TopLevelWellKnownIntrinsicObjects
@@ -81,6 +93,10 @@ module.exports = async function
         .filter(contents => WellKnownIntrinsicsRegExp.test(contents) ? true : console.log("NO :", contents))
         .map(signature => (console.log("YES: ", signature), signature))
         .map(parseSignature)
+        .flatMap(WKIO =>
+            WKIO.fullyQualifiedKeyPath[0] === "%TypedArray%" ?
+                [WKIO, ...toConcreteTypedArrays(WKIO)] :
+                [WKIO])
         .filter(WKIO =>
             !WKIO.failed ||
             warn(`Failure ${WKIO.signature}: ${WKIO.normalized} ${WKIO.errors[0].message}`));
@@ -118,6 +134,13 @@ const toTableRows = (id, from) =>
 const toTableCells = from => XPathQueryAll `.//td` (from);
 const toTableCellTextContents = from =>
     toTableCells(from).map(({ textContent }) => textContent.trim());
+
+const fromTable = (id, from) =>
+    toTableRows(id, from)
+        .flatMap(row => given((
+            [IntrinsicName, GlobalName, documentation] =
+                toTableCellTextContents(row)) =>
+                    ({ IntrinsicName, GlobalName, documentation })));
 
 /*
 const toIndexedIterable = f =>

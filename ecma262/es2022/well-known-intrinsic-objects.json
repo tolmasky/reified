@@ -8355,12 +8355,452 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array",
+    "fullyQualifiedKeyPath": [
+      "Int8Array"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array",
+    "fullyQualifiedKeyPath": [
+      "Int16Array"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array",
+    "fullyQualifiedKeyPath": [
+      "Int32Array"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array",
+    "fullyQualifiedKeyPath": [
+      "Float32Array"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array",
+    "fullyQualifiedKeyPath": [
+      "Float64Array"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
     "type": "function",
     "fullyQualifiedName": "%TypedArray%.from",
     "fullyQualifiedKeyPath": [
       "%TypedArray%",
       "from"
     ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "mapfn"
+          ]
+        },
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int8Array.from",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "from"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "mapfn"
+          ]
+        },
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.from",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "from"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "mapfn"
+          ]
+        },
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.from",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "from"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "mapfn"
+          ]
+        },
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.from",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "from"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "mapfn"
+          ]
+        },
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.from",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "from"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "mapfn"
+          ]
+        },
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.from",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "from"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "mapfn"
+          ]
+        },
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.from",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "from"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "mapfn"
+          ]
+        },
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.from",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "from"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "mapfn"
+          ]
+        },
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.from",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "from"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "mapfn"
+          ]
+        },
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.from",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "from"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "mapfn"
+          ]
+        },
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.from",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "from"
+    ],
+    "type": "function",
     "[[FormalParameters]]": {
       "required": [
         {
@@ -8406,6 +8846,248 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.of",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "of"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            {
+              "children": [
+                "items"
+              ]
+            }
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.of",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "of"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            {
+              "children": [
+                "items"
+              ]
+            }
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.of",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "of"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            {
+              "children": [
+                "items"
+              ]
+            }
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.of",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "of"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            {
+              "children": [
+                "items"
+              ]
+            }
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.of",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "of"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            {
+              "children": [
+                "items"
+              ]
+            }
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.of",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "of"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            {
+              "children": [
+                "items"
+              ]
+            }
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.of",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "of"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            {
+              "children": [
+                "items"
+              ]
+            }
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.of",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "of"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            {
+              "children": [
+                "items"
+              ]
+            }
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.of",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "of"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            {
+              "children": [
+                "items"
+              ]
+            }
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.of",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "of"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            {
+              "children": [
+                "items"
+              ]
+            }
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.of",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "of"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            {
+              "children": [
+                "items"
+              ]
+            }
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
     "type": "object",
     "fullyQualifiedName": "%TypedArray%.prototype",
     "fullyQualifiedKeyPath": [
@@ -8414,12 +9096,188 @@
     ]
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype"
+    ],
+    "type": "object"
+  },
+  {
     "type": "getter",
     "fullyQualifiedName": "%TypedArray%.@@species",
     "fullyQualifiedKeyPath": [
       "%TypedArray%",
       "@@species"
     ]
+  },
+  {
+    "fullyQualifiedName": "Int8Array.@@species",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "@@species"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.@@species",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "@@species"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.@@species",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "@@species"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Int16Array.@@species",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "@@species"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.@@species",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "@@species"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Int32Array.@@species",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "@@species"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.@@species",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "@@species"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.@@species",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "@@species"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.@@species",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "@@species"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Float32Array.@@species",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "@@species"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Float64Array.@@species",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "@@species"
+    ],
+    "type": "getter"
   },
   {
     "type": "function",
@@ -8441,6 +9299,215 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.at",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "at"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "index"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.at",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "at"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "index"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.at",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "at"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "index"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.at",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "at"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "index"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.at",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "at"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "index"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.at",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "at"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "index"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.at",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "at"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "index"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.at",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "at"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "index"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.at",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "at"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "index"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.at",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "at"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "index"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.at",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "at"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "index"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
     "type": "getter",
     "fullyQualifiedName": "%TypedArray%.prototype.buffer",
     "fullyQualifiedKeyPath": [
@@ -8448,6 +9515,105 @@
       "prototype",
       "buffer"
     ]
+  },
+  {
+    "fullyQualifiedName": "Int8Array.prototype.buffer",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "buffer"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.buffer",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "buffer"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.buffer",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "buffer"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.buffer",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "buffer"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.buffer",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "buffer"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.buffer",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "buffer"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.buffer",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "buffer"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.buffer",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "buffer"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.buffer",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "buffer"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.buffer",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "buffer"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.buffer",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "buffer"
+    ],
+    "type": "getter"
   },
   {
     "type": "getter",
@@ -8459,6 +9625,105 @@
     ]
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.byteLength",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "byteLength"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.byteLength",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "byteLength"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.byteLength",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "byteLength"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.byteLength",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "byteLength"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.byteLength",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "byteLength"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.byteLength",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "byteLength"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.byteLength",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "byteLength"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.byteLength",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "byteLength"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.byteLength",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "byteLength"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.byteLength",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "byteLength"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.byteLength",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "byteLength"
+    ],
+    "type": "getter"
+  },
+  {
     "type": "getter",
     "fullyQualifiedName": "%TypedArray%.prototype.byteOffset",
     "fullyQualifiedKeyPath": [
@@ -8466,6 +9731,105 @@
       "prototype",
       "byteOffset"
     ]
+  },
+  {
+    "fullyQualifiedName": "Int8Array.prototype.byteOffset",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "byteOffset"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.byteOffset",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "byteOffset"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.byteOffset",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "byteOffset"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.byteOffset",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "byteOffset"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.byteOffset",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "byteOffset"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.byteOffset",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "byteOffset"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.byteOffset",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "byteOffset"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.byteOffset",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "byteOffset"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.byteOffset",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "byteOffset"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.byteOffset",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "byteOffset"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.byteOffset",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "byteOffset"
+    ],
+    "type": "getter"
   },
   {
     "type": "object",
@@ -8477,6 +9841,105 @@
     ]
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "constructor"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "constructor"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "constructor"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "constructor"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "constructor"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "constructor"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "constructor"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "constructor"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "constructor"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "constructor"
+    ],
+    "type": "object"
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.constructor",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "constructor"
+    ],
+    "type": "object"
+  },
+  {
     "type": "function",
     "fullyQualifiedName": "%TypedArray%.prototype.copyWithin",
     "fullyQualifiedKeyPath": [
@@ -8484,6 +9947,336 @@
       "prototype",
       "copyWithin"
     ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "start"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int8Array.prototype.copyWithin",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "copyWithin"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "start"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.copyWithin",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "copyWithin"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "start"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.copyWithin",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "copyWithin"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "start"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.copyWithin",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "copyWithin"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "start"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.copyWithin",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "copyWithin"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "start"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.copyWithin",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "copyWithin"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "start"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.copyWithin",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "copyWithin"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "start"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.copyWithin",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "copyWithin"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "start"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.copyWithin",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "copyWithin"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "start"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.copyWithin",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "copyWithin"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "target"
+          ]
+        },
+        {
+          "children": [
+            "start"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.copyWithin",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "copyWithin"
+    ],
+    "type": "function",
     "[[FormalParameters]]": {
       "required": [
         {
@@ -8520,6 +10313,149 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.entries",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "entries"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.entries",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "entries"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.entries",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "entries"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.entries",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "entries"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.entries",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "entries"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.entries",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "entries"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.entries",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "entries"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.entries",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "entries"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.entries",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "entries"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.entries",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "entries"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.entries",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "entries"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
     "type": "function",
     "fullyQualifiedName": "%TypedArray%.prototype.every",
     "fullyQualifiedKeyPath": [
@@ -8527,6 +10463,281 @@
       "prototype",
       "every"
     ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int8Array.prototype.every",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "every"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.every",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "every"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.every",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "every"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.every",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "every"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.every",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "every"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.every",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "every"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.every",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "every"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.every",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "every"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.every",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "every"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.every",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "every"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.every",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "every"
+    ],
+    "type": "function",
     "[[FormalParameters]]": {
       "required": [
         {
@@ -8575,6 +10786,336 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.fill",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "fill"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.fill",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "fill"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.fill",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "fill"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.fill",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "fill"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.fill",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "fill"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.fill",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "fill"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.fill",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "fill"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.fill",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "fill"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.fill",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "fill"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.fill",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "fill"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.fill",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "fill"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "value"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ]
+    }
+  },
+  {
     "type": "function",
     "fullyQualifiedName": "%TypedArray%.prototype.filter",
     "fullyQualifiedKeyPath": [
@@ -8582,6 +11123,281 @@
       "prototype",
       "filter"
     ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int8Array.prototype.filter",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "filter"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.filter",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "filter"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.filter",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "filter"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.filter",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "filter"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.filter",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "filter"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.filter",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "filter"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.filter",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "filter"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.filter",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "filter"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.filter",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "filter"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.filter",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "filter"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.filter",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "filter"
+    ],
+    "type": "function",
     "[[FormalParameters]]": {
       "required": [
         {
@@ -8625,6 +11441,281 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.find",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "find"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.find",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "find"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.find",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "find"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.find",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "find"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.find",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "find"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.find",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "find"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.find",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "find"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.find",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "find"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.find",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "find"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.find",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "find"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.find",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "find"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
     "type": "function",
     "fullyQualifiedName": "%TypedArray%.prototype.findIndex",
     "fullyQualifiedKeyPath": [
@@ -8632,6 +11723,281 @@
       "prototype",
       "findIndex"
     ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int8Array.prototype.findIndex",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "findIndex"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.findIndex",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "findIndex"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.findIndex",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "findIndex"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.findIndex",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "findIndex"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.findIndex",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "findIndex"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.findIndex",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "findIndex"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.findIndex",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "findIndex"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.findIndex",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "findIndex"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.findIndex",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "findIndex"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.findIndex",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "findIndex"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "predicate"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.findIndex",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "findIndex"
+    ],
+    "type": "function",
     "[[FormalParameters]]": {
       "required": [
         {
@@ -8675,6 +12041,281 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.forEach",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "forEach"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.forEach",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "forEach"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.forEach",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "forEach"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.forEach",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "forEach"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.forEach",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "forEach"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.forEach",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "forEach"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.forEach",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "forEach"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.forEach",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "forEach"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.forEach",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "forEach"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.forEach",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "forEach"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.forEach",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "forEach"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
     "type": "function",
     "fullyQualifiedName": "%TypedArray%.prototype.includes",
     "fullyQualifiedKeyPath": [
@@ -8682,6 +12323,281 @@
       "prototype",
       "includes"
     ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int8Array.prototype.includes",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "includes"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.includes",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "includes"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.includes",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "includes"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.includes",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "includes"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.includes",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "includes"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.includes",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "includes"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.includes",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "includes"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.includes",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "includes"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.includes",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "includes"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.includes",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "includes"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.includes",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "includes"
+    ],
+    "type": "function",
     "[[FormalParameters]]": {
       "required": [
         {
@@ -8725,6 +12641,281 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.indexOf",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "indexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.indexOf",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "indexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.indexOf",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "indexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.indexOf",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "indexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.indexOf",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "indexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.indexOf",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "indexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.indexOf",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "indexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.indexOf",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "indexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.indexOf",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "indexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.indexOf",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "indexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.indexOf",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "indexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
     "type": "function",
     "fullyQualifiedName": "%TypedArray%.prototype.join",
     "fullyQualifiedKeyPath": [
@@ -8744,6 +12935,215 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.join",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "join"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "separator"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.join",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "join"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "separator"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.join",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "join"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "separator"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.join",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "join"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "separator"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.join",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "join"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "separator"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.join",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "join"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "separator"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.join",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "join"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "separator"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.join",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "join"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "separator"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.join",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "join"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "separator"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.join",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "join"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "separator"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.join",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "join"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "separator"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
     "type": "function",
     "fullyQualifiedName": "%TypedArray%.prototype.keys",
     "fullyQualifiedKeyPath": [
@@ -8751,6 +13151,149 @@
       "prototype",
       "keys"
     ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int8Array.prototype.keys",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "keys"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.keys",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "keys"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.keys",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "keys"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.keys",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "keys"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.keys",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "keys"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.keys",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "keys"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.keys",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "keys"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.keys",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "keys"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.keys",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "keys"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.keys",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "keys"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.keys",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "keys"
+    ],
+    "type": "function",
     "[[FormalParameters]]": {
       "required": [],
       "optional": []
@@ -8782,6 +13325,281 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.lastIndexOf",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "lastIndexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.lastIndexOf",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "lastIndexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.lastIndexOf",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "lastIndexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.lastIndexOf",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "lastIndexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.lastIndexOf",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "lastIndexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.lastIndexOf",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "lastIndexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.lastIndexOf",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "lastIndexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.lastIndexOf",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "lastIndexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.lastIndexOf",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "lastIndexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.lastIndexOf",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "lastIndexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.lastIndexOf",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "lastIndexOf"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "searchElement"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "fromIndex"
+          ]
+        }
+      ]
+    }
+  },
+  {
     "type": "getter",
     "fullyQualifiedName": "%TypedArray%.prototype.length",
     "fullyQualifiedKeyPath": [
@@ -8791,6 +13609,105 @@
     ]
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.length",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "length"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.length",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "length"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.length",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "length"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.length",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "length"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.length",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "length"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.length",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "length"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.length",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "length"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.length",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "length"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.length",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "length"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.length",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "length"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.length",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "length"
+    ],
+    "type": "getter"
+  },
+  {
     "type": "function",
     "fullyQualifiedName": "%TypedArray%.prototype.map",
     "fullyQualifiedKeyPath": [
@@ -8798,6 +13715,281 @@
       "prototype",
       "map"
     ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int8Array.prototype.map",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "map"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.map",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "map"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.map",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "map"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.map",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "map"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.map",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "map"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.map",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "map"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.map",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "map"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.map",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "map"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.map",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "map"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.map",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "map"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.map",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "map"
+    ],
+    "type": "function",
     "[[FormalParameters]]": {
       "required": [
         {
@@ -8841,6 +14033,281 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.reduce",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "reduce"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.reduce",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "reduce"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.reduce",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "reduce"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.reduce",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "reduce"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.reduce",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "reduce"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.reduce",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "reduce"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.reduce",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "reduce"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.reduce",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "reduce"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.reduce",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "reduce"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.reduce",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "reduce"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.reduce",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "reduce"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
     "type": "function",
     "fullyQualifiedName": "%TypedArray%.prototype.reduceRight",
     "fullyQualifiedKeyPath": [
@@ -8848,6 +14315,281 @@
       "prototype",
       "reduceRight"
     ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int8Array.prototype.reduceRight",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "reduceRight"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.reduceRight",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "reduceRight"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.reduceRight",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "reduceRight"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.reduceRight",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "reduceRight"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.reduceRight",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "reduceRight"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.reduceRight",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "reduceRight"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.reduceRight",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "reduceRight"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.reduceRight",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "reduceRight"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.reduceRight",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "reduceRight"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.reduceRight",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "reduceRight"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "initialValue"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.reduceRight",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "reduceRight"
+    ],
+    "type": "function",
     "[[FormalParameters]]": {
       "required": [
         {
@@ -8879,6 +14621,149 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.reverse",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "reverse"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.reverse",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "reverse"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.reverse",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "reverse"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.reverse",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "reverse"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.reverse",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "reverse"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.reverse",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "reverse"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.reverse",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "reverse"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.reverse",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "reverse"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.reverse",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "reverse"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.reverse",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "reverse"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.reverse",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "reverse"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
     "type": "function",
     "fullyQualifiedName": "%TypedArray%.prototype.set",
     "fullyQualifiedKeyPath": [
@@ -8886,6 +14771,281 @@
       "prototype",
       "set"
     ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "offset"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int8Array.prototype.set",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "set"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "offset"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.set",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "set"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "offset"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.set",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "set"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "offset"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.set",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "set"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "offset"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.set",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "set"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "offset"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.set",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "set"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "offset"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.set",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "set"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "offset"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.set",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "set"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "offset"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.set",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "set"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "offset"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.set",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "set"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "source"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "offset"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.set",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "set"
+    ],
+    "type": "function",
     "[[FormalParameters]]": {
       "required": [
         {
@@ -8928,6 +15088,270 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.slice",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "slice"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.slice",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "slice"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.slice",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "slice"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.slice",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "slice"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.slice",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "slice"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.slice",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "slice"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.slice",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "slice"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.slice",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "slice"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.slice",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "slice"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.slice",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "slice"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.slice",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "slice"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "start"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
     "type": "function",
     "fullyQualifiedName": "%TypedArray%.prototype.some",
     "fullyQualifiedKeyPath": [
@@ -8935,6 +15359,281 @@
       "prototype",
       "some"
     ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int8Array.prototype.some",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "some"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.some",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "some"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.some",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "some"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.some",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "some"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.some",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "some"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.some",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "some"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.some",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "some"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.some",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "some"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.some",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "some"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.some",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "some"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "callbackfn"
+          ]
+        }
+      ],
+      "optional": [
+        {
+          "children": [
+            "thisArg"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.some",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "some"
+    ],
+    "type": "function",
     "[[FormalParameters]]": {
       "required": [
         {
@@ -8972,6 +15671,215 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.sort",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "sort"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "comparefn"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.sort",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "sort"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "comparefn"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.sort",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "sort"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "comparefn"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.sort",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "sort"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "comparefn"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.sort",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "sort"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "comparefn"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.sort",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "sort"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "comparefn"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.sort",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "sort"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "comparefn"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.sort",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "sort"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "comparefn"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.sort",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "sort"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "comparefn"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.sort",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "sort"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "comparefn"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.sort",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "sort"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "comparefn"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
     "type": "function",
     "fullyQualifiedName": "%TypedArray%.prototype.subarray",
     "fullyQualifiedKeyPath": [
@@ -8979,6 +15887,270 @@
       "prototype",
       "subarray"
     ],
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "begin"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int8Array.prototype.subarray",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "subarray"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "begin"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.subarray",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "subarray"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "begin"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.subarray",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "subarray"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "begin"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.subarray",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "subarray"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "begin"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.subarray",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "subarray"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "begin"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.subarray",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "subarray"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "begin"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.subarray",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "subarray"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "begin"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.subarray",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "subarray"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "begin"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.subarray",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "subarray"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "begin"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.subarray",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "subarray"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [
+        {
+          "children": [
+            "begin"
+          ]
+        },
+        {
+          "children": [
+            "end"
+          ]
+        }
+      ],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.subarray",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "subarray"
+    ],
+    "type": "function",
     "[[FormalParameters]]": {
       "required": [
         {
@@ -9020,6 +16192,270 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.toLocaleString",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "toLocaleString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.toLocaleString",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "toLocaleString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.toLocaleString",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "toLocaleString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.toLocaleString",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "toLocaleString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.toLocaleString",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "toLocaleString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.toLocaleString",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "toLocaleString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.toLocaleString",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "toLocaleString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.toLocaleString",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "toLocaleString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.toLocaleString",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "toLocaleString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.toLocaleString",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "toLocaleString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.toLocaleString",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "toLocaleString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": [
+        {
+          "children": [
+            "reserved1"
+          ]
+        },
+        {
+          "children": [
+            "reserved2"
+          ]
+        }
+      ]
+    }
+  },
+  {
     "type": "function",
     "fullyQualifiedName": "%TypedArray%.prototype.toString",
     "fullyQualifiedKeyPath": [
@@ -9027,6 +16463,149 @@
       "prototype",
       "toString"
     ],
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int8Array.prototype.toString",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "toString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.toString",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "toString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.toString",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "toString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.toString",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "toString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.toString",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "toString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.toString",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "toString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.toString",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "toString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.toString",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "toString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.toString",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "toString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.toString",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "toString"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.toString",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "toString"
+    ],
+    "type": "function",
     "[[FormalParameters]]": {
       "required": [],
       "optional": []
@@ -9046,6 +16625,149 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.values",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "values"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.values",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "values"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.values",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "values"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.values",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "values"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.values",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "values"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.values",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "values"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.values",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "values"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.values",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "values"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.values",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "values"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.values",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "values"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.values",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "values"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
     "type": "function",
     "fullyQualifiedName": "%TypedArray%.prototype.@@iterator",
     "fullyQualifiedKeyPath": [
@@ -9059,6 +16781,149 @@
     }
   },
   {
+    "fullyQualifiedName": "Int8Array.prototype.@@iterator",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "@@iterator"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.@@iterator",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "@@iterator"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.@@iterator",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "@@iterator"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.@@iterator",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "@@iterator"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.@@iterator",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "@@iterator"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.@@iterator",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "@@iterator"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.@@iterator",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "@@iterator"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.@@iterator",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "@@iterator"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.@@iterator",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "@@iterator"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.@@iterator",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "@@iterator"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.@@iterator",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "@@iterator"
+    ],
+    "type": "function",
+    "[[FormalParameters]]": {
+      "required": [],
+      "optional": []
+    }
+  },
+  {
     "type": "getter",
     "fullyQualifiedName": "%TypedArray%.prototype.@@toStringTag",
     "fullyQualifiedKeyPath": [
@@ -9066,6 +16931,105 @@
       "prototype",
       "@@toStringTag"
     ]
+  },
+  {
+    "fullyQualifiedName": "Int8Array.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "Int8Array",
+      "prototype",
+      "@@toStringTag"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint8Array.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "Uint8Array",
+      "prototype",
+      "@@toStringTag"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint8ClampedArray.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "Uint8ClampedArray",
+      "prototype",
+      "@@toStringTag"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Int16Array.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "Int16Array",
+      "prototype",
+      "@@toStringTag"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint16Array.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "Uint16Array",
+      "prototype",
+      "@@toStringTag"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Int32Array.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "Int32Array",
+      "prototype",
+      "@@toStringTag"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Uint32Array.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "Uint32Array",
+      "prototype",
+      "@@toStringTag"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "BigInt64Array.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "BigInt64Array",
+      "prototype",
+      "@@toStringTag"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "BigUint64Array.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "BigUint64Array",
+      "prototype",
+      "@@toStringTag"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Float32Array.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "Float32Array",
+      "prototype",
+      "@@toStringTag"
+    ],
+    "type": "getter"
+  },
+  {
+    "fullyQualifiedName": "Float64Array.prototype.@@toStringTag",
+    "fullyQualifiedKeyPath": [
+      "Float64Array",
+      "prototype",
+      "@@toStringTag"
+    ],
+    "type": "getter"
   },
   {
     "type": "function",
