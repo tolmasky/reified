@@ -16,7 +16,6 @@ const { JSDOM } = require("jsdom");
 const { parseH1 } = require("ecmarkup/lib/header-parser");
 
 const downloadSpecification = require("../download-specification");
-const toFormalParameters = require("./to-formal-parameters");
 const parseSignature = require("./parse-signature");
 
 const warn = message => (console.warn(message), false);
