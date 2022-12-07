@@ -16,16 +16,22 @@ const downloadSpecification = require("../download-specification");
 const toDestination = (tag, name) =>
     join(__dirname, "..", "..", tag, `${name}.json`);
 
+async function toDOMDocument(tag)
+{
+   const specificationLocation = await downloadSpecification({ tag });
+   const specification = read(specificationLocation, "utf-8");
+
+   return (new JSDOM(specification)).window.document;
+}
 
 module.exports = tagged `fromSpecification` ((name, extract) =>
-    async function ({ tag = "es2022" }, destination = toDestination(tag, name))
+    async function
+    ({
+        tag = "es2022",
+        document = null,
+    }, destination = toDestination(tag, name))
     {
-        const specificationLocation = await downloadSpecification({ tag });
-        const specification = read(specificationLocation, "utf-8");
-
-        const { window: { document } } = new JSDOM(specification);
-
-        const extracted = extract(document);
+        const extracted = extract(document || await toDOMDocument(tag));
 
         mkdirp(dirname(destination));
         write(destination, JSON.stringify(extracted, null, 2), "utf-8");
