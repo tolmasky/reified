@@ -1,21 +1,10 @@
 const given = f => f();
 
-const
-{
-    mkdirSync: mkdir,
-    readFileSync: read,
-    writeFileSync: write
-} = require("fs");
-const { dirname, join } = require("path");
-const writep = (filename, ...rest) => mkdirp(dirname(filename), ...rest);
-const mkdirp = filename => (mkdir(filename, { recursive: true }), filename);
+const XPath = require("./x-path");
+const fromSpecification = require("./from-specification");
 
-const { tagged } = require("ftagged");
-
-const { JSDOM } = require("jsdom");
 const { parseH1 } = require("ecmarkup/lib/header-parser");
 
-const downloadSpecification = require("../download-specification");
 const parseSignature = require("./parse-signature");
 
 const warn = message => (console.warn(message), false);
@@ -43,69 +32,6 @@ const toSectionIDXPathQuery = given((
                         .map(ID => `starts-with(@id, "${ID}")`)
                         .join(" or ")}]`));
 
-const toDestination = tag =>
-    join(__dirname, "..", "..", tag, "well-known-intrinsic-objects.json");
-
-
-// constructor
-// non-objects like "length"?
-// ToProperty(V) -> P
-// we need get AND set for __proto__
-// Should the signature be more like x.{get}y?
-module.exports = async function
-({
-    tag = "es2022"
-}, destination = toDestination(tag))
-{
-    const specificationLocation = await downloadSpecification({ tag });
-    const specification = read(specificationLocation, "utf-8");
-
-    const { window: { document } } = new JSDOM(specification);
-
-    const TopLevelWellKnownIntrinsicObjects =
-        fromTable("table-well-known-intrinsic-objects", document);
-
-    const ConcreteTypedArraySubclasses =
-        fromTable("table-the-typedarray-constructors", document)
-            .map(({ IntrinsicName }) => IntrinsicName.match(/^([^\s]+)/g)[0]);
-
-    const toConcreteTypedArrays =
-        ({ fullyQualifiedName, fullyQualifiedKeyPath, ...rest }) =>
-            ConcreteTypedArraySubclasses.map(name =>
-            ({
-                fullyQualifiedName:
-                    fullyQualifiedName.replace("%TypedArray%", name),
-                fullyQualifiedKeyPath:
-                    [name, ...fullyQualifiedKeyPath.slice(1)],
-                ...rest
-            }));
-
-    const WellKnownIntrinsicsRegExp = new RegExp(`^(?:[gs]et\\s+)?(?:${
-        TopLevelWellKnownIntrinsicObjects
-            .flatMap(({ IntrinsicName }) =>
-                [IntrinsicName, deintrinsify(IntrinsicName)])
-            .join("|")})(\\.[^\\s]+|\\s*\\[[^\\]]+\\])*(\\s*\\(|$)`);
-
-    const WellKnownIntrinsicObjects = TopLevelWellKnownIntrinsicObjects
-        .flatMap(WKIO => XPathQueryAll
-            `${toSectionIDXPathQuery(WKIO.IntrinsicName)}` (document))
-        .filter(clause => !ExcludedTypes.has(clause.getAttribute("type")))
-        .map(clause => XPathQuerySingle `./h1` (clause).textContent)
-        .filter(contents => WellKnownIntrinsicsRegExp.test(contents) ? true : console.log("NO :", contents))
-        .map(signature => (console.log("YES: ", signature), signature))
-        .map(parseSignature)
-        .flatMap(WKIO =>
-            WKIO.fullyQualifiedKeyPath[0] === "%TypedArray%" ?
-                [WKIO, ...toConcreteTypedArrays(WKIO)] :
-                [WKIO])
-        .filter(WKIO =>
-            !WKIO.failed ||
-            warn(`Failure ${WKIO.signature}: ${WKIO.normalized} ${WKIO.errors[0].message}`));
-
-    mkdirp(dirname(destination));
-    write(destination, JSON.stringify(WellKnownIntrinsicObjects, null, 2), "utf-8");
-}
-
 const toWellKnownIntrinsicObject = (type, fullyQualifiedName, attributes) =>
 ({
     type,
@@ -114,31 +40,57 @@ const toWellKnownIntrinsicObject = (type, fullyQualifiedName, attributes) =>
     ...attributes
 });
 
-const toXPathResultArray = result => Array.from(
-({
-    [Symbol.iterator]: () => ({
-        next: () =>
-            given((value = result.iterateNext()) =>
-                ({ value, done: !value })) })
-}));
-
-const XPathQueryAll = tagged `XPathQueryAll` ((query, from) => given((
-    document = from.ownerDocument || from,
-    { XPathResult: { ANY_TYPE } } = document.defaultView) =>
-        toXPathResultArray(document.evaluate(query, from, null, ANY_TYPE, null))));
-
-const XPathQuerySingle = tagged `XPathQuerySingle` ((query, from) =>
-    XPathQueryAll `${query}` (from)[0]);
-
-const toTableRows = (id, from) =>
-    XPathQueryAll `//*[@id="${id}"]//tr[not(descendant::th)]` (from);
-const toTableCells = from => XPathQueryAll `.//td` (from);
-const toTableCellTextContents = from =>
-    toTableCells(from).map(({ textContent }) => textContent.trim());
-
 const fromTable = (id, from) =>
-    toTableRows(id, from)
-        .flatMap(row => given((
-            [IntrinsicName, GlobalName, documentation] =
-                toTableCellTextContents(row)) =>
-                    ({ IntrinsicName, GlobalName, documentation })));
+    XPath.toTableCellTextContentRows(id, from)
+        .map(([IntrinsicName, GlobalName, documentation]) =>
+            ({ IntrinsicName, GlobalName, documentation }));
+
+// constructor
+// non-objects like "length"?
+// ToProperty(V) -> P
+// we need get AND set for __proto__
+// Should the signature be more like x.{get}y?
+module.exports = fromSpecification `well-known-intrinsic-objects`
+    (document => given((
+        TopLevelWellKnownIntrinsicObjects =
+            fromTable("table-well-known-intrinsic-objects", document),
+
+        ConcreteTypedArraySubclasses =
+            fromTable("table-the-typedarray-constructors", document)
+                .map(({ IntrinsicName }) =>
+                    IntrinsicName.match(/^([^\s]+)/g)[0]),
+
+        toConcreteTypedArrays =
+            ({ fullyQualifiedName, fullyQualifiedKeyPath, ...rest }) =>
+                ConcreteTypedArraySubclasses.map(name =>
+                ({
+                    fullyQualifiedName:
+                        fullyQualifiedName.replace("%TypedArray%", name),
+                    fullyQualifiedKeyPath:
+                        [name, ...fullyQualifiedKeyPath.slice(1)],
+                    ...rest
+                })),
+
+        WellKnownIntrinsicsRegExp = new RegExp(`^(?:[gs]et\\s+)?(?:${
+            TopLevelWellKnownIntrinsicObjects
+                .flatMap(({ IntrinsicName }) =>
+                    [IntrinsicName, deintrinsify(IntrinsicName)])
+                .join("|")})(\\.[^\\s]+|\\s*\\[[^\\]]+\\])*(\\s*\\(|$)`)) =>
+
+        TopLevelWellKnownIntrinsicObjects
+            .flatMap(WKIO => XPath.queryAll
+                `${toSectionIDXPathQuery(WKIO.IntrinsicName)}` (document))
+            .filter(clause => !ExcludedTypes.has(clause.getAttribute("type")))
+            .map(clause => XPath.querySingle `./h1` (clause).textContent)
+            .filter(contents => WellKnownIntrinsicsRegExp.test(contents) ? true : console.log("NO :", contents))
+            .map(signature => (console.log("YES: ", signature), signature))
+            .map(parseSignature)
+            .flatMap(WKIO =>
+                WKIO.fullyQualifiedKeyPath[0] === "%TypedArray%" ?
+                    [WKIO, ...toConcreteTypedArrays(WKIO)] :
+                    [WKIO])
+            .filter(WKIO =>
+                !WKIO.failed ||
+                warn(`Failure ${WKIO.signature}: ${WKIO.normalized} ${WKIO.errors[0].message}`))));
+
+

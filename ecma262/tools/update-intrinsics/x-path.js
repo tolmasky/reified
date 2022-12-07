@@ -11,7 +11,7 @@ const queryAll = tagged `XPath.queryAll` ((query, from) => given((
 exports.queryAll = queryAll;
 
 exports.querySingle = tagged `XPath.querySingle` ((query, from) =>
-    quaryAll `${query}` (from)[0]);
+    queryAll `${query}` (from)[0]);
 
 const toTableRows = (id, from) =>
     queryAll `//*[@id="${id}"]//tr[not(descendant::th)]` (from);
