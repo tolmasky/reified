@@ -46,7 +46,9 @@ const toFullyQualifiedKeyPath = given((
         [
             lastDescriptorKind,
             components.map((key, index) =>
-                [key, index === last ? lastDescriptorKind : "[[Value]]"])
+                index === last && lastDescriptorKind !== "[[Value]]" ?
+                    [key, lastDescriptorKind] :
+                    key)
         ]));
 
 const toFormalParameters = (restElements, sequenceElements, parameters) =>

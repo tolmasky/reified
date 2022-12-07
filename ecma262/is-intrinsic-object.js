@@ -5,6 +5,7 @@ const WellKnownIntrinsicObjects = require("./es2022/well-known-intrinsic-objects
 const hasSymbols = !!global.Symbol;
 
 const ArrayPrototype = Array.prototype;
+const ArrayPrototypeFilter = ArrayPrototype.filter;
 const ArrayPrototypeMap = ArrayPrototype.map;
 const ArrayPrototypeReduce = ArrayPrototype.reduce;
 
@@ -33,7 +34,8 @@ const ToPropertyKey = given((
         hasSymbols && Symbol[Call(StringPrototypeReplace, key, IsWellKnownSymbolRegExp, "")] :
         key);
 
-const TypeCheckedGet = (type, [key, field], object) => given((
+const TypeCheckedGet = (type, DK, object) => given((
+    [key, field] = typeof DK === "string" ? [DK, "[[Value]]"] : DK,
     descriptor = ObjectGetOwnPropertyDescriptor(object, ToPropertyKey(key)),
     value =
         !descriptor ? false :
@@ -59,9 +61,12 @@ function GetIntrinsicObject(type, keyPath)
 }
 
 const AvailableIntrinsicObjects = new Map(Call(
-    ArrayPrototypeMap,
-    WellKnownIntrinsicObjects,
-    ({ type, fullyQualifiedKeyPath, fullyQualifiedName }) =>
-        [GetIntrinsicObject(type, fullyQualifiedKeyPath), fullyQualifiedName]));
+    ArrayPrototypeFilter,
+    Call(
+        ArrayPrototypeMap,
+        WellKnownIntrinsicObjects,
+        ({ type, fullyQualifiedKeyPath, fullyQualifiedName }) =>
+            [GetIntrinsicObject(type, fullyQualifiedKeyPath), fullyQualifiedName]),
+    ([object]) => !!object));
 console.log(AvailableIntrinsicObjects);
 module.exports = object => Call(MapPrototypeGet, AvailableIntrinsicObjects, object);
