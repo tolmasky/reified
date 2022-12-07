@@ -51,6 +51,8 @@ const toDestination = tag =>
 // constructor
 // non-objects like "length"?
 // ToProperty(V) -> P
+// we need get AND set for __proto__
+// Should the signature be more like x.{get}y?
 module.exports = async function
 ({
     tag = "es2022"
