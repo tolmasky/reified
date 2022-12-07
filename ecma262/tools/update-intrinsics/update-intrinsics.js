@@ -143,29 +143,3 @@ const fromTable = (id, from) =>
             [IntrinsicName, GlobalName, documentation] =
                 toTableCellTextContents(row)) =>
                     ({ IntrinsicName, GlobalName, documentation })));
-
-/*
-const toIndexedIterable = f =>
-    ({ [Symbol.iterator]() { let i = 0; return { next() { return f(i++); } } } });
-
-const toIterable = result => given((
-    { resultType } = result) =>
-    resultType === XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE ||
-    resultType === XPathResult.ORDERED_NODE_SNAPSHOT_TYPE ?
-        toIndexedIterable((index, value = result.snapshotItem(index)) => ({ value, done: !value })) :
-        ({
-            [Symbol.iterator]: () =>
-            ({
-                next: () => given((value = result.iterateNext()) =>
-                    ({ value, done: !value }))
-            })
-        }));
-
-const toXPathResultArray = result => Array.from(
-({
-    [Symbol.iterator]: () =>
-    ({
-        next: () => given((value = result.iterateNext()) => ({ value, done: !value }))
-    })
-}));
-*/

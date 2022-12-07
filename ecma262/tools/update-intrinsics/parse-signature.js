@@ -11,27 +11,42 @@ const GetterRegExp = /^get\s+/g;
 const SetterRegExp = /^set\s+/g;
 const ParametersRegExp = /\s*\(.+$/g;
 
-const classify = given((
-    pairs =
-    [
-        ["getter", GetterRegExp],
-        ["setter", SetterRegExp],
-        ["function", ParametersRegExp],
-        ["object"]
-    ]) =>
-    signature =>
-        pairs.find(([type, regexp]) => !regexp || regexp.test(signature))[0]);
-
 const toUnbracketedSignature = given((
     BracketedRegExp = /(^[^\(\s]+)\s*\[\s*([^\]\s]+)\s*\]/g) =>
     signature => signature.replace(BracketedRegExp,
         (_, prefix, bracketed) => `${prefix}.${bracketed}`));
 
-const toFullyQualifiedName = signature =>
-    toUnbracketedSignature(signature
-        .replace(GetterRegExp, "")
-        .replace(SetterRegExp, "")
-        .replace(ParametersRegExp, ""));
+const toClassifier = (pairs, fallback) => given((
+    withFallback = [...pairs, [fallback]]) =>
+    signature =>
+        withFallback.find(([type, regexp]) => !regexp || regexp.test(signature))[0]);
+
+const toType = toClassifier
+([
+    ["function", GetterRegExp],
+    ["function", SetterRegExp],
+    ["function", ParametersRegExp]
+], "object");
+
+const toFullyQualifiedKeyPath = given((
+    toDescriptorKind = toClassifier
+    ([
+        ["[[Get]]", GetterRegExp],
+        ["[[Set]]", SetterRegExp]
+    ], "[[Value]]")) =>
+        signature => given((
+        lastDescriptorKind = toDescriptorKind(signature),
+        normalized = toUnbracketedSignature(signature
+            .replace(GetterRegExp, "")
+            .replace(SetterRegExp, "")
+            .replace(ParametersRegExp, "")),
+        components = normalized.split("."),
+        last = components.length - 1) =>
+        [
+            lastDescriptorKind,
+            components.flatMap((key, index) =>
+                [key, index === last ? lastDescriptorKind : "[[Value]]"])
+        ]));
 
 const toFormalParameters = (restElements, sequenceElements, parameters) =>
     parameters.map(({ name }) => given((
@@ -58,6 +73,8 @@ const toFunctionAttributes = given((
                 matchAll(signature, SequenceElementRegExp)
                     .map(([, name]) => name)),
             normalized = toUnbracketedSignature(signature
+                .replace(GetterRegExp, "")
+                .replace(SetterRegExp, "")
                 .replace(RestElementRegExp, (_, name) => name)
                 .replace(SequenceElementRegExp, (_, name) => `_${name}_`)),
             parsed = parseH1(normalized)) =>
@@ -73,13 +90,13 @@ const toFunctionAttributes = given((
 })));
 
 const parseSignature = signature => given((
-    type = classify(signature),
-    fullyQualifiedName = toFullyQualifiedName(signature)) =>
+    type = toType(signature),
+    [DK, fullyQualifiedKeyPath] = toFullyQualifiedKeyPath(signature)) =>
 ({
     type,
-    fullyQualifiedName,
-    fullyQualifiedKeyPath: fullyQualifiedName.split("."),
-    ...(type === "function" && toFunctionAttributes(signature))
+    fullyQualifiedName: fullyQualifiedKeyPath.join("."),
+    fullyQualifiedKeyPath,
+    ...(type === "function" && DK === "[[Value]]" && toFunctionAttributes(signature))
 }));
 
 module.exports = parseSignature;
