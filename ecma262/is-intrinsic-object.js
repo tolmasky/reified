@@ -33,31 +33,28 @@ const ToPropertyKey = given((
         hasSymbols && Symbol[Call(StringPrototypeReplace, key, IsWellKnownSymbolRegExp, "")] :
         key);
 
-// FIXME: Check type === "function" ?
-const TypeCheckedGet = (type, key, object) => given((
-    descriptor = ObjectGetOwnPropertyDescriptor(object, key)) =>
-    !descriptor ? false :
-    type === "getter" ?
-        HasOwnProperty(descriptor, "get") && descriptor.get :
-    type === "setter" ?
-        HasOwnProperty(descriptor, "set") && descriptor.set :
-        descriptor.value);
+const TypeCheckedGet = (type, [key, field], object) => given((
+    descriptor = ObjectGetOwnPropertyDescriptor(object, ToPropertyKey(key)),
+    value =
+        !descriptor ? false :
+        field === "[[Get]]" ?
+            HasOwnProperty(descriptor, "get") && descriptor.get :
+        field === "[[Set]]" ?
+            HasOwnProperty(descriptor, "set") && descriptor.set :
+            descriptor.value) =>
+        (!type || typeof value === type) && value);
 
 function GetIntrinsicObject(type, keyPath)
 {
-    // Can we trust .length?
     const last = keyPath.length - 1;
 
     return Call(
         ArrayPrototypeReduce,
         keyPath,
-        (object, encoded, index) => object && given((
-            key = ToPropertyKey(encoded)) =>
-            !key ? false :
-            (index === last ?
-                TypeCheckedGet(type, key, object) :
-                // Access with descriptor?...
-                object[key]) || false),
+        (object, DKP, index) =>
+            object &&
+            TypeCheckedGet(index === last && type, DKP, object) ||
+            false,
         global);
 }
 

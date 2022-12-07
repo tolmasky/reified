@@ -7,9 +7,9 @@ const BindingSequenceElement = require("../../grammar/binding-sequence-element")
 const { parseH1 } = require("ecmarkup/lib/header-parser");
 
 
-const GetterRegExp = /^get\s+/g;
-const SetterRegExp = /^set\s+/g;
-const ParametersRegExp = /\s*\(.+$/g;
+const GetterRegExp = /^get\s+/;
+const SetterRegExp = /^set\s+/;
+const ParametersRegExp = /\s*\(.+$/;
 
 const toUnbracketedSignature = given((
     BracketedRegExp = /(^[^\(\s]+)\s*\[\s*([^\]\s]+)\s*\]/g) =>
@@ -19,7 +19,8 @@ const toUnbracketedSignature = given((
 const toClassifier = (pairs, fallback) => given((
     withFallback = [...pairs, [fallback]]) =>
     signature =>
-        withFallback.find(([type, regexp]) => !regexp || regexp.test(signature))[0]);
+        withFallback.find(([type, regexp]) =>
+            !regexp || regexp.test(signature))[0]);
 
 const toType = toClassifier
 ([
@@ -44,7 +45,7 @@ const toFullyQualifiedKeyPath = given((
         last = components.length - 1) =>
         [
             lastDescriptorKind,
-            components.flatMap((key, index) =>
+            components.map((key, index) =>
                 [key, index === last ? lastDescriptorKind : "[[Value]]"])
         ]));
 
@@ -94,7 +95,7 @@ const parseSignature = signature => given((
     [DK, fullyQualifiedKeyPath] = toFullyQualifiedKeyPath(signature)) =>
 ({
     type,
-    fullyQualifiedName: fullyQualifiedKeyPath.join("."),
+    fullyQualifiedName: JSON.stringify(fullyQualifiedKeyPath),
     fullyQualifiedKeyPath,
     ...(type === "function" && DK === "[[Value]]" && toFunctionAttributes(signature))
 }));
