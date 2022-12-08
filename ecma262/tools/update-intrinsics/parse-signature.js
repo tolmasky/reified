@@ -4,6 +4,8 @@ const BindingIdentifier = require("../../grammar/binding-identifier");
 const BindingRestElement = require("../../grammar/binding-rest-element");
 const BindingSequenceElement = require("../../grammar/binding-sequence-element");
 
+const toWellKnownID = require("../../to-well-known-id");
+
 const { parseH1 } = require("ecmarkup/lib/header-parser");
 
 
@@ -29,14 +31,14 @@ const toType = toClassifier
     ["function", ParametersRegExp]
 ], "object");
 
-const toFullyQualifiedKeyPath = given((
-    toDescriptorKind = toClassifier
+const toDescriptorKeyPath = given((
+    toDescriptorField = toClassifier
     ([
         ["[[Get]]", GetterRegExp],
         ["[[Set]]", SetterRegExp]
     ], "[[Value]]")) =>
         signature => given((
-        lastDescriptorKind = toDescriptorKind(signature),
+        lastDescriptorField = toDescriptorField(signature),
         normalized = toUnbracketedSignature(signature
             .replace(GetterRegExp, "")
             .replace(SetterRegExp, "")
@@ -44,11 +46,14 @@ const toFullyQualifiedKeyPath = given((
         components = normalized.split("."),
         last = components.length - 1) =>
         [
-            lastDescriptorKind,
+            lastDescriptorField,
             components.map((key, index) =>
-                index === last && lastDescriptorKind !== "[[Value]]" ?
-                    [key, lastDescriptorKind] :
-                    key)
+            ({
+                key,
+                field: index === last ?
+                    lastDescriptorField :
+                    "[[Value]]"
+            }))
         ]));
 
 const toFormalParameters = (restElements, sequenceElements, parameters) =>
@@ -92,14 +97,14 @@ const toFunctionAttributes = given((
     }
 })));
 
-const parseSignature = signature => given((
+const parseSignature = (scope, signature) => given((
     type = toType(signature),
-    [DK, fullyQualifiedKeyPath] = toFullyQualifiedKeyPath(signature)) =>
+    [field, descriptorKeyPath] = toDescriptorKeyPath(signature)) =>
 ({
+    WKID: toWellKnownID(scope, descriptorKeyPath),
     type,
-    fullyQualifiedName: JSON.stringify(fullyQualifiedKeyPath),
-    fullyQualifiedKeyPath,
-    ...(type === "function" && DK === "[[Value]]" && toFunctionAttributes(signature))
+    descriptorKeyPath,
+    ...(type === "function" && field === "[[Value]]" && toFunctionAttributes(signature))
 }));
 
 module.exports = parseSignature;
