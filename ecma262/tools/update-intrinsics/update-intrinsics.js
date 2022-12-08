@@ -61,27 +61,41 @@ module.exports = fromSpecification `well-known-intrinsic-objects`
                     descriptorKeyPath =
                         [({ ...first, key }), ...restDescriptorKeyPath]) =>
                 ({
+                    ...rest,
                     WKID: toWellKnownID("ES2022", descriptorKeyPath),
-                    descriptorKeyPath,
-                    ...rest
+                    descriptorKeyPath
                 }))),
 
         WellKnownIntrinsicsRegExp = new RegExp(`^(?:[gs]et\\s+)?(?:${
             TopLevelWellKnownIntrinsicObjects
                 .flatMap(({ IntrinsicName }) =>
                     [IntrinsicName, deintrinsify(IntrinsicName)])
-                .join("|")})(\\.[^\\s]+|\\s*\\[[^\\]]+\\])*(\\s*\\(|$)`)) =>
+                .join("|")})(\\.[^\\s]+|\\s*\\[[^\\]]+\\])*(\\s*\\(|$)`),
+
+        PropertyReferenceToExistingIntrinsicRegExp =
+            /property is %[^%]+%, defined in \.$/,
+
+        ConstructorReferenceToExistingIntrinsicRegExp =
+            /^The initial value of `([A-Za-z]+).prototype.constructor` is %\1%.$/
+
+        ) =>
 
         TopLevelWellKnownIntrinsicObjects
             .flatMap(WKIO => XPath.queryAll
                 `${toSectionIDXPathQuery(WKIO.IntrinsicName)}` (document))
             .filter(clause => !ExcludedTypes.has(clause.getAttribute("type")))
-            .map(clause => XPath.querySingle `./h1` (clause).textContent)
-            .filter(contents => WellKnownIntrinsicsRegExp.test(contents) ? true : console.log("NO :", contents))
-            .map(signature => (console.log("YES: ", signature), signature))
-            .map(signature => parseSignature(scope, signature))
+            .map(clause => ["./h1", "./p"]
+                .map(query => XPath.querySingle `${query}` (clause))
+                .map(result => result ? result.textContent : ""))
+            .filter(([name, description]) =>
+                WellKnownIntrinsicsRegExp.test(name) &&
+                !PropertyReferenceToExistingIntrinsicRegExp.test(description) &&
+                !ConstructorReferenceToExistingIntrinsicRegExp.test(description)
+                 ? true : console.log("NO :", name))
+            .map(([signature]) => (console.log("YES: ", signature), [signature]))
+            .map(([signature]) => parseSignature(scope, signature))
             .flatMap(WKIO =>
-                WKIO.descriptorKeyPath[0].key === "%TypedArray%" ?
+                WKIO.WKID === `${scope}.%TypedArray%` ?
                     [WKIO, ...toConcreteTypedArrays(WKIO)] :
                     [WKIO])
             .filter(WKIO =>

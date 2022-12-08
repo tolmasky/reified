@@ -3,7 +3,7 @@ const given = f => f();
 const escape = require("@reified/string/escape");
 
 
-const SpecialCharactersRegExp = /^[%@]|^\[\[|(\.)/;
+const SpecialCharactersRegExp = /^@|^\[\[|(\.)/;
 const OIFQuote = string => given((
     escaped = escape(string)) =>
         escaped !== string || SpecialCharactersRegExp.test(escaped) ?
