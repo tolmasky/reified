@@ -1,7 +1,5 @@
 const given = f => f();
 
-const WellKnownIntrinsicObjects = require("./es2022/well-known-intrinsic-objects");
-
 const hasSymbols = !!global.Symbol;
 
 const ArrayPrototype = Array.prototype;
@@ -44,7 +42,7 @@ const TypeCheckedGet = (type, { key, field }, object) => given((
         field === "[[Set]]" ?
             HasOwnProperty(descriptor, "set") && descriptor.set :
             descriptor.value) =>
-        (!type || typeof value === type || typeof value === "symbol") && value);
+        value);
 
 const evalSafe = string => { try { return eval(string); } catch (e) { return false } };
 
@@ -103,12 +101,23 @@ function GetIntrinsicObject(type, keyPath)
                 false,
         global);
 }
+
+const WellKnownIntrinsicValues = require("./es2022/well-known-intrinsic-objects");
+const WellKnownIntrinsicObjectsAndSymbols = Call(
+    ArrayPrototypeFilter,
+    WellKnownIntrinsicValues,
+    WKIV =>
+        WKIV.type === "symbol" ||
+        WKIV.type === "object" ||
+        WKIV.type === "function");
+
+
 console.log(TopLevelWellKnownObjects);
 const AvailableIntrinsicObjects = new Map(Call(
     ArrayPrototypeFilter,
     Call(
         ArrayPrototypeMap,
-        WellKnownIntrinsicObjects,
+        WellKnownIntrinsicObjectsAndSymbols,
         ({ type, descriptorKeyPath, WKID }) =>
             [GetIntrinsicObject(type, descriptorKeyPath), WKID]),
     ([object]) => !!object));
@@ -116,13 +125,13 @@ const AvailableIntrinsicObjects = new Map(Call(
 module.exports = object => Call(MapPrototypeGet, AvailableIntrinsicObjects, object);
 
 console.log(AvailableIntrinsicObjects);
-console.log(AvailableIntrinsicObjects.size + " vs. " + WellKnownIntrinsicObjects.length);
+console.log(AvailableIntrinsicObjects.size + " vs. " + WellKnownIntrinsicObjectsAndSymbols.length);
 const every = new Set(AvailableIntrinsicObjects.values());
 console.log("COULDNT FIND:",
-WellKnownIntrinsicObjects
+WellKnownIntrinsicObjectsAndSymbols
     .map(x => x.WKID)
-    .filter(WKID => !every.has(WKID))
-    .filter(WKID => !WKID.endsWith(`"@@toStringTag"`) && !WKID.endsWith(".constructor")));
+    .filter(WKID => !every.has(WKID)))
+//    .filter(WKID => !WKID.endsWith(`"@@toStringTag"`) && !WKID.endsWith(".constructor")));
 
 console.log("hey -> ", GetIntrinsicObject(false, [
       {

@@ -38,18 +38,6 @@ const fromTable = (id, from) =>
         .map(([IntrinsicName, GlobalName, documentation]) =>
             ({ IntrinsicName, GlobalName, documentation }));
 
-const IsNumberValueRegExp =
-    /^The (Number )?value .+ is ((?:(\*NaN\*|\*[^\s]+\*𝔽))|(?:approximately [\d\.]+(\s×\s\d+(-\d+)?)?))\.$/;
-
-const StringValueDataPropertyRegExp =
-    /^The initial value of (?:(?:`[^\s]+` is ((?:the empty String)|(?:\*"[^"]+"\*)))|(?:the [^\s]+ property is (?:the String value (?:\*"[^"]+"\*))))\.$/;
-const isStringValueDataProperty = (signature, description) =>
-    StringValueDataPropertyRegExp.test(description);
-/*given((
-    [, match] = description.match(StringValueDataPropertyRegExp) || []) =>
-        signature === match);
-*/
-
 // constructor
 // non-objects like "length"?
 // ToProperty(V) -> P
@@ -88,7 +76,7 @@ module.exports = fromSpecification `well-known-intrinsic-objects`
             /property is %[^%]+%(, defined in )?\.$/,
 
         ConstructorReferenceToExistingIntrinsicRegExp =
-            /^The initial value of `([A-Za-z]+).prototype.constructor` is %\1%.$/
+            /^The initial value of (`([A-Za-z]+)|%([A-Za-z]+)%`).prototype.constructor` is %[^%]+%.?$/
 
         ) =>
 
@@ -102,12 +90,10 @@ module.exports = fromSpecification `well-known-intrinsic-objects`
             .filter(([signature, description]) =>
                 WellKnownIntrinsicsRegExp.test(signature) &&
                 !PropertyReferenceToExistingIntrinsicRegExp.test(description) &&
-                !ConstructorReferenceToExistingIntrinsicRegExp.test(description) &&
-                !IsNumberValueRegExp.test(description) &&
-                !isStringValueDataProperty(signature, description)
+                !ConstructorReferenceToExistingIntrinsicRegExp.test(description)
                  ? true : console.log("NO :", signature))
-            .map(([signature]) => (console.log("YES: ", signature), [signature]))
-            .map(([signature]) => parseSignature(scope, signature))
+//            .map(([signature]) => (console.log("YES: ", signature), [signature]))
+            .map(([signature, description]) => parseSignature(scope, signature, description))
             .flatMap(WKIO =>
                 WKIO.WKID === `${scope}.%TypedArray%` ?
                     [WKIO, ...toConcreteTypedArrays(WKIO)] :

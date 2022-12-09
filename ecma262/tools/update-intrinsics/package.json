@@ -17,6 +17,7 @@
     "@esfx/disposable": "^1.0.0",
     "ecmarkup": "^16.0.0",
     "ftagged": "^1.0.0-alpha.6",
-    "jsdom": "^20.0.3"
+    "jsdom": "^20.0.3",
+    "templated-regular-expression": "^1.0.0-alpha.6"
   }
 }

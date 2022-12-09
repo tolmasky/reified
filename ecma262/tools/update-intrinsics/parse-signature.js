@@ -5,6 +5,7 @@ const BindingRestElement = require("../../grammar/binding-rest-element");
 const BindingSequenceElement = require("../../grammar/binding-sequence-element");
 
 const toWellKnownID = require("../../to-well-known-id");
+const toType = require("./to-type");
 
 const { parseH1 } = require("ecmarkup/lib/header-parser");
 
@@ -23,13 +24,6 @@ const toClassifier = (pairs, fallback) => given((
     signature =>
         withFallback.find(([type, regexp]) =>
             !regexp || regexp.test(signature))[0]);
-
-const toType = toClassifier
-([
-    ["function", GetterRegExp],
-    ["function", SetterRegExp],
-    ["function", ParametersRegExp]
-], "object");
 
 const toDescriptorKeyPath = given((
     toDescriptorField = toClassifier
@@ -97,8 +91,8 @@ const toFunctionAttributes = given((
     }
 })));
 
-const parseSignature = (scope, signature) => given((
-    type = toType(signature),
+const parseSignature = (scope, signature, description) => given((
+    type = toType(signature, description),
     [field, descriptorKeyPath] = toDescriptorKeyPath(signature)) =>
 ({
     WKID: toWellKnownID(scope, descriptorKeyPath),
