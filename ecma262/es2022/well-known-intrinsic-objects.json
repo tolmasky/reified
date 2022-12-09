@@ -5038,24 +5038,6 @@
     ]
   },
   {
-    "WKID": "ES2022.%ForInIteratorPrototype%.next",
-    "type": "function",
-    "descriptorKeyPath": [
-      {
-        "key": "%ForInIteratorPrototype%",
-        "field": "[[Value]]"
-      },
-      {
-        "key": "next",
-        "field": "[[Value]]"
-      }
-    ],
-    "[[FormalParameters]]": {
-      "required": [],
-      "optional": []
-    }
-  },
-  {
     "WKID": "ES2022.Function",
     "type": "function",
     "descriptorKeyPath": [

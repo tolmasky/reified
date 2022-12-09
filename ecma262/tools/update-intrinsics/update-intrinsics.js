@@ -38,6 +38,8 @@ const fromTable = (id, from) =>
         .map(([IntrinsicName, GlobalName, documentation]) =>
             ({ IntrinsicName, GlobalName, documentation }));
 
+const NotDirectlyAccessibleIntrinsicObjects = new Set(["ForInIteratorPrototype"]);
+
 // constructor
 // non-objects like "length"?
 // ToProperty(V) -> P
@@ -68,6 +70,8 @@ module.exports = fromSpecification `well-known-intrinsic-objects`
 
         WellKnownIntrinsicsRegExp = new RegExp(`^(?:[gs]et\\s+)?(?:${
             TopLevelWellKnownIntrinsicObjects
+                .filter(({ IntrinsicName }) =>
+                    !NotDirectlyAccessibleIntrinsicObjects.has(deintrinsify(IntrinsicName)))
                 .flatMap(({ IntrinsicName }) =>
                     [IntrinsicName, deintrinsify(IntrinsicName)])
                 .join("|")})(\\.[^\\s]+|\\s*\\[[^\\]]+\\])*(\\s*\\(|$)`),
