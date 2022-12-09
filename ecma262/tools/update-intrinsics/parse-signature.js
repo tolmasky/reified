@@ -43,7 +43,9 @@ const toDescriptorKeyPath = given((
             lastDescriptorField,
             components.map((key, index) =>
             ({
-                key,
+                key: key.startsWith("@@") ?
+                    { WKID: `ES2022.Symbol.${key.substr(2)}` } :
+                    key,
                 field: index === last ?
                     lastDescriptorField :
                     "[[Value]]"

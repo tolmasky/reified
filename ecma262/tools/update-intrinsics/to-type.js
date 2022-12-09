@@ -14,7 +14,7 @@ const
     IsNumberValueRegExp: /${ThisIsADataPropertyRegExp}|${TheValueIsRegExp}/,
 
     IsSymbolValueRegExp:
-        /The initial value of `[A-Za-z\.]+` is the well-known symbol @@[a-z]+\.$/,
+        /The initial value of `[A-Za-z\.]+` is the well[\s-]?known symbol @@[A-Za-z]+/,
 
     TheEmptyString: /the empty String/,
     TheStringValue: /the String value ${StringValue}/,

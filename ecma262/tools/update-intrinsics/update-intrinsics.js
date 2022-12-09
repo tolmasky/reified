@@ -91,7 +91,7 @@ module.exports = fromSpecification `well-known-intrinsic-objects`
                 WellKnownIntrinsicsRegExp.test(signature) &&
                 !PropertyReferenceToExistingIntrinsicRegExp.test(description) &&
                 !ConstructorReferenceToExistingIntrinsicRegExp.test(description)
-                 ? true : console.log("NO :", signature))
+                 ? (console.log("YES: ", signature), true) : console.log("NO :", signature))
 //            .map(([signature]) => (console.log("YES: ", signature), [signature]))
             .map(([signature, description]) => parseSignature(scope, signature, description))
             .flatMap(WKIO =>

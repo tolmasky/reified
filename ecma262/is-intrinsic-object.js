@@ -7,12 +7,17 @@ const ArrayPrototypeFilter = ArrayPrototype.filter;
 const ArrayPrototypeMap = ArrayPrototype.map;
 const ArrayPrototypeReduce = ArrayPrototype.reduce;
 
+const map = (array, f) => Call(ArrayPrototypeMap, array, f);
+const filter = (array, f) => Call(ArrayPrototypeFilter, array, f);
+
 const MapPrototype = Map.prototype;
 const MapPrototypeGet = MapPrototype.get;
 
 const ObjectHasOwnProperty = Object.hasOwnProperty;
+const ObjectKeys = Object.keys;
 const ObjectGetOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
 const ObjectGetPrototypeOf = Object.getPrototypeOf;
+const ObjectFromEntries = Object.fromEntries;
 
 const HasOwnProperty = (O, P) => Call(ObjectHasOwnProperty, O, P);
 
@@ -27,11 +32,13 @@ const FunctionPrototypeCall = FunctionPrototype.call;
 
 const Call = FunctionPrototypeCall.bind(FunctionPrototypeCall);
 
-const ToPropertyKey = given((
-    IsWellKnownSymbolRegExp = /^@@/) =>
-    key => Call(RegExpPrototypeTest, IsWellKnownSymbolRegExp, key) ?
-        hasSymbols && Symbol[Call(StringPrototypeReplace, key, IsWellKnownSymbolRegExp, "")] :
-        key);
+
+
+const ToPropertyKey = key =>
+    typeof key === "string" ?
+        key :
+        WellKnownSymbols[key.WKID];
+
 
 const TypeCheckedGet = (type, { key, field }, object) => given((
     descriptor = ObjectGetOwnPropertyDescriptor(object, ToPropertyKey(key)),
@@ -86,13 +93,12 @@ const TopLevelWellKnownObjects =
 
 const get = ({ key }) => TopLevelWellKnownObjects[key] || global[key];
 
-function GetIntrinsicObject(type, keyPath)
+function toWellKnownEntry({ type, descriptorKeyPath, WKID })
 {
-    const last = keyPath.length - 1;
-
-    return Call(
+    const last = descriptorKeyPath.length - 1;
+    const value = Call(
         ArrayPrototypeReduce,
-        keyPath,
+        descriptorKeyPath,
         (object, DKP, index) =>
             index === 0 ?
                 get(DKP) :
@@ -100,47 +106,63 @@ function GetIntrinsicObject(type, keyPath)
                 TypeCheckedGet(index === last && type, DKP, object) ||
                 false,
         global);
+
+    return [WKID, value];
 }
 
+const toIDstoValues = WKVDs =>
+    ObjectFromEntries(filter(map(WKVDs, toWellKnownEntry), entry => !!entry));
+
 const WellKnownIntrinsicValues = require("./es2022/well-known-intrinsic-objects");
-const WellKnownIntrinsicObjectsAndSymbols = Call(
-    ArrayPrototypeFilter,
+const WellKnownSymbols = toIDstoValues(filter(
     WellKnownIntrinsicValues,
     WKIV =>
-        WKIV.type === "symbol" ||
-        WKIV.type === "object" ||
-        WKIV.type === "function");
+        WKIV.descriptorKeyPath[0].key === "Symbol" &&
+        WKIV.type === "symbol"));
+console.log(WellKnownSymbols, filter(
+    WellKnownIntrinsicValues,
+    WKIV =>
+        WKIV.descriptorKeyPath[0].key === "Symbol" &&
+        WKIV.type === "symbol"));
+const WellKnownObjectsAndSymbols =
+{
+    ...WellKnownSymbols,
+    ...toIDstoValues(filter(
+        WellKnownIntrinsicValues,
+        WKIV => WKIV.type === "object" || WKIV.type === "function"))
+};
 
+const WellKnownIDs = new Map(map(
+    ObjectKeys(WellKnownObjectsAndSymbols),
+    key => [WellKnownObjectsAndSymbols[key], key]));
 
 console.log(TopLevelWellKnownObjects);
-const AvailableIntrinsicObjects = new Map(Call(
-    ArrayPrototypeFilter,
-    Call(
-        ArrayPrototypeMap,
-        WellKnownIntrinsicObjectsAndSymbols,
-        ({ type, descriptorKeyPath, WKID }) =>
-            [GetIntrinsicObject(type, descriptorKeyPath), WKID]),
-    ([object]) => !!object));
 
-module.exports = object => Call(MapPrototypeGet, AvailableIntrinsicObjects, object);
 
-console.log(AvailableIntrinsicObjects);
-console.log(AvailableIntrinsicObjects.size + " vs. " + WellKnownIntrinsicObjectsAndSymbols.length);
-const every = new Set(AvailableIntrinsicObjects.values());
+module.exports = object => Call(MapPrototypeGet, WellKnownIDs, object);
+
+const comparison = filter(
+        WellKnownIntrinsicValues,
+        WKIV => WKIV.type === "object" || WKIV.type === "function" || WKIV.type === "symbol");
+
+
+console.log(WellKnownIDs);
+console.log(WellKnownIDs.size + " vs. " + comparison.length);
+const every = new Set(WellKnownIDs.values());
 console.log("COULDNT FIND:",
-WellKnownIntrinsicObjectsAndSymbols
+comparison
     .map(x => x.WKID)
     .filter(WKID => !every.has(WKID)))
 //    .filter(WKID => !WKID.endsWith(`"@@toStringTag"`) && !WKID.endsWith(".constructor")));
 
-console.log("hey -> ", GetIntrinsicObject(false, [
+console.log("hey -> ", toWellKnownEntry({ type: false, descriptorKeyPath: [
       {
         "key": "%TypedArray%",
         "field": "[[Value]]"
       }
-    ]));
+    ]}));
 
-console.log("hey -> ", GetIntrinsicObject(false, [
+console.log("hey -> ", toWellKnownEntry({type: false, descriptorKeyPath: [
       {
         "key": "%TypedArray%",
         "field": "[[Value]]"
@@ -149,9 +171,9 @@ console.log("hey -> ", GetIntrinsicObject(false, [
         "key": "prototype",
         "field": "[[Value]]"
       }
-    ]));
+    ]}));
 
-console.log("hey -> ", GetIntrinsicObject("function", [
+console.log("hey -> ", toWellKnownEntry({ type: "function", descriptorKeyPath: [
       {
         "key": "Array",
         "field": "[[Value]]"
@@ -164,4 +186,4 @@ console.log("hey -> ", GetIntrinsicObject("function", [
         "key": "toString",
         "field": "[[Value]]"
       }
-    ]));
+    ]}));

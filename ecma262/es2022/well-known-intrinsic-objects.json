@@ -206,7 +206,7 @@
     ]
   },
   {
-    "WKID": "ES2022.Array.\"@@species\".[[Get]]",
+    "WKID": "ES2022.Array.@\"ES2022.Symbol.species\".[[Get]]",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -214,7 +214,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@species",
+        "key": {
+          "WKID": "ES2022.Symbol.species"
+        },
         "field": "[[Get]]"
       }
     ]
@@ -1210,7 +1212,7 @@
     }
   },
   {
-    "WKID": "ES2022.Array.prototype.\"@@unscopables\"",
+    "WKID": "ES2022.Array.prototype.@\"ES2022.Symbol.unscopables\"",
     "type": "object",
     "descriptorKeyPath": [
       {
@@ -1222,7 +1224,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@unscopables",
+        "key": {
+          "WKID": "ES2022.Symbol.unscopables"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -1286,7 +1290,7 @@
     ]
   },
   {
-    "WKID": "ES2022.ArrayBuffer.\"@@species\".[[Get]]",
+    "WKID": "ES2022.ArrayBuffer.@\"ES2022.Symbol.species\".[[Get]]",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -1294,7 +1298,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@species",
+        "key": {
+          "WKID": "ES2022.Symbol.species"
+        },
         "field": "[[Get]]"
       }
     ]
@@ -1351,7 +1357,7 @@
     }
   },
   {
-    "WKID": "ES2022.ArrayBuffer.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.ArrayBuffer.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -1363,7 +1369,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -1427,7 +1435,7 @@
     ]
   },
   {
-    "WKID": "ES2022.ArrayBuffer.\"@@species\".[[Get]]",
+    "WKID": "ES2022.ArrayBuffer.@\"ES2022.Symbol.species\".[[Get]]",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -1435,7 +1443,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@species",
+        "key": {
+          "WKID": "ES2022.Symbol.species"
+        },
         "field": "[[Get]]"
       }
     ]
@@ -1492,7 +1502,7 @@
     }
   },
   {
-    "WKID": "ES2022.ArrayBuffer.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.ArrayBuffer.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -1504,7 +1514,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -1528,7 +1540,7 @@
     }
   },
   {
-    "WKID": "ES2022.%ArrayIteratorPrototype%.\"@@toStringTag\"",
+    "WKID": "ES2022.%ArrayIteratorPrototype%.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -1536,7 +1548,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -1667,7 +1681,7 @@
     ]
   },
   {
-    "WKID": "ES2022.AsyncFunction.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.AsyncFunction.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -1679,7 +1693,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -1756,7 +1772,7 @@
     ]
   },
   {
-    "WKID": "ES2022.AsyncGeneratorFunction.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.AsyncGeneratorFunction.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -1768,13 +1784,15 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
   },
   {
-    "WKID": "ES2022.%AsyncIteratorPrototype%.\"@@asyncIterator\"",
+    "WKID": "ES2022.%AsyncIteratorPrototype%.@\"ES2022.Symbol.asyncIterator\"",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -1782,7 +1800,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@asyncIterator",
+        "key": {
+          "WKID": "ES2022.Symbol.asyncIterator"
+        },
         "field": "[[Value]]"
       }
     ],
@@ -2205,7 +2225,7 @@
     }
   },
   {
-    "WKID": "ES2022.Atomics.\"@@toStringTag\"",
+    "WKID": "ES2022.Atomics.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -2213,7 +2233,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -2394,7 +2416,7 @@
     }
   },
   {
-    "WKID": "ES2022.BigInt.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.BigInt.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -2406,7 +2428,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -3295,7 +3319,7 @@
     }
   },
   {
-    "WKID": "ES2022.DataView.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.DataView.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -3307,7 +3331,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -4623,7 +4649,7 @@
     }
   },
   {
-    "WKID": "ES2022.Date.prototype.\"@@toPrimitive\"",
+    "WKID": "ES2022.Date.prototype.@\"ES2022.Symbol.toPrimitive\"",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -4635,7 +4661,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toPrimitive",
+        "key": {
+          "WKID": "ES2022.Symbol.toPrimitive"
+        },
         "field": "[[Value]]"
       }
     ],
@@ -4990,7 +5018,7 @@
     }
   },
   {
-    "WKID": "ES2022.FinalizationRegistry.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.FinalizationRegistry.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -5002,7 +5030,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -5208,7 +5238,7 @@
     }
   },
   {
-    "WKID": "ES2022.Function.prototype.\"@@hasInstance\"",
+    "WKID": "ES2022.Function.prototype.@\"ES2022.Symbol.hasInstance\"",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -5220,7 +5250,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@hasInstance",
+        "key": {
+          "WKID": "ES2022.Symbol.hasInstance"
+        },
         "field": "[[Value]]"
       }
     ],
@@ -5307,7 +5339,7 @@
     ]
   },
   {
-    "WKID": "ES2022.GeneratorFunction.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.GeneratorFunction.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -5319,7 +5351,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -5365,7 +5399,7 @@
     }
   },
   {
-    "WKID": "ES2022.%IteratorPrototype%.\"@@iterator\"",
+    "WKID": "ES2022.%IteratorPrototype%.@\"ES2022.Symbol.iterator\"",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -5373,7 +5407,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@iterator",
+        "key": {
+          "WKID": "ES2022.Symbol.iterator"
+        },
         "field": "[[Value]]"
       }
     ],
@@ -5458,7 +5494,7 @@
     }
   },
   {
-    "WKID": "ES2022.JSON.\"@@toStringTag\"",
+    "WKID": "ES2022.JSON.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -5466,7 +5502,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -5506,7 +5544,7 @@
     ]
   },
   {
-    "WKID": "ES2022.Map.\"@@species\".[[Get]]",
+    "WKID": "ES2022.Map.@\"ES2022.Symbol.species\".[[Get]]",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -5514,7 +5552,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@species",
+        "key": {
+          "WKID": "ES2022.Symbol.species"
+        },
         "field": "[[Get]]"
       }
     ]
@@ -5777,7 +5817,7 @@
     }
   },
   {
-    "WKID": "ES2022.Map.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.Map.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -5789,7 +5829,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -5813,7 +5855,7 @@
     }
   },
   {
-    "WKID": "ES2022.%MapIteratorPrototype%.\"@@toStringTag\"",
+    "WKID": "ES2022.%MapIteratorPrototype%.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -5821,7 +5863,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -5949,7 +5993,7 @@
     ]
   },
   {
-    "WKID": "ES2022.Math.\"@@toStringTag\"",
+    "WKID": "ES2022.Math.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -5957,7 +6001,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -8386,7 +8432,7 @@
     }
   },
   {
-    "WKID": "ES2022.Promise.\"@@species\".[[Get]]",
+    "WKID": "ES2022.Promise.@\"ES2022.Symbol.species\".[[Get]]",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -8394,7 +8440,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@species",
+        "key": {
+          "WKID": "ES2022.Symbol.species"
+        },
         "field": "[[Get]]"
       }
     ]
@@ -8489,7 +8537,7 @@
     }
   },
   {
-    "WKID": "ES2022.Promise.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.Promise.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -8501,7 +8549,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -8961,7 +9011,7 @@
     }
   },
   {
-    "WKID": "ES2022.Reflect.\"@@toStringTag\"",
+    "WKID": "ES2022.Reflect.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -8969,7 +9019,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -9039,7 +9091,7 @@
     ]
   },
   {
-    "WKID": "ES2022.RegExp.\"@@species\".[[Get]]",
+    "WKID": "ES2022.RegExp.@\"ES2022.Symbol.species\".[[Get]]",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -9047,7 +9099,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@species",
+        "key": {
+          "WKID": "ES2022.Symbol.species"
+        },
         "field": "[[Get]]"
       }
     ]
@@ -9171,7 +9225,7 @@
     ]
   },
   {
-    "WKID": "ES2022.RegExp.prototype.\"@@match\"",
+    "WKID": "ES2022.RegExp.prototype.@\"ES2022.Symbol.match\"",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -9183,7 +9237,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@match",
+        "key": {
+          "WKID": "ES2022.Symbol.match"
+        },
         "field": "[[Value]]"
       }
     ],
@@ -9199,7 +9255,7 @@
     }
   },
   {
-    "WKID": "ES2022.RegExp.prototype.\"@@matchAll\"",
+    "WKID": "ES2022.RegExp.prototype.@\"ES2022.Symbol.matchAll\"",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -9211,7 +9267,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@matchAll",
+        "key": {
+          "WKID": "ES2022.Symbol.matchAll"
+        },
         "field": "[[Value]]"
       }
     ],
@@ -9245,7 +9303,7 @@
     ]
   },
   {
-    "WKID": "ES2022.RegExp.prototype.\"@@replace\"",
+    "WKID": "ES2022.RegExp.prototype.@\"ES2022.Symbol.replace\"",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -9257,7 +9315,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@replace",
+        "key": {
+          "WKID": "ES2022.Symbol.replace"
+        },
         "field": "[[Value]]"
       }
     ],
@@ -9278,7 +9338,7 @@
     }
   },
   {
-    "WKID": "ES2022.RegExp.prototype.\"@@search\"",
+    "WKID": "ES2022.RegExp.prototype.@\"ES2022.Symbol.search\"",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -9290,7 +9350,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@search",
+        "key": {
+          "WKID": "ES2022.Symbol.search"
+        },
         "field": "[[Value]]"
       }
     ],
@@ -9324,7 +9386,7 @@
     ]
   },
   {
-    "WKID": "ES2022.RegExp.prototype.\"@@split\"",
+    "WKID": "ES2022.RegExp.prototype.@\"ES2022.Symbol.split\"",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -9336,7 +9398,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@split",
+        "key": {
+          "WKID": "ES2022.Symbol.split"
+        },
         "field": "[[Value]]"
       }
     ],
@@ -9461,7 +9525,7 @@
     }
   },
   {
-    "WKID": "ES2022.%RegExpStringIteratorPrototype%.\"@@toStringTag\"",
+    "WKID": "ES2022.%RegExpStringIteratorPrototype%.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -9469,7 +9533,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -9527,7 +9593,7 @@
     ]
   },
   {
-    "WKID": "ES2022.Set.\"@@species\".[[Get]]",
+    "WKID": "ES2022.Set.@\"ES2022.Symbol.species\".[[Get]]",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -9535,7 +9601,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@species",
+        "key": {
+          "WKID": "ES2022.Symbol.species"
+        },
         "field": "[[Get]]"
       }
     ]
@@ -9743,7 +9811,7 @@
     }
   },
   {
-    "WKID": "ES2022.Set.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.Set.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -9755,7 +9823,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -9779,7 +9849,7 @@
     }
   },
   {
-    "WKID": "ES2022.%SetIteratorPrototype%.\"@@toStringTag\"",
+    "WKID": "ES2022.%SetIteratorPrototype%.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -9787,7 +9857,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -9827,7 +9899,7 @@
     ]
   },
   {
-    "WKID": "ES2022.SharedArrayBuffer.\"@@species\".[[Get]]",
+    "WKID": "ES2022.SharedArrayBuffer.@\"ES2022.Symbol.species\".[[Get]]",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -9835,7 +9907,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@species",
+        "key": {
+          "WKID": "ES2022.Symbol.species"
+        },
         "field": "[[Get]]"
       }
     ]
@@ -9892,7 +9966,7 @@
     }
   },
   {
-    "WKID": "ES2022.SharedArrayBuffer.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.SharedArrayBuffer.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -9904,7 +9978,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -10979,7 +11055,7 @@
     }
   },
   {
-    "WKID": "ES2022.String.prototype.\"@@iterator\"",
+    "WKID": "ES2022.String.prototype.@\"ES2022.Symbol.iterator\"",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -10991,7 +11067,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@iterator",
+        "key": {
+          "WKID": "ES2022.Symbol.iterator"
+        },
         "field": "[[Value]]"
       }
     ],
@@ -11019,7 +11097,7 @@
     }
   },
   {
-    "WKID": "ES2022.%StringIteratorPrototype%.\"@@toStringTag\"",
+    "WKID": "ES2022.%StringIteratorPrototype%.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -11027,7 +11105,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -11054,7 +11134,7 @@
   },
   {
     "WKID": "ES2022.Symbol.asyncIterator",
-    "type": "object",
+    "type": "symbol",
     "descriptorKeyPath": [
       {
         "key": "Symbol",
@@ -11092,7 +11172,7 @@
   },
   {
     "WKID": "ES2022.Symbol.hasInstance",
-    "type": "object",
+    "type": "symbol",
     "descriptorKeyPath": [
       {
         "key": "Symbol",
@@ -11106,7 +11186,7 @@
   },
   {
     "WKID": "ES2022.Symbol.isConcatSpreadable",
-    "type": "object",
+    "type": "symbol",
     "descriptorKeyPath": [
       {
         "key": "Symbol",
@@ -11120,7 +11200,7 @@
   },
   {
     "WKID": "ES2022.Symbol.iterator",
-    "type": "object",
+    "type": "symbol",
     "descriptorKeyPath": [
       {
         "key": "Symbol",
@@ -11158,7 +11238,7 @@
   },
   {
     "WKID": "ES2022.Symbol.match",
-    "type": "object",
+    "type": "symbol",
     "descriptorKeyPath": [
       {
         "key": "Symbol",
@@ -11172,7 +11252,7 @@
   },
   {
     "WKID": "ES2022.Symbol.matchAll",
-    "type": "object",
+    "type": "symbol",
     "descriptorKeyPath": [
       {
         "key": "Symbol",
@@ -11200,7 +11280,7 @@
   },
   {
     "WKID": "ES2022.Symbol.replace",
-    "type": "object",
+    "type": "symbol",
     "descriptorKeyPath": [
       {
         "key": "Symbol",
@@ -11214,7 +11294,7 @@
   },
   {
     "WKID": "ES2022.Symbol.search",
-    "type": "object",
+    "type": "symbol",
     "descriptorKeyPath": [
       {
         "key": "Symbol",
@@ -11228,7 +11308,7 @@
   },
   {
     "WKID": "ES2022.Symbol.species",
-    "type": "object",
+    "type": "symbol",
     "descriptorKeyPath": [
       {
         "key": "Symbol",
@@ -11242,7 +11322,7 @@
   },
   {
     "WKID": "ES2022.Symbol.split",
-    "type": "object",
+    "type": "symbol",
     "descriptorKeyPath": [
       {
         "key": "Symbol",
@@ -11256,7 +11336,7 @@
   },
   {
     "WKID": "ES2022.Symbol.toPrimitive",
-    "type": "object",
+    "type": "symbol",
     "descriptorKeyPath": [
       {
         "key": "Symbol",
@@ -11270,7 +11350,7 @@
   },
   {
     "WKID": "ES2022.Symbol.toStringTag",
-    "type": "object",
+    "type": "symbol",
     "descriptorKeyPath": [
       {
         "key": "Symbol",
@@ -11284,7 +11364,7 @@
   },
   {
     "WKID": "ES2022.Symbol.unscopables",
-    "type": "object",
+    "type": "symbol",
     "descriptorKeyPath": [
       {
         "key": "Symbol",
@@ -11359,7 +11439,7 @@
     }
   },
   {
-    "WKID": "ES2022.Symbol.prototype.\"@@toPrimitive\"",
+    "WKID": "ES2022.Symbol.prototype.@\"ES2022.Symbol.toPrimitive\"",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -11371,7 +11451,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toPrimitive",
+        "key": {
+          "WKID": "ES2022.Symbol.toPrimitive"
+        },
         "field": "[[Value]]"
       }
     ],
@@ -11387,7 +11469,7 @@
     }
   },
   {
-    "WKID": "ES2022.Symbol.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.Symbol.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -11399,7 +11481,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -11664,7 +11748,7 @@
     ]
   },
   {
-    "WKID": "ES2022.%TypedArray%.\"@@species\".[[Get]]",
+    "WKID": "ES2022.%TypedArray%.@\"ES2022.Symbol.species\".[[Get]]",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -11672,7 +11756,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@species",
+        "key": {
+          "WKID": "ES2022.Symbol.species"
+        },
         "field": "[[Get]]"
       }
     ]
@@ -12541,7 +12627,7 @@
     }
   },
   {
-    "WKID": "ES2022.%TypedArray%.prototype.\"@@toStringTag\".[[Get]]",
+    "WKID": "ES2022.%TypedArray%.prototype.@\"ES2022.Symbol.toStringTag\".[[Get]]",
     "type": "function",
     "descriptorKeyPath": [
       {
@@ -12553,7 +12639,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Get]]"
       }
     ]
@@ -12710,7 +12798,7 @@
     }
   },
   {
-    "WKID": "ES2022.WeakMap.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.WeakMap.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -12722,7 +12810,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -12784,7 +12874,7 @@
     }
   },
   {
-    "WKID": "ES2022.WeakRef.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.WeakRef.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -12796,7 +12886,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
@@ -12920,7 +13012,7 @@
     }
   },
   {
-    "WKID": "ES2022.WeakSet.prototype.\"@@toStringTag\"",
+    "WKID": "ES2022.WeakSet.prototype.@\"ES2022.Symbol.toStringTag\"",
     "type": "string",
     "descriptorKeyPath": [
       {
@@ -12932,7 +13024,9 @@
         "field": "[[Value]]"
       },
       {
-        "key": "@@toStringTag",
+        "key": {
+          "WKID": "ES2022.Symbol.toStringTag"
+        },
         "field": "[[Value]]"
       }
     ]
