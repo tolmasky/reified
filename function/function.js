@@ -5,7 +5,10 @@ const
 {
     assign: ObjectAssign,
     defineProperty: ObjectDefineProperty,
-    hasOwnProperty: ObjectHasOwnProperty
+    hasOwnProperty: ObjectHasOwnProperty,
+    setPrototypeOf: ObjectSetPrototypeOf,
+    getOwnPropertyDescriptors: ObjectGetOwnPropertyDescriptors,
+    defineProperties: ObjectDefineProperties
 } = Object;
 const { toString: FunctionPrototypeToString } = Function.prototype;
 const hasOwnProperty = (value, key) => ObjectHasOwnProperty.call(value, key);
@@ -29,9 +32,11 @@ const isTaggedCall = args =>
     ArrayIsArray(args[0]) &&
     hasOwnProperty(args[0], "raw");
 
-const ƒ = (...tag) => (f, ...attributes) => ObjectAssign(
-    ObjectDefineProperty(f, "name", { value: toResolvedString(...tag) }),
-    ...attributes);
+const ƒ = (...tag) => (f, ...rest) => ObjectDefineProperties(
+    f,
+    rest.reduce((f, item) =>
+        ObjectGetOwnPropertyDescriptors(typeof item === "function" ? item(f) : item),
+        ObjectDefineProperty(f, "name", { value: toResolvedString(...tag) })));
 
 module.exports = ƒ;
 
