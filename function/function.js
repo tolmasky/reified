@@ -1,14 +1,16 @@
 const given = f => f();
+
 const { isArray: ArrayIsArray } = Array;
 const
 {
+    assign: ObjectAssign,
     defineProperty: ObjectDefineProperty,
     hasOwnProperty: ObjectHasOwnProperty
 } = Object;
 const { toString: FunctionPrototypeToString } = Function.prototype;
 const hasOwnProperty = (value, key) => ObjectHasOwnProperty.call(value, key);
 
-const fail = message => { throw Error(message); };
+const fail = require("@reified/fail");
 
 
 const NormalFunctionRegExp =
@@ -27,8 +29,11 @@ const isTaggedCall = args =>
     ArrayIsArray(args[0]) &&
     hasOwnProperty(args[0], "raw");
 
-const ƒ = (...tag) => f =>
-    ObjectDefineProperty(f, "name", { value: toResolvedString(...tag) });
+const ƒ = (...tag) => (f, ...attributes) => ObjectAssign(
+    ObjectDefineProperty(f, "name", { value: toResolvedString(...tag) }),
+    ...attributes);
+
+module.exports = ƒ;
 
 module.exports.ƒ = ƒ;
 

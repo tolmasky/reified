@@ -1,6 +1,6 @@
 {
-  "name": "@reified/f",
-  "version": "1.0.0-alpha.6",
+  "name": "@reified/fail",
+  "version": "1.0.0-alpha.1",
   "description": "",
   "main": "ftagged.js",
   "repository": {
