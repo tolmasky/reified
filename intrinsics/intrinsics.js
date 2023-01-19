@@ -1,3 +1,7 @@
+const I = { };
+
+I.I = I;
+
 I.Function = global.Function;
 I["Function.prototype.toString"] = I.Function.prototype.toString;
 
