@@ -80,7 +80,7 @@ I["Object.keys"] = I.Object.keys;
 I["Object.getOwnPropertyDescriptor"] = I.Object.getOwnPropertyDescriptor;
 I["Object.getPrototypeOf"] = I.Object.getPrototypeOf;
 
-I["RegExp"] = I.RegExp;
+I["RegExp"] = global.RegExp;
 I["RegExp.prototype.exec"] = I.RegExp.prototype.exec;
 
 I["String"] = global.String;
