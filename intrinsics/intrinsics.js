@@ -89,6 +89,12 @@ I["String.prototype.match"] = I.String.prototype.match;
 I["String.prototype.indexOf"] = I.String.prototype.indexOf;
 I["String.prototype.slice"] = I.String.prototype.slice;
 I["String.prototype.split"] = I.String.prototype.split;
+I["String.prototype.startsWith"] =
+    I.String.prototype.startsWith ||
+    function startsWith(prefix)
+    {
+        return Call(I["String.prototype.indexOf"], this, prefix) === 0;
+    };
 I["String.prototype.substr"] = I.String.prototype.substr;
 I["String.prototype.substring"] = I.String.prototype.substring;
 
