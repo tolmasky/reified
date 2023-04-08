@@ -2,7 +2,11 @@
   "name": "@reified/intrinsics",
   "version": "1.0.0-alpha.5",
   "description": "",
-  "main": "intrinsics.js",
+  "main": "reified-intrinsics.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tolmasky/reified"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
