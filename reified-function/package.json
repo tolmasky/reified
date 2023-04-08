@@ -2,7 +2,7 @@
   "name": "@reified/function",
   "version": "1.0.0-alpha.1",
   "description": "",
-  "main": "function.js",
+  "main": "reified-function.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/tolmasky/reified"
