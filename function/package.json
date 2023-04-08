@@ -16,5 +16,8 @@
     "email": "tolmasky@gmail.com",
     "url": "https://tolmasky.com"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@reified/fail": "^1.0.0-alpha.1"
+  }
 }
