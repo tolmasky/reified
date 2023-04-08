@@ -33,3 +33,12 @@ exports.kindsof = value =>
     I.Array.isArray(value) ? ["array", "object"] :
     typeof value === "function" ? ["function", "object"] :
     [typeof value];
+
+// FIXME: Use I.
+const GetOwnKeys = Reflect.ownKeys;
+
+exports.GetOwnKeys = GetOwnKeys;
+
+const GetOwnEntries = object => GetOwnKeys(object).map(key => [key, object[key]]);
+
+exports.GetOwnEntries = GetOwnEntries;
