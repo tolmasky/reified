@@ -3,6 +3,8 @@ const given = f => f();
 const fail = require("@reified/fail");
 const I = require("@reified/intrinsics");
 
+// Would be nice if there was an easy way to make unemurable properties...
+// Or maybe just have some "known" symbols like "unenumerable-name"?
 const α = (target, ...sources) => given((
     descriptors = sources
         .filter(source => !!source)

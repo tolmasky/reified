@@ -18,6 +18,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@reified/fail": "^1.0.0-alpha.1"
+    "@reified/fail": "^1.0.0-alpha.1",
+    "@reified/intrinsics": "^1.0.0-alpha.5",
+    "@reified/object": "^1.0.0-alpha.1"
   }
 }
