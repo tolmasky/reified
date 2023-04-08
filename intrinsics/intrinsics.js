@@ -11,6 +11,11 @@ I.Call = (I.Function.prototype.call).bind(I.Function.prototype.call);
 const Apply = (I.Function.prototype.call).bind(I.Function.prototype.apply);
 const Call = (I.Function.prototype.call).bind(I.Function.prototype.call);
 
+// This is a stopgap for now, but should we keep it?
+// From:
+// I.on = ƒ.tagged ((identifier, ...args) => I.Call(I[identifier], ...args));
+I.on = ([identifier]) => (...args) => Call(I[identifier], ...args);
+
 I.Array = global.Array;
 I["Array.from"] = I.Array.from;
 I["Array.isArray"] = I.Array.isArray;
