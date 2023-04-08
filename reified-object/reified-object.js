@@ -26,4 +26,10 @@ exports.alpha = ø;
 const construct =
     (C, ...sources) => α(I.Object.create(C.prototype), ...sources);
 
-exports.construct;
+exports.construct = construct;
+
+exports.kindsof = value =>
+    value === null ? ["null"] :
+    I.Array.isArray(value) ? ["array", "object"] :
+    typeof value === "function" ? ["function", "object"] :
+    [typeof value];
