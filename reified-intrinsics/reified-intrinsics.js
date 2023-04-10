@@ -22,6 +22,7 @@ I["Array.isArray"] = I.Array.isArray;
 I["Array.prototype.concat"] = I.Array.prototype.concat;
 I["Array.prototype.filter"] = I.Array.prototype.filter;
 I["Array.prototype.forEach"] = I.Array.prototype.forEach;
+I["Array.prototype.join"] = I.Array.prototype.join;
 I["Array.prototype.map"] = I.Array.prototype.map;
 I["Array.prototype.push"] = I.Array.prototype.push;
 I["Array.prototype.reduce"] = I.Array.prototype.reduce;
@@ -84,6 +85,7 @@ I["Object.keys"] = I.Object.keys;
 
 I["Object.getOwnPropertyDescriptor"] = I.Object.getOwnPropertyDescriptor;
 I["Object.getPrototypeOf"] = I.Object.getPrototypeOf;
+I["Object.setPrototypeOf"] = I.Object.setPrototypeOf;
 
 I["RegExp"] = global.RegExp;
 I["RegExp.prototype.exec"] = I.RegExp.prototype.exec;
@@ -102,6 +104,8 @@ I["String.prototype.startsWith"] =
     };
 I["String.prototype.substr"] = I.String.prototype.substr;
 I["String.prototype.substring"] = I.String.prototype.substring;
+I["String.prototype.toLowerCase"] = I.String.prototype.toLowerCase;
+I["String.prototype.toUpperCase"] = I.String.prototype.toUpperCase;
 
 I["undefined"] = void(0);
 
