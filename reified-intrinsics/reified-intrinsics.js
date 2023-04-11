@@ -1,4 +1,7 @@
-const I = { };
+const I = ([key]) =>
+    I.Call(I["String.prototype.charAt"], key) === "." ?
+        (...args) => I.Call(I[key.substr(1)], ...args) :
+        I[key];
 
 I.I = I;
 
@@ -89,8 +92,10 @@ I["Object.setPrototypeOf"] = I.Object.setPrototypeOf;
 
 I["RegExp"] = global.RegExp;
 I["RegExp.prototype.exec"] = I.RegExp.prototype.exec;
+I["RegExp.prototype.test"] = I.RegExp.prototype.test;
 
 I["String"] = global.String;
+I["String.prototype.charAt"] = I.String.prototype.charAt;
 I["String.prototype.charCodeAt"] = I.String.prototype.charCodeAt;
 I["String.prototype.match"] = I.String.prototype.match;
 I["String.prototype.indexOf"] = I.String.prototype.indexOf;
