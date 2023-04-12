@@ -24,6 +24,7 @@ I["Array.from"] = I.Array.from;
 I["Array.isArray"] = I.Array.isArray;
 I["Array.prototype.concat"] = I.Array.prototype.concat;
 I["Array.prototype.filter"] = I.Array.prototype.filter;
+I["Array.prototype.find"] = I.Array.prototype.find;
 I["Array.prototype.forEach"] = I.Array.prototype.forEach;
 I["Array.prototype.join"] = I.Array.prototype.join;
 I["Array.prototype.map"] = I.Array.prototype.map;
@@ -58,8 +59,12 @@ I["Object.assign"] = I.Object.assign || function assign(object)
 
     return object;
 };
+
 I["Object.create"] = I.Object.create;
+
 I["Object.defineProperty"] = I.Object.defineProperty;
+I["Object.defineProperties"] = I.Object.defineProperties;
+
 I["Object.entries"] = I.Object.entries || function entries(object)
 {
     return Call(
@@ -87,8 +92,12 @@ I["Object.hasOwnProperty"] = I.Object.hasOwnProperty;
 I["Object.keys"] = I.Object.keys;
 
 I["Object.getOwnPropertyDescriptor"] = I.Object.getOwnPropertyDescriptor;
+I["Object.getOwnPropertyDescriptors"] = I.Object.getOwnPropertyDescriptors;
+I["Object.getOwnPropertySymbols"] = I.Object.getOwnPropertySymbols;
+
 I["Object.getPrototypeOf"] = I.Object.getPrototypeOf;
 I["Object.setPrototypeOf"] = I.Object.setPrototypeOf;
+I["Object.values"] = I.Object.values;
 
 I["RegExp"] = global.RegExp;
 I["RegExp.prototype.exec"] = I.RegExp.prototype.exec;
