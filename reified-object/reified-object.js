@@ -3,6 +3,12 @@ const given = f => f();
 const fail = require("@reified/fail");
 const I = require("@reified/intrinsics");
 
+
+const o = () => { };
+
+module.exports = o;
+module.exports.o = o;
+
 // Would be nice if there was an easy way to make unemurable properties...
 // Or maybe just have some "known" symbols like "unenumerable-name"?
 const α = (target, ...sources) => given((
@@ -15,20 +21,29 @@ const α = (target, ...sources) => given((
             target,
             I.Object.assign(...descriptors)));
 
-exports.α = α;
-exports.alpha = α;
+o.α = α;
+o.alpha = α;
 
 const ø = (...sources) => α(I.Object.create(null), ...sources);
 
-exports.ø = ø;
-exports.alpha = ø;
+o.ø = ø;
+
+o.mapEntries= mapEntries = (O, f) =>
+    I `Object.fromEntries` (
+        I `Array.from` (I `Object.entries` (O), f));
+
+ø.mapEntries = mapEntries;
+
+ø.fromEntries = entries => ø(I `Object.fromEntries` (entries));
+
+o.alpha = ø;
 
 const construct =
     (C, ...sources) => α(I.Object.create(C.prototype), ...sources);
 
-exports.construct = construct;
+o.construct = construct;
 
-exports.kindsof = value =>
+o.kindsof = value =>
     value === null ? ["null"] :
     I.Array.isArray(value) ? ["array", "object"] :
     typeof value === "function" ? ["function", "object"] :
@@ -37,8 +52,10 @@ exports.kindsof = value =>
 // FIXME: Use I.
 const GetOwnKeys = Reflect.ownKeys;
 
-exports.GetOwnKeys = GetOwnKeys;
+o.GetOwnKeys = GetOwnKeys;
 
 const GetOwnEntries = object => GetOwnKeys(object).map(key => [key, object[key]]);
 
-exports.GetOwnEntries = GetOwnEntries;
+o.GetOwnEntries = GetOwnEntries;
+
+

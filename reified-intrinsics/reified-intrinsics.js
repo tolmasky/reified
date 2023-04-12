@@ -8,6 +8,22 @@ I.I = I;
 I.Function = global.Function;
 I["Function.prototype.toString"] = I.Function.prototype.toString;
 
+
+const WithSafeEvaluatedValue = (string, f) =>
+    { try { return f(eval(string)) } catch (e) { return false; } };
+
+const GetEvaluatedConstructor = string =>
+    WithSafeEvaluatedValue(string,
+        object => I `Object.getPrototypeOf` (object) .constructor);
+
+const FilterExtant = (array, f) =>
+    I `.Array.prototype.filter` (array, item => !!(f ? f(item) : item));
+
+I["Object.getOwnPropertySymbols"] = Object.getOwnPropertySymbols;
+I["Object.values"] = Object.values;
+
+I["Array.prototype.find"] = Array.prototype.find;
+
 I.Apply = (I.Function.prototype.call).bind(I.Function.prototype.apply);
 I.Call = (I.Function.prototype.call).bind(I.Function.prototype.call);
 
@@ -127,4 +143,33 @@ I["JSON"] = JSON;
 I["JSON.stringify"] = JSON.stringify;
 I["JSON.parse"] = JSON.parse;
 
-module.exports = I;
+const EvaluatedExpression = string => Function("return (" + string + ")")();
+const EvaluatedExpressionOr = function (string, fallback)
+{
+    try { return EvaluatedExpression(string) }
+    catch (e) { return fallback; }
+};
+
+const Chain = (target, ...operations) =>
+    I `.Array.prototype.reduce` (
+        I `Array.from` (
+            operations, operation => I `Object.entries`(operation)[0]),
+        (target, [key, f]) =>
+            I([`.Array.prototype.${key}`]) (target, f),
+        target);
+
+I["@reified/array-chain"] = Chain;
+
+const FunctionSubclasses =  I `Object.fromEntries` (Chain
+([
+    "async function * () { }",
+    "async function () { }",
+    "function * () { }",
+],
+    { map: string => EvaluatedExpressionOr(string, false) },
+    { filter: F => !!F },
+    { map: F => I `Object.getPrototypeOf` (F).constructor },
+    { map: C => [C.name, C] }));
+
+
+module.exports = I `Object.assign` (I, FunctionSubclasses);

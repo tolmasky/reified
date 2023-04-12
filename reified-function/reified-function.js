@@ -2,72 +2,75 @@ const given = f => f();
 
 const fail = require("@reified/fail");
 const I = require("@reified/intrinsics");
-const { α, ø } = require("@reified/object");
+const { α, ø, mapEntries } = require("@reified/object");
+const SymbolEnum = require("@reified/object/symbol-enum");
+const Declaration = require("@reified/language/declaration");
 
+const
+{
+    IsTaggedCall,
+    ToResolvedString
+} = require("@reified/language/tagged-templates");
 
-const NormalFunctionRegExp =
-    /^(?:get\s+)|(?:set\s+)|(?:(?:async\s+)?function[\s\*])/;
-const isNormalFunction = f =>
-    NormalFunctionRegExp.test(I.Function.prototype.toString.call(f));
+const
+{
+    FunctionKinds,
+    FunctionKindGenerator,
+    FunctionKindAsync,
+    GetFunctionKind
+} = require("./function-kind");
+const IsArrowFunction = require("./is-arrow-function");
 
-const toResolvedString = (strings, ...values) => []
-    .concat(...Array.from(strings, (string, index) => [string, values[index]]))
-    .join("");
+const GetƒGeneratorForFunctionKind = given((
+    toConditionalCode = C => C ? ([S]) => S : () => false,
+    toGA = kind =>
+    ({
+        G: toConditionalCode(kind & FunctionKindGenerator),
+        A: toConditionalCode(kind & FunctionKindAsync)
+    }),
+    ƒGeneratorTemplate = ({ G, A }) => I `@reified/array-chain` (
+    [
+         `return ((F =`, A `async`, `function`, G `*`, `(...arguments)`,
+         `{ return`, G `yield *`, A `await`,
+         `R(F, this, ...arguments); }) => F)()`
+    ], { filter: string => !!string }, { join: " " }),
+    toƒGenerator = kind =>
+        I `Function` ("R", `${ƒGeneratorTemplate(toGA(kind))}`),
+    ƒGenerators = mapEntries(FunctionKinds,
+        ([_, kind]) => [kind, toƒGenerator(kind)])) =>
+    kind => ƒGenerators[kind]);
 
-module.exports.toResolvedString = toResolvedString;
+function ReifiedCallEvaluateBody(ƒ, thisArgument, ...arguments)
+{
+    const tagged = ƒ[ƒSymbols.tagged];
 
-const isTaggedCall = args =>
-    I.Array.isArray(args) &&
-    I.Array.isArray(args[0]) &&
-    I.Object.hasOwn(args[0], "raw");
+    return IsTaggedCall(arguments) && tagged ?
+        I.Call(tagged, thisArgument, ToResolvedString(arguments), ƒ) :
+        I.Call(ƒ[ƒSymbols.called], thisArgument, ...arguments);
+}
 
-const ƒ = (...tag) =>
-    (f, ...sources) => α(
-        I.Object.defineProperty(f, "name", { value: toResolvedString(...tag) }),
-        ...sources);
+const ƒSymbols = SymbolEnum("called", "tagged", "[[ThisMode]]", "[[SourceText]]");
 
-module.exports = ƒ;
+const IsFunction = value => typeof value === "function";
+const ToSourceText = f => I `.Function.prototype.toString` (f);
 
-module.exports.ƒ = ƒ;
-
-// Important that we respect untagged over tagged for function type. Or perhaps
-// we should always make a function(){}, and then in the tagged case, do an
-// inner check of whether it is function(){} or not.
-// Also, we should be subclassing the right kind of function, Maybe use
-// construct?...
-const taggableBase = (tagged, untagged, ...sources) => given((
-    body = function (...args)
+const ƒ = Declaration `ƒ` (({ name, tail }) => given((
+    [first, ...rest] = tail,
+    firstSource = IsFunction(first) ? { [ƒSymbols.called]: first } : first,
+    body = ø(firstSource, ...rest),
+    ƒCalled = body[ƒSymbols.called],
+    kind = GetFunctionKind(ƒCalled),
+    a = console.log(kind, GetƒGeneratorForFunctionKind(kind)),
+    ƒGenerator = GetƒGeneratorForFunctionKind(kind)) =>
+    α(ƒGenerator(ReifiedCallEvaluateBody),
     {
-        return isTaggedCall(args) ?
-            untagged ?
-                tagged.call(this, toResolvedString(...args)) :
-                (...rest) => tagged.call(this, toResolvedString(...args), ...rest) :
-            untagged ? untagged.call(this, ...args) :
-            tagged.call(this, false, ...args);
-    }) => α(isNormalFunction(untagged || tagged) ?
-        body :
-        (...args) => body(...args), ...sources));
+        name,
+        toString()
+        {
+            return this[ƒSymbols["[[SourceText]]"]];
+        },
+        [ƒSymbols["[[ThisMode]]"]]: IsArrowFunction(ƒCalled),//GetThisMode(ƒCalled)
+        [ƒSymbols["[[SourceText]]"]]: ToSourceText(ƒCalled)
+    }, body)));
 
-const taggable = taggableBase((tag, tagged, untagged, ...sources) => tag ?
-    ƒ `${tag}` (taggableBase(tagged, untagged, ...sources)) :
-    taggableBase(tagged, untagged, ...sources));
-
-module.exports.taggable = taggable;
-
-
-// This takes a function that returns a funtion, and makes that return function
-// taggable. Unclear if this is what we have found ourselves wanting though.
-const ƒƒ = taggable `ƒƒ` ((name, f, ...properties) => given((
-    taggablef = taggable (
-        tag => (...args) => ƒ `${tag}` (f(...args)),
-        f)) => name ? ƒ `${name}` (taggablef) : taggablef));
-
-const tagged = taggable `tagged` ((name, implementation) =>
-    taggable `${name}` ((tag, ...rest) => !tag ?
-        fail (`Function ${name || implementation.name} expected a tagged call.`) :
-        implementation(tag, ...rest)));
-
-module.exports.tagged = tagged;
-
-// ƒ.tag = ƒ.tagged `ƒ.tag` ((name, f) => (...args) => f(toResolvedString(...args)));
-
+module.exports = α(ƒ, ƒSymbols);
