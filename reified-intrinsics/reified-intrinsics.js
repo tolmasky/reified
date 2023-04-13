@@ -46,6 +46,7 @@ I["Array.prototype.concat"] = I.Array.prototype.concat;
 I["Array.prototype.filter"] = I.Array.prototype.filter;
 I["Array.prototype.find"] = I.Array.prototype.find;
 I["Array.prototype.findIndex"] = I.Array.prototype.findIndex;
+I["Array.prototype.flatMap"] = I.Array.prototype.flatMap;
 I["Array.prototype.forEach"] = I.Array.prototype.forEach;
 I["Array.prototype.join"] = I.Array.prototype.join;
 I["Array.prototype.map"] = I.Array.prototype.map;
