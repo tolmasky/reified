@@ -8,17 +8,6 @@ I.I = I;
 I.Function = global.Function;
 I["Function.prototype.toString"] = I.Function.prototype.toString;
 
-
-const WithSafeEvaluatedValue = (string, f) =>
-    { try { return f(eval(string)) } catch (e) { return false; } };
-
-const GetEvaluatedConstructor = string =>
-    WithSafeEvaluatedValue(string,
-        object => I `Object.getPrototypeOf` (object) .constructor);
-
-const FilterExtant = (array, f) =>
-    I `.Array.prototype.filter` (array, item => !!(f ? f(item) : item));
-
 I["Object.getOwnPropertySymbols"] = Object.getOwnPropertySymbols;
 I["Object.values"] = Object.values;
 
