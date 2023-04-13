@@ -7,9 +7,9 @@ const SymbolEnum = require("@reified/object/symbol-enum");
 const IsArrowFunction = given((
     NonArrowFunctionRegExp =
         /^(?:get\s+)|(?:set\s+)|(?:(?:async\s+)?function[\s\*])/) =>
-    f => !I `.RegExp.prototype.test` (
-        NonArrowFunctionRegExp,
-        I `.Function.prototype.toString` (f)));
+    f => !NonArrowFunctionRegExp
+        [I `::RegExp.prototype.test`]
+            (f[I `::Function.prototype.toString`]()));
 
 exports.IsArrowFunction = IsArrowFunction;
 

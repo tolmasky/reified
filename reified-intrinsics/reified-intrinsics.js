@@ -1,11 +1,26 @@
-const I = ([key]) =>
-    I.Call(I["String.prototype.charAt"], key) === "." ?
-        (...args) => I.Call(I[key.substr(1)], ...args) :
-        I[key];
+const given = f => f();
+
+const I = given((
+    called = false,
+    toBind = null,
+    Bind = global.Symbol && Symbol("Bind")) => (
+    ([key]) => (
+        !called && I["Object.defineProperty"](
+            I["Object.prototype"],
+            Bind,
+            { get () { return I.Call(I["Function.prototype.bind"], toBind, this); } }),
+        called = true,
+        I.Call(I["String.prototype.startsWith"], key, "::") ?
+            ((toBind = I[key.substr(2)]), Bind) :
+        I.Call(I["String.prototype.startsWith"], key, ".") ?
+            (...args) => I.Call(I[key.substr(1)], ...args) :
+        I[key])));
 
 I.I = I;
 
 I.Function = global.Function;
+
+I["Function.prototype.bind"] = I.Function.prototype.bind;
 I["Function.prototype.toString"] = I.Function.prototype.toString;
 
 I["Object.getOwnPropertySymbols"] = Object.getOwnPropertySymbols;
@@ -105,6 +120,8 @@ I["Object.getPrototypeOf"] = I.Object.getPrototypeOf;
 I["Object.setPrototypeOf"] = I.Object.setPrototypeOf;
 I["Object.values"] = I.Object.values;
 
+I["Object.prototype"] = I.Object.prototype;
+
 I["RegExp"] = global.RegExp;
 I["RegExp.prototype.exec"] = I.RegExp.prototype.exec;
 I["RegExp.prototype.test"] = I.RegExp.prototype.test;
@@ -160,6 +177,5 @@ const FunctionSubclasses =  I `Object.fromEntries` (Chain
     { filter: F => !!F },
     { map: F => I `Object.getPrototypeOf` (F).constructor },
     { map: C => [C.name, C] }));
-
 
 module.exports = I `Object.assign` (I, FunctionSubclasses);

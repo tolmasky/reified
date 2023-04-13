@@ -73,4 +73,4 @@ const ƒ = Declaration `ƒ` (({ name, tail }) => given((
         [ƒSymbols["[[SourceText]]"]]: ToSourceText(ƒCalled)
     }, body)));
 
-module.exports = α(ƒ, ƒSymbols);
+module.exports = α(ƒ, { ƒ }, ƒSymbols);

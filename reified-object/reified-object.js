@@ -49,6 +49,10 @@ o.kindsof = value =>
     typeof value === "function" ? ["function", "object"] :
     [typeof value];
 
+o.typeof = value =>
+    value === null ? "null" :
+    typeof value;
+
 // FIXME: Use I.
 const GetOwnKeys = Reflect.ownKeys;
 
