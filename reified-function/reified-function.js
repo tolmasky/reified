@@ -6,6 +6,8 @@ const { α, ø, mapEntries } = require("@reified/object");
 const SymbolEnum = require("@reified/object/symbol-enum");
 const Declaration = require("@reified/language/declaration");
 
+const { GetApproximateThisMode } = require("./reflect");
+
 const
 {
     IsTaggedCall,
@@ -19,7 +21,6 @@ const
     FunctionKindAsync,
     GetFunctionKind
 } = require("./function-kind");
-const IsArrowFunction = require("./is-arrow-function");
 
 const GetƒGeneratorForFunctionKind = given((
     toConditionalCode = C => C ? ([S]) => S : () => false,
@@ -60,7 +61,6 @@ const ƒ = Declaration `ƒ` (({ name, tail }) => given((
     body = ø(firstSource, ...rest),
     ƒCalled = body[ƒSymbols.called],
     kind = GetFunctionKind(ƒCalled),
-    a = console.log(kind, GetƒGeneratorForFunctionKind(kind)),
     ƒGenerator = GetƒGeneratorForFunctionKind(kind)) =>
     α(ƒGenerator(ReifiedCallEvaluateBody),
     {
@@ -69,7 +69,7 @@ const ƒ = Declaration `ƒ` (({ name, tail }) => given((
         {
             return this[ƒSymbols["[[SourceText]]"]];
         },
-        [ƒSymbols["[[ThisMode]]"]]: IsArrowFunction(ƒCalled),//GetThisMode(ƒCalled)
+        [ƒSymbols["[[ThisMode]]"]]: GetApproximateThisMode(ƒCalled),
         [ƒSymbols["[[SourceText]]"]]: ToSourceText(ƒCalled)
     }, body)));
 
