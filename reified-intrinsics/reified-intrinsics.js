@@ -115,6 +115,7 @@ I["Object.keys"] = I.Object.keys;
 
 I["Object.getOwnPropertyDescriptor"] = I.Object.getOwnPropertyDescriptor;
 I["Object.getOwnPropertyDescriptors"] = I.Object.getOwnPropertyDescriptors;
+I["Object.getOwnPropertyNames"] = I.Object.getOwnPropertyNames;
 I["Object.getOwnPropertySymbols"] = I.Object.getOwnPropertySymbols;
 
 I["Object.getPrototypeOf"] = I.Object.getPrototypeOf;
@@ -142,6 +143,7 @@ I["String.prototype.startsWith"] =
     };
 I["String.prototype.substr"] = I.String.prototype.substr;
 I["String.prototype.substring"] = I.String.prototype.substring;
+I["String.prototype.replace"] = I.String.prototype.replace;
 I["String.prototype.toLowerCase"] = I.String.prototype.toLowerCase;
 I["String.prototype.toUpperCase"] = I.String.prototype.toUpperCase;
 

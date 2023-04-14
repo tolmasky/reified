@@ -32,6 +32,9 @@ o.mapEntries= mapEntries = (O, f) =>
     I `Object.fromEntries` (
         I `Array.from` (I `Object.entries` (O), f));
 
+ø.fromPropertyDescriptors = descriptors =>
+    I `Object.defineProperties` (ø(), descriptors);
+
 ø.mapEntries = mapEntries;
 
 ø.fromEntries = entries => ø(I `Object.fromEntries` (entries));
