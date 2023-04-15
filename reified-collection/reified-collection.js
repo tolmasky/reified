@@ -36,6 +36,7 @@ const S =
 
 const fCollectionMethods =
 {
+    reduce: to => to(A.reduce),
     concat: to => (target, ...sources) => I `Object.assign` ({}, target, ...sources),
 
     filter: to => to(A.filter, f => ([key, value]) => f(value, key)),
@@ -73,10 +74,13 @@ const toCollectionMethod = given((
                 ([predicate]) => predicate(target))[1][key]
             (target, ...args));
 
+const Collection = toCollectionMethod("map")
+    (fCollectionMethods, (_, key) => toCollectionMethod(key));
 
-module.exports =
+module.exports = α(Collection,
 {
+    Collection,
     ...toCollectionMethod("map")(
         fCollectionMethods,
         (_, key) => toCollectionMethod(key))
-}
+});

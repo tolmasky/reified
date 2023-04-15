@@ -1,0 +1,19 @@
+{
+  "name": "@reified/delta",
+  "version": "1.0.0-alpha.1",
+  "description": "",
+  "main": "reified-delta.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tolmasky/reified"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Francisco Ryan Tolmasky I",
+    "email": "tolmasky@gmail.com",
+    "url": "https://tolmasky.com"
+  }
+}
