@@ -2,6 +2,17 @@ const given = f => f();
 const I = require("@reified/intrinsics");
 //const Declaration = require("@reified/language/declaration");
 
+const { reduce } = require("@reified/collection");
+const ChainableUpdate = require("./chainable-update");
+
+console.log(ChainableUpdate);
+const Δ = ChainableUpdate((target, ...updates) =>
+    reduce(updates, (target, update) => update(target), target));
+
+module.exports = I `Object.assign` (Δ, { Δ });
+
+/*
+
 const ObjectAssign = I `Object.assign`;
 
 const ObjectGetOwnSymbolEntries = O =>

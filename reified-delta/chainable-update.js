@@ -9,8 +9,7 @@ const S = SymbolEnum("[[ChildUpdates]]");
 
 const toChainableUpdateMethod = method => ƒnamed(method.name, function (...args)
 {
-    const reversed = args.slice().reverse();
-    const curried = target => method(target, ...reversed);
+    const curried = target => method(target, ...args);
     const ChildUpdates = [...(this[S["[[ChildUpdates]]"]] || []), curried];
     const implementation = target =>
         reduce(ChildUpdates, (target, update) => update(target), target);
@@ -24,5 +23,3 @@ const ChainableUpdate = FunctionFactory `ChainableUpdate`
     (class extends Function { }, map(Collection, toChainableUpdateMethod));
 
 module.exports = ChainableUpdate;
-
-module.exports.delta = ChainableUpdate((target, ...updates) => reduce(updates, (target, update) => update(target), target));
