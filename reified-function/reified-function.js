@@ -6,6 +6,8 @@ const { α, ø, mapEntries } = require("@reified/object");
 const SymbolEnum = require("@reified/object/symbol-enum");
 const Declaration = require("@reified/language/declaration");
 
+const Δ = require("@reified/delta");
+
 const { GetApproximateThisMode } = require("./reflect");
 
 const
@@ -41,26 +43,29 @@ const GetƒGeneratorForFunctionKind = given((
         ([_, kind]) => [kind, toƒGenerator(kind)])) =>
     kind => ƒGenerators[kind]);
 
-function ReifiedCallEvaluateBody(ƒ, thisArgument, ...arguments)
-{
-    const tagged = ƒ[ƒSymbols.tagged];
+const ReifiedCallEvaluateBody = (ƒ, thisArgument, ...args) =>
+    IsTaggedCall(args) && ƒ[ƒSymbols.tag] ?
+        ƒ[ƒSymbols.tag](ƒ, thisArgument, ToResolvedString(args)) :
+    ƒ[ƒSymbols.apply] ?
+        ƒ[ƒSymbols.apply](ƒ, thisArgument, args) :
+    I.Call(ƒ[ƒSymbols.target], thisArgument, ...args);
 
-    return IsTaggedCall(arguments) && tagged ?
-        I.Call(tagged, thisArgument, ToResolvedString(arguments), ƒ) :
-        I.Call(ƒ[ƒSymbols.called], thisArgument, ...arguments);
-}
-
-const ƒSymbols = SymbolEnum("called", "tagged", "[[ThisMode]]", "[[SourceText]]");
+const ƒSymbols = SymbolEnum(
+    "apply",
+    "tag",
+    "target",
+    "[[ThisMode]]",
+    "[[SourceText]]");
 
 const IsFunction = value => typeof value === "function";
 const ToSourceText = f => I `.Function.prototype.toString` (f);
 
 const ƒ = Declaration `ƒ` (({ name, tail }) => given((
     [first, ...rest] = tail,
-    firstSource = IsFunction(first) ? { [ƒSymbols.called]: first } : first,
+    firstSource = IsFunction(first) ? { [ƒSymbols.target]: first } : first,
     body = ø(firstSource, ...rest),
-    ƒCalled = body[ƒSymbols.called],
-    kind = GetFunctionKind(ƒCalled),
+    ƒBasis = body[ƒSymbols.target] || body[ƒSymbols.apply],
+    kind = GetFunctionKind(ƒBasis),
     ƒGenerator = GetƒGeneratorForFunctionKind(kind)) =>
     α(ƒGenerator(ReifiedCallEvaluateBody),
     {
@@ -69,8 +74,10 @@ const ƒ = Declaration `ƒ` (({ name, tail }) => given((
         {
             return this[ƒSymbols["[[SourceText]]"]];
         },
-        [ƒSymbols["[[ThisMode]]"]]: GetApproximateThisMode(ƒCalled),
-        [ƒSymbols["[[SourceText]]"]]: ToSourceText(ƒCalled)
+        [ƒSymbols["[[ThisMode]]"]]: GetApproximateThisMode(ƒBasis),
+        [ƒSymbols["[[SourceText]]"]]: ToSourceText(ƒBasis)
     }, body)));
+
+const curry = (f, Δa) => Δ(f, Δ.update(ƒ.bindings, Δa))
 
 module.exports = α(ƒ, { ƒ }, ƒSymbols);

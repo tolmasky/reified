@@ -6,17 +6,21 @@ const { α } = require("@reified/object");
 const GetPrototypeMethodsOf = require("./get-prototype-methods-of");
 
 
-const A =
-{
-    ...GetPrototypeMethodsOf(Array),
+const A = given((
+    A = GetPrototypeMethodsOf(Array)) =>
+({
+    ...A,
 
     // We do Array.from to avoid arrays with non-index entries.
     toEntries: target => I `Array.from` (target, (value, index) => [index, value]),
     fromEntries: target => I `Object.assign` ([], O.fromEntries(target)),
 
     filterEntries: (target, f) =>
-        A.filter(target, (value, index) => f([index, value]))
-}
+        A.filter(target, (value, index) => f([index, value])),
+
+    // NEED TO do itN if we want to reverse f and start
+    reduce: (target, f, start) => A.reduce(target, f, start)
+}));
 
 const O =
 {
@@ -34,22 +38,35 @@ const S =
         "")
 }
 
+const FromEntries = 1;
+const ToEntries = 2;
+const FromToEntries = FromEntries | ToEntries;
+
 const fCollectionMethods =
 {
-    reduce: to => to(A.reduce),
-    concat: to => (target, ...sources) => I `Object.assign` ({}, target, ...sources),
+    get: to => (target, key) => target[key],
+    set: to => (target, key, value) =>
+        I `Object.assign` ({}, target, { [key]: value }),
+
+    concat: to => (target, ...sources) =>
+        I `Object.assign` ({}, target, ...sources),
 
     filter: to => to(A.filter, f => ([key, value]) => f(value, key)),
     filterEntries: to => to(A.filter),
 
     map: to => to(A.map, f => ([key, value]) => [key, f(value, key)]),
-    mapEntries: to => to(A.map)
+    mapEntries: to => to(A.map),
+
+    reduce: to => to(A.reduce, f => (accum, [key, value]) => f(accum, value, key), ToEntries),
+    reduceEntries: to => to(A.reduce, f => (accum, entry) => f(accum, entry), ToEntries)
 };
 
 const toComputedCollectionMethods = M => given((
     { fromEntries, toEntries } = M,
-    toCollectionMethod = (Af, toEntryIterator = x => x) =>
+    toCollectionMethod = (Af, toEntryIterator = x => x, flags = FromToEntries) =>
         (target, f, ...args) => given((
+            fromEntries = (flags & FromEntries) ? M.fromEntries : x => x,
+            toEntries = (flags & ToEntries) ? M.toEntries : x => x,
             iterator = toEntryIterator(f)) =>
             fromEntries(Af(toEntries(target), iterator, ...args)))) =>
     I `Object.assign` ({ },
