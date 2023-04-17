@@ -26,8 +26,6 @@ I["Function.prototype.toString"] = I.Function.prototype.toString;
 I["Object.getOwnPropertySymbols"] = Object.getOwnPropertySymbols;
 I["Object.values"] = Object.values;
 
-I["Array.prototype.find"] = Array.prototype.find;
-
 I.Apply = (I.Function.prototype.call).bind(I.Function.prototype.apply);
 I.Call = (I.Function.prototype.call).bind(I.Function.prototype.call);
 

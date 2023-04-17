@@ -48,6 +48,10 @@ const fCollectionMethods =
     set: to => (target, key, value) =>
         I `Object.assign` ({}, target, { [key]: value }),
 
+    update: to => (target, ...rest) =>
+        rest.length === 1 ? rest[0](target) :
+        I `Object.assign` ({}, target, { [rest[0]]: rest[1](target[rest[0]]) }),
+
     concat: to => (target, ...sources) =>
         I `Object.assign` ({}, target, ...sources),
 
@@ -78,7 +82,9 @@ const toComputedCollectionMethods = M => given((
 
 const IsArray = value => I `Array.isArray` (value);
 const IsString = value => typeof value === "string";
-const IsObject = value => value && typeof value === "object";
+const IsObjectType = value =>
+    value &&
+    (typeof value === "object" || typeof value === "function");
 
 const toCollectionMethod = given((
     methods = A.map(
