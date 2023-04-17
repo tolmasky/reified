@@ -8,13 +8,13 @@ const Declaration = require("@reified/foundation/declaration");
 
 const Δ = require("@reified/delta");
 
-const { GetApproximateThisMode } = require("./reflect");
-
 const
 {
+    GetApproximateThisMode,
+    IsFunctionObject,
     IsTaggedCall,
     ToResolvedString
-} = require("@reified/foundation/tagged-templates");
+} = require("@reified/foundation/function-objects");
 
 const
 {

@@ -1,5 +1,5 @@
 const { α } = require("@reified/object");
-const ƒnamed = require("@reified/foundation/function-named");
+const { ƒnamed } = require("@reified/foundation/function-objects");
 const { FunctionFactory } = require("@reified/foundation/factory");
 const SymbolEnum = require("@reified/foundation/symbol-enum");
 const { Collection, map, reduce } = require("@reified/collection");

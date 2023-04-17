@@ -4,8 +4,8 @@ const fail = require("@reified/fail");
 const { I, Call } = require("@reified/intrinsics");
 const { IsFunctionObject, IsArray } = require("./types-and-values");
 
-const ƒnamed = require("./function-named");
 const Declaration = require("./declaration");
+const { ƒnamed } = require("./function-objects");
 
 
 const Map = class Map { };
@@ -26,7 +26,7 @@ module.exports = Declaration `PredicateMap` (({ name, tail: [body] }) => given((
             [fallback]),
         ([K, V]) => [K, V instanceof Map ? V.map : () => V])) =>
     ƒnamed(name, function (query)
-    {console.log(Call, cases, I `Array.prototype.find`);
+    {
         return Call(
             I `Array.prototype.find`,
             cases,

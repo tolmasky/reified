@@ -1,9 +1,11 @@
 const given = f => f();
 
 const I = require("@reified/intrinsics");
-const ƒnamed = require("./function-named");
+
 const Declaration = require("./declaration");
 const SymbolEnum = require("./symbol-enum");
+
+const { ƒnamed } = require("./function-objects");
 
 const { ø, α } = require("@reified/object");
 

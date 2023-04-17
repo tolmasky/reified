@@ -1,9 +1,7 @@
 const given = f => f();
 
-const ƒnamed = require("./function-named");
 const { IsString } = require("./types-and-values");
-
-const { IsTaggedCall, ToResolvedString } = require("./tagged-templates");
+const { ƒnamed, IsTaggedCall, ToResolvedString } = require("./function-objects");
 
 
 module.exports = given ((
