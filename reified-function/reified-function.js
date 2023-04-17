@@ -14,6 +14,7 @@ const
     GetApproximateThisMode,
     IsFunctionObject,
     IsTaggedCall,
+    IsTagCoercibleCall,
     ToResolvedString
 } = require("@reified/foundation/function-objects");
 
@@ -45,11 +46,22 @@ const GetƒGeneratorForFunctionKind = given((
     kind => ƒGenerators[kind]);
 
 const ReifiedCallEvaluateBody = (ƒ, thisArgument, ...args) =>
+
     IsTaggedCall(args) && ƒ[ƒSymbols.tag] ?
         ƒ[ƒSymbols.tag](ƒ, thisArgument, ToResolvedString(args)) :
+
     ƒ[ƒSymbols.apply] ?
         ƒ[ƒSymbols.apply](ƒ, thisArgument, args) :
-    I.Call(ƒ[ƒSymbols.target], thisArgument, ...args);
+
+    ƒ[ƒSymbols.target] ?
+        I.Call(ƒ[ƒSymbols.target], thisArgument, ...args) :
+
+    // FIXME: How should we handle this when we have TagObject,
+    // and should we make it an option whether this should be coercible?
+    ƒ[ƒSymbols.tag] && IsTagCoercibleCall(args)?
+        ƒ[ƒSymbols.tag](ƒ, thisArgument, args[0]) :
+
+        fail.type(`${ƒ.name} can't respond to this kind of call.`);
 
 const ƒSymbols = SymbolEnum(
     "apply",
@@ -64,7 +76,10 @@ const ƒ = Declaration `ƒ` (({ name, tail }) => given((
     [first, ...rest] = tail,
     firstSource = IsFunctionObject(first) ? { [ƒSymbols.target]: first } : first,
     body = ø(firstSource, ...rest),
-    ƒBasis = body[ƒSymbols.target] || body[ƒSymbols.apply],
+    ƒBasis =
+        body[ƒSymbols.target] ||
+        body[ƒSymbols.apply] ||
+        body[ƒSymbols.tag],
     kind = GetFunctionKind(ƒBasis),
     ƒGenerator = GetƒGeneratorForFunctionKind(kind)) =>
     α(ƒGenerator(ReifiedCallEvaluateBody),
@@ -79,6 +94,12 @@ const ƒ = Declaration `ƒ` (({ name, tail }) => given((
         [ƒSymbols["[[SourceText]]"]]: ToSourceText(ƒBasis)
     }, body)));
 
+// Should we make this taggedCoercible?
+// Or "stringTaggable"?
+const tagged = Declaration `ƒ.tagged`
+    (({ name, tail: [ƒtag, ...rest] }) =>
+        ƒ (name, { [ƒ.tag]: ƒtag }, ...rest));
+
 const curry = (f, Δa) => Δ(f, Δ.update(ƒ.bindings, Δa))
 
-module.exports = α(ƒ, { ƒ }, ƒSymbols);
+module.exports = α(ƒ, { ƒ, tagged }, ƒSymbols);

@@ -2,7 +2,7 @@ const given = f => f();
 
 const I = require("@reified/intrinsics");
 const SymbolEnum = require("./symbol-enum");
-const { IsArray, IsFunctionObject } = require("./types-and-values");
+const { IsArray, IsFunctionObject, IsString } = require("./types-and-values");
 // const { α } = require("@reified/object");
 
 
@@ -34,6 +34,13 @@ const IsTaggedCall = fArguments =>
     I `Object.hasOwn` (fArguments[0], "raw");
 
 exports.IsTaggedCall = IsTaggedCall;
+
+const IsTagCoercibleCall = fArguments =>
+    IsArray (fArguments) &&
+    fArguments.length === 1 &&
+    IsString(fArguments[0]);
+
+exports.IsTagCoercibleCall = IsTagCoercibleCall;
 
 const flattened = array => I `.Array.prototype.concat` ([], ...array);
 
