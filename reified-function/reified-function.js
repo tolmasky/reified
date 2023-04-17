@@ -34,9 +34,9 @@ const GetƒGeneratorForFunctionKind = given((
     }),
     ƒGeneratorTemplate = ({ G, A }) => I `@reified/array-chain` (
     [
-         `return ((F =`, A `async`, `function`, G `*`, `(...arguments)`,
+         `return ((F =`, A `async`, `function`, G `*`, `(...args)`,
          `{ return`, G `yield *`, A `await`,
-         `R(F, this, ...arguments); }) => F)()`
+         `R(F, this, ...args); }) => F)()`
     ], { filter: string => !!string }, { join: " " }),
     toƒGenerator = kind =>
         I `Function` ("R", `${ƒGeneratorTemplate(toGA(kind))}`),

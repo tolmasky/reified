@@ -5,6 +5,7 @@ const { α } = require("@reified/object");
 const T = require("@reified/foundation/types-and-values");
 
 const GetPrototypeMethodsOf = require("./get-prototype-methods-of");
+const CopyValue = require("@reified/delta/copy-value");
 
 
 const A = given((
@@ -52,14 +53,14 @@ const fCollectionMethods =
 {
     get: to => (target, key) => target[key],
     set: to => (target, key, value) =>
-        I `Object.assign` ({}, target, { [key]: value }),
+        I `Object.assign` (CopyValue(target), { [key]: value }),
 
     update: to => (target, ...rest) =>
         rest.length === 1 ? rest[0](target) :
-        I `Object.assign` ({}, target, { [rest[0]]: rest[1](target[rest[0]]) }),
+        I `Object.assign` (CopyValue(target), { [rest[0]]: rest[1](target[rest[0]]) }),
 
     concat: to => (target, ...sources) =>
-        I `Object.assign` ({}, target, ...sources),
+        I `Object.assign` (CopyValue(target), ...sources),
 
     filter: to => to(A.filter, f => ([key, value]) => f(value, key)),
     filterEntries: to => to(A.filter),

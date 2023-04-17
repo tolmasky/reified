@@ -9,6 +9,8 @@ const o = () => { };
 module.exports = o;
 module.exports.o = o;
 
+const HACK = ({ arguments:_, caller:__, ...object }) => object;//Object.fromEntries((I `Object.entries` (object)).filter(([key]) => key !== "arguments"));
+
 // Would be nice if there was an easy way to make unemurable properties...
 // Or maybe just have some "known" symbols like "unenumerable-name"?
 const α = (target, ...sources) => given((
@@ -19,7 +21,7 @@ const α = (target, ...sources) => given((
         target :
         I.Object.defineProperties(
             target,
-            I.Object.assign(...descriptors)));
+            HACK(I `Object.assign` (...descriptors))));
 
 o.α = α;
 o.alpha = α;
