@@ -5,6 +5,7 @@ const I = require("@reified/intrinsics");
 const { α, ø, mapEntries } = require("@reified/object");
 const SymbolEnum = require("@reified/foundation/symbol-enum");
 const Declaration = require("@reified/foundation/declaration");
+const { copy } = require("@reified/delta/copy-value");
 
 const Δ = require("@reified/delta");
 
@@ -57,12 +58,11 @@ const ƒSymbols = SymbolEnum(
     "[[ThisMode]]",
     "[[SourceText]]");
 
-const IsFunction = value => typeof value === "function";
 const ToSourceText = f => I `.Function.prototype.toString` (f);
 
 const ƒ = Declaration `ƒ` (({ name, tail }) => given((
     [first, ...rest] = tail,
-    firstSource = IsFunction(first) ? { [ƒSymbols.target]: first } : first,
+    firstSource = IsFunctionObject(first) ? { [ƒSymbols.target]: first } : first,
     body = ø(firstSource, ...rest),
     ƒBasis = body[ƒSymbols.target] || body[ƒSymbols.apply],
     kind = GetFunctionKind(ƒBasis),
@@ -74,6 +74,7 @@ const ƒ = Declaration `ƒ` (({ name, tail }) => given((
         {
             return this[ƒSymbols["[[SourceText]]"]];
         },
+        [copy]: function (target) { return ƒ(target.name, () => {}, target); },
         [ƒSymbols["[[ThisMode]]"]]: GetApproximateThisMode(ƒBasis),
         [ƒSymbols["[[SourceText]]"]]: ToSourceText(ƒBasis)
     }, body)));

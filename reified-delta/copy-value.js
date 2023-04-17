@@ -20,7 +20,7 @@ const PlainObjectCopy = V => V;
 const GetCopyMethod = PredicateMap (map =>
 [
     [T.IsPrimitive, PrimitiveCopy],
-    [V => GetMethod(S.copy, V), map(V => GetMethod(S.copy, V))],
+    [V => !!GetMethod(V, S.copy), map(V => GetMethod(V, S.copy))],
     [T.IsFunctionObject, FunctionObjectCopy],
     [T.IsPrototypelessObject, PrototypelessObjectCopy],
     PlainObjectCopy
