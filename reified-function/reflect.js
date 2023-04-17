@@ -1,6 +1,6 @@
 const given = f => f();
 const I = require("@reified/intrinsics");
-const SymbolEnum = require("@reified/object/symbol-enum");
+const SymbolEnum = require("@reified/foundation/symbol-enum");
 // const { α } = require("@reified/object");
 
 

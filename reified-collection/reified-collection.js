@@ -2,6 +2,7 @@ const given = f => f();
 
 const { I, Call } = require("@reified/intrinsics");
 const { α } = require("@reified/object");
+const T = require("@reified/foundation/types-and-values");
 
 const GetPrototypeMethodsOf = require("./get-prototype-methods-of");
 
@@ -42,6 +43,11 @@ const FromEntries = 1;
 const ToEntries = 2;
 const FromToEntries = FromEntries | ToEntries;
 
+// set
+// setEntry
+// setProperty
+// For all builtins, setEntry === setProperty
+
 const fCollectionMethods =
 {
     get: to => (target, key) => target[key],
@@ -80,15 +86,9 @@ const toComputedCollectionMethods = M => given((
                 O.toEntries(fCollectionMethods),
                 ([key, f]) => [key, M[key] || f(toCollectionMethod)]))));
 
-const IsArray = value => I `Array.isArray` (value);
-const IsString = value => typeof value === "string";
-const IsObjectType = value =>
-    value &&
-    (typeof value === "object" || typeof value === "function");
-
 const toCollectionMethod = given((
     methods = A.map(
-        [[IsArray, A], [IsString, S], [IsObject, O]],
+        [[T.IsArray, A], [T.IsString, S], [T.IsObject, O]],
         (([predicate, methods]) =>
             [predicate, toComputedCollectionMethods(methods)]))) =>
     key =>

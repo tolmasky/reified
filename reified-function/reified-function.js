@@ -3,8 +3,8 @@ const given = f => f();
 const fail = require("@reified/fail");
 const I = require("@reified/intrinsics");
 const { α, ø, mapEntries } = require("@reified/object");
-const SymbolEnum = require("@reified/object/symbol-enum");
-const Declaration = require("@reified/language/declaration");
+const SymbolEnum = require("@reified/foundation/symbol-enum");
+const Declaration = require("@reified/foundation/declaration");
 
 const Δ = require("@reified/delta");
 
@@ -14,7 +14,7 @@ const
 {
     IsTaggedCall,
     ToResolvedString
-} = require("@reified/language/tagged-templates");
+} = require("@reified/foundation/tagged-templates");
 
 const
 {

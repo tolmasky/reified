@@ -1,11 +1,11 @@
 const given = f => f();
 const { I, Call } = require("@reified/intrinsics");
-const T = require("@reified/reflect/types-and-values");
-const { GetMethod } = require("@reified/reflect/operations-on-objects");
 
-const PredicateMap = require("@reified/reflect/predicate-map");
+const T = require("@reified/foundation/types-and-values");
+const { GetMethod } = require("@reified/foundation/operations-on-objects");
 
-const SymbolEnum = require("@reified/object/symbol-enum");
+const PredicateMap = require("@reified/foundation/predicate-map");
+const SymbolEnum = require("@reified/foundation/symbol-enum");
 
 const S = SymbolEnum("copy");
 
@@ -26,9 +26,12 @@ const GetCopyMethod = PredicateMap (map =>
     PlainObjectCopy
 ]);
 
+const CopyValue = V => GetCopyMethod(V)(V);
 
+module.exports = CopyValue;
 
-module.exports = GetCopyMethod;
+module.exports.CopyValue = CopyValue;
+module.exports.CopyValue.copy = S.copy;
 
 
 /*const FunctionCopy = f => 

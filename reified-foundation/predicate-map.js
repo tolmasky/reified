@@ -5,7 +5,7 @@ const { I, Call } = require("@reified/intrinsics");
 const { IsFunctionObject, IsArray } = require("./types-and-values");
 
 const ƒnamed = require("./function-named");
-const Declaration = require("@reified/language/declaration");
+const Declaration = require("./declaration");
 
 
 const Map = class Map { };

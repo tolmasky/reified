@@ -1,11 +1,12 @@
 const given = f => f();
 
 const ƒnamed = require("./function-named");
+const { IsString } = require("./types-and-values");
+
 const { IsTaggedCall, ToResolvedString } = require("./tagged-templates");
 
-const IsString = value => typeof value === "string";
 
-const Declaration = given ((
+module.exports = given ((
     Declaration = ({ name, tail: [declare] }) => given((
         parse = (name, ...tail) => declare({ name, tail })) =>
         ƒnamed(name, (...headArguments) => IsTaggedCall(headArguments) ?
@@ -15,5 +16,3 @@ const Declaration = given ((
                 parse(...headArguments) :
                 parse(false, ...headArguments)))) =>
         Declaration({ name: "Declaration", tail: [Declaration] }));
-
-module.exports = Declaration;

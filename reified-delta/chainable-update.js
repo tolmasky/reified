@@ -1,7 +1,7 @@
 const { α } = require("@reified/object");
-const ƒnamed = require("@reified/language/function-named");
-const { FunctionFactory } = require("@reified/object/factory");
-const SymbolEnum = require("@reified/object/symbol-enum");
+const ƒnamed = require("@reified/foundation/function-named");
+const { FunctionFactory } = require("@reified/foundation/factory");
+const SymbolEnum = require("@reified/foundation/symbol-enum");
 const { Collection, map, reduce } = require("@reified/collection");
 
 

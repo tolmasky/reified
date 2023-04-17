@@ -20,7 +20,3 @@ const GetMethod = (V, P) => given((
         value);
 
 exports.GetMethod = GetMethod;
-
-const GetKeyedMethod = P => V => GetMethod(V, P);
-
-exports.GetKeyedMethod;
