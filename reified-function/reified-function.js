@@ -2,72 +2,45 @@ const given = f => f();
 
 const fail = require("@reified/fail");
 const I = require("@reified/intrinsics");
-const { α, ø, mapEntries } = require("@reified/object");
+const { α, ø } = require("@reified/object");
 const SymbolEnum = require("@reified/foundation/symbol-enum");
 const Declaration = require("@reified/foundation/declaration");
 const { copy } = require("@reified/delta/copy-value");
+const { GetMethod, HasMethod } = require("@reified/foundation/operations-on-objects");
 
 const Δ = require("@reified/delta");
 
 const
 {
-    GetApproximateThisMode,
+    ƒnamed,
     IsFunctionObject,
     IsTaggedCall,
     IsTagCoercibleCall,
     ToResolvedString
 } = require("@reified/foundation/function-objects");
 
-const
-{
-    FunctionKinds,
-    FunctionKindGenerator,
-    FunctionKindAsync,
-    GetFunctionKind
-} = require("./function-kind");
+const ReifiedCallEvaluateBody = (f, thisArgument, ...args) =>
 
-const GetƒGeneratorForFunctionKind = given((
-    toConditionalCode = C => C ? ([S]) => S : () => false,
-    toGA = kind =>
-    ({
-        G: toConditionalCode(kind & FunctionKindGenerator),
-        A: toConditionalCode(kind & FunctionKindAsync)
-    }),
-    ƒGeneratorTemplate = ({ G, A }) => I `@reified/array-chain` (
-    [
-         `return ((F =`, A `async`, `function`, G `*`, `(...args)`,
-         `{ return`, G `yield *`, A `await`,
-         `R(F, this, ...args); }) => F)()`
-    ], { filter: string => !!string }, { join: " " }),
-    toƒGenerator = kind =>
-        I `Function` ("R", `${ƒGeneratorTemplate(toGA(kind))}`),
-    ƒGenerators = mapEntries(FunctionKinds,
-        ([_, kind]) => [kind, toƒGenerator(kind)])) =>
-    kind => ƒGenerators[kind]);
+    IsTaggedCall(args) && HasMethod(f, ƒSymbols.tag) ?
+        GetMethod(f, ƒSymbols.tag)(f, thisArgument, ToResolvedString(args)) :
 
-const ReifiedCallEvaluateBody = (ƒ, thisArgument, ...args) =>
+    HasMethod(f, ƒSymbols.apply) ?
+        GetMethod(f, ƒSymbols.apply)(f, thisArgument, args) :
 
-    IsTaggedCall(args) && ƒ[ƒSymbols.tag] ?
-        ƒ[ƒSymbols.tag](ƒ, thisArgument, ToResolvedString(args)) :
-
-    ƒ[ƒSymbols.apply] ?
-        ƒ[ƒSymbols.apply](ƒ, thisArgument, args) :
-
-    ƒ[ƒSymbols.target] ?
-        I.Call(ƒ[ƒSymbols.target], thisArgument, ...args) :
+    HasMethod(f, ƒSymbols.target) ?
+        I.Call(GetMethod(f, ƒSymbols.target), thisArgument, ...args) :
 
     // FIXME: How should we handle this when we have TagObject,
     // and should we make it an option whether this should be coercible?
-    ƒ[ƒSymbols.tag] && IsTagCoercibleCall(args)?
-        ƒ[ƒSymbols.tag](ƒ, thisArgument, args[0]) :
+    HasMethod(f, ƒSymbols.tag) && IsTagCoercibleCall(args)?
+        GetMethod(f, ƒSymbols.tag)(ƒ, thisArgument, args[0]) :
 
-        fail.type(`${ƒ.name} can't respond to this kind of call.`);
+        fail.type(`${f.name} can't respond to this kind of call.`);
 
 const ƒSymbols = SymbolEnum(
     "apply",
     "tag",
     "target",
-    "[[ThisMode]]",
     "[[SourceText]]");
 
 const ToSourceText = f => I `.Function.prototype.toString` (f);
@@ -75,24 +48,28 @@ const ToSourceText = f => I `.Function.prototype.toString` (f);
 const ƒ = Declaration `ƒ` (({ name, tail }) => given((
     [first, ...rest] = tail,
     firstSource = IsFunctionObject(first) ? { [ƒSymbols.target]: first } : first,
-    body = ø(firstSource, ...rest),
-    ƒBasis =
-        body[ƒSymbols.target] ||
-        body[ƒSymbols.apply] ||
-        body[ƒSymbols.tag],
-    kind = GetFunctionKind(ƒBasis),
-    ƒGenerator = GetƒGeneratorForFunctionKind(kind)) =>
-    α(ƒGenerator(ReifiedCallEvaluateBody),
+    f = I `Object.setPrototypeOf` (ƒnamed(name, function (...args)
     {
-        name,
-        toString()
-        {
-            return this[ƒSymbols["[[SourceText]]"]];
-        },
-        [copy]: function (target) { return ƒ(target.name, () => {}, target); },
-        [ƒSymbols["[[ThisMode]]"]]: GetApproximateThisMode(ƒBasis),
-        [ƒSymbols["[[SourceText]]"]]: ToSourceText(ƒBasis)
-    }, body)));
+        return ReifiedCallEvaluateBody(f, this, ...args);
+    }), ƒ.prototype)) => α(f, firstSource, ...rest)));
+
+α(ƒ.prototype,
+{
+    [copy]: function (target) { return ƒ(target.name, () => {}, target); },
+
+    toString()
+    {
+        return this[ƒSymbols["[[SourceText]]"]];
+    },
+
+    get [ƒSymbols["[[SourceText]]"]]()
+    {
+        return ToSourceText(
+            GetMethod(this, ƒSymbols.target) ||
+            GetMethod(this, ƒSymbols.apply) ||
+            GetMethod(this, ƒSymbols.tag));
+    }
+});
 
 // Should we make this taggedCoercible?
 // Or "stringTaggable"?

@@ -20,3 +20,12 @@ const GetMethod = (V, P) => given((
         value);
 
 exports.GetMethod = GetMethod;
+
+const HasMethod = (V, P) => given((
+    value = GetV(V, P)) =>
+    IsNull(value) || IsUndefined(value) ? false :
+    !IsFunctionObject(value) ?
+        fail.type(`${value} is not callable.`) :
+        true);
+
+exports.HasMethod = HasMethod;
