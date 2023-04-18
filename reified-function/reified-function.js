@@ -8,7 +8,8 @@ const Declaration = require("@reified/foundation/declaration");
 const { copy } = require("@reified/delta/copy-value");
 const { GetMethod, HasMethod } = require("@reified/foundation/operations-on-objects");
 
-const Δ = require("@reified/delta");
+// const Δ = require("@reified/delta");
+// const curry = (f, Δa) => Δ(f, Δ.update(ƒ.bindings, Δa))
 
 const
 {
@@ -51,32 +52,33 @@ const ƒ = Declaration `ƒ` (({ name, tail }) => given((
     f = I `Object.setPrototypeOf` (ƒnamed(name, function (...args)
     {
         return ReifiedCallEvaluateBody(f, this, ...args);
-    }), ƒ.prototype)) => α(f, firstSource, ...rest)));
-
-α(ƒ.prototype,
+    }), ƒ.prototype)) => α(f, firstSource, ...rest)),
 {
-    [copy]: function (target) { return ƒ(target.name, () => {}, target); },
+    ...ƒSymbols,
 
-    toString()
-    {
-        return this[ƒSymbols["[[SourceText]]"]];
-    },
+    // Should we make this taggedCoercible?
+    // Or "stringTaggable"?
+    tagged: Declaration `ƒ.tagged`
+        (({ name, tail: [ƒtag, ...rest] }) =>
+            ƒ (name, { [ƒ.tag]: ƒtag }, ...rest)),
 
-    get [ƒSymbols["[[SourceText]]"]]()
+    prototype:
     {
-        return ToSourceText(
-            GetMethod(this, ƒSymbols.target) ||
-            GetMethod(this, ƒSymbols.apply) ||
-            GetMethod(this, ƒSymbols.tag));
+        [copy]: function (target) { return ƒ(target.name, () => {}, target); },
+
+        toString()
+        {
+            return this[ƒSymbols["[[SourceText]]"]];
+        },
+
+        get [ƒSymbols["[[SourceText]]"]]()
+        {
+            return ToSourceText(
+                GetMethod(this, ƒSymbols.target) ||
+                GetMethod(this, ƒSymbols.apply) ||
+                GetMethod(this, ƒSymbols.tag));
+        }
     }
 });
 
-// Should we make this taggedCoercible?
-// Or "stringTaggable"?
-const tagged = Declaration `ƒ.tagged`
-    (({ name, tail: [ƒtag, ...rest] }) =>
-        ƒ (name, { [ƒ.tag]: ƒtag }, ...rest));
-
-const curry = (f, Δa) => Δ(f, Δ.update(ƒ.bindings, Δa))
-
-module.exports = α(ƒ, { ƒ, tagged }, ƒSymbols);
+module.exports = α(ƒ, { ƒ });
