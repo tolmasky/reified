@@ -56,6 +56,10 @@ const ƒ = Declaration `ƒ` (({ name, tail }) => given((
 {
     ...ƒSymbols,
 
+    method: Declaration `ƒ.method`
+        (({ name, tail: [method, ...rest] }) =>
+            ƒ (name, { [ƒ.apply]: method }, ...rest)),
+
     // Should we make this taggedCoercible?
     // Or "stringTaggable"?
     tagged: Declaration `ƒ.tagged`
