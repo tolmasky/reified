@@ -5,7 +5,7 @@ const I = require("@reified/intrinsics");
 const { reduce } = require("@reified/collection");
 const ChainableUpdate = require("./chainable-update");
 
-console.log(ChainableUpdate);
+
 const Δ = ChainableUpdate((target, ...updates) =>
     reduce(updates, (target, update) => update(target), target));
 

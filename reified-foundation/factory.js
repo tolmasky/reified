@@ -11,7 +11,7 @@ const { ø, α } = require("@reified/object");
 
 const S = SymbolEnum("construct");
 
-console.log(Declaration);
+
 // We should do something meaningful when the tail is classes,
 // namely, copy down through prototype, not prototype.
 const Factory = Declaration `Factory` (({ name, tail }) => given((
@@ -47,7 +47,7 @@ module.exports = α(Factory,
         (({ name, tail }) => Factory(name, ...tail,
         {
             [S.construct](_, args, FunctionFactory)
-            {console.log(args);
+            {
                 const [implementation, ...rest] = args;
                 const instance = α(ƒnamed(implementation.name, function (...args)
                 {
