@@ -1,13 +1,17 @@
 const given = f => f();
+
 const I = require("@reified/intrinsics");
-//const Declaration = require("@reified/language/declaration");
+const { α } = require("@reified/object");
 
 const { reduce } = require("@reified/collection");
 const ChainableUpdate = require("./chainable-update");
+const { IsFunctionObject } = require("@reified/foundation/types-and-values");
 
 
 const Δ = ChainableUpdate((target, ...updates) =>
-    reduce(updates, (target, update) => update(target), target));
+    reduce(updates, (target, update) => IsFunctionObject(update) ?
+        update(target) :
+        Δ.assign(update)(target), target));
 
 module.exports = I `Object.assign` (Δ, { Δ });
 

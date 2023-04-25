@@ -1,6 +1,8 @@
 const given = f => f();
 const { I, Call } = require("@reified/intrinsics");
 
+const { α } = require("@reified/object");
+
 const T = require("@reified/foundation/types-and-values");
 const { GetMethod } = require("@reified/foundation/operations-on-objects");
 
@@ -15,7 +17,8 @@ const FunctionObjectCopy = F => F;
 
 const PrototypelessObjectCopy = V => V;
 
-const PlainObjectCopy = V => V;
+const PlainObjectCopy = V =>
+    α(I `Object.create` (I `Object.getPrototypeOf` (V)), V);
 
 const GetCopyMethod = PredicateMap (map =>
 [

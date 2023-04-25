@@ -13,6 +13,9 @@ const A = given((
 ({
     ...A,
 
+    partition: (target, filter) =>
+        [A.filter(target, filter), A.filter(target, (...args) => !filter(...args))],
+
     // We do Array.from to avoid arrays with non-index entries.
     toEntries: target => I `Array.from` (target, (value, index) => [index, value]),
     fromEntries: target => I `Object.assign` ([], O.fromEntries(target)),
@@ -49,11 +52,32 @@ const FromToEntries = FromEntries | ToEntries;
 // setProperty
 // For all builtins, setEntry === setProperty
 
+
+// set SPECIAL(K) -> PD.V
+// setProperty SPECIAL(K) -> PD
+// setEntry -> [K, V] (for Objects, setEntry === set)
+
+// assign { [SPECIAL(K)]: PD.V }
+// assignProperties: { [SPECIAL(K)]: PD }
+// assignEntries: [[K, V], [K, V], ...
+
+// SHORTHAND:
+// { [prototype]: },
+// { [prototype.update]: },
+// { [property `a`]: }, (same as { a: })
+// { [property (symbol)]: }
+// { [entry `a`]: } -> SetEntry
+// { [] }
+// { a: 10 }
+
 const fCollectionMethods =
 {
     get: to => (target, key) => target[key],
     set: to => (target, key, value) =>
         I `Object.assign` (CopyValue(target), { [key]: value }),
+
+    assign: to => (target, source) =>(console.log(target),
+        α(CopyValue(target), source)),
 
     update: to => (target, ...rest) =>
         rest.length === 1 ? rest[0](target) :
@@ -61,6 +85,10 @@ const fCollectionMethods =
 
     concat: to => (target, ...sources) =>
         I `Object.assign` (CopyValue(target), ...sources),
+
+    // FIXME: Broken.
+    partition: to => to(A.partition, f => ([key, value]) => f(value, key)),
+    partitionEntries: to => to(A.partition),
 
     filter: to => to(A.filter, f => ([key, value]) => f(value, key)),
     filterEntries: to => to(A.filter),
