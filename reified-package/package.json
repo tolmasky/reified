@@ -1,0 +1,19 @@
+{
+  "name": "@reified/package",
+  "version": "1.0.0-alpha.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Francisco Ryan Tolmasky I",
+    "email": "tolmasky@gmail.com",
+    "url": "https://tolmasky.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "semver": "^7.5.0"
+  }
+}
