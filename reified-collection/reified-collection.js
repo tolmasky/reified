@@ -1,7 +1,7 @@
 const given = f => f();
 
 const { I, Call } = require("@reified/intrinsics");
-const { α } = require("@reified/object");
+const { ø, α } = require("@reified/object");
 const T = require("@reified/foundation/types-and-values");
 
 const GetPrototypeMethodsOf = require("./get-prototype-methods-of");
@@ -85,6 +85,12 @@ const fCollectionMethods =
 
     concat: to => (target, ...sources) =>
         I `Object.assign` (CopyValue(target), ...sources),
+
+    group: to => (target, f) =>
+        A.reduce(target, (result, item) => given((
+            key = f(item),
+            items = result[key] || []) =>
+                (items.push(item), result[key] = items, result)), ø()),
 
     // FIXME: Broken.
     partition: to => to(A.partition, f => ([key, value]) => f(value, key)),
