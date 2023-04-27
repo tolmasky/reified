@@ -3,11 +3,11 @@ const { I, Call } = require("@reified/intrinsics");
 
 const { α } = require("@reified/object");
 
-const T = require("@reified/foundation/types-and-values");
-const { GetMethod } = require("@reified/foundation/operations-on-objects");
+const T = require("@reified/core/types-and-values");
+const { GetMethod } = require("@reified/core/operations-on-objects");
 
-const PredicateMap = require("@reified/foundation/predicate-map");
-const SymbolEnum = require("@reified/foundation/symbol-enum");
+const PredicateMap = require("@reified/core/predicate-map");
+const SymbolEnum = require("@reified/core/symbol-enum");
 
 const S = SymbolEnum("copy");
 

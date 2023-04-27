@@ -2,7 +2,7 @@ const given = f => f();
 
 const { I, Call } = require("@reified/intrinsics");
 const { ø, α } = require("@reified/object");
-const T = require("@reified/foundation/types-and-values");
+const T = require("@reified/core/types-and-values");
 
 const GetPrototypeMethodsOf = require("./get-prototype-methods-of");
 const CopyValue = require("@reified/delta/copy-value");

@@ -3,10 +3,10 @@ const given = f => f();
 const fail = require("@reified/fail");
 const I = require("@reified/intrinsics");
 const { α, ø } = require("@reified/object");
-const SymbolEnum = require("@reified/foundation/symbol-enum");
-const Declaration = require("@reified/foundation/declaration");
+const SymbolEnum = require("@reified/core/symbol-enum");
+const Declaration = require("@reified/core/declaration");
 const { copy } = require("@reified/delta/copy-value");
-const { GetMethod, HasMethod } = require("@reified/foundation/operations-on-objects");
+const { GetMethod, HasMethod } = require("@reified/core/operations-on-objects");
 
 const Δ = require("@reified/delta");
 
@@ -17,7 +17,7 @@ const
     IsTaggedCall,
     IsTagCoercibleCall,
     ToResolvedString
-} = require("@reified/foundation/function-objects");
+} = require("@reified/core/function-objects");
 
 const toBoundArguments = (f, argumentsList) => given((
     bindings = f[ƒSymbols["[[Bindings]]"]]) =>
@@ -86,6 +86,7 @@ const ƒ = Declaration `ƒ` (({ name, tail }) => given((
 
     prototype:
     {
+        // FIXME: Should this just be handled in CopyValue?...
         [copy]: function (target) { return ƒ(target.name, () => {}, target); },
 
         toString()

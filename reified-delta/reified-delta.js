@@ -5,7 +5,7 @@ const { α } = require("@reified/object");
 
 const { reduce } = require("@reified/collection");
 const ChainableUpdate = require("./chainable-update");
-const { IsFunctionObject } = require("@reified/foundation/types-and-values");
+const { IsFunctionObject } = require("@reified/core/types-and-values");
 
 
 const Δ = ChainableUpdate((target, ...updates) =>
