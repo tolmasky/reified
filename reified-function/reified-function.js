@@ -8,8 +8,7 @@ const Declaration = require("@reified/foundation/declaration");
 const { copy } = require("@reified/delta/copy-value");
 const { GetMethod, HasMethod } = require("@reified/foundation/operations-on-objects");
 
-// const Δ = require("@reified/delta");
-// const curry = (f, Δa) => Δ(f, Δ.update(ƒ.bindings, Δa))
+const Δ = require("@reified/delta");
 
 const
 {
@@ -20,16 +19,27 @@ const
     ToResolvedString
 } = require("@reified/foundation/function-objects");
 
+const toBoundArguments = (f, argumentsList) => given((
+    bindings = f[ƒSymbols["[[Bindings]]"]]) =>
+        bindings.size <= 0 ? argumentsList :
+        Δ(bindings, Δ.reduce(
+            (argumentsList, value, keyPath) =>
+                keyPath in argumentsList ?
+                    argumentsList :
+                    Δ(argumentsList, Δ.set(keyPath, value)),
+            argumentsList)));
+
+
 const ReifiedCallEvaluateBody = (f, thisArgument, ...args) =>
 
     IsTaggedCall(args) && HasMethod(f, ƒSymbols.tag) ?
         GetMethod(f, ƒSymbols.tag)(f, thisArgument, ToResolvedString(args)) :
 
     HasMethod(f, ƒSymbols.apply) ?
-        GetMethod(f, ƒSymbols.apply)(f, thisArgument, args) :
+        GetMethod(f, ƒSymbols.apply)(f, thisArgument, toBoundArguments(f, args)) :
 
     HasMethod(f, ƒSymbols.target) ?
-        I.Call(GetMethod(f, ƒSymbols.target), thisArgument, ...args) :
+        I.Call(GetMethod(f, ƒSymbols.target), thisArgument, ...toBoundArguments(f, args)) :
 
     // FIXME: How should we handle this when we have TagObject,
     // and should we make it an option whether this should be coercible?
@@ -42,17 +52,19 @@ const ƒSymbols = SymbolEnum(
     "apply",
     "tag",
     "target",
-    "[[SourceText]]");
+    "[[SourceText]]",
+    "[[Bindings]]");
 
 const ToSourceText = f => I `.Function.prototype.toString` (f);
 
 const ƒ = Declaration `ƒ` (({ name, tail }) => given((
     [first, ...rest] = tail,
     firstSource = IsFunctionObject(first) ? { [ƒSymbols.target]: first } : first,
+    bindingsSource = { [ƒSymbols["[[Bindings]]"]]: new Map() },
     f = I `Object.setPrototypeOf` (ƒnamed(name, function (...args)
     {
         return ReifiedCallEvaluateBody(f, this, ...args);
-    }), ƒ.prototype)) => α(f, firstSource, ...rest)),
+    }), ƒ.prototype)) => α(f, bindingsSource, firstSource, ...rest)),
 {
     ...ƒSymbols,
 
@@ -65,6 +77,12 @@ const ƒ = Declaration `ƒ` (({ name, tail }) => given((
     tagged: Declaration `ƒ.tagged`
         (({ name, tail: [ƒtag, ...rest] }) =>
             ƒ (name, { [ƒ.tag]: ƒtag }, ...rest)),
+
+    curry: (f, Δbindings) => Δ.update(
+        ƒSymbols["[[Bindings]]"],
+        bindings => bindings ?
+            Δ.assignEntriesFrom(Δbindings)(bindings) : Δbindings)
+                (f instanceof ƒ ? f : ƒ(f)),
 
     prototype:
     {

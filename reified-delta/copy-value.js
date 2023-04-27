@@ -20,12 +20,19 @@ const PrototypelessObjectCopy = V => V;
 const PlainObjectCopy = V =>
     α(I `Object.create` (I `Object.getPrototypeOf` (V)), V);
 
+const ArrayObjectCopy = V => given((
+    copy = I `Array.from` (V),
+    prototype = I `Object.getPrototypeOf` (V)) =>
+    (I `Object.setPrototypeOf`(copy, prototype), α(copy, V)));
+
+
 const GetCopyMethod = PredicateMap (map =>
 [
     [T.IsPrimitive, PrimitiveCopy],
     [V => !!GetMethod(V, S.copy), map(V => GetMethod(V, S.copy))],
     [T.IsFunctionObject, FunctionObjectCopy],
     [T.IsPrototypelessObject, PrototypelessObjectCopy],
+    [T.IsArray, ArrayObjectCopy],
     PlainObjectCopy
 ]);
 

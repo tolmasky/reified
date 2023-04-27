@@ -43,6 +43,12 @@ const S =
         "")
 }
 
+const M =
+{
+    toEntries: target => [...Call(I `Map.prototype.entries`, target)],
+    fromEntries: target => new I `Map` (target)
+};
+
 const FromEntries = 1;
 const ToEntries = 2;
 const FromToEntries = FromEntries | ToEntries;
@@ -72,12 +78,21 @@ const FromToEntries = FromEntries | ToEntries;
 
 const fCollectionMethods =
 {
+    fromEntries: false,
+    toEntries: false,
+
     get: to => (target, key) => target[key],
     set: to => (target, key, value) =>
         I `Object.assign` (CopyValue(target), { [key]: value }),
 
     assign: to => (target, source) =>(console.log(target),
         α(CopyValue(target), source)),
+
+    assignEntries: (to, { fromEntries }) => (target, source) =>
+        fromEntries([...C.toEntries(target), ...source]),
+
+    assignEntriesFrom: (to, { fromEntries }) => (target, source) =>
+        fromEntries([...C.toEntries(target), ...C.toEntries(source)]),
 
     update: to => (target, ...rest) =>
         rest.length === 1 ? rest[0](target) :
@@ -119,11 +134,16 @@ const toComputedCollectionMethods = M => given((
         O.fromEntries(
             I `Array.from` (
                 O.toEntries(fCollectionMethods),
-                ([key, f]) => [key, M[key] || f(toCollectionMethod)]))));
+                ([key, f]) => [key, M[key] || f(toCollectionMethod, M)]))));
 
 const toCollectionMethod = given((
     methods = A.map(
-        [[T.IsArray, A], [T.IsString, S], [T.IsObject, O]],
+    [
+        [T.IsArray, A],
+        [T.IsString, S],
+        [value => value instanceof I `Map`, M],
+        [T.IsObject, O]
+    ],
         (([predicate, methods]) =>
             [predicate, toComputedCollectionMethods(methods)]))) =>
     key =>
@@ -134,6 +154,8 @@ const toCollectionMethod = given((
 
 const Collection = toCollectionMethod("map")
     (fCollectionMethods, (_, key) => toCollectionMethod(key));
+
+const C = Collection;
 
 module.exports = α(Collection,
 {

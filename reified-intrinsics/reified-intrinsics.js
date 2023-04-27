@@ -53,6 +53,14 @@ I["Array.prototype.reduce"] = I.Array.prototype.reduce;
 I["Array.prototype.slice"] = I.Array.prototype.slice;
 I["Array.prototype.sort"] = I.Array.prototype.sort;
 
+I["Map"] = global.Map;
+I["Map.prototype"] = I.Map.prototype;
+I["Map.prototype.entries"] = I.Map.prototype.entries;
+I["Map.prototype.get"] = I.Map.prototype.get;
+I["Map.prototype.set"] = I.Map.prototype.set;
+
+
+
 I.Error = global.Error;
 I.AggregateError = global.AggregateError;
 I.EvalError = global.EvalError;
