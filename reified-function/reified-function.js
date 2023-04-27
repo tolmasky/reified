@@ -8,6 +8,8 @@ const Declaration = require("@reified/core/declaration");
 const { copy } = require("@reified/delta/copy-value");
 const { GetMethod, HasMethod } = require("@reified/core/operations-on-objects");
 
+const toBindings = require("./to-bindings");
+
 const Δ = require("@reified/delta");
 
 const
@@ -23,8 +25,8 @@ const toBoundArguments = (f, argumentsList) => given((
     bindings = f[ƒSymbols["[[Bindings]]"]]) =>
         bindings.size <= 0 ? argumentsList :
         Δ(bindings, Δ.reduce(
-            (argumentsList, value, keyPath) =>
-                keyPath in argumentsList ?
+            (argumentsList, [keyPath, value]) =>
+                keyPath.hasOwn(argumentsList) ?
                     argumentsList :
                     Δ(argumentsList, Δ.set(keyPath, value)),
             argumentsList)));
@@ -78,11 +80,12 @@ const ƒ = Declaration `ƒ` (({ name, tail }) => given((
         (({ name, tail: [ƒtag, ...rest] }) =>
             ƒ (name, { [ƒ.tag]: ƒtag }, ...rest)),
 
-    curry: (f, Δbindings) => Δ.update(
+    curry: (f, shorthand) => Δ.update(
         ƒSymbols["[[Bindings]]"],
-        bindings => bindings ?
-            Δ.assignEntriesFrom(Δbindings)(bindings) : Δbindings)
-                (f instanceof ƒ ? f : ƒ(f)),
+        bindings => given((
+            Δbindings = toBindings(shorthand)) => bindings ?
+                Δ.assignEntriesFrom(Δbindings)(bindings) :
+                Δbindings))(f instanceof ƒ ? f : ƒ(f)),
 
     prototype:
     {

@@ -6,6 +6,7 @@ const T = require("@reified/core/types-and-values");
 
 const GetPrototypeMethodsOf = require("./get-prototype-methods-of");
 const CopyValue = require("@reified/delta/copy-value");
+const KeyPath = require("@reified/delta/key-path");
 
 
 const A = given((
@@ -82,8 +83,8 @@ const fCollectionMethods =
     toEntries: false,
 
     get: to => (target, key) => target[key],
-    set: to => (target, key, value) =>
-        I `Object.assign` (CopyValue(target), { [key]: value }),
+    set: to => (target, keylike, value) =>
+        KeyPath(keylike).set(target, value),
 
     assign: to => (target, source) =>(console.log(target),
         α(CopyValue(target), source)),
