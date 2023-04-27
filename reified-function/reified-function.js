@@ -83,7 +83,7 @@ const ƒ = Declaration `ƒ` (({ name, tail }) => given((
     curry: (f, shorthand) => Δ.update(
         ƒSymbols["[[Bindings]]"],
         bindings => given((
-            Δbindings = toBindings(shorthand)) => bindings ?
+            Δbindings = toBindings(GetMethod(f, ƒ.target), shorthand)) => bindings ?
                 Δ.assignEntriesFrom(Δbindings)(bindings) :
                 Δbindings))(f instanceof ƒ ? f : ƒ(f)),
 

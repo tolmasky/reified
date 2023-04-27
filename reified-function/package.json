@@ -18,6 +18,8 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@babel/parser": "^7.21.4",
+    "@babel/types": "^7.21.4",
     "@reified/fail": "^1.0.0-alpha.1",
     "@reified/intrinsics": "^1.0.0-alpha.5",
     "@reified/object": "^1.0.0-alpha.2"
