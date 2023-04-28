@@ -1,7 +1,7 @@
 const given = f => f();
 
 const I = require("@reified/intrinsics");
-const { IsPlainObject, IsArray } = require("@reified/core/types-and-values");
+const { IsArray, IsFunctionObject } = require("@reified/core/types-and-values");
 const Enum = require("@reified/core/enum");
 
 const KeyPath = require("./key-path");
@@ -24,7 +24,10 @@ const apply = function (target, keyPath, 𝑢)
 {
     if (keyPath === KeyPath.End)
     {
-        const mutation = Mutation(𝑢(target));
+        const mutation =
+            𝑢 instanceof Mutation ? 𝑢 :
+            IsFunctionObject(𝑢) ? Mutation(𝑢(target)) :
+            Mutation.Set(𝑢);
 
         if (mutation instanceof Mutation.Splice)
             return Mutation.Set(I.Call(
