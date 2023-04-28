@@ -32,7 +32,7 @@ const ƒextending = (from, name, f) => given((
     constructor = ƒnamed(name, f),
     prototype = I `Object.setPrototypeOf`
         (constructor.prototype, from.prototype)) =>
-        f);
+        constructor);
 
 exports.ƒextending = ƒextending;
 
