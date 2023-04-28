@@ -22,9 +22,19 @@ exports.ThisMode = ThisMode;
 exports.GetApproximateThisMode = f =>
     IsArrowFunction(f) ? ThisMode.Lexical : ThisMode.Global;
 
-exports.ƒnamed = (name, f) => name ?
+const ƒnamed = (name, f) => name ?
     I `Object.defineProperty` (f, "name", { value: name }) :
     f;
+
+exports.ƒnamed = ƒnamed;
+
+const ƒextending = (from, name, f) => given((
+    constructor = ƒnamed(name, f),
+    prototype = I `Object.setPrototypeOf`
+        (constructor.prototype, from.prototype)) =>
+        f);
+
+exports.ƒextending = ƒextending;
 
 exports.IsFunctionObject = IsFunctionObject;
 
