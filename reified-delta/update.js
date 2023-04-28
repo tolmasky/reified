@@ -18,7 +18,7 @@ const Mutation = Enum `Mutation` (caseof =>
     caseof `Set` (value => ({ value })),
     caseof `Delete`,
     caseof `Spread` (value => ({ value })),
-    caseof `Splice` ((start, count, items) => ({ start, count, items }))
+    caseof `Splice` ((start, count, value) => ({ start, count, value }))
 ]);
 
 const apply = function (target, keyPath, 𝑢)
@@ -31,11 +31,15 @@ const apply = function (target, keyPath, 𝑢)
             Mutation.Set(𝑢);
 
         if (mutation instanceof Mutation.Splice)
-            return Mutation.Set(I.Call(
-            I `Array.prototype.concat`,
-                I.Call(I `Array.prototype.slice`, target, 0, mutation.start),
-                mutation.items,
-                I.Call(I `Array.prototype.slice`, target, mutation.start + mutation.count)));
+        {
+            const { start, count, value } = mutation;
+            const forAssignment =
+                I `Object.assign`(I `Array.from` (target), { length: start });
+
+            forAssignment.splice(start, count, ...value);
+
+            return Mutation.Set(I `Object.assign` (CopyValue(target), forAssignment));
+        }
 
         return mutation instanceof Mutation.Spread ?
             Mutation.Set(I `Object.assign` (CopyValue(target), mutation.value)) :
@@ -94,11 +98,12 @@ module.exports.Mutation = Mutation;
 
 const TargetedUpdate = ƒextending(Function, "TargetedUpdate", function (keyPath, mutation)
 {
+    const effectiveKeyPath = mutation instanceof Mutation.Splice ? KeyPath(mutation.start, keyPath) : keyPath;
     return I `Object.setPrototypeOf` (
         ƒnamed(
             "update",
             target => update(target, keyPath, mutation),
-            { keyPath, mutation }),
+            { effectiveKeyPath, keyPath, mutation }),
         TargetedUpdate.prototype);
 });
 

@@ -25,10 +25,10 @@ const toBoundArguments = (f, argumentsList) => given((
     bindings = f[ƒSymbols["[[Bindings]]"]]) =>
         bindings.size <= 0 ? argumentsList :
         Δ(bindings, Δ.reduce(
-            (argumentsList, [keyPath, value]) =>
-                keyPath.hasOwn(argumentsList) ?
+            (argumentsList, update) =>
+                update.effectiveKeyPath.hasOwn(argumentsList) ?
                     argumentsList :
-                    Δ(argumentsList, Δ.set(keyPath, value)),
+                    update(argumentsList),
             argumentsList)));
 
 

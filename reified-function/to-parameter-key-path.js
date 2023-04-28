@@ -3,7 +3,10 @@ const given = f => f();
 const I = require("@reified/intrinsics");
 
 const { IsArray } = require("@reified/core/types-and-values");
+
 const KeyPath = require("@reified/delta/key-path");
+const update = require("@reified/delta/update");
+const { Mutation } = update;
 
 const { ø } = require("@reified/object");
 
@@ -62,32 +65,65 @@ const fParse = f => given((
 const ToIndexedEntries = array =>
     I `Array.from` (array, (value, index) => [index, value]);
 
-const toParameterKeyPaths = node =>
+const toRestKeyPathIfNecessary = keyPaths =>(console.log(keyPaths, keyPaths[0][1]),
+    keyPaths.length !== 1 ? keyPaths :
+    keyPaths[0][1] !== KeyPath.End ? keyPaths :
+    [KeyPath.RestKeyPath(keyPaths[0][1])]);
+
+const toMaybeRestKeyPath = keyPaths =>
+    keyPaths.length !== 1 ? keyPaths :
+    keyPaths[0][1] !== KeyPath.End ? keyPaths :
+    [KeyPath.Rest];
+
+const toRestUpdateTemplates = (templates, fromArrayIndex) =>
+    templates.length !== 1 ? templates : given((
+        [[name, { keyPath }]] = templates) =>
+        keyPath !== KeyPath.End ? templates :
+        [[
+            name,
+            update(keyPath, fromArrayIndex !== false ?
+                Mutation.Splice(fromArrayIndex, Infinity, null) :
+                Mutation.Spread(null))
+        ]]);
+
+const toUpdateTemplates = (node, fromArrayIndex = false) =>
     !node ? [] :
     IsArray(node) ?
         node.flatMap(([key, value]) =>
-            toParameterKeyPaths(value)
-                .map(([name, keyPath]) => [name, KeyPath(key, keyPath)])) :
+            toUpdateTemplates(value, typeof key === "number" && key)
+                .map(([name, template]) =>
+                [
+                    name,
+                    template.mutation instanceof Mutation.Splice ?
+                        template :
+                        template.nest(key)
+                ])) :
     isFunction(node) ?
-        toParameterKeyPaths(ToIndexedEntries(node.params)) :
+        toUpdateTemplates(ToIndexedEntries(node.params)) :
     isArrayPattern(node) ?
-        toParameterKeyPaths(ToIndexedEntries(node.elements)) :
+        toUpdateTemplates(ToIndexedEntries(node.elements)) :
     isObjectPattern(node) ?
-        toParameterKeyPaths(node
+        toUpdateTemplates(node
             .properties
             .filter(node => isIdentifier(node.key))
-            .map(({ key, value }) => [key.name, value])) :
-    isIdentifier(node) ? [[node.name, KeyPath.End]] :
+            .map(({ key, value }) => [key.name, value]))
+            .concat(toUpdateTemplates(node
+                .properties
+                .filter(isRestElement)[0])) :
+    isIdentifier(node) ?
+         [[node.name, update(KeyPath.End, Mutation.Set(null))]] :
     isAssignmentPattern(node) ?
-        toParameterKeyPaths(node.left) :
+        toUpdateTemplates(node.left) :
     isRestElement(node) ?
-        toParameterKeyPaths(node.argument) :
+        toRestUpdateTemplates(
+            toUpdateTemplates(node.argument),
+            fromArrayIndex) :
     [];
 
-const toParameterKeyPath = (f, name) => given((
+const toUpdateTemplate = (f, name) => given((
     fString = FunctionPrototypeToString.call(f),
     fExpression = parseExpression(`(${fString})`),
-    parameterMappings = ø.fromEntries(toParameterKeyPaths(fExpression))) =>
-    parameterMappings[name]);
+    templates = ø.fromEntries(toUpdateTemplates(fExpression))) =>
+    templates[name]);
 
-module.exports = toParameterKeyPath;
+module.exports = toUpdateTemplate;
