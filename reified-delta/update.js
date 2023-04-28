@@ -3,6 +3,7 @@ const given = f => f();
 const I = require("@reified/intrinsics");
 const { IsArray, IsFunctionObject } = require("@reified/core/types-and-values");
 const Enum = require("@reified/core/enum");
+const { ƒnamed, ƒextending } = require("@reified/core/function-objects");
 
 const KeyPath = require("./key-path");
 const CopyValue = require("./copy-value");
@@ -79,15 +80,31 @@ const apply = (target, keyPath, 𝑢) => keyPath.caseof
 });*/
 
 
-const toNormalizedArguments = ([target, location, 𝑢]) =>
-    [target, KeyPath(location), 𝑢];
+const toNormalizedArguments = ([location, 𝑢]) =>
+    [KeyPath(location), 𝑢];
 
-const update = (...argumentsList) =>
-    argumentsList.length < 3 ?
-        target => update(target, ...argumentsList) :
-        apply(...toNormalizedArguments(argumentsList)).value;
+const update = (first, ...rest) =>
+    rest.length < 2 ?
+        TargetedUpdate(...toNormalizedArguments([first, ...rest])) :
+        apply(first, ...toNormalizedArguments(rest)).value;
 
 module.exports = update;
 
 module.exports.Mutation = Mutation;
 
+const TargetedUpdate = ƒextending(Function, "TargetedUpdate", function (keyPath, mutation)
+{
+    return I `Object.setPrototypeOf` (
+        ƒnamed(
+            "update",
+            target => update(target, keyPath, mutation),
+            { keyPath, mutation }),
+        TargetedUpdate.prototype);
+});
+
+TargetedUpdate.prototype.nest = function (key)
+{
+    return TargetedUpdate(KeyPath(key, this.keyPath), this.mutation);
+}
+
+module.exports.TargetedUpdate = TargetedUpdate;
