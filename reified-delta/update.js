@@ -49,12 +49,12 @@ const toNormalizedArguments = ([location, 𝑢]) =>
 
 const update = (first, ...rest) =>
     rest.length < 2 ?
-        TargetedUpdate(...toNormalizedArguments([first, ...rest])) :
+        Update(...toNormalizedArguments([first, ...rest])) :
         apply(first, ...toNormalizedArguments(rest)).value;
 
 module.exports = update;
 
-const TargetedUpdate = ƒextending(Function, "TargetedUpdate", function (keyPath, mutation)
+const Update = ƒextending(Function, "Update", function (keyPath, mutation)
 {
     return I `Object.setPrototypeOf` (ƒnamed("update",
         target => update(target, keyPath, mutation),
@@ -66,12 +66,12 @@ const TargetedUpdate = ƒextending(Function, "TargetedUpdate", function (keyPath
                 [Mutation.Splice]: ({ start }) => KeyPath(start, keyPath),
                 default: () => keyPath
             })
-        }), TargetedUpdate.prototype);
+        }), Update.prototype);
 });
 
-TargetedUpdate.prototype.nest = function (key)
+Update.prototype.nest = function (key)
 {
-    return TargetedUpdate(KeyPath(key, this.keyPath), this.mutation);
+    return Update(KeyPath(key, this.keyPath), this.mutation);
 }
 
-module.exports.TargetedUpdate = TargetedUpdate;
+module.exports.Update = Update;

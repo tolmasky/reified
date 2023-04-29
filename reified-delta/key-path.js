@@ -1,9 +1,6 @@
 const given = f => f();
 
 const I = require("@reified/intrinsics");
-const { α } = require("@reified/object");
-const { IsPlainObject, IsArray } = require("@reified/core/types-and-values");
-const CopyValue = require("./copy-value");
 const Enum = require("@reified/core/enum");
 
 const KeyPath = Enum `KeyPath` (caseof =>
@@ -30,26 +27,6 @@ const KeyPath = Enum `KeyPath` (caseof =>
 
     prototype:
     {
-        get(value)
-        {
-            return this === KeyPath.End ?
-                value :
-                this.tail.get(value[this.key]);
-        },
-
-        set(target, value)
-        {
-            if (this === KeyPath.End)
-                return value;
-
-            const current = target[this.key];
-            const updated = this.tail.set(current, value);
-
-            return current === updated ?
-                target :
-                I `Object.assign` (CopyValue(target), { [this.key]: updated });
-        },
-
         hasOwn(target)
         {
             return  this === KeyPath.End ||
