@@ -21,66 +21,45 @@ const Mutation = Enum `Mutation` (caseof =>
     caseof `Splice` ((start, count, value) => ({ start, count, value }))
 ]);
 
-const apply = function (target, keyPath, 𝑢)
+const toMutation = (target, update) =>
+    update instanceof Mutation ? update :
+    IsFunctionObject(update) ? Mutation(update(target)) :
+    Mutation.Set(update);
+
+const omitting = (target, key) => given((
+    copy = CopyValue(target)) => (delete copy[key], copy));
+
+const apply = (target, keyPath, update) => caseof(keyPath,
 {
-    if (keyPath === KeyPath.End)
+    [KeyPath.End]: () => caseof(toMutation(target, update),
     {
-        const mutation =
-            𝑢 instanceof Mutation ? 𝑢 :
-            IsFunctionObject(𝑢) ? Mutation(𝑢(target)) :
-            Mutation.Set(𝑢);
+        [Mutation.Splice]: ({ start, count, value }) => given((
+            forAssignment = I `Object.assign`(
+                I `Array.from` (target), { length: start }),
+            result = forAssignment.splice(start, count, ...value)) =>
+            Mutation.Set(
+                I `Object.assign` (CopyValue(target), forAssignment))),
 
-        return caseof(mutation,
-        {
-            [Mutation.Splice]: ({ start, count, value }) => given((
-                forAssignment = I `Object.assign`(
-                    I `Array.from` (target), { length: start }),
-                result = forAssignment.splice(start, count, ...value)) =>
-                Mutation.Set(
-                    I `Object.assign` (CopyValue(target), forAssignment))),
+        [Mutation.Spread]: ({ value }) =>
+            Mutation.Set(I `Object.assign` (CopyValue(target), value)),
 
-            [Mutation.Spread]: ({ value }) =>
-                Mutation.Set(I `Object.assign` (CopyValue(target), value)),
+        default: mutation => mutation
+    }),
 
-            default: mutation => mutation
-        });
-    }
-
-    const { key, tail } = keyPath;
-    const current = target[key];
-
-    return caseof(apply(current, tail, 𝑢),
-    {
-        [Mutation.Delete]: () =>
-        {
-            const updated = CopyValue(target);
-
-            delete updated[key];
-
-            return Mutation.Set(updated);
-        },
-
-        [Mutation.Set]: ({ value: updated }) =>
-            Mutation.Set(current === updated ?
-                target :
-                I `Object.assign` (CopyValue(target), { [key]: updated })),
-
-        default: () => fail("oh no!")
-    });
-};
-
-/*
-const apply = (target, keyPath, 𝑢) => keyPath.caseof
-({
-    [KeyPath.End]: () => 𝑢(target),
     [KeyPath.KeyPath]: ({ key, tail }) => given((
-        current = target[key],
-        updated = apply(target, tail, current)) =>
-            current === updated ?
-                target :
-                I `Object.assign` (CopyValue(target), { [key]: updated }))
-});*/
+        current = target[key]) => caseof(apply(current, tail, update),
+        {
+            [Mutation.Delete]: () =>
+                Mutation.Set(omitting(target, key)),
 
+            [Mutation.Set]: ({ value: updated }) =>
+                Mutation.Set(current === updated ?
+                    target :
+                    I `Object.assign` (CopyValue(target), { [key]: updated })),
+
+            default: () => fail("oh no!")
+        }))
+});
 
 const toNormalizedArguments = ([location, 𝑢]) =>
     [KeyPath(location), 𝑢];
