@@ -6,7 +6,7 @@ const { IsArray } = require("@reified/core/types-and-values");
 
 const KeyPath = require("@reified/delta/key-path");
 const update = require("@reified/delta/update");
-const { Mutation } = update;
+const Mutation = require("@reified/delta/mutation");
 
 const { ø } = require("@reified/object");
 
