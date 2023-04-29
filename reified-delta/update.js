@@ -18,20 +18,20 @@ const Mutation = Enum `Mutation` (caseof =>
     caseof `Set` (value => ({ value })),
     caseof `Delete`,
     caseof `Spread` (value => ({ value })),
-    caseof `Splice` ((start, count, value) => ({ start, count, value }))
-]);
+    caseof `Splice` ((start, count, value) => ({ start, count, value })),
 
-const toMutation = (target, update) =>
-    update instanceof Mutation ? update :
-    IsFunctionObject(update) ? Mutation(update(target)) :
-    Mutation.Set(update);
+    caseof `fromShorthand` ((target, update) =>
+        update instanceof Mutation ? update :
+        IsFunctionObject(update) ? Mutation(update(target)) :
+        Mutation.Set(update))
+]);
 
 const omitting = (target, key) => given((
     copy = CopyValue(target)) => (delete copy[key], copy));
 
 const apply = (target, keyPath, update) => caseof(keyPath,
 {
-    [KeyPath.End]: () => caseof(toMutation(target, update),
+    [KeyPath.End]: () => caseof(Mutation.fromShorthand(target, update),
     {
         [Mutation.Splice]: ({ start, count, value }) => given((
             forAssignment = I `Object.assign`(
