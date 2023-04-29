@@ -2,7 +2,7 @@ const given = f => f();
 
 const I = require("@reified/intrinsics");
 const { IsArray, IsFunctionObject } = require("@reified/core/types-and-values");
-const Enum = require("@reified/core/enum");
+const { Enum, caseof } = require("@reified/core/enum");
 const { ƒnamed, ƒextending } = require("@reified/core/function-objects");
 
 const KeyPath = require("./key-path");
@@ -30,45 +30,43 @@ const apply = function (target, keyPath, 𝑢)
             IsFunctionObject(𝑢) ? Mutation(𝑢(target)) :
             Mutation.Set(𝑢);
 
-        if (mutation instanceof Mutation.Splice)
+        return caseof(mutation,
         {
-            const { start, count, value } = mutation;
-            const forAssignment =
-                I `Object.assign`(I `Array.from` (target), { length: start });
+            [Mutation.Splice]: ({ start, count, value }) => given((
+                forAssignment = I `Object.assign`(
+                    I `Array.from` (target), { length: start }),
+                result = forAssignment.splice(start, count, ...value)) =>
+                Mutation.Set(
+                    I `Object.assign` (CopyValue(target), forAssignment))),
 
-            forAssignment.splice(start, count, ...value);
+            [Mutation.Spread]: ({ value }) =>
+                Mutation.Set(I `Object.assign` (CopyValue(target), value)),
 
-            return Mutation.Set(I `Object.assign` (CopyValue(target), forAssignment));
-        }
-
-        return mutation instanceof Mutation.Spread ?
-            Mutation.Set(I `Object.assign` (CopyValue(target), mutation.value)) :
-            mutation;
+            default: mutation => mutation
+        });
     }
 
     const { key, tail } = keyPath;
     const current = target[key];
-    const mutation = apply(current, tail, 𝑢);
 
-    if (mutation instanceof Mutation.Delete)
+    return caseof(apply(current, tail, 𝑢),
     {
-        const updated = CopyValue(target);
+        [Mutation.Delete]: () =>
+        {
+            const updated = CopyValue(target);
 
-        delete updated[key];
-    
-        return Mutation.Set(updated);
-    };
+            delete updated[key];
 
-    if (mutation instanceof Mutation.Set)
-    {
-        const updated = mutation.value;
+            return Mutation.Set(updated);
+        },
 
-        return Mutation.Set(current === updated ?
-            target :
-            I `Object.assign` (CopyValue(target), { [key]: updated }));
-    }
-    
-    fail("oh no!");
+        [Mutation.Set]: ({ value: updated }) =>
+            Mutation.Set(current === updated ?
+                target :
+                I `Object.assign` (CopyValue(target), { [key]: updated })),
+
+        default: () => fail("oh no!")
+    });
 };
 
 /*
