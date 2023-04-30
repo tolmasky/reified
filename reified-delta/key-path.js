@@ -1,7 +1,7 @@
 const given = f => f();
 
 const I = require("@reified/intrinsics");
-const Enum = require("@reified/core/enum");
+const { Enum, caseof } = require("@reified/core/enum");
 
 const KeyPath = Enum `KeyPath` (caseof =>
 [
@@ -48,9 +48,11 @@ const KeyPath = Enum `KeyPath` (caseof =>
 
         toArray()
         {
-            return this === KeyPath.End ?
-                [] :
-                [this.key, ...this.tail.toArray()];
+            return caseof(this,
+            {
+                [KeyPath.End]: () => [],
+                [KeyPath.KeyPath]: ({ key, tail }) => [key, ...tail.toArray()]
+            });
         },
 
         toKeyID()
