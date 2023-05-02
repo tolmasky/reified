@@ -4,6 +4,7 @@ const fail = require("@reified/fail");
 const I = require("@reified/intrinsics");
 const Declaration = require("./declaration");
 const { ƒnamed, ƒextending, IsFunctionObject } = require("./function-objects");
+const ESymbols = require("./symbol-enum")("apply");
 
 const { ø, α } = require("@reified/object");
 
@@ -20,8 +21,20 @@ const Constant = (Enum, name, properties) => given((
 
 
 const GetConstructorOf = value => I `Object.getPrototypeOf` (value).constructor;
+const EnumNameRegExp = /([^\(]+)(\(\))?$/;
 
-const Enum = Declaration `Enum` (({ name, tail:[fCaseOfs, ...rest] }) => given((
+const instantiate = C => given((
+    { name, isCallable } = GetConstructorDefinitionOf(C)) => isCallable ?
+        I `Object.setPrototypeOf` (ƒnamed(
+            name,
+            function f(...args) { return f[ESymbols["apply"]](f, this, args); }),
+            C.prototype) :
+        I `Object.create` (C.prototype));
+
+const Enum = Declaration `Enum` (declaration => given((
+    { name: unparsed, tail: [fCaseOfs, ...rest] } = declaration,
+    [, name, isCallable] =
+        I.Call(I `String.prototype.match`, unparsed, EnumNameRegExp),
     Enum = ƒnamed(name, function (...argumentsList)
     {
         const constructor = definition.constructors[name];
@@ -43,7 +56,7 @@ const Enum = Declaration `Enum` (({ name, tail:[fCaseOfs, ...rest] }) => given((
 
                         return constructed instanceof Enum ?
                             constructed :
-                            α(I `Object.create` (C.prototype), constructed);
+                            α(instantiate(C), constructed);
                     }) :
                 Constant(Enum, name, constructor))),
         constructor => α(constructor instanceof Declaration.Tail ?
@@ -55,9 +68,10 @@ const Enum = Declaration `Enum` (({ name, tail:[fCaseOfs, ...rest] }) => given((
         }})),
     Cdefinitions = I `Array.from` (
         constructors,
-        C => ConstructorDefinition(C, { symbol: Symbol(C.name) })),
+        C => ConstructorDefinition(C, { isCallable: !!isCallable, symbol: Symbol(C.name) })),
     definition = TypeDefinition(Enum,
     {
+        isCallable: !!isCallable,
         constructors: ø.fromEntries(I `Array.from` (constructors, C => [C.name, C]))
     }),
     { prototype, ...properties } = ø(...rest)) => I `Object.assign` (Enum,
@@ -149,5 +163,5 @@ const caseof = (value, cases) => given((
             fail.type (`No match for ${definition.name} found in caseof statement`) :
             match(value));
 
-module.exports = I `Object.assign` (Enum, { Enum, caseof });
+module.exports = I `Object.assign` (Enum, { Enum, caseof, ...ESymbols });
 

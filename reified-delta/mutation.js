@@ -1,23 +1,61 @@
+const given = f => f();
+
+const I = require("@reified/intrinsics");
 const { IsFunctionObject } = require("@reified/core/types-and-values");
-const Enum = require("@reified/core/enum");
+const { Enum, caseof, apply } = require("@reified/core/enum");
+const CopyValue = require("./copy-value");
+const { max } = Math;
 
 
-const Mutation = Enum `Mutation` (caseof =>
+const omitting = (target, key) => given((
+    copy = CopyValue(target)) => (delete copy[key], copy));
+
+const Mutation = Enum `Mutation()` (caseof =>
 [
-    caseof `Mutation` (value =>
-        value instanceof Mutation ?
-            value :
-            Mutation.Set(value)),
+    caseof `Set` ((key, value) =>
+    ({
+        [apply]: ({ key, value }, _, [target]) =>
+            target[key] === value ?
+                target :
+                I `Object.assign` (CopyValue(target), { [key]: value }),
+        key,
+        value
+    })),
 
-    caseof `Set` (value => ({ value })),
-    caseof `Delete`,
-    caseof `Spread` (value => ({ value })),
-    caseof `Splice` ((start, count, value) => ({ start, count, value })),
+    caseof `Delete` (key =>
+    ({
+        [apply]: ({ key }, _, [target]) =>
+            I `Object.hasOwn` (target, key) ?
+                 omitting(target, key) :
+                 target,
+        key
+    })),
 
-    caseof `fromShorthand` ((target, update) =>
-        update instanceof Mutation ? update :
-        IsFunctionObject(update) ? Mutation(update(target)) :
-        Mutation.Set(update))
+    caseof `Spread` (value =>
+    ({
+        [apply]: ({ value }, _, [target]) =>
+            I `Object.assign` (CopyValue(target), value),
+        value
+    })),
+
+    // FIXME: We need a better name for this since it isn't a strict splice...
+    caseof `Splice` ((key, remove, value) =>
+    ({
+        [apply]: ({ key, remove, value }, _, [target]) =>
+            remove === 0 && value.length === 0 ? target : given((
+            forAssignment = I `Object.assign`(
+                I `Array.from` (target), { length: max(key, target.length) }),
+            result = forAssignment.splice(key, remove, ...value)) =>
+                I `Object.assign` (
+                    CopyValue(target),
+                    forAssignment,
+                    { length: forAssignment.length })),
+        key,
+        remove,
+        value
+    })),
+
+    caseof `Replace` (value => ({ [apply]: ({ value }) => value, value }))
 ]);
 
 module.exports = Mutation;

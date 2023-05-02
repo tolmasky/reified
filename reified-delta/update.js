@@ -12,36 +12,23 @@ const Mutation = require("./mutation");
 const omitting = (target, key) => given((
     copy = CopyValue(target)) => (delete copy[key], copy));
 
+const fromUpdate = (update, target) =>
+    update instanceof Mutation ?
+        update :
+        Mutation.fromShorthand(update(target));
+
+//const toDefaultIfAbsent = (target, key) => key in target ?
+
 const apply = (target, keyPath, update) => caseof(keyPath,
 {
-    [KeyPath.End]: () => caseof(Mutation.fromShorthand(target, update),
-    {
-        [Mutation.Splice]: ({ start, count, value }) => given((
-            forAssignment = I `Object.assign`(
-                I `Array.from` (target), { length: start }),
-            result = forAssignment.splice(start, count, ...value)) =>
-            Mutation.Set(
-                I `Object.assign` (CopyValue(target), forAssignment))),
-
-        [Mutation.Spread]: ({ value }) =>
-            Mutation.Set(I `Object.assign` (CopyValue(target), value)),
-
-        default: mutation => mutation
-    }),
+    [KeyPath.End]: () => update(target),
 
     [KeyPath.KeyPath]: ({ key, tail }) => given((
-        current = target[key]) => caseof(apply(current, tail, update),
-        {
-            [Mutation.Delete]: () =>
-                Mutation.Set(omitting(target, key)),
-
-            [Mutation.Set]: ({ value: updated }) =>
-                Mutation.Set(current === updated ?
-                    target :
-                    I `Object.assign` (CopyValue(target), { [key]: updated })),
-
-            default: () => fail("oh no!")
-        }))
+        current = target[key],
+        updated = apply(current, tail, update)) =>
+            current === updated ?
+                target :
+                I `Object.assign` (CopyValue(target), { [key]: updated }))
 });
 
 const toNormalizedArguments = ([location, 𝑢]) =>
