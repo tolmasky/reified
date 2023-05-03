@@ -156,6 +156,11 @@ I["String.prototype.toUpperCase"] = I.String.prototype.toUpperCase;
 
 I["undefined"] = void(0);
 
+I["WeakMap"] = global.WeakMap;
+I["WeakMap.prototype.get"] = I.WeakMap.prototype.get;
+I["WeakMap.prototype.set"] = I.WeakMap.prototype.set;
+
+
 I["JSON"] = JSON;
 I["JSON.stringify"] = JSON.stringify;
 I["JSON.parse"] = JSON.parse;
