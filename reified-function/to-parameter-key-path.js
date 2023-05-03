@@ -7,7 +7,7 @@ const { IsArray } = require("@reified/core/types-and-values");
 const UpdatePattern = require("@reified/delta/update-pattern");
 const update = require("@reified/delta/update");
 const { Enum, caseof } = require("@reified/core/enum");
-//const Mutation = require("@reified/delta/mutation");
+const Mutation = require("@reified/delta/mutation");
 
 const { ø } = require("@reified/object");
 
@@ -71,14 +71,14 @@ const ToIndexedEntries = array => I `Array.from` (
 const toRestUpdateTemplates = (templates, fromArrayIndex) =>
     templates.length !== 1 ? templates : given((
         [[name, { pattern }]] = templates) =>
-        pattern !== UpdatePattern.End ? (console.log("HERE",pattern),templates) :
+        pattern !== UpdatePattern.End ? templates :
         [[
             name,
-            update(fromArrayIndex !== false ?
-                [fromArrayIndex, Infinity] : [],
-                null)
-//                Mutation.Splice(fromArrayIndex, Infinity, null) :
-//                Mutation.Spread(null))
+            update(
+                fromArrayIndex !== false ?
+                    [fromArrayIndex, Infinity] :
+                    [],
+                Mutation.Set(null))
         ]]);
 
 const toUpdateTemplates = (node, fromArrayIndex = false) =>
@@ -100,7 +100,7 @@ const toUpdateTemplates = (node, fromArrayIndex = false) =>
                 .properties
                 .filter(isRestElement)[0])) :
     isIdentifier(node) ?
-         [[node.name, update(UpdatePattern.End, null)]] :
+         [[node.name, update(UpdatePattern.End, Mutation.Set(null))]] :
     isAssignmentPattern(node) ?
         toUpdateTemplates(node.left) :
     isRestElement(node) ?

@@ -52,7 +52,7 @@ const toConstantValueConstructor = (T, name, isCallable, properties) => given((
         α(properties || ø(), ValueConstructorConstantInstanceToPrimitive))) =>
             ConstantValueConstructor);
 
-const toValueConstructor = (T, name, isCallable, constructor) => (console.log("here"),α(
+const toValueConstructor = (T, name, isCallable, constructor) => α(
     ƒextending(T, name, function C(...argumentsList)
     {
         const constructed = constructor(...argumentsList);
@@ -60,7 +60,7 @@ const toValueConstructor = (T, name, isCallable, constructor) => (console.log("h
         return constructed instanceof T ?
             constructed :
             instantiate(C, name, isCallable, constructed);
-    }), ValueConstructorStaticToPrimitive));
+    }), ValueConstructorStaticToPrimitive);
 
 const ValueConstructorDeclaration = Declaration `ValueConstructor`
     (({ name, tail }) => ({ binding: name, tail }));
@@ -83,7 +83,6 @@ const [ValueConstructorDefinition, GetValueConstructorDefinitionOf] =
         isConstant =
             !hasDeclarationTail ||
             !IsFunctionObject(declaration.tail[0]),
-        _ = console.log("FOR " + name + " " + isConstant),
         implementation = isConstant ?
             toConstantValueConstructor(
                 T,
@@ -100,6 +99,8 @@ const [ValueConstructorDefinition, GetValueConstructorDefinitionOf] =
     })));
 
 exports.ValueConstructorDefinition = ValueConstructorDefinition;
+
+exports.GetValueConstructorDefinitionOf = GetValueConstructorDefinitionOf;
 
 const GetValueConstructorOf = value => I `Object.getPrototypeOf` (value).constructor;
 

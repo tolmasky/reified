@@ -9,7 +9,9 @@ const
 {
     ValueConstructorDeclaration,
     ValueConstructorDefinition,
-    ValueConstructorSymbols
+    ValueConstructorSymbols,
+    GetValueConstructorOf,
+    GetValueConstructorDefinitionOf,
 } = require("./value-constructor");
 
 const { ø, α } = require("@reified/object");
@@ -72,8 +74,8 @@ const [TypeDefinition, GetTypeDefinitionOf] = Definition `TypeDefinition` ();
 
 const caseof = (value, cases) => given((
     { default: fallback } = cases,
-    C = GetConstructorOf(value),
-    definition = GetConstructorDefinitionOf(C),
+    C = GetValueConstructorOf(value),
+    definition = GetValueConstructorDefinitionOf(C),
     match = cases[definition.symbol] ||
             cases[definition.name] ||
             cases.default) =>
