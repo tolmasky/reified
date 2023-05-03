@@ -4,7 +4,7 @@ const fail = require("@reified/fail");
 const I = require("@reified/intrinsics");
 const Declaration = require("./declaration");
 const Definition = require("./definition");
-const { ƒnamed, ƒextending, IsFunctionObject } = require("./function-objects");
+const { ƒnamed, IsTaggedCall } = require("./function-objects");
 
 const
 {
@@ -26,7 +26,7 @@ const [TypeDefinition, GetTypeDefinitionOf] = Definition `TypeDefinition`
     }));
 
 const TypeConstructor = Declaration `TypeConstructor` (declaration => given((
-    { name, tail: [fCaseOfs, ...rest] } = declaration,
+    { name, tail: [cases, ...rest] } = declaration,
     T = ƒnamed(name, function (...argumentsList)
     {
         const constructor = definition.constructors[name];
@@ -39,7 +39,7 @@ const TypeConstructor = Declaration `TypeConstructor` (declaration => given((
         return constructor(...argumentsList);
     }),
     ValueConstructorDefinitions = I `Array.from` (
-        fCaseOfs(ValueConstructorDeclaration),
+        cases,
         declaration => ValueConstructorDefinition(T, declaration)),
     definition = TypeDefinition(T,
     {
@@ -64,15 +64,17 @@ const TypeConstructor = Declaration `TypeConstructor` (declaration => given((
         ...properties
     })));
 
-const caseof = (value, cases) => given((
-    { default: fallback } = cases,
-    C = GetValueConstructorOf(value),
-    definition = GetValueConstructorDefinitionOf(C),
-    match = cases[definition.symbol] ||
-            cases[definition.name] ||
-            cases.default) =>
-        !match ?
-            fail.type (`No match for ${definition.name} found in caseof statement`) :
+const caseof = (...argumentsList) => IsTaggedCall(argumentsList) ?
+    ValueConstructorDeclaration(...argumentsList) :
+    given((
+        [value, cases] = argumentsList,
+        { default: fallback } = cases,
+        C = GetValueConstructorOf(value),
+        { name, symbol } = GetValueConstructorDefinitionOf(C),
+        match = cases[symbol] ||
+                cases[name] ||
+                cases.default) => !match ?
+            fail.type (`No match for ${name} found in caseof statement`) :
             match(value));
 
 module.exports = I `Object.assign` (TypeConstructor,

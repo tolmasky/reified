@@ -6,10 +6,9 @@ const { IsArray, IsNumber, IsSymbol, IsString } = require("@reified/core/types-a
 
 const IsUpdatePatternKey = value =>
     IsNumber(value) || IsSymbol(value) || IsString(value);
-const Caseof = caseof;
 
-const UpdatePattern = Enum `UpdatePattern` (caseof =>
-[
+const UpdatePattern = Enum `UpdatePattern`
+([
     caseof `End` ({ length: 0 }),
 
     caseof `UpdatePattern` ((...argumentsList) =>
@@ -23,7 +22,7 @@ const UpdatePattern = Enum `UpdatePattern` (caseof =>
                 UpdatePattern.Property(lhs, rhs) :
             rest.length === 0 ?
                 lhs :
-            Caseof(lhs,
+            caseof(lhs,
             {
                 [UpdatePattern.End]: () => rhs,
                 [UpdatePattern.Property]: ({ key, tail }) =>

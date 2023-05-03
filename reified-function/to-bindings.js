@@ -1,7 +1,6 @@
 const given = f => f();
 
 const I = require("@reified/intrinsics");
-const KeyPath = require("@reified/delta/key-path");
 const { ToUint32 } = require("@reified/core/type-conversion");
 const { IsArrayIndex } = require("@reified/core/array-exotic-objects");
 const toUpdateTemplate = require("./to-parameter-key-path");

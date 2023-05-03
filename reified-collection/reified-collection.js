@@ -6,7 +6,6 @@ const T = require("@reified/core/types-and-values");
 
 const GetPrototypeMethodsOf = require("./get-prototype-methods-of");
 const CopyValue = require("@reified/delta/copy-value");
-const KeyPath = require("@reified/delta/key-path");
 
 
 const A = given((
