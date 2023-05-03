@@ -69,24 +69,19 @@ const update = (first, ...rest) =>
 
 module.exports = update;
 
-const Update = ƒextending(Function, "Update", function (keyPath, mutation)
+const Update = ƒextending(Function, "Update", function (pattern, mutation)
 {
     return I `Object.setPrototypeOf` (ƒnamed("update",
-        target => update(target, keyPath, mutation),
+        target => update(target, pattern, mutation),
         {
-            pattern,
-            mutation,
-            effectiveKeyPath: caseof(mutation,
-            {
-                [Mutation.Splice]: ({ start }) => KeyPath(start, keyPath),
-                default: () => keyPath
-            })
+            pattern: UpdatePattern(pattern),
+            mutation
         }), Update.prototype);
 });
 
-Update.prototype.nest = function (key)
+Update.prototype.nest = function (shorthand)
 {
-    return Update(KeyPath(key, this.keyPath), this.mutation);
+    return Update(UpdatePattern(shorthand, this.pattern), this.mutation);
 }
 
 module.exports.Update = Update;

@@ -13,7 +13,7 @@ const toBindings = (target, shorthand) => new I `Map`(
     I `Array.from` (
         I `Object.entries`(shorthand),
         ([key, value]) => given((
-            { keyPath, mutation } = toUpdateTemplate(target, IsArrayIndex(key) ? ToUint32(key) : key)) =>
-            [keyPath.toKeyID(), update(keyPath, Δ(mutation, { value }))])));
+            { pattern, mutation } = toUpdateTemplate(target, IsArrayIndex(key) ? ToUint32(key) : key)) =>
+            (console.log(pattern),[pattern.toKeyID(), update(pattern, value/*Δ(mutation, { value })*/)]))));
 
 module.exports = toBindings;

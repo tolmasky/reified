@@ -1,12 +1,13 @@
 const given = f => f();
 
-const I = require("@reified/intrinsics");
+const { I, Call } = require("@reified/intrinsics");
 
 const { IsArray } = require("@reified/core/types-and-values");
 
-const KeyPath = require("@reified/delta/key-path");
+const UpdatePattern = require("@reified/delta/update-pattern");
 const update = require("@reified/delta/update");
-const Mutation = require("@reified/delta/mutation");
+const { Enum, caseof } = require("@reified/core/enum");
+//const Mutation = require("@reified/delta/mutation");
 
 const { ø } = require("@reified/object");
 
@@ -22,7 +23,6 @@ const
 } = require("@babel/types");
 const { parseExpression } = require("@babel/parser");
 
-const FunctionPrototypeToString = Function.prototype.toString;
 /*
 const ObjectAssign = Object.assign;
 const ObjectGetOwnPropertyNames = Object.getOwnPropertyNames;
@@ -62,42 +62,31 @@ const fParse = f => given((
 }));*/
 
 // Object.entries will turn the index into a string.
-const ToIndexedEntries = array =>
-    I `Array.from` (array, (value, index) => [index, value]);
-
-const toRestKeyPathIfNecessary = keyPaths =>(console.log(keyPaths, keyPaths[0][1]),
-    keyPaths.length !== 1 ? keyPaths :
-    keyPaths[0][1] !== KeyPath.End ? keyPaths :
-    [KeyPath.RestKeyPath(keyPaths[0][1])]);
-
-const toMaybeRestKeyPath = keyPaths =>
-    keyPaths.length !== 1 ? keyPaths :
-    keyPaths[0][1] !== KeyPath.End ? keyPaths :
-    [KeyPath.Rest];
+const ToIndexedEntries = array => I `Array.from` (
+    array,
+    (node, index) => isRestElement(node) ?
+        [[index, Infinity], node.argument] :
+        [index, node]);
 
 const toRestUpdateTemplates = (templates, fromArrayIndex) =>
     templates.length !== 1 ? templates : given((
-        [[name, { keyPath }]] = templates) =>
-        keyPath !== KeyPath.End ? templates :
+        [[name, { pattern }]] = templates) =>
+        pattern !== UpdatePattern.End ? (console.log("HERE",pattern),templates) :
         [[
             name,
-            update(keyPath, fromArrayIndex !== false ?
-                Mutation.Splice(fromArrayIndex, Infinity, null) :
-                Mutation.Spread(null))
+            update(fromArrayIndex !== false ?
+                [fromArrayIndex, Infinity] : [],
+                null)
+//                Mutation.Splice(fromArrayIndex, Infinity, null) :
+//                Mutation.Spread(null))
         ]]);
 
 const toUpdateTemplates = (node, fromArrayIndex = false) =>
     !node ? [] :
     IsArray(node) ?
-        node.flatMap(([key, value]) =>
-            toUpdateTemplates(value, typeof key === "number" && key)
-                .map(([name, template]) =>
-                [
-                    name,
-                    template.mutation instanceof Mutation.Splice ?
-                        template :
-                        template.nest(key)
-                ])) :
+        node.flatMap(([key, value]) => I `Array.from` (
+            toUpdateTemplates(value),
+            ([name, template]) => [name, template.nest(key)])) :
     isFunction(node) ?
         toUpdateTemplates(ToIndexedEntries(node.params)) :
     isArrayPattern(node) ?
@@ -111,7 +100,7 @@ const toUpdateTemplates = (node, fromArrayIndex = false) =>
                 .properties
                 .filter(isRestElement)[0])) :
     isIdentifier(node) ?
-         [[node.name, update(KeyPath.End, Mutation.Set(null))]] :
+         [[node.name, update(UpdatePattern.End, null)]] :
     isAssignmentPattern(node) ?
         toUpdateTemplates(node.left) :
     isRestElement(node) ?
@@ -121,7 +110,7 @@ const toUpdateTemplates = (node, fromArrayIndex = false) =>
     [];
 
 const toUpdateTemplate = (f, name) => given((
-    fString = FunctionPrototypeToString.call(f),
+    fString = Call(I `Function.prototype.toString`, f),
     fExpression = parseExpression(`(${fString})`),
     templates = ø.fromEntries(toUpdateTemplates(fExpression))) =>
     templates[name]);

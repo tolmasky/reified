@@ -26,7 +26,7 @@ const toBoundArguments = (f, argumentsList) => given((
         bindings.size <= 0 ? argumentsList :
         Δ(bindings, Δ.reduce(
             (argumentsList, update) =>
-                update.effectiveKeyPath.hasOwn(argumentsList) ?
+                false ? //update.effectiveKeyPath.hasOwn(argumentsList) ?
                     argumentsList :
                     update(argumentsList),
             argumentsList)));
