@@ -1,10 +1,12 @@
 const given = f => f();
 
-const fail = require("@reified/fail");
-const { Call, I } = require("@reified/intrinsics");
+const { Call, I } = require("@reified/ecma-262");
+
 const Declaration = require("./declaration");
 const Definition = require("./definition");
 const { ƒnamed, ƒextending, IsFunctionObject } = require("./function-objects");
+const fail = require("./fail");
+
 const ValueConstructorSymbols = require("./symbol-enum")("apply");
 
 const { ø, α } = require("@reified/object");

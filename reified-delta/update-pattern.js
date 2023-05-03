@@ -1,8 +1,15 @@
 const given = f => f();
 
-const { I, Call } = require("@reified/intrinsics");
+const
+{
+    I,
+    Call,
+    IsArray,
+    IsNumber,
+    IsSymbol,
+    IsString
+} = require("@reified/ecma-262");
 const { type, caseof } = require("@reified/core/type");
-const { IsArray, IsNumber, IsSymbol, IsString } = require("@reified/core/types-and-values");
 
 const IsUpdatePatternKey = value =>
     IsNumber(value) || IsSymbol(value) || IsString(value);

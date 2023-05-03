@@ -1,6 +1,6 @@
 const given = f => f();
-const I = require("@reified/intrinsics");
-const fail = require("@reified/fail");
+const { I } = require("@reified/ecma-262");
+const fail = require("@reified/core/fail");
 
 const FunctionKindNormal            = 0;
 const FunctionKindGenerator         = 1 << 0;

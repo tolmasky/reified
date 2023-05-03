@@ -1,6 +1,5 @@
 const given = f => f();
-const I = require("@reified/intrinsics");
-//const Declaration = require("@reified/language/declaration");
+const { I } = require("@reified/ecma-262");
 
 const ObjectAssign = I `Object.assign`;
 
@@ -82,9 +81,6 @@ const applicable = ƒ.tagged((name, implementation, ...properties) => given((
 
 
 const given = f => f();
-
-const fail = require("@reified/fail");
-const I = require("@reified/intrinsics");
 
 // Would be nice if there was an easy way to make unemurable properties...
 // Or maybe just have some "known" symbols like "unenumerable-name"?

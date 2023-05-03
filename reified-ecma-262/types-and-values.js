@@ -1,5 +1,6 @@
 const given = f => f();
-const I = require("@reified/intrinsics");
+
+const I = require("./intrinsics");
 
 
 const IsUndefined = value => value === void(0);

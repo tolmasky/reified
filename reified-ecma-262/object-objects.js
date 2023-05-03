@@ -1,5 +1,7 @@
 const given = f => f();
-const I = require("@reified/intrinsics");
+
+const I = require("./intrinsics");
+
 
 // https://tc39.es/ecma262/#sec-getownpropertykeys
 // But we also return BOTH names AND symbols when type is left out.

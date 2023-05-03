@@ -1,5 +1,5 @@
 const given = f => f();
-const fail = require("@reified/fail");
+const fail = require("@reified/core/fail");
 const { group } = require("@reified/collection");
 
 const spawn = require("@await/spawn");

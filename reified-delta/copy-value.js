@@ -1,13 +1,20 @@
 const given = f => f();
-const { I, Call } = require("@reified/intrinsics");
 
-const { α } = require("@reified/object");
-
-const T = require("@reified/core/types-and-values");
-const { GetMethod } = require("@reified/core/operations-on-objects");
+const
+{
+    I,
+    Call,
+    IsArray,
+    IsFunctionObject,
+    IsPrimitive,
+    IsPrototypelessObject,
+    GetMethod
+} = require("@reified/ecma-262");
 
 const PredicateMap = require("@reified/core/predicate-map");
 const SymbolEnum = require("@reified/core/symbol-enum");
+
+const { α } = require("@reified/object");
 
 const S = SymbolEnum("copy");
 
@@ -28,11 +35,11 @@ const ArrayObjectCopy = V => given((
 
 const GetCopyMethod = PredicateMap (map =>
 [
-    [T.IsPrimitive, PrimitiveCopy],
+    [IsPrimitive, PrimitiveCopy],
     [V => !!GetMethod(V, S.copy), map(V => GetMethod(V, S.copy))],
-    [T.IsFunctionObject, FunctionObjectCopy],
-    [T.IsPrototypelessObject, PrototypelessObjectCopy],
-    [T.IsArray, ArrayObjectCopy],
+    [IsFunctionObject, FunctionObjectCopy],
+    [IsPrototypelessObject, PrototypelessObjectCopy],
+    [IsArray, ArrayObjectCopy],
     PlainObjectCopy
 ]);
 

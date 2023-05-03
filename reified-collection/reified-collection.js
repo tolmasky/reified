@@ -1,8 +1,7 @@
 const given = f => f();
 
-const { I, Call } = require("@reified/intrinsics");
+const { I, Call, IsArray, IsObject, IsString } = require("@reified/ecma-262");
 const { ø, α } = require("@reified/object");
-const T = require("@reified/core/types-and-values");
 
 const GetPrototypeMethodsOf = require("./get-prototype-methods-of");
 const CopyValue = require("@reified/delta/copy-value");
@@ -139,10 +138,10 @@ const toComputedCollectionMethods = M => given((
 const toCollectionMethod = given((
     methods = A.map(
     [
-        [T.IsArray, A],
-        [T.IsString, S],
+        [IsArray, A],
+        [IsString, S],
         [value => value instanceof I `Map`, M],
-        [T.IsObject, O]
+        [IsObject, O]
     ],
         (([predicate, methods]) =>
             [predicate, toComputedCollectionMethods(methods)]))) =>

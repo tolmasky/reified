@@ -1,8 +1,8 @@
 {
-  "name": "@reified/fail",
+  "name": "@reified/ecma-262",
   "version": "1.0.0-alpha.1",
   "description": "",
-  "main": "fail.js",
+  "main": "reified-ecma-262.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/tolmasky/reified"
@@ -15,6 +15,5 @@
     "name": "Francisco Ryan Tolmasky I",
     "email": "tolmasky@gmail.com",
     "url": "https://tolmasky.com"
-  },
-  "license": "MIT"
+  }
 }

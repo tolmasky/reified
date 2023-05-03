@@ -1,11 +1,11 @@
 const given = f => f();
 
-const I = require("@reified/intrinsics");
-const { ToUint32 } = require("@reified/core/type-conversion");
-const { IsArrayIndex } = require("@reified/core/array-exotic-objects");
-const toUpdateTemplate = require("./to-parameter-key-path");
+const { I, ToUint32, IsArrayIndex }  = require("@reified/ecma-262");
+
 const Δ = require("@reified/delta");
 const update = require("@reified/delta/update");
+
+const toUpdateTemplate = require("./to-parameter-key-path");
 
 
 const toBindings = (target, shorthand) => new I `Map`(

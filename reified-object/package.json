@@ -17,8 +17,8 @@
     "url": "https://tolmasky.com"
   },
   "license": "MIT",
-  "dependencies": {
-    "@reified/fail": "1.0.0-alpha.1",
-    "@reified/intrinsics": "1.0.0-alpha.6"
+  "peerDependencies": {
+    "@reified/core": "1.0.0-alpha.1",
+    "@reified/ecma-262": "1.0.0-alpha.1"
   }
 }

@@ -1,9 +1,9 @@
 const given = f => f();
 
-const fail = require("@reified/fail");
-const I = require("@reified/intrinsics");
-
+const I = require("./intrinsics");
 const { IsNull, IsUndefined, IsFunctionObject } = require("./types-and-values");
+
+const fail = require("@reified/core/fail");
 
 
 // https://tc39.es/ecma262/#sec-getv

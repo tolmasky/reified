@@ -1,6 +1,6 @@
 const given = f => f();
 
-const { I, Call } = require("@reified/intrinsics");
+const { I, Call } = require("@reified/ecma-262");
 
 
 module.exports = C => given((

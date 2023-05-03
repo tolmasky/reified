@@ -1,6 +1,6 @@
 const given = f => f();
 
-const { Call, I } = require("@reified/intrinsics");
+const { Call, I } = require("@reified/ecma-262");
 const { caseof } = require("@reified/core/type");
 const { ƒnamed, ƒextending } = require("@reified/core/function-objects");
 const UpdatePattern = require("./update-pattern");

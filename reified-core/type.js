@@ -1,9 +1,10 @@
 const given = f => f();
 
-const fail = require("@reified/fail");
-const I = require("@reified/intrinsics");
+const { I } = require("@reified/ecma-262");
+
 const Declaration = require("./declaration");
 const Definition = require("./definition");
+const fail = require("./fail");
 const { ƒnamed, IsTaggedCall } = require("./function-objects");
 
 const

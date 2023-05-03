@@ -1,9 +1,15 @@
 const given = f => f();
 
-const I = require("@reified/intrinsics");
-const { IsString } = require("./types-and-values");
+const { I, IsString } = require("@reified/ecma-262");
 const { α } = require("@reified/object");
-const { ƒnamed, ƒextending, IsTaggedCall, ToResolvedString } = require("./function-objects");
+const
+{
+    ƒnamed,
+    ƒextending,
+    IsTaggedCall,
+    ToResolvedString
+} = require("./function-objects");
+
 
 const DeclarationTail = ƒextending(I.Function, "DeclarationTail",
     function (name, f)

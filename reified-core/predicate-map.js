@@ -1,11 +1,16 @@
 const given = f => f();
 
-const fail = require("@reified/fail");
-const { I, Call } = require("@reified/intrinsics");
-const { IsFunctionObject, IsArray } = require("./types-and-values");
+const
+{
+    I,
+    Call,
+    IsFunctionObject,
+    IsArray
+} = require("@reified/ecma-262");
 
 const Declaration = require("./declaration");
 const { ƒnamed } = require("./function-objects");
+const fail = require("./fail");
 
 
 const Map = class Map { };

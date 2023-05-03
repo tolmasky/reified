@@ -1,8 +1,14 @@
 const given = f => f();
 
-const I = require("@reified/intrinsics");
+const
+{
+    I,
+    IsArray,
+    IsFunctionObject,
+    IsString
+} = require("@reified/ecma-262");
+
 const SymbolEnum = require("./symbol-enum");
-const { IsArray, IsFunctionObject, IsString } = require("./types-and-values");
 // const { α } = require("@reified/object");
 
 

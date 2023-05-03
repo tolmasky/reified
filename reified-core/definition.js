@@ -1,6 +1,6 @@
 const given = f => f();
 
-const I = require("@reified/intrinsics");
+const { I } = require("@reified/ecma-262");
 const Declaration = require("./declaration");
 const { ƒnamed } = require("./function-objects");
 

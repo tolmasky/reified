@@ -1,12 +1,12 @@
 const given = f => f();
 
-const fail = require("@reified/fail");
-const I = require("@reified/intrinsics");
+const { I, GetMethod, HasMethod } = require("@reified/ecma-262");
+
+const fail = require("@reified/core/fail");
 const { α, ø } = require("@reified/object");
 const SymbolEnum = require("@reified/core/symbol-enum");
 const Declaration = require("@reified/core/declaration");
 const { copy } = require("@reified/delta/copy-value");
-const { GetMethod, HasMethod } = require("@reified/core/operations-on-objects");
 
 const toBindings = require("./to-bindings");
 

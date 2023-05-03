@@ -1,8 +1,6 @@
 const given = f => f();
 
-const { I, Call } = require("@reified/intrinsics");
-
-const { IsArray } = require("@reified/core/types-and-values");
+const { I, Call, IsArray } = require("@reified/ecma-262");
 
 const UpdatePattern = require("@reified/delta/update-pattern");
 const update = require("@reified/delta/update");
