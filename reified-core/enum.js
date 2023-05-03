@@ -3,6 +3,7 @@ const given = f => f();
 const fail = require("@reified/fail");
 const I = require("@reified/intrinsics");
 const Declaration = require("./declaration");
+const Definition = require("./definition");
 const { ƒnamed, ƒextending, IsFunctionObject } = require("./function-objects");
 
 const
@@ -15,6 +16,14 @@ const
 } = require("./value-constructor");
 
 const { ø, α } = require("@reified/object");
+
+
+const [TypeDefinition, GetTypeDefinitionOf] = Definition `TypeDefinition`
+    ((implementation, properties) =>
+    ({
+        implementation,
+        ...properties
+    }));
 
 const TypeConstructor = Declaration `TypeConstructor` (declaration => given((
     { name, tail: [fCaseOfs, ...rest] } = declaration,
@@ -54,23 +63,6 @@ const TypeConstructor = Declaration `TypeConstructor` (declaration => given((
         ...shorthands,
         ...properties
     })));
-
-const Definition = Declaration `Definition` (({ name, tail }) => given((
-    instances = new WeakMap()) =>
-[
-    ƒnamed(name, function Definition(target, ...rest)
-    {
-        if (!(this instanceof Definition))
-            return new Definition(target, ...rest);
-
-        instances.set(target, this);
-
-        return I `Object.assign` (this, { name: target.name }, ...rest);
-    }),
-    ƒnamed(`Get${name}Of`, instance => instances.get(instance))
-]));
-
-const [TypeDefinition, GetTypeDefinitionOf] = Definition `TypeDefinition` ();
 
 const caseof = (value, cases) => given((
     { default: fallback } = cases,
