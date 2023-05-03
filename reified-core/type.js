@@ -25,7 +25,7 @@ const [TypeDefinition, GetTypeDefinitionOf] = Definition `TypeDefinition`
         ...properties
     }));
 
-const TypeConstructor = Declaration `TypeConstructor` (declaration => given((
+const type = Declaration `type` (declaration => given((
     { name, tail: [cases, ...rest] } = declaration,
     T = ƒnamed(name, function (...argumentsList)
     {
@@ -77,10 +77,13 @@ const caseof = (...argumentsList) => IsTaggedCall(argumentsList) ?
             fail.type (`No match for ${name} found in caseof statement`) :
             match(value));
 
-module.exports = I `Object.assign` (TypeConstructor,
+module.exports = I `Object.assign` (type,
 {
-    Enum: TypeConstructor,
+    type,
+
+    of: value => I `Object.getPrototypeOf` (value) .constructor,
+
     caseof,
+
     ...ValueConstructorSymbols
 });
-

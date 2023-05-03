@@ -1,7 +1,7 @@
 const given = f => f();
 
 const { Call, I } = require("@reified/intrinsics");
-const { caseof } = require("@reified/core/enum");
+const { caseof } = require("@reified/core/type");
 const { ƒnamed, ƒextending } = require("@reified/core/function-objects");
 const UpdatePattern = require("./update-pattern");
 const CopyValue = require("./copy-value");

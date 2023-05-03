@@ -1,9 +1,9 @@
 const given = f => f();
 
-const { Enum, caseof } = require("@reified/core/enum");
+const { type, caseof } = require("@reified/core/type");
 
 
-module.exports = Enum `Mutation`
+module.exports = type `Mutation`
 ([
     caseof `Set()` (value => ({ value })),
 

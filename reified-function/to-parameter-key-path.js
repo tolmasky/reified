@@ -6,7 +6,6 @@ const { IsArray } = require("@reified/core/types-and-values");
 
 const UpdatePattern = require("@reified/delta/update-pattern");
 const update = require("@reified/delta/update");
-const { Enum, caseof } = require("@reified/core/enum");
 const Mutation = require("@reified/delta/mutation");
 
 const { ø } = require("@reified/object");
