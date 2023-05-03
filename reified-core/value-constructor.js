@@ -31,9 +31,13 @@ const instantiate = (C, name, isCallable, properties) => α(
         I `Object.setPrototypeOf` (ƒnamed(name, function f(...args)
         {
             return f[ValueConstructorSymbols["apply"]](f, this, args);
-        }),
-            C.prototype) :
+        }), C.prototype) :
         I `Object.create` (C.prototype),
+
+    // By default, callable constructors return themselves if you don't
+    // supply an explicit function.
+    isCallable && { [ValueConstructorSymbols.apply]: self => self },
+
     properties);
 
 const toConstantValueConstructor = (T, name, isCallable, properties) => given((
