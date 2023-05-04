@@ -80,10 +80,10 @@ const ƒ = Declaration `ƒ` (({ name, tail }) => given((
         (({ name, tail: [ƒtag, ...rest] }) =>
             ƒ (name, { [ƒ.tag]: ƒtag }, ...rest)),
 
-    curry: (f, shorthand) => Δ.update(
+    curry: (f, shorthand, rest) => Δ.update(
         ƒSymbols["[[Bindings]]"],
         bindings => given((
-            Δbindings = toBindings(GetMethod(f, ƒ.target), shorthand)) => bindings ?
+            Δbindings = toBindings(GetMethod(f, ƒ.target), shorthand, rest)) => bindings ?
                 Δ.assignEntriesFrom(Δbindings)(bindings) :
                 Δbindings))(f instanceof ƒ ? f : ƒ(f)),
 

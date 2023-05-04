@@ -1,18 +1,27 @@
 const given = f => f();
 
-const { I, ToUint32, IsArrayIndex }  = require("@reified/ecma-262");
+const { I, ToUint32, IsArrayIndex, IsArray }  = require("@reified/ecma-262");
 
 const Δ = require("@reified/delta");
 const update = require("@reified/delta/update");
+const UpdatePattern = require("@reified/delta/update-pattern");
+const Mutation = require("@reified/delta/mutation");
 
 const toUpdateTemplate = require("./to-parameter-key-path");
 
 
-const toBindings = (target, shorthand) => new I `Map`(
-    I `Array.from` (
-        I `Object.entries`(shorthand),
-        ([key, value]) => given((
-            { pattern, mutation } = toUpdateTemplate(target, IsArrayIndex(key) ? ToUint32(key) : key)) =>
-            [pattern.toKeyID(), update(pattern, Δ(mutation, { value }))])));
+const toBindings = (target, primary, rest = false) => new I `Map`(
+
+    I `Array.from` (I `Object.entries`(primary),
+        ([key, value]) => IsArrayIndex(key) ?
+            update(UpdatePattern(ToUint32(key)), Mutation.Set(value)) : given((
+            { pattern, mutation } = toUpdateTemplate(target, key)) =>
+            update(pattern, Δ(mutation, { value }))))
+
+    [I `::Array.prototype.concat`](rest ?
+        update(UpdatePattern([target.length, Infinity]), Mutation.Set(rest)) :
+        [])
+
+    [I `::Array.prototype.map`](update => [update.pattern.toKeyID(), update]));
 
 module.exports = toBindings;
