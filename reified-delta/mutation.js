@@ -1,11 +1,17 @@
 const given = f => f();
 
-const { type, caseof } = require("@reified/core/type");
+const { type, caseof, apply } = require("@reified/core/type");
 
 
 module.exports = type `Mutation`
 ([
     caseof `Set()` (value => ({ value })),
 
-    caseof `Delete()`
+    caseof `Delete()`,
+
+    caseof `Update()` (implementation =>
+    ({
+        [apply]: (f, thisArgument, [current]) => implementation(current),
+        implementation
+    }))
 ]);

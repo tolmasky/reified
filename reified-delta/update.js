@@ -62,8 +62,8 @@ const apply = (target, pattern, update) => caseof(pattern,
                 I `Object.assign` (CopyValue(target), { [key]: updated }))*/
 });
 
-const toNormalizedArguments = ([location, 𝑢]) =>
-    [UpdatePattern(location), 𝑢];
+const toNormalizedArguments = ([location, value]) =>
+    [UpdatePattern(location), toMutation(value)];
 
 const update = (first, ...rest) =>
     rest.length < 2 ?
