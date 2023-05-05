@@ -1,4 +1,4 @@
-const fail = message => { throw Error(message) };
+const fail = require("@reified/core/fail");
 
 const toBoundAttributes = (t, attributes, children) =>
     t.ObjectExpression(attributes
@@ -18,7 +18,7 @@ const toExpression = (t, node) =>
             toExpression(t, node.property)) :
     t.isJSXExpressionContainer(node) ?
         node.expression :
-    fail(`Unexpected ${node.type} in JSX element`);
+    fail.type(`Unexpected ${node.type} in JSX element`);
 
 const toChildValue = (t, child) =>
     t.isJSXText(child) ? t.StringLiteral(child.extra.raw) :
@@ -36,7 +36,7 @@ const toAttributeValue = (t, value) =>
     value === null ? t.BooleanLiteral(true) :
     t.isStringLiteral(value) ? value :
     t.isJSXExpressionContainer(value) ? value.expression :
-    fail(`Unexpected ${value.type} in JSX element`);
+    fail.type(`Unexpected ${value.type} in JSX element`);
 
 const toBoundFunction = (t, bind, { openingElement, children }) =>
     t.CallExpression((bind.used = true) && bind,
