@@ -11,6 +11,8 @@ const { copy } = require("@reified/delta/copy-value");
 const toBindings = require("./to-bindings");
 
 const Δ = require("@reified/delta");
+const update = require("@reified/delta/update");
+const Mutation = require("@reified/delta/mutation");
 
 const
 {
@@ -59,7 +61,8 @@ const ƒSymbols = SymbolEnum(
 
 const ToSourceText = f => I `.Function.prototype.toString` (f);
 
-const ƒ = Declaration `ƒ` (({ name, tail }) => given((
+const ƒ = Declaration `ƒ` (({ name, tail }) =>
+    !name && tail.length === 1 && tail[0] instanceof ƒ ? tail[0] : given((
     [first, ...rest] = tail,
     firstSource = IsFunctionObject(first) ? { [ƒSymbols.target]: first } : first,
     bindingsSource = { [ƒSymbols["[[Bindings]]"]]: new Map() },
@@ -80,12 +83,14 @@ const ƒ = Declaration `ƒ` (({ name, tail }) => given((
         (({ name, tail: [ƒtag, ...rest] }) =>
             ƒ (name, { [ƒ.tag]: ƒtag }, ...rest)),
 
-    curry: (f, shorthand, rest) => Δ.update(
-        ƒSymbols["[[Bindings]]"],
-        bindings => given((
-            Δbindings = toBindings(GetMethod(f, ƒ.target), shorthand, rest)) => bindings ?
-                Δ.assignEntriesFrom(Δbindings)(bindings) :
-                Δbindings))(f instanceof ƒ ? f : ƒ(f)),
+    curry: (f, shorthand, rest) => given((
+        ƒf = ƒ(f),
+        target = GetMethod(ƒf, ƒSymbols["target"]),
+        Δbindings = toBindings(target, shorthand, rest)) =>
+            update(ƒf, ƒSymbols["[[Bindings]]"], Mutation.Update(bindings =>
+                bindings ?
+                    Δ.assignEntriesFrom(Δbindings)(bindings) :
+                    Δbindings))),
 
     prototype:
     {

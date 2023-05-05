@@ -84,8 +84,8 @@ const fCollectionMethods =
     set: to => (target, keylike, value) =>
         KeyPath(keylike).set(target, value),
 
-    assign: to => (target, source) =>(console.log(target),
-        α(CopyValue(target), source)),
+    assign: to => (target, source) =>
+        α(CopyValue(target), source),
 
     assignEntries: (to, { fromEntries }) => (target, source) =>
         fromEntries([...C.toEntries(target), ...source]),
