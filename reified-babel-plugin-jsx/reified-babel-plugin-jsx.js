@@ -1,4 +1,11 @@
+const { I } = require("@reified/ecma-262");
 const fail = require("@reified/core/fail");
+
+
+const undashcase = string => string
+    [I `::String.prototype.replace`] (
+        /\-(.)/g,
+        (_, char) => char [I `::String.prototype.toUpperCase`] ());
 
 const toBoundAttributes = (t, attributes, children) =>
     t.ObjectExpression(attributes
@@ -11,7 +18,7 @@ const toChildrenArray = (t, children) =>
 
 const toExpression = (t, node) =>
     t.isJSXIdentifier(node) ?
-        t.Identifier(node.name) :
+        t.Identifier(undashcase(node.name)) :
     t.isJSXMemberExpression(node) ?
         t.MemberExpression(
             toExpression(t, node.object),

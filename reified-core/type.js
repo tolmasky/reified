@@ -1,6 +1,6 @@
 const given = f => f();
 
-const { I } = require("@reified/ecma-262");
+const { I, IsFunctionObject } = require("@reified/ecma-262");
 
 const Declaration = require("./declaration");
 const Definition = require("./definition");
@@ -14,6 +14,7 @@ const
     ValueConstructorSymbols,
     GetValueConstructorOf,
     GetValueConstructorDefinitionOf,
+    fromParsedConstructorName
 } = require("./value-constructor");
 
 const { ø, α } = require("@reified/object");
@@ -25,9 +26,11 @@ const [TypeDefinition, GetTypeDefinitionOf] = Definition `TypeDefinition`
         implementation,
         ...properties
     }));
-
+// can't rely on .length...
 const type = Declaration `type` (declaration => given((
-    { name, tail: [cases, ...rest] } = declaration,
+    binding = declaration.name,
+    [name] = fromParsedConstructorName(binding),
+    { tail: [cases, ...rest] } = declaration,
     T = ƒnamed(name, function (...argumentsList)
     {
         const constructor = definition.constructors[name];
@@ -38,10 +41,19 @@ const type = Declaration `type` (declaration => given((
                 `use one if it's constructors.`);
 
         return constructor(...argumentsList);
+    },
+    {
+        get length() { return definition.constructors[name].length; },
+        toString()
+        {
+            return definition.constructors[name].toString()
+        }
     }),
-    ValueConstructorDefinitions = I `Array.from` (
-        cases,
-        declaration => ValueConstructorDefinition(T, declaration)),
+    ValueConstructorDefinitions = IsFunctionObject(cases) ?
+        [ValueConstructorDefinition(T, { binding, tail: [cases] })] :
+        I `Array.from` (
+            cases,
+            declaration => ValueConstructorDefinition(T, declaration)),
     definition = TypeDefinition(T,
     {
         constructors: ø.fromEntries(I `Array.from` (

@@ -20,7 +20,7 @@ const ValueConstructorStaticToPrimitive =
     }
 };
 
-const ValueConstructorConstantInstanceToPrimitive = 
+const ValueConstructorConstantInstanceToPrimitive =
 {
     [Symbol.toPrimitive]()
     {
@@ -58,18 +58,26 @@ const toValueConstructor = (T, name, isCallable, constructor) => α(
     ƒextending(T, name, function C(...argumentsList)
     {
         const constructed = constructor(...argumentsList);
-    
+
         return constructed instanceof T ?
             constructed :
             instantiate(C, name, isCallable, constructed);
-    }), ValueConstructorStaticToPrimitive);
+    }),
+    {
+        length: constructor.length,
+        toString()
+        {
+            return constructor[I `::Function.prototype.toString`]();
+        },
+    },
+    ValueConstructorStaticToPrimitive);
 
 const ValueConstructorDeclaration = Declaration `ValueConstructor`
     (({ name, tail }) => ({ binding: name, tail }));
 
 exports.ValueConstructorDeclaration = ValueConstructorDeclaration;
 
-const parse = given ((
+const fromParsedConstructorName = given ((
     ValueConstructorNameRegExp = /([^\(]+)(\(\))?$/) =>
     unparsed => given((
         [, name, isCallable] = Call(
@@ -78,9 +86,11 @@ const parse = given ((
             ValueConstructorNameRegExp)) =>
             [name, !!isCallable]));
 
+exports.fromParsedConstructorName = fromParsedConstructorName;
+
 const [ValueConstructorDefinition, GetValueConstructorDefinitionOf] =
     Definition `ValueConstructorDefinition` ((T, declaration) => given((
-        [name, isCallable] = parse(declaration.binding),
+        [name, isCallable] = fromParsedConstructorName(declaration.binding),
         hasDeclarationTail = !(declaration instanceof Declaration.Tail),
         isConstant =
             !hasDeclarationTail ||

@@ -107,9 +107,21 @@ const toUpdateTemplates = (node, fromArrayIndex = false) =>
     [];
 
 const toUpdateTemplate = (f, name) => given((
-    fString = Call(I `Function.prototype.toString`, f),
+    fString = f.toString(),//Call(I `Function.prototype.toString`, f),
     fExpression = parseExpression(`(${fString})`),
     templates = ø.fromEntries(toUpdateTemplates(fExpression))) =>
     templates[name]);
 
-module.exports = toUpdateTemplate;
+module.exports.toUpdateTemplate = toUpdateTemplate;
+
+
+// FIXME: UGH!
+module.exports.GetRestArgumentIndex = f => given((
+    ƒ = require("./reified-function"),
+    implementation = f instanceof ƒ ? f[ƒ.target] : f,
+    fString = f.toString(),
+    { params } = parseExpression(`(${fString})`),
+    length = params.length) =>
+        length <= 0 ? 0 :
+        isRestElement(params[length - 1]) ? length - 1 :
+        length);

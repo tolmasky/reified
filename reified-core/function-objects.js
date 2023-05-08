@@ -9,7 +9,7 @@ const
 } = require("@reified/ecma-262");
 
 const SymbolEnum = require("./symbol-enum");
-// const { α } = require("@reified/object");
+const { α } = require("@reified/object");
 
 
 const IsArrowFunction = given((
@@ -28,7 +28,7 @@ exports.ThisMode = ThisMode;
 exports.GetApproximateThisMode = f =>
     IsArrowFunction(f) ? ThisMode.Lexical : ThisMode.Global;
 
-const ƒnamed = (name, f, ...sources) => I `Object.assign` (
+const ƒnamed = (name, f, ...sources) => α (
     name ?
         I `Object.defineProperty` (f, "name", { value: name }) :
         f,
