@@ -1,6 +1,6 @@
 const given = f => f();
 
-const { I, IsFunctionObject } = require("@reified/ecma-262");
+const { I, IsArray } = require("@reified/ecma-262");
 
 const Declaration = require("./declaration");
 const Definition = require("./definition");
@@ -49,7 +49,7 @@ const type = Declaration `type` (declaration => given((
             return definition.constructors[name].toString()
         }
     }),
-    ValueConstructorDefinitions = IsFunctionObject(cases) ?
+    ValueConstructorDefinitions = !IsArray(cases) ?
         [ValueConstructorDefinition(T, { binding, tail: [cases] })] :
         I `Array.from` (
             cases,

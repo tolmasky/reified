@@ -60,11 +60,9 @@ const toImportStatement = (t, as, source) =>
     [
         t.VariableDeclarator(
             as,
-            t.MemberExpression(
-                t.CallExpression(
+            t.CallExpression(
                     t.Identifier("require"),
-                    [t.StringLiteral(source)]),
-                t.Identifier("curry"))),
+                    [t.StringLiteral(source)])),
     ]);
 
 const get = (state, name) =>
@@ -97,7 +95,7 @@ module.exports = ({ types: t }) =>
                             state,
                             "bind-identifier",
                             path.scope.generateUidIdentifier("curry")),
-                        state.opts.importSource || "@reified/function"),
+                        state.opts.importSource || "@reified/jsx"),
                     ...path.node.body
                 ]))),
 

@@ -10,7 +10,7 @@ const Mutation = require("@reified/delta/mutation");
 const { toUpdateTemplate, GetRestArgumentIndex } = require("./to-parameter-key-path");
 
 
-const toBindings = (target, primary, rest = false) => (console.log("--->", target, primary, rest),new I `Map`(
+const toBindings = (target, primary, rest = false) => new I `Map` (
 
     I `Array.from` (I `Object.entries`(primary),
         ([key, value]) => IsArrayIndex(key) ?
@@ -23,6 +23,6 @@ const toBindings = (target, primary, rest = false) => (console.log("--->", targe
         update(UpdatePattern([GetRestArgumentIndex(target), Infinity]), Mutation.Set(rest)) :
         [])
 
-    [I `::Array.prototype.map`](update => [update.pattern.toKeyID(), update])));
+    [I `::Array.prototype.map`](update => [update.pattern.toKeyID(), update]));
 
 module.exports = toBindings;

@@ -1,6 +1,6 @@
 const given = f => f();
 
-const { Call, I } = require("@reified/ecma-262");
+const { Call, I, IsPlainObject } = require("@reified/ecma-262");
 
 const Declaration = require("./declaration");
 const Definition = require("./definition");
@@ -67,7 +67,7 @@ const toValueConstructor = (T, name, isCallable, constructor) => α(
         length: constructor.length,
         toString()
         {
-            return constructor[I `::Function.prototype.toString`]();
+            return constructor.toString();//[I `::Function.prototype.toString`]();
         },
     },
     ValueConstructorStaticToPrimitive);
@@ -88,20 +88,38 @@ const fromParsedConstructorName = given ((
 
 exports.fromParsedConstructorName = fromParsedConstructorName;
 
+const IsRecordDeclaration = given((
+    TypeRegExp = /^\s*of\s*\=>/) =>
+    declaration =>
+        IsPlainObject(declaration) &&
+        I `Object.entries` (declaration)
+            [I `::Array.prototype.every`] (([key, value]) =>
+                IsFunctionObject(value) &&
+                TypeRegExp [I `::RegExp.prototype.test`]
+                    (value [I `::Function.prototype.toString`]())));
+
 const [ValueConstructorDefinition, GetValueConstructorDefinitionOf] =
     Definition `ValueConstructorDefinition` ((T, declaration) => given((
         [name, isCallable] = fromParsedConstructorName(declaration.binding),
         hasDeclarationTail = !(declaration instanceof Declaration.Tail),
+        isRecordDeclaration =
+            hasDeclarationTail &&
+            IsRecordDeclaration(declaration.tail[0]),
         isConstant =
-            !hasDeclarationTail ||
-            !IsFunctionObject(declaration.tail[0]),
-        implementation = isConstant ?
-            toConstantValueConstructor(
-                T,
-                name,
-                isCallable,
-                hasDeclarationTail && declaration.tail[0]) :
-            toValueConstructor(T, name, isCallable, declaration.tail[0])) =>
+            !isRecordDeclaration &&
+            (!hasDeclarationTail || !IsFunctionObject(declaration.tail[0])),
+        toConstructor = isConstant ?
+            toConstantValueConstructor :
+            toValueConstructor,
+        implementation = toConstructor(
+            T,
+            name,
+            isCallable,
+            isConstant ?
+                hasDeclarationTail && declaration.tail[0] :
+            isRecordDeclaration ?
+                α(fields => fields, { toString() { return `({ ${Object.keys(declaration.tail[0]).join(", ")} }) => {}` } }) :
+                declaration.tail[0])) =>
     ({
         name,
         symbol: Symbol(name),

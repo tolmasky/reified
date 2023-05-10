@@ -37,7 +37,7 @@ const ƒnamed = (name, f, ...sources) => α (
 exports.ƒnamed = ƒnamed;
 
 const ƒextending = (from, name, f) => given((
-    constructor = ƒnamed(name, f),
+    constructor = I `Object.setPrototypeOf` (ƒnamed(name, f), from),
     prototype = I `Object.setPrototypeOf`
         (constructor.prototype, from.prototype)) =>
         constructor);

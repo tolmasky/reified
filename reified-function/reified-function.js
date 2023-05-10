@@ -61,15 +61,19 @@ const ƒSymbols = SymbolEnum(
 
 const ToSourceText = f => I `.Function.prototype.toString` (f);
 
+// Should we setPrototypeOf parent?
+// And we need to handle the ƒ(f) case...
 const ƒ = Declaration `ƒ` (({ name, tail }) =>
     !name && tail.length === 1 && tail[0] instanceof ƒ ? tail[0] : given((
     [first, ...rest] = tail,
-    firstSource = IsFunctionObject(first) ? { [ƒSymbols.target]: first } : first,
+    target = IsFunctionObject(first) && first,
+    firstSource = target ? { [ƒSymbols.target]: target, ...target } : first,
     bindingsSource = { [ƒSymbols["[[Bindings]]"]]: new Map() },
     f = I `Object.setPrototypeOf` (ƒnamed(name, function (...args)
     {
         return ReifiedCallEvaluateBody(f, this, ...args);
-    }), ƒ.prototype)) => α(f, bindingsSource, firstSource, ...rest)),
+    }), target ? I `Object.getPrototypeOf` (target) : Function)) =>
+        α(f, bindingsSource, firstSource, ...rest, ƒ.prototype /* ugh */)),
 {
     ...ƒSymbols,
 
@@ -95,7 +99,12 @@ const ƒ = Declaration `ƒ` (({ name, tail }) =>
     prototype:
     {
         // FIXME: Should this just be handled in CopyValue?...
-        [copy]: function (target) { return ƒ(target.name, () => {}, target); },
+        [copy]: function (target)
+        {
+            return I `Object.setPrototypeOf` (
+                ƒ(target.name, () => {}, target),
+                I `Object.getPrototypeOf` (target));
+        },
 
         toString()
         {
