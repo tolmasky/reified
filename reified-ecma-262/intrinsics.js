@@ -48,6 +48,25 @@ I["Array.prototype.findIndex"] = I.Array.prototype.findIndex;
 I["Array.prototype.flat"] = I.Array.prototype.flat;
 I["Array.prototype.flatMap"] = I.Array.prototype.flatMap;
 I["Array.prototype.forEach"] = I.Array.prototype.forEach;
+
+I["Array.prototype.group"] = I.Array.prototype.group || function (f, ...rest)
+{
+    const hasThisArg = rest.length > 1;
+    const thisArg = hasThisArg && rest[0];
+    const fCall = hasThisArg ? (...args) => Call(f, thisArg, ...args) : f;
+
+    return this
+        [I `::Array.prototype.map`]
+            ((element, ...rest) => [fCall(element, ...rest), element])
+        [I `::Array.prototype.reduce`] (
+            (groups, [key, element]) => (
+                I `Object.hasOwn` (groups, key) ?
+                    groups[key] [I `::Array.prototype.push`] (element) :
+                    groups[key] = [element],
+                groups),
+            I `Object.create` (null));
+}
+
 I["Array.prototype.join"] = I.Array.prototype.join;
 I["Array.prototype.map"] = I.Array.prototype.map;
 I["Array.prototype.push"] = I.Array.prototype.push;

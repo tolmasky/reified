@@ -101,6 +101,7 @@ const primitive = Declaration `primitive`
 // FIXME: Should Declaration only set the prototype if it's not Object or Function?
 I `Object.setPrototypeOf` (primitive.prototype, type.prototype);
 
+type.any = primitive `any` (() => true);
 type.undefined = primitive `undefined` (IsUndefined);
 type.null = primitive `null` (IsNull);
 type.boolean = primitive `boolean` (IsBoolean);
