@@ -17,6 +17,7 @@ const
     IsPropertyKey
 } = require("@reified/ecma-262");
 const fail = require("@reified/core/fail");
+const { ø } = require("@reified/object");
 
 const
 {
@@ -29,35 +30,53 @@ const
 const BasicFactory = require("./basic-factory");
 const Declaration = require("./declaration");
 const { FieldValueDefinition } = require("./field");
-//const { ValueConstructorDefinition } = require("./value-constructor");
+const { ValueConstructorDeclaration, ValueConstructorDefinition } = require("./value-constructor");
 
 
+const annotated = (annotation, T) =>
+    annotation === "=" ?
+        fallback => FieldValueDefinition({ type: T, default: fallback }) :
+
+    // annotation === "?" ?  maybe(T) :
+    // annotation === "[]") ? List(T) :
+
+    fail (`Unrecognized annotation: ${annotation} on type ${T}`)
 
 
-const TypeDefinition = BasicFactory `TypeDefinition`
-    (({ binding, ...rest }) => given((
-        instantiate = HasOwnProperty(rest, "instantiate") ?
-            rest.instantiate :
-            `${binding} cannot be directly instantiated`) =>
+const TypeDefinition = BasicFactory `TypeDefinition` (declaration => given((
+    { binding, ...rest } = declaration,
+    constructors = ø(rest.constructors)) =>
 ({
     binding,
+    constructors,
     implementation: function T(...args)
     {
-        return  !IsTaggedCall(args) ?
-                    instantiate(...args) :
-                ToResolvedString(args) === "=" ?
-                    fallback =>
-                        FieldValueDefinition({ type: T, default: fallback }) :
-                    fail (ToResolvedString(args) + " not supported");
+        if (IsTaggedCall(args))
+            return annotated(ToResolvedString(args), T);
+
+        if (!HasOwnProperty(constructors, binding))
+            fail(
+                `${binding} cannot be directly instantiated, use one of its ` +
+                `constructors instead:\n` +
+                I `Object.keys` (constructors) [ `::Array.prototype.join`] (`\n`));
+
+        return constructors[binding](...args);
     }
 })));
 
-const type = Declaration `type` (({ binding, body }) =>
+const type = Declaration `type` (({ binding, body }) => given((
+    constructors = I `Object.fromEntries` ([[binding, body]]
+        [I `::Array.prototype.map`]
+            (declaration => ValueConstructorDeclaration(...declaration))
+        [I `::Array.prototype.map`]
+            (ValueConstructorDefinition.parse)
+        [I `::Array.prototype.map`]
+            (({ binding, implementation }) => [binding, implementation]))) =>
     TypeDefinition
     ({
         binding,
-        instantiate: x => x//ValueConstructorDefinition({ binding, tail[0]).implementation
-    }).implementation);
+        constructors,
+    }).implementation));
 
 
 const primitive = Declaration `primitive`
