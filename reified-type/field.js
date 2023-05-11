@@ -59,6 +59,6 @@ FieldDefinition.extract = source => fieldDeclaration => given((
     HasOwnProperty(source, binding) ?
         typecheck(`value for field "${binding}"`, type, source[binding]) :
     fieldValueDefinition.default !== Maybe.None ?
-        fieldValueDefinition.default :
+        fieldValueDefinition.default.value :
     fail.type(`No value was provided for required field "${binding}".`)
 ]);

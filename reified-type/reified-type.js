@@ -13,7 +13,8 @@ const
     IsNumber,
     IsBigInt,
     IsIntegralNumber,
-    IsFunctionObject
+    IsFunctionObject,
+    IsPropertyKey
 } = require("@reified/ecma-262");
 const fail = require("@reified/core/fail");
 
@@ -80,6 +81,9 @@ type.number = primitive `number` (IsNumber);
 type.bigint = primitive `bigint` (IsBigInt);
 type.integer = primitive `integer` (IsIntegralNumber);
 type.function = primitive `function` (IsFunctionObject);
+
+type.PropertyKey = primitive `PropertyKey` (IsPropertyKey);
+
 
 module.exports = type;
 
