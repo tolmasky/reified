@@ -4,10 +4,16 @@ const
 {
     I,
     HasOwnProperty,
-    IsNumber,
-    IsIntegralNumber,
+    IsUndefined,
+    IsNull,
+    IsBoolean,
     IsString,
-    IsBoolean
+    IsSymbol,
+    IsNumeric,
+    IsNumber,
+    IsBigInt,
+    IsIntegralNumber,
+    IsFunctionObject
 } = require("@reified/ecma-262");
 const fail = require("@reified/core/fail");
 
@@ -67,10 +73,16 @@ const primitive = Declaration `primitive`
                 Symbol.hasInstance,
                 { value: hasInstance })));
 
-type.number = primitive `number` (IsNumber);
-type.integer = primitive `integer` (IsIntegralNumber);
-type.string = primitive `string` (IsString);
+type.undefined = primitive `undefined` (IsUndefined);
+type.null = primitive `null` (IsNull);
 type.boolean = primitive `boolean` (IsBoolean);
+type.string = primitive `string` (IsString);
+type.symbol = primitive `symbol` (IsSymbol);
+type.numeric = primitive `numeric` (IsNumeric);
+type.number = primitive `number` (IsNumber);
+type.bigint = primitive `bigint` (IsBigInt);
+type.integer = primitive `integer` (IsIntegralNumber);
+type.function = primitive `function` (IsFunctionObject);
 
 module.exports = type;
 
