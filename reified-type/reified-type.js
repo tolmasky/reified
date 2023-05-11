@@ -58,7 +58,8 @@ const TypeDefinition = BasicFactory `TypeDefinition` (declaration => given((
             fail(
                 `${binding} cannot be directly instantiated, use one of its ` +
                 `constructors instead:\n` +
-                I `Object.keys` (constructors) [ `::Array.prototype.join`] (`\n`));
+                I `Object.keys` (constructors)
+                    [ `::Array.prototype.join`] (`\n`));
 
         return constructors[binding](...args);
     })
