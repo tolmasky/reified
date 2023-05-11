@@ -21,8 +21,9 @@ const DeclarationTail = ƒextending(I.Function, "DeclarationTail",
 
 const Declaration = given ((
     Declaration = ({ binding, tail: [declare, ...sources] }) => given((
-        parse = (binding, ...tail) => declare({ binding, tail })) =>
-        I `Object.assign` (ƒnamed(binding, function (...headArguments)
+        parse = (binding, ...tail) =>
+            I `Object.setPrototypeOf` (declare({ binding, tail }), T.prototype),
+        T = I `Object.assign` (ƒnamed(binding, function (...headArguments)
         {
             return  IsTaggedCall(headArguments) ?
                     DeclarationTail(
@@ -32,7 +33,10 @@ const Declaration = given ((
                     IsString(headArguments[0]) ?
                         parse(...headArguments) :
                         parse(false, ...headArguments)
-        }), ...sources))) =>
-        Declaration({ binding: "Declaration", tail: [Declaration] }));
+        }), ...sources)) => T)) =>
+            Declaration({ binding: "Declaration", tail: [Declaration] }));
+
+// FIXME: Can we incorporate this into Declaration?
+I `Object.setPrototypeOf` (Declaration.prototype, Function.prototype);
 
 module.exports = α(Declaration, { Declaration, Tail: DeclarationTail });

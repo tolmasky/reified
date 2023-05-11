@@ -28,6 +28,7 @@ const
 const BasicFactory = require("./basic-factory");
 const Declaration = require("./declaration");
 const { FieldValueDefinition } = require("./field");
+//const { ValueConstructorDefinition } = require("./value-constructor");
 
 
 
@@ -39,7 +40,7 @@ const TypeDefinition = BasicFactory `TypeDefinition`
             `${binding} cannot be directly instantiated`) =>
 ({
     binding,
-    implementation: ƒextending(type, binding, function T(...args)
+    implementation: function T(...args)
     {
         return  !IsTaggedCall(args) ?
                     instantiate(...args) :
@@ -47,11 +48,15 @@ const TypeDefinition = BasicFactory `TypeDefinition`
                     fallback =>
                         FieldValueDefinition({ type: T, default: fallback }) :
                     fail (ToResolvedString(args) + " not supported");
-    })
+    }
 })));
 
 const type = Declaration `type` (({ binding, tail }) =>
-    TypeDefinition({ binding, instantiate: x => x }).implementation);
+    TypeDefinition
+    ({
+        binding,
+        instantiate: x => x//ValueConstructorDefinition({ binding, tail[0]).implementation
+    }).implementation);
 
 
 const primitive = Declaration `primitive`

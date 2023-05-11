@@ -3,6 +3,7 @@ const fail = require("@reified/core/fail");
 
 const BasicFactory = require("./basic-factory");
 const Maybe = require("./basic-maybe");
+const Declaration = require("./declaration");
 
 
 const toMaybeDefault = (type, rest) =>
@@ -17,6 +18,13 @@ const FieldValueDefinition = BasicFactory `FieldValueDefinition`
         ({ type, default: toMaybeDefault(type, rest) }));
 
 exports.FieldValueDefinition = FieldValueDefinition;
+
+
+const FieldDeclaration = Declaration `FieldDeclaration`
+    (({ binding, tail: [fieldValueDeclaration] }) =>
+        ({ binding, fieldValueDeclaration }));
+
+exports.FieldDeclaration = FieldDeclaration;
 
 /*
 const FieldDeclaration = BasicFactory `FieldDeclaration`
