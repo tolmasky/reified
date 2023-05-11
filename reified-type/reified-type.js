@@ -26,22 +26,11 @@ const
 } = require("@reified/core/function-objects");
 
 const BasicFactory = require("./basic-factory");
-const Maybe = require("./basic-maybe");
 const Declaration = require("./declaration");
+const { FieldValueDefinition } = require("./field");
 
 
-const toMaybeDefault = ({ type, ...rest }) =>
-    !HasOwnProperty(rest, "default") ?
-        Maybe.None :
-    rest.default instanceof type ?
-        Maybe.Just(rest.default) :
-        fail.type (`Default value of ${rest.default} is not of type ${type}`);
 
-const FieldValueDefinition = BasicFactory `FieldValueDefinition` (properties =>
-({
-    type: properties.type,
-    default: toMaybeDefault(properties)
-}));
 
 const TypeDefinition = BasicFactory `TypeDefinition`
     (({ binding, ...rest }) => given((
