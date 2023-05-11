@@ -1,6 +1,6 @@
 const given = f => f();
 
-const { I, HasOwnProperty } = require("@reified/ecma-262");
+const { I, HasOwnProperty, IsString } = require("@reified/ecma-262");
 const { ƒextending } = require("@reified/core/function-objects");
 
 const Declaration = require("./declaration");
@@ -22,7 +22,7 @@ const toDataProperty = ({ binding, type }, location, source) =>
             enumerable: true
         });
 
-module.exports = Declaration `Rudimentary` (({ binding, body }) => given((
+const Rudimentary = Declaration `Rudimentary` (({ binding, body }) => given((
     { [Symbols.extending]: extending = I `Object`, ...rest } = body,
     fields = I `Object.entries` (rest)
         [I `::Array.prototype.map`]
@@ -37,6 +37,14 @@ module.exports = Declaration `Rudimentary` (({ binding, body }) => given((
                     toDataProperty(field, binding, properties)
                 ])));
     })));
+
+module.exports = I `Object.assign` (Rudimentary, { Rudimentary }, Symbols);
+
+Rudimentary.any = { [Symbol.hasInstance]: () => true };
+
+Rudimentary.string = { [Symbol.hasInstance]: V => IsString(V) };
+
+
     /*
 
 
