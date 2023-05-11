@@ -92,7 +92,7 @@ const type = Declaration `type` (({ binding, body }) => given((
 
 const primitive = Declaration `primitive`
     (({ binding, body: hasInstance }) => given((
-        T = TypeDefinition(binding, {}).implementation) =>
+        T = TypeDefinition({ binding }).implementation) =>
             I `Object.defineProperty` (
                 T,
                 Symbol.hasInstance,
