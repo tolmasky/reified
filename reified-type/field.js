@@ -1,3 +1,5 @@
+const given = f => f();
+
 const { HasOwnProperty } = require("@reified/ecma-262");
 const fail = require("@reified/core/fail");
 
@@ -6,55 +8,57 @@ const Maybe = require("./basic-maybe");
 const Declaration = require("./declaration");
 
 
-const toMaybeDefault = (type, rest) =>
+const typecheck = (reference, T, value) => value instanceof T ?
+    value :
+    fail.type (`Type mismatch in ${reference}:\n`+
+        `Expected type: ${T}\n` +
+        `But found type: ${typeof value}`);
+
+const toMaybeDefault = (reference, type, rest) =>
     !HasOwnProperty(rest, "default") ?
         Maybe.None :
-    rest.default instanceof type ?
-        Maybe.Just(rest.default) :
-        fail.type (`Default value of ${rest.default} is not of type ${type}`);
+        Maybe.Just(typecheck(reference, type, rest.default));
 
 const FieldValueDefinition = BasicFactory `FieldValueDefinition`
     (({ type, ...rest }) =>
-        ({ type, default: toMaybeDefault(type, rest) }));
+        ({ type, default: toMaybeDefault("default value", type, rest) }));
 
 exports.FieldValueDefinition = FieldValueDefinition;
 
+FieldValueDefinition.parse = declaration => given((
+    resolved = declaration()) =>
+    resolved instanceof FieldValueDefinition ?
+        resolved :
+        FieldValueDefinition({ type: resolved }));
+
 
 const FieldDeclaration = Declaration `FieldDeclaration`
-    (({ binding, tail: [fieldValueDeclaration] }) =>
+    (({ binding, body: fieldValueDeclaration }) =>
         ({ binding, fieldValueDeclaration }));
 
 exports.FieldDeclaration = FieldDeclaration;
 
-/*
-const FieldDeclaration = BasicFactory `FieldDeclaration`
-    (({ binding, fieldValueDeclaration }) =>
-        ({ binding, fieldValueDeclaration }));
-
-exports.FieldDeclaration = FieldDeclaration;
 
 const FieldDefinition = BasicFactory `FieldDefinition`
     (({ binding, fieldValueDefinition }) =>
-         ({ binding, fieldValueDefinition }));
+        ({ binding, fieldValueDefinition }));
 
-FieldDefinition.parse = declaration => FieldDefinition
+exports.FieldDefinition = FieldDefinition;
+
+FieldDefinition.parse = ({ binding, fieldValueDeclaration }) => FieldDefinition
 ({
-    binding: declaration.binding,
-    fieldValueDefinition: FieldValueDefinition.parse(declaration.fieldValueDeclaration)
+    binding,
+    fieldValueDefinition: FieldValueDefinition.parse(fieldValueDeclaration)
 });
 
-
-
-FieldDefinition.parse = declaration => FieldDefinition
-({
-    binding: declaration.binding,
-    fieldValueDefinition: FieldValueDefinition.parse(declaration.fieldValueDeclaration)
-});
-    
-FieldDefinition.extract = source => field => given((
-    value = source[field.binding],
-    type = field.fieldValueDefinition.type) =>
-    !satisfies(type, value) ?
-        fail(`Expected type ${type}, but instead found ${typeof value}`) :
-        [field.binding, value]);
-*/
+FieldDefinition.extract = source => fieldDeclaration => given((
+    { binding, fieldValueDefinition } = fieldDeclaration,
+    { type } = fieldValueDefinition) =>
+[
+    binding,
+    HasOwnProperty(source, binding) ?
+        typecheck(`value for field "${binding}"`, type, source[binding]) :
+    fieldValueDefinition.default !== Maybe.None ?
+        fieldValueDefinition.default :
+    fail.type(`No value was provided for required field "${binding}".`)
+]);

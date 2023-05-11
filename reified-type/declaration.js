@@ -1,6 +1,6 @@
 const given = f => f();
 
-const { I, IsString } = require("@reified/ecma-262");
+const { I, IsPropertyKey } = require("@reified/ecma-262");
 const { α } = require("@reified/object");
 const
 {
@@ -11,32 +11,31 @@ const
 } = require("@reified/core/function-objects");
 
 
-const DeclarationTail = ƒextending(I.Function, "DeclarationTail",
+const DeclarationBody = ƒextending(I.Function, "DeclarationBody",
     function (name, f)
     {
         f.binding = name;
 
-        return I `Object.setPrototypeOf` (f, DeclarationTail.prototype);
+        return I `Object.setPrototypeOf` (f, DeclarationBody.prototype);
     });
 
 const Declaration = given ((
-    Declaration = ({ binding, tail: [declare, ...sources] }) => given((
-        parse = (binding, ...tail) =>
-            I `Object.setPrototypeOf` (declare({ binding, tail }), T.prototype),
-        T = I `Object.assign` (ƒnamed(binding, function (...headArguments)
+    Declaration = ({ binding, body: declare }) => given((
+        parse = (binding, body) =>
+            I `Object.setPrototypeOf` (declare({ binding, body }), T.prototype),
+        T = ƒnamed(binding, function (...headArguments)
         {
             return  IsTaggedCall(headArguments) ?
-                    DeclarationTail(
+                    DeclarationBody(
                         ToResolvedString(headArguments),
-                        (...tailArguments) =>
-                            parse(ToResolvedString(headArguments), ...tailArguments)) :
-                    IsString(headArguments[0]) ?
+                        body => parse(ToResolvedString(headArguments), body)) :
+                    IsPropertyKey(headArguments[0]) ?
                         parse(...headArguments) :
                         parse(false, ...headArguments)
-        }), ...sources)) => T)) =>
-            Declaration({ binding: "Declaration", tail: [Declaration] }));
+        })) => T)) =>
+            Declaration({ binding: "Declaration", body: Declaration }));
 
 // FIXME: Can we incorporate this into Declaration?
 I `Object.setPrototypeOf` (Declaration.prototype, Function.prototype);
 
-module.exports = α(Declaration, { Declaration, Tail: DeclarationTail });
+module.exports = α(Declaration, { Declaration, Body: DeclarationBody });

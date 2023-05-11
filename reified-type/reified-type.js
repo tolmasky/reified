@@ -51,7 +51,7 @@ const TypeDefinition = BasicFactory `TypeDefinition`
     }
 })));
 
-const type = Declaration `type` (({ binding, tail }) =>
+const type = Declaration `type` (({ binding, body }) =>
     TypeDefinition
     ({
         binding,
@@ -60,12 +60,15 @@ const type = Declaration `type` (({ binding, tail }) =>
 
 
 const primitive = Declaration `primitive`
-    (({ binding, tail:[hasInstance] }) => given((
+    (({ binding, body: hasInstance }) => given((
         T = TypeDefinition(binding, {}).implementation) =>
             I `Object.defineProperty` (
                 T,
                 Symbol.hasInstance,
                 { value: hasInstance })));
+
+// FIXME: Should Declaration only set the prototype if it's not Object or Function?
+I `Object.setPrototypeOf` (primitive.prototype, type.prototype);
 
 type.undefined = primitive `undefined` (IsUndefined);
 type.null = primitive `null` (IsNull);

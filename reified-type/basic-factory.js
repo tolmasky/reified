@@ -5,7 +5,7 @@ const Declaration = require("./declaration");
 
 
 module.exports = Declaration `BasicFactory`
-    (({ binding, tail: [toProperties] }) =>
+    (({ binding, body: toProperties }) =>
         ƒnamed(binding, function F(properties)
         {
             return I `Object.assign` (
