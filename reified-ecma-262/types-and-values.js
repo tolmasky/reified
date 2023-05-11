@@ -56,7 +56,3 @@ const IsPrototypelessObject = value =>
     IsNull(I `Object.getPrototypeOf` (value));
 
 exports.IsPrototypelessObject = IsPrototypelessObject;
-
-const IsArray = I `Array.isArray`;
-
-exports.IsArray = IsArray;

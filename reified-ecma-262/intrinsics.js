@@ -61,7 +61,8 @@ I["Map.prototype.entries"] = I.Map.prototype.entries;
 I["Map.prototype.get"] = I.Map.prototype.get;
 I["Map.prototype.set"] = I.Map.prototype.set;
 
-
+I.Number = global.Number;
+I["Number.isInteger"] = I.Number.isInteger;
 
 I.Error = global.Error;
 I.AggregateError = global.AggregateError;

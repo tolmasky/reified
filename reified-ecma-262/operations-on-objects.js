@@ -29,3 +29,19 @@ const HasMethod = (V, P) => given((
         true);
 
 exports.HasMethod = HasMethod;
+
+// 7.3.12 HasProperty ( O, P )
+// https://tc39.es/ecma262/#sec-hasproperty
+
+// FIXME: Should this fail if O isn't an object or P isn't a key?
+const HasProperty = (O, P) => P in O;
+
+exports.HasProperty = HasProperty;
+
+// 7.3.13 HasOwnProperty ( O, P )
+// https://tc39.es/ecma262/#sec-hasownproperty
+
+// FIXME: Should this fail if O isn't an object or P isn't a key?
+const HasOwnProperty = (O, P) => I `Object.hasOwn` (O, P);
+
+exports.HasOwnProperty = HasOwnProperty
