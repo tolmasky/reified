@@ -153,7 +153,6 @@ I["String.prototype.startsWith"] =
     };
 I["String.prototype.substr"] = I.String.prototype.substr;
 I["String.prototype.substring"] = I.String.prototype.substring;
-I["String.prototype.replace"] = I.String.prototype.replace;
 I["String.prototype.toLowerCase"] = I.String.prototype.toLowerCase;
 I["String.prototype.toUpperCase"] = I.String.prototype.toUpperCase;
 
@@ -162,7 +161,7 @@ I["undefined"] = void(0);
 I["WeakMap"] = global.WeakMap;
 I["WeakMap.prototype.get"] = I.WeakMap.prototype.get;
 I["WeakMap.prototype.set"] = I.WeakMap.prototype.set;
-
+I["WeakMap.prototype.has"] = I.WeakMap.prototype.has;
 
 I["JSON"] = JSON;
 I["JSON.stringify"] = JSON.stringify;
