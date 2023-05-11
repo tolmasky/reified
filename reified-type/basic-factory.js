@@ -8,7 +8,7 @@ module.exports = Declaration `BasicFactory`
     (({ binding, body: toProperties }) =>
         ƒnamed(binding, function F(properties)
         {
-            return I `Object.assign` (
-                I `Object.create` (F.prototype),
-                toProperties(properties));
+            return I `Object.setPrototypeOf` (
+                toProperties(properties),
+                F.prototype);
         }));
