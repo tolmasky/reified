@@ -9,7 +9,7 @@ const SymbolBijection = require("./symbol-bijection");
 const CaseofSymbols = SymbolBijection(caseof =>
     `@reified/type/caseof/${I `String` (caseof.binding)}`);
 
-//const IsCaseofKey = key => IsSymbol(key) && 
+const IsCaseofPropertyKey = key => IsSymbol(key) && CaseofSymbols.hasSymbol(key);
 
 const DataProperty = (value, enumerable = false) => ({ value, enumerable });
 const MethodProperty = (value, ...rest) =>
@@ -23,6 +23,9 @@ const caseof = function caseof(...args)
             binding: DataProperty(ToResolvedString(args), true),
             [toPrimitive]: MethodProperty(self => CaseofSymbols.toSymbol(self))
         });
+
+    if (args.length === 1 && IsCaseofPropertyKey(args[0]))
+        return CaseofSymbols.forSymbol(args[0]);
 
     const [value, cases] = args;
     const { default: fallback } = cases;
@@ -39,7 +42,9 @@ const caseof = function caseof(...args)
         match(value);
 }
 
-caseof.IsCaseofPropertyKey = key => IsSymbol(key) && CaseofSymbols.hasSymbol(key);
+caseof.caseof = caseof;
+
+caseof.IsCaseofPropertyKey = IsCaseofPropertyKey;
 
 module.exports = caseof;
 

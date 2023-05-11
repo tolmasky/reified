@@ -8,6 +8,16 @@ const I = require("./intrinsics");
 const GetOwnPropertyKeys = (O, type) =>
     type === "string" ? I `Object.getOwnPropertyNames` (O) :
     type === "symbol" ? I `Object.getOwnPropertySymbols` (O) :
-    I `Array.concat` (
-        GetOwnPropertyKeys(O, "string"),
-        GetOwnPropertyKeys(O, "symbol"));
+    fail("oh no...");
+
+exports.GetOwnPropertyKeys = GetOwnPropertyKeys;
+
+
+// Convenience method.
+const GetOwnPropertyDescriptorEntries = O =>
+    GetOwnPropertyKeys(O, "string")
+        [I `::Array.prototype.concat`] (GetOwnPropertyKeys(O, "symbol"))
+        [I `::Array.prototype.map`] (key =>
+            [key, I `Object.getOwnPropertyDescriptor` (O, key)]);
+
+exports.GetOwnPropertyDescriptorEntries = GetOwnPropertyDescriptorEntries;

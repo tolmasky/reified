@@ -14,7 +14,8 @@ const
     IsBigInt,
     IsIntegralNumber,
     IsFunctionObject,
-    IsPropertyKey
+    IsPropertyKey,
+    GetOwnPropertyDescriptorEntries
 } = require("@reified/ecma-262");
 const fail = require("@reified/core/fail");
 const { ø } = require("@reified/object");
@@ -31,6 +32,8 @@ const BasicFactory = require("./basic-factory");
 const Declaration = require("./declaration");
 const { FieldValueDefinition } = require("./field");
 const { ValueConstructorDeclaration, ValueConstructorDefinition } = require("./value-constructor");
+
+const { caseof, IsCaseofPropertyKey } = require("./caseof");
 
 
 const annotated = (annotation, T) =>
@@ -59,20 +62,27 @@ const TypeDefinition = BasicFactory `TypeDefinition` (declaration => given((
                 `${binding} cannot be directly instantiated, use one of its ` +
                 `constructors instead:\n` +
                 I `Object.keys` (constructors)
-                    [ `::Array.prototype.join`] (`\n`));
+                    [ I `::Array.prototype.join`] (`\n`));
 
         return constructors[binding](...args);
-    })
+    }, constructors)
 })));
 
 const type = Declaration `type` (({ binding, body }) => given((
-    constructors = I `Object.fromEntries` ([[binding, body]]
+    descriptors = GetOwnPropertyDescriptorEntries (body),
+    caseofs = descriptors
+        [I `::Array.prototype.filter`]
+            (([key]) => IsCaseofPropertyKey(key))
         [I `::Array.prototype.map`]
-            (declaration => ValueConstructorDeclaration(...declaration))
-        [I `::Array.prototype.map`]
-            (ValueConstructorDefinition.parse)
-        [I `::Array.prototype.map`]
-            (({ binding, implementation }) => [binding, implementation]))) =>
+            (([key, descriptor]) => ([caseof(key).binding, descriptor.value])),
+    constructors = I `Object.fromEntries` (
+        (caseofs.length <= 0 ? [[binding, body]] : caseofs)
+            [I `::Array.prototype.map`]
+                (declaration => ValueConstructorDeclaration(...declaration))
+            [I `::Array.prototype.map`]
+                (ValueConstructorDefinition.parse)
+            [I `::Array.prototype.map`]
+                (({ binding, implementation }) => [binding, implementation]))) =>
     TypeDefinition
     ({
         binding,
@@ -104,5 +114,8 @@ type.function = primitive `function` (IsFunctionObject);
 
 type.PropertyKey = primitive `PropertyKey` (IsPropertyKey);
 
+type.caseof = caseof;
+
+type.type = type;
 
 module.exports = type;
