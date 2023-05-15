@@ -12,14 +12,17 @@ const
     IsBigInt,
     IsObject,
     IsFunctionObject,
+    HasOwnProperty,
     GetOwnPropertyDescriptorEntries,
-} = require("@reified/ecma-262");    
+} = require("@reified/ecma-262");
 
 const fail = require("./fail");
 const { IsTaggedCall, ToResolvedString } =
     require("@reified/core/function-objects");
 
 const ϕ = (O, fProperties) => I `Object.assign` (O, fProperties(O));
+const ø = (...sources) => I `Object.assign` (I `Object.create` (null), ...sources);
+
 
 const annotate = (...args) => IsTaggedCall(args) && given((
     annotation = ToResolvedString(args)) =>
@@ -51,9 +54,9 @@ const ƒ = (binding, extending, definition) => given((
         }));
 
 const mismatch = (T, value, reference) => fail.type (
-    `Type mismatch${reference ? `in ${reference}` : ""}:\n` +
+    `Type mismatch${reference ? ` in ${reference}` : ""}:\n` +
     `    Expected: ${toTypeDescription(T)}\n` +
-    `    But found: ${value}`);
+    `    Found: ${value}`);
 
 const toTypeDescription = T =>
     // FIXME: We'll want something like [[Description]] here, for Dependent
@@ -65,9 +68,7 @@ const toTypeDescription = T =>
 const IsTypeOrConstructor = T =>
     T instanceof type || IsFunctionObject(T);
 
-//const toType = T => T instanceof type ? T : 
-
-module.exports = ƒ ("type", I `Function`, type =>
+const type = ƒ ("type", I `Function`, type =>
 ({
     target: (...args) => annotate(args) || fail.type("oops"),
 
@@ -96,10 +97,155 @@ module.exports = ƒ ("type", I `Function`, type =>
             })
         ])),
 
-    check: (T, value, reference) => 
+    check: (T, value, reference) =>
         !IsTypeOrConstructor(T) ?
-            mismatch(type, T, "in type.check") :
+            mismatch(type, T, "type.check") :
         !(value instanceof T) ?
             mismatch(T, value, reference) :
             value
 }));
+
+I `Object.setPrototypeOf` (type, type.prototype);
+
+module.exports = type;
+
+const GetConstructorOf = O =>
+    I `Object.getPrototypeOf` (type.check(type.object, O, "GetConstructorOf"))
+        .constructor;
+
+const caseof = function caseof(...args)
+{
+/*    if (IsTaggedCall(args))
+        return I `Object.create` (caseof.prototype,
+        {
+            binding: DataProperty(ToResolvedString(args), true),
+            [toPrimitive]: MethodProperty(self => CaseofSymbols.toSymbol(self))
+        });
+
+    if (args.length === 1 && IsCaseofPropertyKey(args[0]))
+        return CaseofSymbols.forSymbol(args[0]);
+*/
+
+    const [value, cases] = args;
+    const { default: fallback } = cases;
+
+    const C = GetConstructorOf(value);
+
+//    const C = GetValueConstructorOf(value);
+//    const { name, symbol } = GetValueConstructorDefinitionOf(C);
+    const match =
+//        cases[symbol] ||
+        cases[C.name] ||
+        cases.default;
+
+    return !match ?
+        fail.type (`No match for ${name} found in caseof statement`) :
+        match(value);
+}
+
+const OrdinaryDataCreate = (constructor, fields, source) =>
+    I `Object.assign` (
+        I `Object.create` (constructor.prototype),
+        fields [I `::Array.prototype.reduce`] (
+            (values, field) => I `Object.assign` (values,
+            {
+                [field.binding]: extract(field, source, values)
+            }), ø()));
+
+const Data = ({ binding, fields }) => ƒ (binding, false, F =>
+({
+    target: (...args) =>
+        annotate(...args) ||
+        OrdinaryDataCreate(F, fields, ...args),
+
+    prototypeOf: type.prototype,
+}));
+
+const Field = Data
+({
+    binding: "Field",
+    fields:
+    [
+        { type, binding: "type" },
+        { type: type.string, binding: "binding" }
+    ]
+});
+
+module.exports.Field = Field;
+
+/*
+function Data()
+{
+}
+
+function Field() { }
+
+Field.fields =
+[
+    { type: type, binding: "type" },
+    { type:
+]
+
+
+
+module.exports.OrdinaryDataCreate = OrdinaryDataCreate;*/
+
+module.exports.Data = Data;
+
+const extract = ({ type: T, binding, value }, source, values) =>
+    HasOwnProperty(source, binding) ?
+        type.check(T, source[binding], `in field ${binding}`) :
+        fail.type (
+                        `No value was provided for required field "${binding}".`)
+/*
+
+    caseof(value,
+    {
+        [Field.Value.Constant]: initialize(source, values),
+        [Field.Value.Variable]: ({ default: fallback }) =>
+            HasOwnProperty(source, binding) ?
+                type.check(T, binding, `in field ${binding}`) :
+                caseof(fallback,
+                {
+                    None: () => fail.type (
+                        `No value was provided for required field "${binding}".`),
+                    Just: initialize(source, values)
+                })
+    })
+
+/*
+
+Field({ type, binding, Constant(initializer), Variable(initializer) })
+
+const initialize = (source, values) => initializer => caseof(initializer,
+{
+    [Initializer.Static]: value => value,
+    // FIXME: ? In theory compute will be type-checked already, so we don't
+    // need to do it manually...
+    [Initializer.Computed]: compute => compute(values)
+});
+
+const extract = ({ type: T, binding, value }, source, values) =>
+    caseof(value,
+    {
+        [Field.Value.Constant]: initialize(source, values),
+        [Field.Value.Variable]: ({ default: fallback }) =>
+            HasOwnProperty(source, binding) ?
+                type.check(T, binding, `in field ${binding}`) :
+                caseof(fallback,
+                {
+                    None: () => fail.type (
+                        `No value was provided for required field "${binding}".`),
+                    Just: initialize(source, values)
+                })
+    })
+
+function Field()
+
+    [caseof `Data`]:
+    ({
+        [Definition]    :of => Definition,
+
+        [Call]: annotate or construct
+    }),
+*/
