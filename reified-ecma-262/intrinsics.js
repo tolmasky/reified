@@ -20,6 +20,7 @@ I.I = I;
 
 I.Function = global.Function;
 
+I["Function.prototype"] = I.Function.prototype;
 I["Function.prototype.bind"] = I.Function.prototype.bind;
 I["Function.prototype.toString"] = I.Function.prototype.toString;
 
