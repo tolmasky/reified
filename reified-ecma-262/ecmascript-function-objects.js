@@ -9,7 +9,7 @@ const { I } = require("./intrinsics");
 const OrdinaryFunctionCreate = (functionPrototype, sourceText, ParameterList, Body) =>
     I `Object.setPrototypeOf`(function F(...args)
     {
-        return Body [I `::Function.prototype.call`] (this, F, ...args);
+        return Body (F, this, args);
     }, functionPrototype);
 
 exports.OrdinaryFunctionCreate = OrdinaryFunctionCreate;
