@@ -3,6 +3,7 @@ const given = f => f();
 const I = require("./intrinsics");
 
 
+// 20.1.2.11.1 GetOwnPropertyKeys ( O, type )
 // https://tc39.es/ecma262/#sec-getownpropertykeys
 // But we also return BOTH names AND symbols when type is left out.
 const GetOwnPropertyKeys = (O, type) =>

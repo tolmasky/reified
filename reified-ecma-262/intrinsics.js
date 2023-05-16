@@ -21,7 +21,9 @@ I.I = I;
 I.Function = global.Function;
 
 I["Function.prototype"] = I.Function.prototype;
+I["Function.prototype.apply"] = I.Function.prototype.apply;
 I["Function.prototype.bind"] = I.Function.prototype.bind;
+I["Function.prototype.call"] = I.Function.prototype.call;
 I["Function.prototype.toString"] = I.Function.prototype.toString;
 
 I["Object.getOwnPropertySymbols"] = Object.getOwnPropertySymbols;
@@ -153,6 +155,9 @@ I["Object.values"] = I.Object.values;
 
 I["Object.prototype"] = I.Object.prototype;
 
+I["Promise"] = global.Promise;
+I["Promise.prototype.finally"] = I.Promise.prototype.finally;
+
 I["RegExp"] = global.RegExp;
 I["RegExp.prototype.exec"] = I.RegExp.prototype.exec;
 I["RegExp.prototype.test"] = I.RegExp.prototype.test;
@@ -175,6 +180,10 @@ I["String.prototype.substr"] = I.String.prototype.substr;
 I["String.prototype.substring"] = I.String.prototype.substring;
 I["String.prototype.toLowerCase"] = I.String.prototype.toLowerCase;
 I["String.prototype.toUpperCase"] = I.String.prototype.toUpperCase;
+
+I["Symbol"] = global.Symbol;
+I["Symbol.hasInstance"] = I.Symbol.hasInstance;
+I["Symbol.species"] = I.Symbol.species;
 
 I["undefined"] = void(0);
 

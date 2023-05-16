@@ -1,5 +1,5 @@
 const I = require("./intrinsics");
-const { IsString, IsSymbol } = require("./types-and-values");
+const { IsObject, IsString, IsSymbol } = require("./types-and-values");
 
 
 // 7.2.2 IsArray ( argument )
@@ -12,6 +12,34 @@ const { IsString, IsSymbol } = require("./types-and-values");
 const IsArray = argument => I `Array.isArray` (argument);
 
 exports.IsArray = IsArray;
+
+
+// 7.2.4 IsConstructor ( argument )
+// https://tc39.es/ecma262/#sec-isconstructor
+
+const IsConstructor = function (argument)
+{
+    if (!IsObject(argument))
+        return false;
+
+    if (argument === I `Symbol`)
+        return true;
+
+    try
+    {
+        ({ constructor: { [I `Symbol.species`]: argument }, then() { } })
+            [I `::Promise.prototype.finally`]()
+    }
+    catch (error)
+    {
+        return false;
+    }
+
+    return true;
+}
+
+exports.IsConstructor = IsConstructor;
+
 
 // 7.2.6 IsIntegralNumber ( argument )
 // https://tc39.es/ecma262/#sec-isintegralnumber
