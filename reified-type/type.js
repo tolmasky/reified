@@ -47,24 +47,57 @@ const annotate = args => given((
         annotation === "where" ? value => value :
         fail.syntax(`Unrecgonized type annotation: "${annotation}"`));
 
+const TypeDefinitionSymbol = Symbol("@reified/type/type-definition");
+
+const toMethodDescriptor = value => [value.binding, { value, ...value }];
 
 module.exports = Θ
 ({
     name: { value: "type" },
 
-    [Θ.Call]: (type, _, [{ binding, hasInstance = false, construct }]) => Θ
-    ({
-        [Θ.Call]: (T, thisArg, args) => (console.log(args),
-            IsAnnotation(args) ? annotate(args) :
-            construct ? construct(T, thisArg, args) :
-            fail.type(`${binding} is not a constructor.`)),
+    [Θ.Call]: (type, _, args) => given((
+        // FIXME: && args[0] instanceof TypeDefinition
+        IsTypeDefinition = args =>
+            args.length === 2 &&
+            args[0] === TypeDefinitionSymbol,
+        IsTypeDataDeclaration = args => IsTaggedCall(args),
 
-        [Θ.Prototype]: type.prototype,
+        FromTypeDefinition =
+        ({
+            binding,
+            hasInstance = false,
+            construct = false,
+            methods = [],
+            functions = [],
+            extending = I `Object`
+        }) => Θ
+        ({
+            [Θ.Call]: (T, thisArg, args) => (console.log(args),
+                IsAnnotation(args) ? annotate(args) :
+                construct ? construct(T, thisArg, args) :
+                fail.type(`${binding} is not a constructor.`)),
 
-        name: { value: binding },
-        [I `Symbol.hasInstance`]: hasInstance && { value: hasInstance }
-    }),
+            [Θ.Prototype]: type.prototype,
 
+            name: { value: binding },
+
+            [I `Symbol.hasInstance`]: hasInstance && { value: hasInstance },
+
+            prototype:
+            {
+                value: I `Object.create` (extending.prototype, methods
+                    [I `::Array.prototype.map`] (toMethodDescriptor))
+            },
+
+            ...I `Object.fromEntries` (functions
+                [I `::Array.prototype.map`] (toMethodDescriptor))
+        })) =>
+
+            IsTypeDefinition(args) ? FromTypeDefinition(args[1]) :
+
+            IsTypeDataDeclaration(args) ? console.log("declaring...") :
+
+            fail.syntax (`Improper type declaration`)),
 
     ...I `Object.fromEntries`
     ([
@@ -82,7 +115,7 @@ module.exports = Θ
             binding,
             type =>
             ({
-                value: type({ binding, hasInstance }),
+                value: type(TypeDefinitionSymbol, { binding, hasInstance, functions:[Object.assign(function () { return this }, { binding:"self", enumerable: true })] }),
                 enumerable: true
             })
         ])),
@@ -97,3 +130,6 @@ module.exports = Θ
                 value
     }
 });
+
+// type `TypeDefinition` ({ })
+// type `TypeDefinition` ({ })
