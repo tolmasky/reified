@@ -62,24 +62,40 @@ module.exports = Θ
             args[0] === TypeDefinitionSymbol,
         IsTypeDataDeclaration = args => IsTaggedCall(args),
 
+        FindDefaultConstructor = (binding, constructors) =>
+            constructors [I `::Array.prototype.find`]
+                (constructor => binding === constructor.binding) ||
+            false,
+
         FromTypeDefinition =
         ({
             binding,
             hasInstance = false,
-            construct = false,
+            constructors = [],
             methods = [],
             functions = [],
             extending = I `Object`
-        }) => Θ
+        }) => given((
+            defaultConstructor = FindDefaultConstructor(binding, constructors)) => Θ
         ({
-            [Θ.Call]: (T, thisArg, args) => (console.log(args),
-                IsAnnotation(args) ? annotate(args) :
-                construct ? construct(T, thisArg, args) :
-                fail.type(`${binding} is not a constructor.`)),
+            [Θ.Call]: (T, thisArg, args) =>
+                IsAnnotation(args) ?
+                    annotate(args) :
+                defaultConstructor ?
+                    defaultConstructor(args) :
+                !constructors.length <= 0 ?
+                    fail.type(`${binding} is only a type, not a constructor.`) :
+                    fail.type(
+                        `${binding} has no default constructor, ` +
+                        constructors
+                            [I `::Array.prototype.map`]
+                                (({ binding }) => `    ${binding}`)
+                            [ I `::Array.prototype.join`] (`\n`)),
 
             [Θ.Prototype]: type.prototype,
 
             name: { value: binding },
+            binding: { value: binding },
 
             [I `Symbol.hasInstance`]: hasInstance && { value: hasInstance },
 
@@ -91,11 +107,15 @@ module.exports = Θ
 
             ...I `Object.fromEntries` (functions
                 [I `::Array.prototype.map`] (toMethodDescriptor))
-        })) =>
+        }))) =>
 
             IsTypeDefinition(args) ? FromTypeDefinition(args[1]) :
 
-            IsTypeDataDeclaration(args) ? console.log("declaring...") :
+            IsTypeDataDeclaration(args) ? (console.log("hi"),type(TypeDefinitionSymbol,
+            {
+                binding: "Cheese",
+                constructors: [Object.assign(function () { return this }, { binding:"Cheese", enumerable: true })]
+            })) :
 
             fail.syntax (`Improper type declaration`)),
 
