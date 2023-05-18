@@ -16,9 +16,7 @@ const
     HasOwnProperty,
 } = require("@reified/ecma-262");
 
-const fail = require("./fail");
-
-const { Ø } = require("@reified/core/object");
+const { fail, SymbolEnum, ø, Ø } = require("@reified/core");
 
 const { IsTaggedCall, ToResolvedString } =
     require("@reified/core/function-objects");
@@ -52,9 +50,20 @@ const TypeDefinitionSymbol = Symbol("@reified/type/type-definition");
 
 const toMethodDescriptor = value => [value.binding, { value, ...value }];
 
-const S = I `Object.fromEntries`
-    (["Constructors", "Definition", "DefaultConstructor"]
-        [I `::Array.prototype.map`] (name => [name, Symbol(name)]));
+const S = SymbolEnum("Constructors", "Definition", "DefaultConstructor");
+
+const Constructor = (T, definition) => Ø
+({
+    [Ø.Call]: (C, _, args) =>
+        Ø({ [Ø.Prototype]: C.prototype }),
+
+    [S.definition]: definition,
+
+    name: { value: definition.binding },
+    binding: { value: definition.binding },
+
+    prototype: { value: I `Object.create` (T.prototype) }
+});
 
 module.exports = Ø
 ({
@@ -100,11 +109,16 @@ module.exports = Ø
             [Ø.Prototype]: type.prototype,
 
             //{ value: toConstructors(F,....) (including [Default]) },
-            [S.Constructors]: { value: [] },
+            [S.Constructors]: T =>
+            ({
+                value: constructors
+                    [I `::Array.prototype.map`]
+                        (definition => Constructor(T, definition))
+            }),
 
             [Ø `...`]: ({ [S.Constructors]: constructors }) =>
-                constructors [I `::Array.prototype.map`]
-                    (([name, value]) => [name, { value, enumerable: true }]),
+                ø(constructors [I `::Array.prototype.map`]
+                        (value => [value.binding, { value, enumerable: true }])),
 
 //...            toConstructors()
 

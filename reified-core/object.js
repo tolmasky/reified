@@ -3,6 +3,7 @@ const given = f => f();
 const
 {
     I,
+    IsArray,
     IsFunctionObject,
     IsSymbol,
     GetOwnPropertyDescriptorEntries,
@@ -24,6 +25,16 @@ const fromTag = tag =>
     tag === "..." ? Symbol("...") :
     false;
 
+const ø = (...sources) => sources
+    [I `::Array.prototype.reduce`] ((O, source) =>
+        I `Object.assign` (
+            O,
+            IsArray(source) ? I `Object.fromEntries` (source) : source),
+        I `Object.create` (null));
+
+exports.ø = ø;
+
+
 const Ø = I `Object.assign` ((...args) => IsTaggedCall(args) ?
     fromTag(ToResolvedString(args)) : given((
     {
@@ -43,6 +54,4 @@ const Ø = I `Object.assign` ((...args) => IsTaggedCall(args) ?
                 I `Object.defineProperties` (O, resolved) :    
             I `Object.defineProperty` (O, key, resolved)), O)), S);
 
-module.exports = I `Object.assign` (Ø, { Ø });
-
-
+exports.Ø = Ø;
