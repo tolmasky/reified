@@ -31,3 +31,5 @@ const Θ = I `Object.assign` (properties => given((
         ])))), S);
 
 module.exports = I `Object.assign` (Θ, { Θ });
+
+

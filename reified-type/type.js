@@ -17,7 +17,8 @@ const
 } = require("@reified/ecma-262");
 
 const fail = require("./fail");
-const Θ = require("./theta");
+
+const { Ø } = require("@reified/core/object");
 
 const { IsTaggedCall, ToResolvedString } =
     require("@reified/core/function-objects");
@@ -51,11 +52,15 @@ const TypeDefinitionSymbol = Symbol("@reified/type/type-definition");
 
 const toMethodDescriptor = value => [value.binding, { value, ...value }];
 
-module.exports = Θ
+const S = I `Object.fromEntries`
+    (["Constructors", "Definition", "DefaultConstructor"]
+        [I `::Array.prototype.map`] (name => [name, Symbol(name)]));
+
+module.exports = Ø
 ({
     name: { value: "type" },
 
-    [Θ.Call]: (type, _, args) => given((
+    [Ø.Call]: (type, _, args) => given((
         // FIXME: && args[0] instanceof TypeDefinition
         IsTypeDefinition = args =>
             args.length === 2 &&
@@ -76,9 +81,9 @@ module.exports = Θ
             functions = [],
             extending = I `Object`
         }) => given((
-            defaultConstructor = FindDefaultConstructor(binding, constructors)) => Θ
+            defaultConstructor = FindDefaultConstructor(binding, constructors)) => Ø
         ({
-            [Θ.Call]: (T, thisArg, args) =>
+            [Ø.Call]: (T, thisArg, args) =>
                 IsAnnotation(args) ?
                     annotate(args) :
                 defaultConstructor ?
@@ -92,7 +97,21 @@ module.exports = Θ
                                 (({ binding }) => `    ${binding}`)
                             [ I `::Array.prototype.join`] (`\n`)),
 
-            [Θ.Prototype]: type.prototype,
+            [Ø.Prototype]: type.prototype,
+
+            //{ value: toConstructors(F,....) (including [Default]) },
+            [S.Constructors]: { value: [] },
+
+            [Ø `...`]: ({ [S.Constructors]: constructors }) =>
+                constructors [I `::Array.prototype.map`]
+                    (([name, value]) => [name, { value, enumerable: true }]),
+
+//...            toConstructors()
+
+//[given]: T => { }
+
+            // [Constructors]: { value: toConstructors(F,....) (including [Default]) },
+            // [Ø `...`]: O => O[Constructors]
 
             name: { value: binding },
             binding: { value: binding },
@@ -111,11 +130,11 @@ module.exports = Θ
 
             IsTypeDefinition(args) ? FromTypeDefinition(args[1]) :
 
-            IsTypeDataDeclaration(args) ? (console.log("hi"),type(TypeDefinitionSymbol,
+            IsTypeDataDeclaration(args) ? type(TypeDefinitionSymbol,
             {
                 binding: "Cheese",
                 constructors: [Object.assign(function () { return this }, { binding:"Cheese", enumerable: true })]
-            })) :
+            }) :
 
             fail.syntax (`Improper type declaration`)),
 
@@ -150,6 +169,8 @@ module.exports = Θ
                 value
     }
 });
+
+// const toConstructor = ConstructorDefinition => Constuctor;
 
 // type `TypeDefinition` ({ })
 // type `TypeDefinition` ({ })

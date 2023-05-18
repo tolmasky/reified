@@ -22,9 +22,6 @@ const IsConstructor = function (argument)
     if (!IsObject(argument))
         return false;
 
-    if (argument === I `Symbol`)
-        return true;
-
     try
     {
         ({ constructor: { [I `Symbol.species`]: argument }, then() { } })
