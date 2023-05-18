@@ -89,32 +89,37 @@ module.exports = Ø
             methods = [],
             functions = [],
             extending = I `Object`
-        }) => given((
-            defaultConstructor = FindDefaultConstructor(binding, constructors)) => Ø
+        }) => Ø
         ({
             [Ø.Call]: (T, thisArg, args) =>
                 IsAnnotation(args) ?
                     annotate(args) :
-                defaultConstructor ?
-                    defaultConstructor(args) :
-                !constructors.length <= 0 ?
+                T[S.DefaultConstructor] ?
+                    T[S.DefaultConstructor](...args) :
+                T[S.Constructors].length <= 0 ?
                     fail.type(`${binding} is only a type, not a constructor.`) :
                     fail.type(
                         `${binding} has no default constructor, ` +
-                        constructors
-                            [I `::Array.prototype.map`]
-                                (({ binding }) => `    ${binding}`)
-                            [ I `::Array.prototype.join`] (`\n`)),
+                        `use on of it's named constructors instead:\n` +
+                            constructors
+                                [I `::Array.prototype.map`]
+                                    (({ binding }) => `    ${binding}`)
+                                [ I `::Array.prototype.join`] (`\n`)),
 
             [Ø.Prototype]: type.prototype,
 
-            //{ value: toConstructors(F,....) (including [Default]) },
             [S.Constructors]: T =>
             ({
                 value: constructors
                     [I `::Array.prototype.map`]
                         (definition => Constructor(T, definition))
             }),
+
+            [S.DefaultConstructor]: T => given((
+                defaultConstructor = T[S.Constructors]
+                    [I `::Array.prototype.find`]
+                        (constructor => binding === constructor.binding)) =>
+                ({ value: defaultConstructor || false })),
 
             [Ø `...`]: ({ [S.Constructors]: constructors }) =>
                 ø(constructors [I `::Array.prototype.map`]
@@ -140,13 +145,13 @@ module.exports = Ø
 
             ...I `Object.fromEntries` (functions
                 [I `::Array.prototype.map`] (toMethodDescriptor))
-        }))) =>
+        })) =>
 
             IsTypeDefinition(args) ? FromTypeDefinition(args[1]) :
 
             IsTypeDataDeclaration(args) ? type(TypeDefinitionSymbol,
             {
-                binding: "Cheese",
+                binding: ToResolvedString(args),
                 constructors: [Object.assign(function () { return this }, { binding:"Cheese", enumerable: true })]
             }) :
 
