@@ -54,8 +54,17 @@ const S = SymbolEnum("Constructors", "Definition", "DefaultConstructor");
 
 const Constructor = (T, definition) => Ø
 ({
-    [Ø.Call]: (C, _, args) =>
-        Ø({ [Ø.Prototype]: C.prototype }),
+    [Ø.Call]: (C, _, [source = { }]) => Ø
+    ({
+        [Ø.Prototype]: C.prototype,
+
+        ...I `Object.getOwnPropertyDescriptors`(definition
+            .fields [I `::Array.prototype.reduce`] (
+                (values, field) => I `Object.assign` (values,
+                {
+                    [field.binding]: extract(field, source, values)
+                }), ø()))
+    }),
 
     [S.definition]: definition,
 
@@ -74,12 +83,8 @@ module.exports = Ø
         IsTypeDefinition = args =>
             args.length === 2 &&
             args[0] === TypeDefinitionSymbol,
-        IsTypeDataDeclaration = args => IsTaggedCall(args),
 
-        FindDefaultConstructor = (binding, constructors) =>
-            constructors [I `::Array.prototype.find`]
-                (constructor => binding === constructor.binding) ||
-            false,
+        IsTypeDataDeclaration = args => IsTaggedCall(args),
 
         FromTypeDefinition =
         ({
@@ -125,13 +130,6 @@ module.exports = Ø
                 ø(constructors [I `::Array.prototype.map`]
                         (value => [value.binding, { value, enumerable: true }])),
 
-//...            toConstructors()
-
-//[given]: T => { }
-
-            // [Constructors]: { value: toConstructors(F,....) (including [Default]) },
-            // [Ø `...`]: O => O[Constructors]
-
             name: { value: binding },
             binding: { value: binding },
 
@@ -152,7 +150,11 @@ module.exports = Ø
             IsTypeDataDeclaration(args) ? type(TypeDefinitionSymbol,
             {
                 binding: ToResolvedString(args),
-                constructors: [Object.assign(function () { return this }, { binding:"Cheese", enumerable: true })]
+                constructors: [
+                {
+                    binding:"Cheese",
+                    fields: [{ type: type.string, binding: "a" }]
+                }]
             }) :
 
             fail.syntax (`Improper type declaration`)),
@@ -173,7 +175,7 @@ module.exports = Ø
             binding,
             type =>
             ({
-                value: type(TypeDefinitionSymbol, { binding, hasInstance, functions:[Object.assign(function () { return this }, { binding:"self", enumerable: true })] }),
+                value: type(TypeDefinitionSymbol, { binding, hasInstance }),
                 enumerable: true
             })
         ])),
@@ -188,6 +190,11 @@ module.exports = Ø
                 value
     }
 });
+
+const extract = ({ type: T, binding, value }, source, values) =>
+    HasOwnProperty(source, binding) ?
+        type.check(T, source[binding], `in field ${binding}`) :
+        fail.type (`No value was provided for required field "${binding}".`);
 
 // const toConstructor = ConstructorDefinition => Constuctor;
 
