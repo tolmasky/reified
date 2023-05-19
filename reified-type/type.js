@@ -52,6 +52,14 @@ const toMethodDescriptor = value => [value.binding, { value, ...value }];
 
 const S = SymbolEnum("Constructors", "Definition", "DefaultConstructor");
 
+const toExtendingPrototype = (parent, constructor, ...rest) => Ø
+({
+    [Ø.Prototype]: parent.prototype,
+    constructor: { value: constructor, enumerable: true },
+    ...rest
+});
+
+
 const Constructor = (T, definition) => Ø
 ({
     [Ø.Call]: (C, _, [source = { }]) => Ø
@@ -71,7 +79,7 @@ const Constructor = (T, definition) => Ø
     name: { value: definition.binding },
     binding: { value: definition.binding },
 
-    prototype: { value: I `Object.create` (T.prototype) }
+    prototype: C => toExtendingPrototype(T, C)
 });
 
 module.exports = Ø
@@ -105,7 +113,7 @@ module.exports = Ø
                     fail.type(`${binding} is only a type, not a constructor.`) :
                     fail.type(
                         `${binding} has no default constructor, ` +
-                        `use on of it's named constructors instead:\n` +
+                        `use one of it's named constructors instead:\n` +
                             constructors
                                 [I `::Array.prototype.map`]
                                     (({ binding }) => `    ${binding}`)
@@ -121,6 +129,7 @@ module.exports = Ø
             }),
 
             [S.DefaultConstructor]: T => given((
+            _=console.log((T[S.Constructors][0] || {}).binding),
                 defaultConstructor = T[S.Constructors]
                     [I `::Array.prototype.find`]
                         (constructor => binding === constructor.binding)) =>
@@ -135,11 +144,10 @@ module.exports = Ø
 
             [I `Symbol.hasInstance`]: hasInstance && { value: hasInstance },
 
-            prototype:
-            {
-                value: I `Object.create` (extending.prototype, methods
-                    [I `::Array.prototype.map`] (toMethodDescriptor))
-            },
+            prototype: T => toExtendingPrototype(
+                extending,
+                T,
+                ø(methods [I `::Array.prototype.map`] (toMethodDescriptor))),
 
             ...I `Object.fromEntries` (functions
                 [I `::Array.prototype.map`] (toMethodDescriptor))
@@ -191,12 +199,49 @@ module.exports = Ø
     }
 });
 
+const type = module.exports;
+
+const TypeDefinition = type(TypeDefinitionSymbol,
+{
+    binding: "TypeDefinition",
+    constructors:
+    [
+        {
+            binding: "TypeDefinition",
+            fields:
+            [
+                { binding: "binding", type: type.string },
+                { binding: "fields", type: Array }
+            ]
+        }
+    ]
+});
+
+
+module.exports.TypeDefinition = TypeDefinition;
+
 const extract = ({ type: T, binding, value }, source, values) =>
     HasOwnProperty(source, binding) ?
         type.check(T, source[binding], `in field ${binding}`) :
         fail.type (`No value was provided for required field "${binding}".`);
 
+/*
+DataDefinition =
+{
+    name:           type.string,
+    constructors:   [DataConstructorDefinition],
+}
+
+DataConstructorDefinition =
+{
+    name: type.string,
+    fields:
+    [
+        { key: PropertyKey { }, }
+    ]
+}
 // const toConstructor = ConstructorDefinition => Constuctor;
 
 // type `TypeDefinition` ({ })
 // type `TypeDefinition` ({ })
+*/
