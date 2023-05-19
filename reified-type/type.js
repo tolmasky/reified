@@ -79,7 +79,7 @@ const Constructor = (T, definition) => Ø
     name: { value: definition.binding },
     binding: { value: definition.binding },
 
-    prototype: C => toExtendingPrototype(T, C)
+    prototype: C => ({ value: toExtendingPrototype(T, C) })
 });
 
 module.exports = Ø
@@ -129,7 +129,6 @@ module.exports = Ø
             }),
 
             [S.DefaultConstructor]: T => given((
-            _=console.log((T[S.Constructors][0] || {}).binding),
                 defaultConstructor = T[S.Constructors]
                     [I `::Array.prototype.find`]
                         (constructor => binding === constructor.binding)) =>
@@ -153,17 +152,22 @@ module.exports = Ø
                 [I `::Array.prototype.map`] (toMethodDescriptor))
         })) =>
 
+            args.length === 1 &&
+            args[0] instanceof TypeDefinition ?
+                FromTypeDefinition(args[0]) :
+
             IsTypeDefinition(args) ? FromTypeDefinition(args[1]) :
 
-            IsTypeDataDeclaration(args) ? type(TypeDefinitionSymbol,
-            {
-                binding: ToResolvedString(args),
-                constructors: [
+            IsTypeDataDeclaration(args) ?
+                body => type(TypeDefinition(
                 {
-                    binding:"Cheese",
-                    fields: [{ type: type.string, binding: "a" }]
-                }]
-            }) :
+                    binding: ToResolvedString(args),
+                    constructors: [
+                    {
+                        binding:"Cheese",
+                        fields: [{ type: type.string, binding: "a" }]
+                    }]
+                })) :
 
             fail.syntax (`Improper type declaration`)),
 
@@ -211,7 +215,7 @@ const TypeDefinition = type(TypeDefinitionSymbol,
             fields:
             [
                 { binding: "binding", type: type.string },
-                { binding: "fields", type: Array }
+                { binding: "constructors", type: Array }
             ]
         }
     ]
