@@ -21,20 +21,6 @@ const { fail, SymbolEnum, ø, Ø } = require("@reified/core");
 const { IsTaggedCall, ToResolvedString } =
     require("@reified/core/function-objects");
 
-const mismatch = (T, value, reference) => fail.type (
-    `Type mismatch${reference ? ` in ${reference}` : ""}:\n` +
-    `    Expected: ${toTypeDescription(T)}\n` +
-    `    Found: ${value}`);
-
-const toTypeDescription = T =>
-    // FIXME: We'll want something like [[Description]] here, for Dependent
-    // types.
-    T instanceof type ? `instance of type ${T.name}` :
-    IsConstructor(T) ? `instance of class ${T.name}` :
-    "blah";
-
-const IsTypeOrConstructor = T => T instanceof type || IsConstructor(T);
-
 const IsAnnotation = args => IsTaggedCall(args);
 
 const annotate = args => given((
@@ -60,7 +46,7 @@ const toExtendingPrototype = (parent, constructor, ...rest) => Ø
 });
 
 
-const Constructor = (T, definition) => Ø
+const Constructor = (type, T, definition) => Ø
 ({
     [Ø.Call]: (C, _, [source = { }]) => Ø
     ({
@@ -70,17 +56,38 @@ const Constructor = (T, definition) => Ø
             .fields [I `::Array.prototype.reduce`] (
                 (values, field) => I `Object.assign` (values,
                 {
-                    [field.binding]: extract(field, source, values)
+                    [field.binding]: extract(type, field, source, values)
                 }), ø()))
     }),
 
-    [S.definition]: definition,
+    [S.Definition]: { value: definition },
 
     name: { value: definition.binding },
     binding: { value: definition.binding },
 
     prototype: C => ({ value: toExtendingPrototype(T, C) })
 });
+
+const FIXME_ANY = Object.create(Object.prototype, { binding:{ value: "FIXME_ANY" }, [Symbol.hasInstance]: { value: () => true } });
+
+
+const check = (T, value, reference) =>(console.log(T),
+            false ? //!IsTypeOrConstructor(T) ?
+                mismatch(type, T, "type.check") :
+            !(value instanceof T) ?
+                mismatch(T, value, reference) :
+                value);
+
+const extract = (type, { binding, value }, source, values) => given((
+    { type: T } = value()) =>
+        HasOwnProperty(source, binding) ?
+            type.check(T, source[binding], `in field ${binding}`) :
+        T === FIXME_ANY ?
+            false :
+            fail.type (`No value was provided for required field "${binding}".`));
+
+
+const PrimitiveString = type => I `Object.create` (type.prototype, { [Symbol.hasInstance]: { value: V => typeof V === "string" } });
 
 module.exports = Ø
 ({
@@ -94,15 +101,15 @@ module.exports = Ø
 
         IsTypeDataDeclaration = args => IsTaggedCall(args),
 
-        FromTypeDefinition =
-        ({
+        FromTypeDefinition = definition => given((
+        {
             binding,
             hasInstance = false,
             constructors = [],
             methods = [],
             functions = [],
             extending = I `Object`
-        }) => Ø
+        } = definition) => Ø
         ({
             [Ø.Call]: (T, thisArg, args) =>
                 IsAnnotation(args) ?
@@ -121,11 +128,13 @@ module.exports = Ø
 
             [Ø.Prototype]: type.prototype,
 
+            [S.Definition]: { value: definition },
+
             [S.Constructors]: T =>
             ({
                 value: constructors
                     [I `::Array.prototype.map`]
-                        (definition => Constructor(T, definition))
+                        (definition => Constructor(type, T, definition))
             }),
 
             [S.DefaultConstructor]: T => given((
@@ -150,33 +159,93 @@ module.exports = Ø
 
             ...I `Object.fromEntries` (functions
                 [I `::Array.prototype.map`] (toMethodDescriptor))
-        })) =>
+        }))) =>
 
-            args.length === 1 &&
-            args[0] instanceof TypeDefinition ?
-                FromTypeDefinition(args[0]) :
 
             IsTypeDefinition(args) ? FromTypeDefinition(args[1]) :
 
+            args.length === 1 &&
+            args[0] instanceof type.Definition ?
+                FromTypeDefinition(args[0]) :
+
+
             IsTypeDataDeclaration(args) ?
-                body => type(TypeDefinition(
+                body => type(type.Definition(
                 {
                     binding: ToResolvedString(args),
-                    constructors: [
-                    {
-                        binding:"Cheese",
-                        fields: [{ type: type.string, binding: "a" }]
-                    }]
+                    constructors:
+                    [type.ConstructorDefinition({
+                        binding: ToResolvedString(args),
+                        ...body
+                    })]
                 })) :
 
             fail.syntax (`Improper type declaration`)),
 
+    Definition: type => ({ value: type(TypeDefinitionSymbol,
+    {
+        binding: "TypeDefinition",
+        constructors:
+        [
+            {
+                binding: "TypeDefinition",
+                fields:
+                [
+                    { binding: "binding", value: () => ({ type: PrimitiveString(type)  }) },
+                    { binding: "constructors", value: () => ({ type: Array }) },
+                    { binding: "hasInstance", value: () => ({ type: FIXME_ANY }) }
+                ]
+            }
+        ]
+    }) }),
+
+    ConstructorDefinition: type => ({ value:
+        type(TypeDefinitionSymbol,
+        {
+            binding: "ConstructorDefinition",
+            constructors:
+            [
+                {
+                    binding: "ConstructorDefinition",
+                    fields:
+                    [
+                        { binding: "binding", value: () => ({ type: PrimitiveString(type) }) },
+                        { binding: "fields", value: () => ({ type: Array }) }
+                    ]
+                }
+            ]
+        })
+    }),
+
+    check: type => given((
+        IsTypeOrConstructor = T => T instanceof type || IsConstructor(T),
+
+        mismatch = (T, value, reference) => fail.type (
+            `Type mismatch${reference ? ` in ${reference}` : ""}:\n` +
+            `    Expected: ${toTypeDescription(T)}\n` +
+            `    Found: ${value}`),
+
+        // FIXME: We'll want something like [[Description]] here, for Dependent
+        // types.
+        toTypeDescription = T =>
+            T instanceof type ? `instance of type ${T.name}` :
+            IsConstructor(T) ? `instance of class ${T.name}` :
+            "blah") =>
+    ({
+        value: (T, value, reference) =>
+            T !== FIXME_ANY && !IsTypeOrConstructor(T) ?
+                mismatch(type, T, "type.check") :
+            !(value instanceof T) ?
+                mismatch(T, value, reference) :
+                value
+    })),
+
     ...I `Object.fromEntries`
     ([
+        ["string", IsString],
         ["undefined", IsUndefined],
         ["null", IsNull],
         ["boolean", IsBoolean],
-        ["string", IsString],
         ["symbol", IsSymbol],
         ["number", IsNumber],
         ["bigint", IsBigInt],
@@ -187,24 +256,16 @@ module.exports = Ø
             binding,
             type =>
             ({
-                value: type(TypeDefinitionSymbol, { binding, hasInstance }),
+                value: type(type.Definition({ binding, hasInstance, constructors:[] })),//TypeDefinitionSymbol, { binding, hasInstance }),
                 enumerable: true
             })
-        ])),
-
-    check:
-    {
-        value: (T, value, reference) =>
-            !IsTypeOrConstructor(T) ?
-                mismatch(type, T, "type.check") :
-            !(value instanceof T) ?
-                mismatch(T, value, reference) :
-                value
-    }
+        ]))
 });
+
 
 const type = module.exports;
 
+/*
 const TypeDefinition = type(TypeDefinitionSymbol,
 {
     binding: "TypeDefinition",
@@ -214,20 +275,27 @@ const TypeDefinition = type(TypeDefinitionSymbol,
             binding: "TypeDefinition",
             fields:
             [
-                { binding: "binding", type: type.string },
-                { binding: "constructors", type: Array }
+                { binding: "binding", value: () => ({ type: type.string }) },
+                { binding: "constructors", value: () => ({ type: Array }) },
+                { binding: "hasInstance", value: () => ({ type: FIXME_ANY }) }
             ]
         }
     ]
-});
+});*/
+
+/*
+const Field = type `Field`
+({
+    fields:
+    [
+        { binding: "binding", value: () => type.string },
+        { binding: "value", value: () => type.string },
+    ]
+});*/
 
 
-module.exports.TypeDefinition = TypeDefinition;
+// module.exports.TypeDefinition = TypeDefinition;
 
-const extract = ({ type: T, binding, value }, source, values) =>
-    HasOwnProperty(source, binding) ?
-        type.check(T, source[binding], `in field ${binding}`) :
-        fail.type (`No value was provided for required field "${binding}".`);
 
 /*
 DataDefinition =
