@@ -185,7 +185,10 @@ module.exports = Ø
             ({
                 value: constructors
                     [I `::Array.prototype.map`]
-                        (definition => Constructor(type, T, definition))
+                        (definition =>
+                            type.Constructor && definition instanceof type.Constructor ?
+                                definition :
+                                Constructor(type, T, definition))
             }),
 
             [S.DefaultConstructor]: T => given((
@@ -317,25 +320,6 @@ module.exports = Ø
                 mismatch(T, value, reference) :
                 value
     })),
-
-    FieldDefinition: ({ type, ConstructorDefinition }) => ({ value:
-        type(type.Definition
-        ({
-            binding: "FieldDefinition",
-            constructors:
-            [
-                ConstructorDefinition
-                ({
-                    binding: "FieldDefinition",
-                    fields:
-                    [
-                        { binding: "binding", value: () => ({ type: PrimitiveString(type) }) },
-                        { binding: "value", value: () => ({ type: FIXME_ANY }) }
-                    ]
-                })
-            ]
-        }))
-    }),
 
     Constructor: ({ type }) => ({ value:
         type(TypeDefinitionSymbol,
