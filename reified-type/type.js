@@ -14,6 +14,7 @@ const
     IsFunctionObject,
     IsConstructor,
     HasOwnProperty,
+    GetOwnPropertyDescriptorEntries
 } = require("@reified/ecma-262");
 
 const { fail, SymbolEnum, ø, Ø, M } = require("@reified/core");
@@ -116,6 +117,29 @@ const extract = (type, { binding, value: fValue }, source, values) => given((
 
 const PrimitiveString = type => I `Object.create` (type.prototype, { [Symbol.hasInstance]: { value: V => typeof V === "string" } });
 
+const parse = (T, name, body) => given((
+    descriptors = GetOwnPropertyDescriptorEntries (body),
+    caseofs = [],
+    /*caseofs = descriptors
+        [I `::Array.prototype.filter`]
+            (([key]) => IsCaseofPropertyKey(key))
+        [I `::Array.prototype.map`]
+            (([key, descriptor]) => ([caseof(key).binding, descriptor.value])),*/
+    T = type(TypeDefinitionSymbol,
+    {
+        binding: name,
+        hasInstance: false,
+        constructors: (caseofs.length <= 0 ? [[name, body]] : caseofs)
+            [I `::Array.prototype.map`] (([name, body]) => Constructor
+            ({
+                name,
+                binding: name,
+                fields: [],
+                oftype: () => T
+            }))
+    })) => T);
+
+
 module.exports = Ø
 ({
     name: { value: "type" },
@@ -195,6 +219,29 @@ module.exports = Ø
             args[0] instanceof type.Definition ?
                 FromTypeDefinition(args[0]) :
 
+            IsString(args[0]) ? given((
+                name = args[0],
+                body = args[1],
+                descriptors = GetOwnPropertyDescriptorEntries (body),
+                caseofs = [],
+                /*caseofs = descriptors
+                    [I `::Array.prototype.filter`]
+                        (([key]) => IsCaseofPropertyKey(key))
+                    [I `::Array.prototype.map`]
+                        (([key, descriptor]) => ([caseof(key).binding, descriptor.value])),*/
+                T = type(TypeDefinitionSymbol,
+                {
+                    binding: name,
+                    hasInstance: false,
+                    constructors: (caseofs.length <= 0 ? [[name, body]] : caseofs)
+                        [I `::Array.prototype.map`] (([name, body]) => type.Constructor
+                        ({
+                            name,
+                            binding: name,
+                            fields: [],
+                            oftype: () => T
+                        }))
+                })) => T) :
 
             IsTypeDataDeclaration(args) ?
                 body => type(type.Definition(
@@ -287,6 +334,25 @@ module.exports = Ø
             ]
         }))
     }),
+/*
+    Field: ({ type }) => ({ value:
+        type(type.Definition
+        ({
+            binding: "Field",
+            constructors:
+            [
+                C
+                ({
+                    binding: "Field",
+                    fields:
+                    [
+                        { binding: "binding", value: () => ({ type: PrimitiveString(type) }) },
+                        { binding: "value", value: () => ({ type: FIXME_ANY }) }
+                    ]
+                })
+            ]
+        }))
+    }),*/
 
     Constructor: ({ type }) => ({ value:
         type(TypeDefinitionSymbol,
