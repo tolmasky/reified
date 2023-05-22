@@ -240,7 +240,7 @@ module.exports = Ø
                             binding: name,
                             fields: GetOwnPropertyDescriptorEntries(body)
                                 [I `::Array.prototype.map`] (([key, descriptor]) =>
-                                    ({ binding: key, value: () => ({ type: descriptor.value() }) })),
+                                    type.Field({ binding: key, value: () => ({ type: descriptor.value() }) })),
                             oftype: () => T
                         }))
                 })) => T) :
@@ -361,6 +361,30 @@ module.exports = Ø
             ]
         })
     }),
+
+    Field: ({ type }) => ({ value: given((T = type(TypeDefinitionSymbol,
+    {
+        binding: "Field",
+        constructors:
+        [
+            type.Constructor
+            ({
+                binding: "Field",
+                fields:
+                [
+                    { binding: "binding", value: () => ({ type: type.string }) },
+                    { binding: "value",  value: () => ({ type: FIXME_ANY }) }
+                ],
+                oftype: () => T
+            })
+        ]
+    })) => T) }),
+
+    /*({ value: type("Field",
+    {
+        binding :of => type.string,//PrimitiveString(type),
+        value   :of => FIXME_ANY
+    }) }),*/
 
     ...I `Object.fromEntries`
     ([
