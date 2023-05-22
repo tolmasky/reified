@@ -16,7 +16,7 @@ const
     HasOwnProperty,
 } = require("@reified/ecma-262");
 
-const { fail, SymbolEnum, ø, Ø } = require("@reified/core");
+const { fail, SymbolEnum, ø, Ø, M } = require("@reified/core");
 
 const { IsTaggedCall, ToResolvedString } =
     require("@reified/core/function-objects");
@@ -43,6 +43,31 @@ const toExtendingPrototype = (parent, constructor, ...rest) => Ø
     [Ø.Prototype]: parent.prototype,
     constructor: { value: constructor, enumerable: true },
     ...rest
+});
+
+const toPrototypeM = M(C => given((
+    _ = console.log("---", C, C.oftype),
+    __= console.log(C.oftype()),
+    T = C.oftype()) => Ø
+({
+    [Ø.Call]: () => fail.type(`${C.binding} is not meant to be called`),
+
+    name: { value: `${T.name}.${C.binding}` },
+    binding: { value: C.binding },
+
+    prototype: C => ({ value: toExtendingPrototype(T, C) })
+}).prototype));
+
+const construct = type => (C, _, [source]) => Ø
+({
+    [Ø.Prototype]: toPrototypeM(C),
+
+    ...I `Object.getOwnPropertyDescriptors`(C
+        .fields [I `::Array.prototype.reduce`] (
+            (values, field) => I `Object.assign` (values,
+            {
+                [field.binding]: extract(type, field, source, values)
+            }), ø()))
 });
 
 
@@ -78,12 +103,14 @@ const check = (T, value, reference) =>(console.log(T),
                 mismatch(T, value, reference) :
                 value);
 
-const extract = (type, { binding, value }, source, values) => given((
-    { type: T } = value()) =>
+const extract = (type, { binding, value: fValue }, source, values) => given((
+    { type: T, ...value } = fValue()) =>
         HasOwnProperty(source, binding) ?
-            type.check(T, source[binding], `in field ${binding}`) :
+            type.check(T, source[binding], `in field ${String(binding)}`) :
         T === FIXME_ANY ?
             false :
+        HasOwnProperty(value, "value") ?
+            value.value :
             fail.type (`No value was provided for required field "${binding}".`));
 
 
@@ -261,6 +288,31 @@ module.exports = Ø
         }))
     }),
 
+    Constructor: ({ type }) => ({ value:
+        type(TypeDefinitionSymbol,
+        {
+            binding: "Constructor",
+            constructors:
+            [
+                {
+                    binding: "Constructor",
+                    fields:
+                    [
+                        { binding: "binding", value: () => ({ type: FIXME_ANY }) },
+                        { binding: "name", value: () => ({ type: FIXME_ANY }) },
+                        { binding: "fields", value: () => ({ type: Array }) },
+                        { binding: "oftype", value: () => ({ type: Function }) },
+                        { binding: Ø.Call, value: () =>
+                        ({
+                            type: Function,
+                            value: construct(type)
+                        }) }
+                    ]
+                }
+            ]
+        })
+    }),
+
     ...I `Object.fromEntries`
     ([
         ["string", IsString],
@@ -283,8 +335,49 @@ module.exports = Ø
         ]))
 });
 
+/*
+IDEA:
 
-const type = module.exports;
+We *could* combine Constructor and ConstructorDefinition (and possibly Type and
+ TypeDefinition), but it would require deferring the creation of the Constructor
+since we usally don't have T available at time of instantiating C:
+
+    Constructor: ({ type }) => ({ value:
+        type(TypeDefinitionSymbol,
+        {
+            binding: "Constructor",
+            constructors:
+            [
+                {
+                    binding: "Constructor",
+                    fields:
+                    [
+                        { binding: "binding", value: () => ({ type: FIXME_ANY }) },
+                        { binding: "fields", value: () => ({ type: Array }) },
+                        { binding: Ø.Call, value: () => ({ type: Function }) }
+                    ]
+                }
+            ]
+        })
+    }),
+
+This has the interesting side effect of making Type and Constructor also objects
+from our system though... and unifies the idea of constructors and definition.constructors...
+
+type.construct = (type, T, C) => Ø
+({
+    [Ø.Call]: (C, _, [source = { }]) => Ø
+    ({
+        [Ø.Prototype]: C.prototype,
+
+        ...I `Object.getOwnPropertyDescriptors`(definition
+            .fields [I `::Array.prototype.reduce`] (
+                (values, field) => I `Object.assign` (values,
+                {
+                    [field.binding]: extract(type, field, source, values)
+                }), ø()))
+    })
+});
 
 /*
 const TypeDefinition = type(TypeDefinitionSymbol,

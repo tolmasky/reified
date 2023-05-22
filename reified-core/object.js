@@ -44,7 +44,7 @@ const Ø = I `Object.assign` ((...args) => IsTaggedCall(args) ?
         ...rest
     } = args[0],
     O = Call ?
-        OrdinaryFunctionCreate(Prototype, false, false, Call) :
+        OrdinaryFunctionCreate(Prototype, false, false, IsFunctionObject(Call) ? Call : Call.value) :
         OrdinaryObjectCreate(Prototype)) =>
     GetOwnPropertyDescriptorEntries(rest)
         [I `::Array.prototype.reduce`] ((O, [key, { value }]) => given((
