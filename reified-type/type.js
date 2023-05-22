@@ -71,6 +71,10 @@ const construct = type => (C, _, [source]) => Ø
             }), ø()))
 });
 
+const TypeConstruct = given((
+    TypeConstructM = M((TC, ...args) => TC.implementation(...args))) =>
+        (TC, _, args) => TypeConstructM(TC, ...args));
+
 
 const Constructor = (type, T, definition) => Ø
 ({
@@ -117,27 +121,7 @@ const extract = (type, { binding, value: fValue }, source, values) => given((
 
 const PrimitiveString = type => I `Object.create` (type.prototype, { [Symbol.hasInstance]: { value: V => typeof V === "string" } });
 
-const parse = (T, name, body) => given((
-    descriptors = GetOwnPropertyDescriptorEntries (body),
-    caseofs = [],
-    /*caseofs = descriptors
-        [I `::Array.prototype.filter`]
-            (([key]) => IsCaseofPropertyKey(key))
-        [I `::Array.prototype.map`]
-            (([key, descriptor]) => ([caseof(key).binding, descriptor.value])),*/
-    T = type(TypeDefinitionSymbol,
-    {
-        binding: name,
-        hasInstance: false,
-        constructors: (caseofs.length <= 0 ? [[name, body]] : caseofs)
-            [I `::Array.prototype.map`] (([name, body]) => Constructor
-            ({
-                name,
-                binding: name,
-                fields: [],
-                oftype: () => T
-            }))
-    })) => T);
+
 
 
 module.exports = Ø
@@ -222,7 +206,9 @@ module.exports = Ø
             args[0] instanceof type.Definition ?
                 FromTypeDefinition(args[0]) :
 
-            IsString(args[0]) ? given((
+            IsString(args[0]) ?
+                IsFunctionObject(args[1]) ?
+                    type.TypeConstructor({ name: args[0] , implementation: args[1] }) : given((
                 name = args[0],
                 body = args[1],
                 descriptors = GetOwnPropertyDescriptorEntries (body),
@@ -364,6 +350,25 @@ module.exports = Ø
         ]
     })) => T) }),
 
+    /*
+    FieldValue: ({ type }) => ({ value: given((T = type(TypeDefinitionSymbol,
+    {
+        binding: "Field.Value.Constant",
+        constructors:
+        [
+            type.Constructor
+            ({
+                binding: "Field.Value.Constant",
+                fields:
+                [
+                    { binding: "binding", value: () => ({ type: type.string }) },
+                    { binding: "value",  value: () => ({ type: FIXME_ANY }) }
+                ],
+                oftype: () => T
+            })
+        ]
+    })) => T) }),
+
     /*({ value: type("Field",
     {
         binding :of => type.string,//PrimitiveString(type),
@@ -389,7 +394,36 @@ module.exports = Ø
                 value: type(type.Definition({ binding, hasInstance, constructors:[] })),//TypeDefinitionSymbol, { binding, hasInstance }),
                 enumerable: true
             })
-        ]))
+        ])),
+
+    TypeConstructor: ({ type }) => ({ value:(console.log("IT IS[[:",type.string),
+        type(TypeDefinitionSymbol,
+        {
+            binding: "TypeConstructor",
+            constructors:
+            [
+                {
+                    binding: "TypeConstructor",
+                    fields:
+                    [
+                        { binding: "name", value: () => ({ type: type.string }) },
+                        { binding: "implementation", value: () => ({ type: Function }) },
+                        { binding: Ø.Call, value: () =>
+                        ({
+                            type: Function,
+                            value: TypeConstruct
+                        }) }
+                    ]
+                }
+            ]
+        }))
+    }),
+
+    Initializer: ({ type }) => ({ value:
+        type("Initializer", T => type(`Initializer<${T.name}>`,
+        {
+            value   :of => T
+        })) })
 });
 
 /*
