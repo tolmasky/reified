@@ -182,6 +182,8 @@ module.exports = Ø
 
             fail.syntax (`Improper type declaration`)),
 
+    type: type => ({ value: type, enumerable: true }),
+
     Definition: type => ({ value: type(TypeDefinitionSymbol,
     {
         binding: "TypeDefinition",
@@ -239,6 +241,25 @@ module.exports = Ø
                 mismatch(T, value, reference) :
                 value
     })),
+
+    FieldDefinition: ({ type, ConstructorDefinition }) => ({ value:
+        type(type.Definition
+        ({
+            binding: "FieldDefinition",
+            constructors:
+            [
+                ConstructorDefinition
+                ({
+                    binding: "FieldDefinition",
+                    fields:
+                    [
+                        { binding: "binding", value: () => ({ type: PrimitiveString(type) }) },
+                        { binding: "value", value: () => ({ type: FIXME_ANY }) }
+                    ]
+                })
+            ]
+        }))
+    }),
 
     ...I `Object.fromEntries`
     ([
