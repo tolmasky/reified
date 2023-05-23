@@ -236,15 +236,7 @@ module.exports = Ø
                 })) => T) :
 
             IsTypeDataDeclaration(args) ?
-                body => type(type.Definition(
-                {
-                    binding: ToResolvedString(args),
-                    constructors:
-                    [type.ConstructorDefinition({
-                        binding: ToResolvedString(args),
-                        ...body
-                    })]
-                })) :
+                body => type(ToResolvedString(args), body) :
 
             fail.syntax (`Improper type declaration`)),
 
@@ -420,14 +412,42 @@ module.exports = Ø
         }))
     }),
 
-    Initializer: ({ type }) => ({ value:
-        type("Initializer", T => type(`Initializer<${T.name}>`,
-        {
-            type    :of => type,
-            value   :of => T
-        })) }),
+    caseof: { value: caseof, enumerable: true },
 
-    caseof: { value: caseof, enumerable: true }
+    [Ø `...`]: require("./field"),
+
+/*
+    Initializer: ({ type }) => ({ value:
+        type(`Initializer`,
+        {
+            // Ideally we have this be dependently typed...
+            [caseof `Static`]:
+            {
+                type    :of => type,
+                value   :of => FIXME_ANY
+            },
+
+            [caseof `Computed`]:
+            {
+                type    :of => type,
+                value   :of => Function
+            }
+        }) }),
+
+    Value: ({ type }) => ({ value:
+        type(`Field.Value`,
+        {
+            [caseof `Variable`]:
+            {
+                initializer :of => Maybe(Initializer)
+            },
+
+            [caseof `Constant`]:
+            {
+                initializer :of => Initializer
+            }
+        })
+    })*/
 });
 
 /*
