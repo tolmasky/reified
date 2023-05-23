@@ -20,8 +20,8 @@ const Cache = () => given((
 const caches = Cache();
 
 // FIXME: FUNCTION COPYING
-const cached = f => caches(f, () => given((
-    cache = Cache()) => 
-        (...args) => f(...args)));
+const cached = f => given((
+    cache = Cache()) =>
+        (...args) => cache(args, () => f(...args)));
 
 module.exports = I `Object.assign` (cached, { 𝑐: cached });

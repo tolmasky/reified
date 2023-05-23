@@ -39,6 +39,8 @@ const toMethodDescriptor = value => [value.binding, { value, ...value }];
 
 const S = SymbolEnum("Constructors", "Definition", "DefaultConstructor");
 
+const { caseof, IsCaseofPropertyKey } = require("./caseof_");
+
 const toExtendingPrototype = (parent, constructor, ...rest) => Ø
 ({
     [Ø.Prototype]: parent.prototype,
@@ -212,12 +214,11 @@ module.exports = Ø
                 name = args[0],
                 body = args[1],
                 descriptors = GetOwnPropertyDescriptorEntries (body),
-                caseofs = [],
-                /*caseofs = descriptors
+                caseofs = descriptors
                     [I `::Array.prototype.filter`]
                         (([key]) => IsCaseofPropertyKey(key))
                     [I `::Array.prototype.map`]
-                        (([key, descriptor]) => ([caseof(key).binding, descriptor.value])),*/
+                        (([key, descriptor]) => ([caseof(key).name, descriptor.value])),
                 T = type(TypeDefinitionSymbol,
                 {
                     binding: name,
@@ -422,8 +423,11 @@ module.exports = Ø
     Initializer: ({ type }) => ({ value:
         type("Initializer", T => type(`Initializer<${T.name}>`,
         {
+            type    :of => type,
             value   :of => T
-        })) })
+        })) }),
+
+    caseof: { value: caseof, enumerable: true }
 });
 
 /*
