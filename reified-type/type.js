@@ -42,6 +42,7 @@ const toMethodDescriptor = value => [value.binding, { value, ...value }];
 const S = SymbolEnum("Constructors", "Definition", "DefaultConstructor");
 
 const { caseof, IsCaseofPropertyKey } = require("./caseof_");
+const { IsFieldDeclaration, Field } = require("./field");
 
 const toExtendingPrototype = (parent, constructor, ...rest) => Ø
 ({
@@ -225,27 +226,36 @@ module.exports = Ø
                     type.TypeConstructor({ name: args[0] , implementation: args[1] }) : given((
                 name = args[0],
                 body = args[1],
-                descriptors = GetOwnPropertyDescriptorEntries (body),
-                caseofs = descriptors
-                    [I `::Array.prototype.filter`]
-                        (([key]) => IsCaseofPropertyKey(key))
-                    [I `::Array.prototype.map`]
-                        (([key, descriptor]) => ([caseof(key).name, descriptor.value])),
+                grouped = GetOwnPropertyDescriptorEntries (body)
+                    [I `::Array.prototype.group`] (([key, descriptor]) =>
+                        IsCaseofPropertyKey(key) ? "caseofs" :
+                        IsFieldDeclaration(descriptor) ? "fields" :
+                        "rest"),
+                caseofs = grouped.caseofs ?
+                    grouped.caseofs
+                        [I `::Array.prototype.map`] (([key, descriptor]) =>
+                        [
+                            caseof(key).name,
+                            GetOwnPropertyDescriptorEntries(descriptor.value)
+                                [I `::Array.prototype.filter`]
+                                    (([, descriptor]) => IsFieldDeclaration(descriptor))
+                        ]) :
+                    [[name, grouped.fields]],
+                _ = console.log(caseofs),
                 T = type(TypeDefinitionSymbol,
                 {
                     binding: name,
                     hasInstance: false,
-                    constructors: (caseofs.length <= 0 ? [[name, body]] : caseofs)
-                        [I `::Array.prototype.map`] (([name, body]) => type.Constructor
+                    constructors: caseofs
+                        [I `::Array.prototype.map`] (([name, entries]) => type.Constructor
                         ({
                             name,
                             binding: name,
-                            hasPositionalFields: IsArray(body),
-                            fields: GetOwnPropertyDescriptorEntries(body)
-                                [I `::Array.prototype.filter`]
-                                    (([, descriptor]) => descriptor.enumerable)
+                            hasPositionalFields: entries
+                                [I `::Array.prototype.every`] (([key]) => IsArrayIndex(key)),
+                            fields: entries
                                 [I `::Array.prototype.map`] (([key, descriptor]) =>
-                                    type.Field({ binding: key, value: () => (console.log(key, descriptor),{ type: descriptor.value() }) })),
+                                    type.Field_({ binding: key, value: () => ({ type: descriptor.value() }) })),
                             oftype: () => T
                         }))
                 })) => T) :
@@ -341,7 +351,7 @@ module.exports = Ø
         })
     }),
 
-    Field: ({ type }) => ({ value: given((T = type(TypeDefinitionSymbol,
+    Field_: ({ type }) => ({ value: given((T = type(TypeDefinitionSymbol,
     {
         binding: "Field",
         constructors:
@@ -430,7 +440,7 @@ module.exports = Ø
 
     caseof: { value: caseof, enumerable: true },
 
-    [Ø `...`]: require("./field"),
+    [Ø `...`]: Field,
 
 /*
     Initializer: ({ type }) => ({ value:
