@@ -3,6 +3,7 @@ const given = f => f();
 const
 {
     I,
+    IsArray,
     IsUndefined,
     IsNull,
     IsBoolean,
@@ -14,7 +15,8 @@ const
     IsFunctionObject,
     IsConstructor,
     HasOwnProperty,
-    GetOwnPropertyDescriptorEntries
+    GetOwnPropertyDescriptorEntries,
+    IsArrayIndex
 } = require("@reified/ecma-262");
 
 const { fail, SymbolEnum, ø, Ø, M } = require("@reified/core");
@@ -45,7 +47,8 @@ const toExtendingPrototype = (parent, constructor, ...rest) => Ø
 ({
     [Ø.Prototype]: parent.prototype,
     constructor: { value: constructor, enumerable: true },
-    ...rest
+
+    ...ø(...rest [I `::Array.prototype.map`] (source => ({ [Ø `...`]: source })))
 });
 
 const toPrototypeM = M(C => given((
@@ -58,10 +61,19 @@ const toPrototypeM = M(C => given((
     name: { value: `${T.name}.${C.binding}` },
     binding: { value: C.binding },
 
-    prototype: C => ({ value: toExtendingPrototype(T, C) })
+    DataConstructor: { value: C, enumerable: true },
+
+    prototype: CC => ({ value: toExtendingPrototype(T, CC,
+    {
+        [Symbol.iterator]: { value: function * ()
+        {console.log(C, C.fields);
+            yield * (C.fields [I `::Array.prototype.map`] (({ binding }) => this[binding]));
+        }, enumerable: true }
+    }) })
 }).prototype));
 
-const construct = type => (C, _, [source]) => Ø
+const construct = type => (C, _, args) => given((
+    source = C.hasPositionalFields ? args : args[0]) => Ø
 ({
     [Ø.Prototype]: toPrototypeM(C),
 
@@ -71,7 +83,7 @@ const construct = type => (C, _, [source]) => Ø
             {
                 [field.binding]: extract(type, field, source, values)
             }), ø()))
-});
+}));
 
 const TypeConstruct = given((
     TypeConstructM = M((TC, ...args) => TC.implementation(...args))) =>
@@ -228,9 +240,12 @@ module.exports = Ø
                         ({
                             name,
                             binding: name,
+                            hasPositionalFields: IsArray(body),
                             fields: GetOwnPropertyDescriptorEntries(body)
+                                [I `::Array.prototype.filter`]
+                                    (([, descriptor]) => descriptor.enumerable)
                                 [I `::Array.prototype.map`] (([key, descriptor]) =>
-                                    type.Field({ binding: key, value: () => ({ type: descriptor.value() }) })),
+                                    type.Field({ binding: key, value: () => (console.log(key, descriptor),{ type: descriptor.value() }) })),
                             oftype: () => T
                         }))
                 })) => T) :
@@ -312,6 +327,7 @@ module.exports = Ø
                     [
                         { binding: "binding", value: () => ({ type: FIXME_ANY }) },
                         { binding: "name", value: () => ({ type: FIXME_ANY }) },
+                        { binding: "hasPositionalFields", value: () => ({ type: FIXME_ANY }) },
                         { binding: "fields", value: () => ({ type: Array }) },
                         { binding: "oftype", value: () => ({ type: Function }) },
                         { binding: Ø.Call, value: () =>

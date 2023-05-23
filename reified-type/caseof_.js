@@ -14,7 +14,9 @@ const { Ø, fail } = require("@reified/core");
 const IsCaseofPropertyKey =
     key => IsSymbol(key) && CaseofSymbols.hasSymbol(key);
 
-const GetConstructorOf = O => I `Object.getPrototypeOf` (O).constructor;
+const GetDataConstructorOf = O => I `Object.getPrototypeOf` (O)
+    .constructor
+    .DataConstructor;
 
 
 module.exports = Ø
@@ -34,13 +36,14 @@ module.exports = Ø
             CaseofSymbols.forSymbol(args[0]) : given((
 
         [value, cases] = args,
-        { name, symbol } = GetConstructorOf(value),
+        { name, symbol, hasPositionalFields } = GetDataConstructorOf(value),
         key = [symbol, name, "default"]
             [I `::Array.prototype.find`]
                 (key => HasOwnProperty(cases, key))) =>
-        key ?
-            cases[key](value) :
-            fail.type (`No match for ${name} found in caseof statement`)),
+
+        !key ? fail.type (`No match for ${name} found in caseof statement`) :
+        hasPositionalFields ? cases[key](...value) :
+        cases[key](value)),
 
     caseof: caseof => ({ value: caseof }),
 
