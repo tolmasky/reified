@@ -13,15 +13,15 @@ exports.IsFieldDeclaration = given((
             (descriptor.value [I `::Function.prototype.toString`] ()));
 
 exports.Field = ({ type, caseof }) => given((
-    Key = type `Key`
-    ({
-        [caseof `String`]: [of => type.string],
-        [caseof `Symbol`]: [of => type.symbol]
-    }),
-
     Field = type `Field`
     ({
-        key :of => Key
+        key :of => Field.Key,
+
+        Key: type `Field.Key`
+        ({
+            [caseof `String`]: [of => type.string],
+            [caseof `Symbol`]: [of => type.symbol]
+        }),
     }),
 
     IsFieldDeclaration = given((
@@ -33,6 +33,5 @@ exports.Field = ({ type, caseof }) => given((
             FieldDeclarationRegExp [I `::RegExp.prototype.test`]
                 (descriptor.value [I `::Function.prototype.toString`] ()))) =>
 ({
-    Key: { value: Key, enumerable: true },
     Field: { value: Field, enumerable: true },
 }));

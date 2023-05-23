@@ -157,7 +157,7 @@ module.exports = Ø
             hasInstance = false,
             constructors = [],
             methods = [],
-            functions = [],
+            statics = [],
             extending = I `Object`
         } = definition) => Ø
         ({
@@ -210,8 +210,7 @@ module.exports = Ø
                 T,
                 ø(methods [I `::Array.prototype.map`] (toMethodDescriptor))),
 
-            ...I `Object.fromEntries` (functions
-                [I `::Array.prototype.map`] (toMethodDescriptor))
+            [Ø `...`]: ø(statics)
         }))) =>
 
 
@@ -230,7 +229,9 @@ module.exports = Ø
                     [I `::Array.prototype.group`] (([key, descriptor]) =>
                         IsCaseofPropertyKey(key) ? "caseofs" :
                         IsFieldDeclaration(descriptor) ? "fields" :
-                        "rest"),
+                        // get and (self) go on prototype, Call?.... or just rely on same as constructor name
+                        // NOT default constructor, default call...
+                        "statics"),
                 caseofs = grouped.caseofs ?
                     grouped.caseofs
                         [I `::Array.prototype.map`] (([key, descriptor]) =>
@@ -240,7 +241,7 @@ module.exports = Ø
                                 [I `::Array.prototype.filter`]
                                     (([, descriptor]) => IsFieldDeclaration(descriptor))
                         ]) :
-                    [[name, grouped.fields]],
+                    [[name, grouped.fields || []]],
                 _ = console.log(caseofs),
                 T = type(TypeDefinitionSymbol,
                 {
@@ -257,7 +258,8 @@ module.exports = Ø
                                 [I `::Array.prototype.map`] (([key, descriptor]) =>
                                     type.Field_({ binding: key, value: () => ({ type: descriptor.value() }) })),
                             oftype: () => T
-                        }))
+                        })),
+                    statics: grouped.statics
                 })) => T) :
 
             IsTypeDataDeclaration(args) ?
