@@ -42,7 +42,27 @@ const toMethodDescriptor = value => [value.binding, { value, ...value }];
 const S = SymbolEnum("Constructors", "Definition", "DefaultConstructor");
 
 const { caseof, IsCaseofPropertyKey } = require("./caseof_");
-const { IsFieldDeclaration, Field } = require("./field");
+const { Field } = require("./field");
+
+// Do we want to do something for get too?
+const IsMethodDeclaration = given((
+    MethodDeclarationRegExp = /^\s*\(?\s*self\s/) =>
+    descriptor =>
+        !!descriptor.enumerable &&
+        HasOwnProperty(descriptor, "value") &&
+        IsFunctionObject(descriptor.value) &&
+        MethodDeclarationRegExp [I `::RegExp.prototype.test`]
+            (descriptor.value [I `::Function.prototype.toString`] ()));
+
+const IsFieldDeclaration = given((
+    FieldDeclarationRegExp = /^\s*of\s*=>/) =>
+    descriptor =>
+        !!descriptor.enumerable &&
+        HasOwnProperty(descriptor, "value") &&
+        IsFunctionObject(descriptor.value) &&
+        FieldDeclarationRegExp [I `::RegExp.prototype.test`]
+            (descriptor.value [I `::Function.prototype.toString`] ()));
+
 
 const toExtendingPrototype = (parent, constructor, ...rest) => Ø
 ({
@@ -159,7 +179,10 @@ module.exports = Ø
             methods = [],
             statics = [],
             extending = I `Object`
-        } = definition) => Ø
+        } = definition, _ = console.log(methods, ø(methods), toExtendingPrototype(
+                extending,
+                function A(){},
+                ø(methods)))) => Ø
         ({
             [Ø.Call]: (T, thisArg, args) =>
                 IsAnnotation(args) ?
@@ -190,6 +213,7 @@ module.exports = Ø
                                 Constructor(type, T, definition))
             }),
 
+            // FIXME: Replace S.DefaultConstructor with DefaultCall to allow for statics.
             [S.DefaultConstructor]: T => given((
                 defaultConstructor = T[S.Constructors]
                     [I `::Array.prototype.find`]
@@ -205,10 +229,13 @@ module.exports = Ø
 
             [I `Symbol.hasInstance`]: hasInstance && { value: hasInstance },
 
-            prototype: T => toExtendingPrototype(
-                extending,
-                T,
-                ø(methods [I `::Array.prototype.map`] (toMethodDescriptor))),
+            prototype: T => ({ value:
+                toExtendingPrototype(
+                    extending,
+                    T,
+                    ø(methods [I `::Array.prototype.map`] (([key, { value, ...descriptor }]) =>
+                        [key, { ...descriptor, value: function(...args) { return value(this, ...args); } }])))
+            }),
 
             [Ø `...`]: ø(statics)
         }))) =>
@@ -229,8 +256,7 @@ module.exports = Ø
                     [I `::Array.prototype.group`] (([key, descriptor]) =>
                         IsCaseofPropertyKey(key) ? "caseofs" :
                         IsFieldDeclaration(descriptor) ? "fields" :
-                        // get and (self) go on prototype, Call?.... or just rely on same as constructor name
-                        // NOT default constructor, default call...
+                        IsMethodDeclaration(descriptor) ? "methods" :
                         "statics"),
                 caseofs = grouped.caseofs ?
                     grouped.caseofs
@@ -259,7 +285,8 @@ module.exports = Ø
                                     type.Field_({ binding: key, value: () => ({ type: descriptor.value() }) })),
                             oftype: () => T
                         })),
-                    statics: grouped.statics
+                    methods: grouped.methods || [],
+                    statics: grouped.statics || []
                 })) => T) :
 
             IsTypeDataDeclaration(args) ?
