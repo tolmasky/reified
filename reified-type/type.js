@@ -26,8 +26,9 @@ const { IsTaggedCall, ToResolvedString } =
 
 const IsAnnotation = args => IsTaggedCall(args);
 
-const annotate = args => given((
+const annotate = (args, T) => given((
     annotation = ToResolvedString(args)) =>
+        annotation === "?" ? type.Maybe(T) :
         annotation === "=" ? value => value :
         annotation === "()=" ? value => value :
         annotation === "const" ? value => value :
@@ -183,7 +184,7 @@ module.exports = Ø
         ({
             [Ø.Call]: (T, thisArg, args) =>
                 IsAnnotation(args) ?
-                    annotate(args) :
+                    annotate(args, T) :
                 T[S.DefaultConstructor] ?
                     T[S.DefaultConstructor](...args) :
                 T[S.Constructors].length <= 0 ?
