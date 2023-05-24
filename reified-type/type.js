@@ -29,6 +29,7 @@ const IsAnnotation = args => IsTaggedCall(args);
 const annotate = (args, T) => given((
     annotation = ToResolvedString(args)) =>
         annotation === "?" ? type.Maybe(T) :
+        annotation === "[]" ? type.array(T) :
         annotation === "=" ? value => value :
         annotation === "()=" ? value => value :
         annotation === "const" ? value => value :
@@ -471,6 +472,13 @@ module.exports = Ø
             ]
         }))
     }),
+
+    array: type => ({ value: type `array` (T => type(type.Definition
+    ({
+        binding: `array<${T.name}>`,
+        hasInstance: V => IsArray(V),
+        constructors:[]
+    }))), enumerable: true }),
 
     caseof: { value: caseof, enumerable: true },
 
