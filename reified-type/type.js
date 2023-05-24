@@ -159,7 +159,33 @@ const extract = (type, { binding, value: fValue }, source, values) => given((
 const PrimitiveString = type => I `Object.create` (type.prototype, { [Symbol.hasInstance]: { value: V => typeof V === "string" } });
 
 
+const BootstrapType = (Type, name, hasInstance) => Ø
+({
+    [Ø.Call]: TypeCall,
 
+    [Ø.Prototype]: Type.prototype,
+    [I `Symbol.hasInstance`]: { value: hasInstance },
+
+    [S.Constructors]: { value: [] },
+
+    name: { value: name }
+});
+
+const TypeCall = (T, thisArg, args) =>
+    IsAnnotation(args) ?
+        annotate(args, T) :
+    T[S.DefaultConstructor] ?
+        T[S.DefaultConstructor](...args) :
+    (console.log(T[S.Constructors]),
+    T[S.Constructors].length <= 0 ?
+        fail.type(`${T.name} is only a type, not a constructor.`) :
+        fail.type(
+            `${T.name} has no default constructor, ` +
+            `use one of it's named constructors instead:\n` +
+                constructors
+                    [I `::Array.prototype.map`]
+                        (({ binding }) => `    ${binding}`)
+                    [ I `::Array.prototype.join`] (`\n`)));
 
 module.exports = Ø
 ({
@@ -297,6 +323,23 @@ module.exports = Ø
 
     type: type => ({ value: type, enumerable: true }),
 
+    ...I `Object.fromEntries`
+    ([
+        ["string", IsString],
+        ["undefined", IsUndefined],
+        ["null", IsNull],
+        ["boolean", IsBoolean],
+        ["symbol", IsSymbol],
+        ["number", IsNumber],
+        ["bigint", IsBigInt],
+        ["object", IsObject],
+        ["function", IsFunctionObject],
+    ]
+        [I `::Array.prototype.map`] (([name, hasInstance]) =>
+        [
+            name, Type => ({ value: BootstrapType(Type, name, hasInstance), enumerable: true })
+        ])),
+
     Definition: type => ({ value: type(TypeDefinitionSymbol,
     {
         binding: "TypeDefinition",
@@ -428,28 +471,6 @@ module.exports = Ø
         binding :of => type.string,//PrimitiveString(type),
         value   :of => FIXME_ANY
     }) }),*/
-
-    ...I `Object.fromEntries`
-    ([
-        ["string", IsString],
-        ["undefined", IsUndefined],
-        ["null", IsNull],
-        ["boolean", IsBoolean],
-        ["symbol", IsSymbol],
-        ["number", IsNumber],
-        ["bigint", IsBigInt],
-        ["object", IsObject],
-        ["function", IsFunctionObject],
-    ]
-        [I `::Array.prototype.map`] (([binding, hasInstance]) =>
-        [
-            binding,
-            type =>
-            ({
-                value: type(type.Definition({ binding, hasInstance, constructors:[] })),//TypeDefinitionSymbol, { binding, hasInstance }),
-                enumerable: true
-            })
-        ])),
 
     TypeConstructor: ({ type }) => ({ value:(console.log("IT IS[[:",type.string),
         type(TypeDefinitionSymbol,
