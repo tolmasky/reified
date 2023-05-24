@@ -47,7 +47,8 @@ const { caseof, IsCaseofPropertyKey } = require("./caseof_");
 
 // Do we want to do something for get too?
 const IsMethodDeclaration = given((
-    MethodDeclarationRegExp = /^\s*\(?\s*self\s/) =>
+    // FIXME should we do a real parse here?
+    MethodDeclarationRegExp = /^\s*\(?\s*self[,\s\)=]/) =>
     descriptor =>
         !!descriptor.enumerable &&
         HasOwnProperty(descriptor, "value") &&
@@ -264,6 +265,8 @@ module.exports = Ø
                                     (([, descriptor]) => IsFieldDeclaration(descriptor))
                         ]) :
                     [[name, grouped.fields || []]],
+                methods = grouped.methods || [],
+                statics = [...(grouped.statics || []), ...methods],
                 T = type(TypeDefinitionSymbol,
                 {
                     binding: name,
@@ -281,8 +284,8 @@ module.exports = Ø
                                     type.Field_({ binding: key, value: () => ({ type: descriptor.value() }) })),
                             oftype: () => T
                         })),
-                    methods: grouped.methods || [],
-                    statics: grouped.statics || []
+                    methods,
+                    statics
                 })) => T) :
 
             IsTypeDataDeclaration(args) ?
@@ -482,6 +485,8 @@ module.exports = Ø
         type    :of => type,
         value   :of => T
     })), enumerable: true }),
+
+    Maybe: type => ({ value: require("./maybe")(type), enumerable: true })
 
 /*
     Initializer: ({ type }) => ({ value:
