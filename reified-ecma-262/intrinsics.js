@@ -162,6 +162,9 @@ I["RegExp"] = global.RegExp;
 I["RegExp.prototype.exec"] = I.RegExp.prototype.exec;
 I["RegExp.prototype.test"] = I.RegExp.prototype.test;
 
+I["Set"] = global.Set;
+I["Set.prototype.has"] = I.Set.prototype.has;
+
 I["String"] = global.String;
 I["String.prototype.charAt"] = I.String.prototype.charAt;
 I["String.prototype.charCodeAt"] = I.String.prototype.charCodeAt;
