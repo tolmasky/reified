@@ -280,7 +280,7 @@ module.exports = Ø
                             binding: name,
                             symbol: Symbol(name),
                             hasPositionalFields: entries
-                                [I `::Array.prototype.every`] (([key]) => IsArrayIndex(key)),
+                                [I `::Array.prototype.every`] (([key]) => IsString(key) && IsArrayIndex(key)),
                             fields: entries
                                 [I `::Array.prototype.map`] (([key, descriptor]) =>
                                     type.Field_({ binding: key, value: () => ({ type: descriptor.value() }) })),
@@ -338,7 +338,7 @@ module.exports = Ø
         mismatch = (T, value, reference) => fail.type (
             `Type mismatch${reference ? ` in ${reference}` : ""}:\n` +
             `    Expected: ${toTypeDescription(T)}\n` +
-            `    Found: ${value}`),
+            `    Found: ${String(value)}`),
 
         // FIXME: We'll want something like [[Description]] here, for Dependent
         // types.
@@ -396,7 +396,7 @@ module.exports = Ø
                 binding: "Field",
                 fields:
                 [
-                    { binding: "binding", value: () => ({ type: type.string }) },
+                    { binding: "binding", value: () => ({ type: FIXME_ANY }) },
                     { binding: "value",  value: () => ({ type: FIXME_ANY }) }
                 ],
                 oftype: () => T
@@ -438,7 +438,8 @@ module.exports = Ø
         ["symbol", IsSymbol],
         ["number", IsNumber],
         ["bigint", IsBigInt],
-        ["object", IsObject]
+        ["object", IsObject],
+        ["function", IsFunctionObject],
     ]
         [I `::Array.prototype.map`] (([binding, hasInstance]) =>
         [
