@@ -42,7 +42,8 @@ const toMethodDescriptor = value => [value.binding, { value, ...value }];
 const S = SymbolEnum("Constructors", "Definition", "DefaultConstructor");
 
 const { caseof, IsCaseofPropertyKey } = require("./caseof_");
-const { Field } = require("./field");
+
+// Unary constructor
 
 // Do we want to do something for get too?
 const IsMethodDeclaration = given((
@@ -73,8 +74,6 @@ const toExtendingPrototype = (parent, constructor, ...rest) => Ø
 });
 
 const toPrototypeM = M(C => given((
-    _ = console.log("---", C, C.oftype),
-    __= console.log(C.oftype()),
     T = C.oftype()) => Ø
 ({
     [Ø.Call]: () => fail.type(`${C.binding} is not meant to be called`),
@@ -87,7 +86,7 @@ const toPrototypeM = M(C => given((
     prototype: CC => ({ value: toExtendingPrototype(T, CC,
     {
         [Symbol.iterator]: { value: function * ()
-        {console.log(C, C.fields);
+        {
             yield * (C.fields [I `::Array.prototype.map`] (({ binding }) => this[binding]));
         }, enumerable: true }
     }) })
@@ -146,7 +145,7 @@ const check = (T, value, reference) =>(console.log(T),
 const extract = (type, { binding, value: fValue }, source, values) => given((
     { type: T, ...value } = fValue()) =>
         HasOwnProperty(source, binding) ?
-            type.check(T, source[binding], `in field ${String(binding)}`) :
+            type.check(T, source[binding], `field ${String(binding)}`) :
         T === FIXME_ANY ?
             false :
         HasOwnProperty(value, "value") ?
@@ -179,10 +178,7 @@ module.exports = Ø
             methods = [],
             statics = [],
             extending = I `Object`
-        } = definition, _ = console.log(methods, ø(methods), toExtendingPrototype(
-                extending,
-                function A(){},
-                ø(methods)))) => Ø
+        } = definition) => Ø
         ({
             [Ø.Call]: (T, thisArg, args) =>
                 IsAnnotation(args) ?
@@ -268,7 +264,6 @@ module.exports = Ø
                                     (([, descriptor]) => IsFieldDeclaration(descriptor))
                         ]) :
                     [[name, grouped.fields || []]],
-                _ = console.log(caseofs),
                 T = type(TypeDefinitionSymbol,
                 {
                     binding: name,
@@ -278,6 +273,7 @@ module.exports = Ø
                         ({
                             name,
                             binding: name,
+                            symbol: Symbol(name),
                             hasPositionalFields: entries
                                 [I `::Array.prototype.every`] (([key]) => IsArrayIndex(key)),
                             fields: entries
@@ -292,7 +288,7 @@ module.exports = Ø
             IsTypeDataDeclaration(args) ?
                 body => type(ToResolvedString(args), body) :
 
-            fail.syntax (`Improper type declaration`)),
+            fail.syntax (`Improper type declaration ${console.log(args)}`)),
 
     type: type => ({ value: type, enumerable: true }),
 
@@ -366,6 +362,7 @@ module.exports = Ø
                     [
                         { binding: "binding", value: () => ({ type: FIXME_ANY }) },
                         { binding: "name", value: () => ({ type: FIXME_ANY }) },
+                        { binding: "symbol", value: () => ({ type: FIXME_ANY }) },
                         { binding: "hasPositionalFields", value: () => ({ type: FIXME_ANY }) },
                         { binding: "fields", value: () => ({ type: Array }) },
                         { binding: "oftype", value: () => ({ type: Function }) },
@@ -376,6 +373,10 @@ module.exports = Ø
                         }) }
                     ]
                 }
+            ],
+            methods:
+            [
+                [Symbol.toPrimitive, { value: self => self.symbol }]
             ]
         })
     }),
@@ -469,7 +470,18 @@ module.exports = Ø
 
     caseof: { value: caseof, enumerable: true },
 
-    [Ø `...`]: Field,
+    PropertyKey: type => ({ value: type `PropertyKey`
+    ({
+        [caseof `Name`]: [of => type.string],
+        [caseof `Symbol`]: [of => type.symbol]
+    }), enumerable: true }),
+
+    Field: type => ({ value: type `Field` (T => type `Field<${T.name}>`
+    ({
+        key     :of => type.PropertyKey,
+        type    :of => type,
+        value   :of => T
+    })), enumerable: true }),
 
 /*
     Initializer: ({ type }) => ({ value:
