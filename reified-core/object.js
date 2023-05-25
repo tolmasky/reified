@@ -31,9 +31,12 @@ const fromTag = tag =>
 
 const ø = (...sources) => sources
     [I `::Array.prototype.reduce`] ((O, source) =>
-        I `Object.assign` (
-            O,
-            IsArray(source) ? I `Object.fromEntries` (source) : source),
+        !source ?
+            O :
+        IsArray(source) ?
+            I `Object.assign` (O, I `Object.fromEntries` (source)) :
+            I `Object.defineProperties`
+                (O, I `Object.getOwnPropertyDescriptors` (source)),
         I `Object.create` (null));
 
 exports.ø = ø;
@@ -45,7 +48,7 @@ const DefaultPartialPropertyPlan =
 {
     key: void(0),
     configurable: false,
-    enumerable: false,
+    enumerable: true,
     writable: false,
     recursive: false,
 };
@@ -98,12 +101,7 @@ const IsPropertyPlanKey = key =>
 const ToPartialPropertyPlan = key =>
     IsPropertyPlanKey(key) ?
         PropertyPlanSymbols.forSymbol(key) :
-        PartialPropertyPlan
-        ({
-            ...DefaultPartialPropertyPlan,
-            key,
-            enumerable: true
-        });
+        P(key);
 
 const GetOwnPropertyPlans = O => ø(
     GetOwnPropertyDescriptorEntries(O)
@@ -117,8 +115,11 @@ exports.GetOwnPropertyPlans = GetOwnPropertyPlans;
 
 exports.P = I `Object.assign` (P,
 {
-    Call: P(S.Call, { enumerable: false }),
-    Prototype: P(S.Prototype, { enumerable: false })
+    Call: P(S.Call).unenumerable,
+    Prototype: P(S.Prototype).unenumerable,
+
+    hasInstance: P(Symbol.hasInstance),
+    iterator: P(Symbol.iterator)
 });
 
 
