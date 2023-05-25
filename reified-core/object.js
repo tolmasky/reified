@@ -18,6 +18,7 @@ const
     ToResolvedString
 } = require("@reified/core/function-objects");
 
+const M = require("./cached");
 const SymbolBijection = require("./symbol-bijection");
 
 
@@ -42,31 +43,77 @@ const PropertyPlanSymbols = SymbolBijection(plan =>
 
 const DefaultPartialPropertyPlan =
 {
+    key: void(0),
     configurable: false,
-    enumerable: true,
+    enumerable: false,
     writable: false,
     recursive: false,
 };
 
-const P = (key, plan) =>
-    PropertyPlanSymbols.toSymbol(ø(ToPartialPropertyPlan(key), plan));
+
+const MapPartialPropertyPlanKeys = given((
+    keys = I `Object.keys` (DefaultPartialPropertyPlan)) =>
+        f => keys [I `::Array.prototype.map`] (f));
+
+const PartialPropertyPlan = given((
+    PartialPropertyPlan = function (contents)
+    {
+        return PartialPropertyPlanM(
+            ...MapPartialPropertyPlanKeys(key => contents[key]));
+    },
+    PartialPropertyPlanM = M((...args) => given((
+        contents = ø(MapPartialPropertyPlanKeys(
+            (key, index) => [key, args[index]]))) =>
+        I `Object.assign` (
+            I `Object.create` (PartialPropertyPlan.prototype), { contents }))),
+    mutate = (plan, key, value) =>
+        PartialPropertyPlan({ ...plan.contents, [key]: value }),
+    prototype = I `Object.defineProperties` (PartialPropertyPlan.prototype,
+        ø(  ["configurable", "enumerable", "writable", "recursive"]
+                [I `::Array.prototype.flatMap`] (key => [true, false]
+                    [I `::Array.prototype.map`] (value =>
+                    [
+                        value ? key : `un${key}`,
+                        {
+                            enumerable: true,
+                            get ()  { return mutate(this, key, value); }
+                        }
+                    ])),
+            [[
+                Symbol.toPrimitive,
+                {
+                    enumerable: true,
+                    value() { return PropertyPlanSymbols.toSymbol(this); }
+                }
+            ]]))) => PartialPropertyPlan);
+
+const P = (...args) => IsTaggedCall(args) ?
+    P(ToResolvedString(args)) :
+    PartialPropertyPlan({ ...DefaultPartialPropertyPlan, key: args[0] });
 
 const IsPropertyPlanKey = key =>
     IsSymbol(key) && PropertyPlanSymbols.hasSymbol(key);
 
+// FIXME: Always use property plans in order to maintain correct key order?
 const ToPartialPropertyPlan = key =>
     IsPropertyPlanKey(key) ?
-    PropertyPlanSymbols.forSymbol(key) :
-    ø(DefaultPartialPropertyPlan, { key });
+        PropertyPlanSymbols.forSymbol(key) :
+        PartialPropertyPlan
+        ({
+            ...DefaultPartialPropertyPlan,
+            key,
+            enumerable: true
+        });
 
 const GetOwnPropertyPlans = O => ø(
     GetOwnPropertyDescriptorEntries(O)
         [I `::Array.prototype.map`]
             (([key, { value }]) =>
-                ({ ...ToPartialPropertyPlan(key), value }))
+                ({ ...ToPartialPropertyPlan(key).contents, value }))
         [I `::Array.prototype.map`]
             (plan => [plan.key, plan]));
 
+exports.GetOwnPropertyPlans = GetOwnPropertyPlans;
 
 exports.P = I `Object.assign` (P,
 {
