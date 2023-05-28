@@ -5,9 +5,11 @@ const
     I,
     IsArray,
     IsFunctionObject,
+    IsString,
     IsSymbol,
     GetOwnPropertyDescriptorEntries,
     GetOwnValues,
+    HasOwnProperty,
     OrdinaryObjectCreate,
     OrdinaryFunctionCreate
 } = require("@reified/ecma-262");
@@ -16,18 +18,12 @@ const
 {
     IsTaggedCall,
     ToResolvedString
-} = require("@reified/core/function-objects");
+} = require("./function-objects");
+
+const SymbolEnum = require("./symbol-enum");
 
 const M = require("./cached");
 const SymbolBijection = require("./symbol-bijection");
-
-
-const S = I `Object.fromEntries` (["Call", "Prototype"]
-    [I `::Array.prototype.map`] (name => [name, Symbol(name)]));
-
-const fromTag = tag =>
-    tag === "..." ? Symbol("...") :
-    false;
 
 const ø = (...sources) => sources
     [I `::Array.prototype.reduce`] ((O, source) =>
@@ -41,18 +37,27 @@ const ø = (...sources) => sources
 
 exports.ø = ø;
 
+const Symbols = SymbolEnum("Call", "Prototype");
+
 const PropertyPlanSymbols = SymbolBijection(plan =>
     `@reified/core/object/property-plan: ${I `JSON.stringify` (plan)}`);
+
+const Default = Symbol("Default");
 
 const DefaultPartialPropertyPlan =
 {
     key: void(0),
     configurable: false,
     enumerable: true,
-    writable: false,
-    recursive: false,
+    writable: false
 };
 
+const toPropertyDesctiptorOption = (key, option, setting, existing) =>
+    setting[option] !== Default ?
+        setting[option] :
+    HasOwnProperty(existing, key) ?
+        I `Object.getOwnPropertyDescriptor` (existing, key) [option] :
+        DefaultPartialPropertyPlan[option];
 
 const MapPartialPropertyPlanKeys = given((
     keys = I `Object.keys` (DefaultPartialPropertyPlan)) =>
@@ -92,7 +97,13 @@ const PartialPropertyPlan = given((
 
 const P = (...args) => IsTaggedCall(args) ?
     P(ToResolvedString(args)) :
-    PartialPropertyPlan({ ...DefaultPartialPropertyPlan, key: args[0] });
+    PartialPropertyPlan
+    ({
+        configurable: Default,
+        enumerable: Default,
+        writable: Default,
+        key: args[0]
+    });
 
 const IsPropertyPlanKey = key =>
     IsSymbol(key) && PropertyPlanSymbols.hasSymbol(key);
@@ -111,48 +122,55 @@ const GetOwnPropertyPlans = O => ø(
         [I `::Array.prototype.map`]
             (plan => [plan.key, plan]));
 
-exports.GetOwnPropertyPlans = GetOwnPropertyPlans;
-
-exports.P = I `Object.assign` (P,
+function RecursiveDefinition(definition)
 {
-    Call: P(S.Call).unenumerable,
-    Prototype: P(S.Prototype).unenumerable,
-
-    hasInstance: P(Symbol.hasInstance),
-    iterator: P(Symbol.iterator)
-});
-
-
-const Call = function Call(F, thisArg, args)
-{
-    return F[S.Call](F, thisArg, args);
+    this.definition = definition;
 }
 
-const Ø = I `Object.assign` ((...args) => IsTaggedCall(args) ?
-    fromTag(ToResolvedString(args)) : given((
+const Ø = I `Object.assign` ((...args) =>
+    IsTaggedCall(args) ? P(ToResolvedString(args)) :
+    IsString(args[0]) ? P(args[0]) :
+    IsSymbol(args[0]) ? P(args[0]) :
+    IsFunctionObject(args[0]) ? new RecursiveDefinition(args[0]) : given((
     {
-        [S.Prototype]: PrototypePropertyPlan,
+        [Symbols.Prototype]: PrototypePropertyPlan,
         ...plans
     } = GetOwnPropertyPlans(args[0]),
-    { [S.Call]: CallPropertyPlan } = plans,
+    { [Symbols.Call]: CallPropertyPlan } = plans,
     Prototype =
         PrototypePropertyPlan ? PrototypePropertyPlan.value :
         CallPropertyPlan ? I `Function.prototype` :
         I `Object.prototype`,
     O = CallPropertyPlan ?
-        OrdinaryFunctionCreate(Prototype, false, false, Call) :
+        OrdinaryFunctionCreate(Prototype, false, false, CallPropertyPlan.value) :
         OrdinaryObjectCreate(Prototype)) =>
     GetOwnValues(plans, "every")
         [I `::Array.prototype.reduce`]
-            ((O, { key, recursive, value, ...rest }) => given((
-                resolved = recursive ? value(O) : value,
-                descriptor = { ...rest, value: resolved },
-                _ = console.log("FOR " + String(key) + " ", descriptor)) =>
+            ((O, { key, value, ...rest }) =>
                     // IsSymbol(key) && key.description === "..." ?
                     //    I `Object.defineProperties` (O, { ...descriptor) :
-                I `Object.defineProperty` (O, key, descriptor)), O)), S);
+                I `Object.defineProperty` (O, key,
+                {
+                    value: value instanceof RecursiveDefinition ?
+                        value.definition(O) :
+                        value,
+                    configurable: toPropertyDesctiptorOption(key, "configurable", rest, O),
+                    enumerable: toPropertyDesctiptorOption(key, "enumerable", rest, O),
+                    writable: toPropertyDesctiptorOption(key, "writable", rest, O),
+                }), O)),
+    { Symbols });
 
-exports.Ø = Ø;
+
+
+exports.Ø = I `Object.assign` (Ø,
+{
+    from: O => ø(GetOwnPropertyDescriptorEntries(O)
+        [I `::Array.prototype.map`]
+            (([key, descriptor]) => [Ø(key), descriptor.value])),
+
+    Call: P(Symbols.Call),
+    Proottype: P(Symbols.Prototype)
+});
 
 
 /*
