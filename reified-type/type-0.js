@@ -60,6 +60,24 @@ module.exports = Ø
     [Ø `Symbols`]: ø(Symbols),
 
     // We have to make Ø() have Symbol.iteroatr in order to make ...Ø(X=>Y) work...
+/*
+    [Ø]: Ø(Type_0 => given((
+        primitives =
+        I `Object.entries` (PrimitiveHasInhabitants)
+            [I `::Array.prototype.map`] (([name, HasInhabitant]) =>
+            [
+                Ø(name),
+                Type_0
+                ({
+                    [Symbols.Name]: name,
+                    // Should we just do V => check(self, V)?
+                    [Symbols.Constructors]: [],
+                    [Symbols.Exports]: ø(),
+                    [Symbols.Methods]: ø(),
+                    [Symbols.HasInhabitant]: HasInhabitant,
+                    [Symbols.UnannotatedCall]: () => console.log("BAD")
+                })
+            ])) => ø()*/
 
     [Ø `primitives`]: Ø(Type_0 => Ø(ø(
         I `Object.entries` (PrimitiveHasInhabitants)
@@ -78,6 +96,13 @@ module.exports = Ø
                 })
             ])))),
 
+    [Ø `primitiveof`]: Ø(Type0 => given((
+        primitives = I `Object.values` (Type0.primitives)) =>
+            value => primitives
+                [I `::Array.prototype.find`]
+                    (P => P[Symbols.HasInhabitant](value)))),
+
+    ...Ø(({ primitives }) => Ø.from(primitives)),
     
 /*
         primitiveof = V => primitives

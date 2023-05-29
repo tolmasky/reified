@@ -124,8 +124,13 @@ const GetOwnPropertyPlans = O => ø(
 
 function RecursiveDefinition(definition)
 {
-    this.definition = definition;
+    I `Object.defineProperty` (this, "definition", { value: definition });
+
+    this[P(Symbol("..."))] = this;
 }
+
+RecursiveDefinition.prototype[Symbol("...")]
+
 
 const Ø = I `Object.assign` ((...args) =>
     IsTaggedCall(args) ? P(ToResolvedString(args)) :
@@ -143,21 +148,21 @@ const Ø = I `Object.assign` ((...args) =>
         I `Object.prototype`,
     O = CallPropertyPlan ?
         OrdinaryFunctionCreate(Prototype, false, false, CallPropertyPlan.value) :
-        OrdinaryObjectCreate(Prototype)) =>
-    GetOwnValues(plans, "every")
+        OrdinaryObjectCreate(Prototype),
+    DefineElements = (O, elements) => GetOwnValues(elements, "every")
         [I `::Array.prototype.reduce`]
             ((O, { key, value, ...rest }) =>
-                    // IsSymbol(key) && key.description === "..." ?
-                    //    I `Object.defineProperties` (O, { ...descriptor) :
-                I `Object.defineProperty` (O, key,
-                {
-                    value: value instanceof RecursiveDefinition ?
-                        value.definition(O) :
-                        value,
-                    configurable: toPropertyDesctiptorOption(key, "configurable", rest, O),
-                    enumerable: toPropertyDesctiptorOption(key, "enumerable", rest, O),
-                    writable: toPropertyDesctiptorOption(key, "writable", rest, O),
-                }), O)),
+                IsSymbol(key) && key.description === "..." ?
+                    (console.log("here!!!", value.definition(O)), DefineElements(O, GetOwnPropertyPlans(value.definition(O)))) :
+                    I `Object.defineProperty` (O, key,
+                    {
+                        value: value instanceof RecursiveDefinition ?
+                            value.definition(O) :
+                            value,
+                        configurable: toPropertyDesctiptorOption(key, "configurable", rest, O),
+                        enumerable: toPropertyDesctiptorOption(key, "enumerable", rest, O),
+                        writable: toPropertyDesctiptorOption(key, "writable", rest, O),
+                    }), O)) => DefineElements(O, plans)),
     { Symbols });
 
 
@@ -169,7 +174,7 @@ exports.Ø = I `Object.assign` (Ø,
             (([key, descriptor]) => [Ø(key), descriptor.value])),
 
     Call: P(Symbols.Call),
-    Proottype: P(Symbols.Prototype)
+    Prototype: P(Symbols.Prototype)
 });
 
 
