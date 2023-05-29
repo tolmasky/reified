@@ -129,8 +129,7 @@ function RecursiveDefinition(definition)
     this[P(Symbol("..."))] = this;
 }
 
-RecursiveDefinition.prototype[Symbol("...")]
-
+RecursiveDefinition.prototype[Symbol("...")];
 
 const Ø = I `Object.assign` ((...args) =>
     IsTaggedCall(args) ? P(ToResolvedString(args)) :
@@ -153,7 +152,7 @@ const Ø = I `Object.assign` ((...args) =>
         [I `::Array.prototype.reduce`]
             ((O, { key, value, ...rest }) =>
                 IsSymbol(key) && key.description === "..." ?
-                    (console.log("here!!!", value.definition(O)), DefineElements(O, GetOwnPropertyPlans(value.definition(O)))) :
+                    DefineElements(O, GetOwnPropertyPlans(value.definition(O))) :
                     I `Object.defineProperty` (O, key,
                     {
                         value: value instanceof RecursiveDefinition ?
