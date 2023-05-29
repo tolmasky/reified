@@ -16,13 +16,11 @@ console.log(Ø);
 
 module.exports = Ø
 ({
-    [Ø `prototype`]:{},
-
     [Ø.Call]: (Type_0, _, [definition = { }]) => Ø
     ({
         [Ø.Call]: () => console.log("hi..."),
         
-        [Ø `prototype`]: I `Object.create` (Type_0.prototype),
+        [Ø.Prototype]: I `Object.create` (Type_0.prototype),
         
         // Should we automatically make this unenumerated since it's a function?
         // or should this be a getter?... (might not play nice with RunKit)
@@ -58,26 +56,6 @@ module.exports = Ø
     })),
 
     [Ø `Symbols`]: ø(Symbols),
-
-    // We have to make Ø() have Symbol.iteroatr in order to make ...Ø(X=>Y) work...
-/*
-    [Ø]: Ø(Type_0 => given((
-        primitives =
-        I `Object.entries` (PrimitiveHasInhabitants)
-            [I `::Array.prototype.map`] (([name, HasInhabitant]) =>
-            [
-                Ø(name),
-                Type_0
-                ({
-                    [Symbols.Name]: name,
-                    // Should we just do V => check(self, V)?
-                    [Symbols.Constructors]: [],
-                    [Symbols.Exports]: ø(),
-                    [Symbols.Methods]: ø(),
-                    [Symbols.HasInhabitant]: HasInhabitant,
-                    [Symbols.UnannotatedCall]: () => console.log("BAD")
-                })
-            ])) => ø()*/
 
     [Ø `primitives`]: Ø(Type_0 => Ø(ø(
         I `Object.entries` (PrimitiveHasInhabitants)
