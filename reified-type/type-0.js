@@ -19,16 +19,16 @@ module.exports = Ø
     [Ø.Call]: (Type_0, _, [definition = { }]) => Ø
     ({
         [Ø.Call]: () => console.log("hi..."),
-        
+
         [Ø.Prototype]: I `Object.create` (Type_0.prototype),
-        
+
         // Should we automatically make this unenumerated since it's a function?
         // or should this be a getter?... (might not play nice with RunKit)
         [Ø `name`]: definition[Symbols.Name],
 
         ...ø([...Symbols]
             [I `::Array.prototype.map`]
-                (S => [Ø /*.unenumerated*/ (S), definition[S]]))
+                (S => [Ø(S) .unenumerable, definition[S]]))
 
         // FIXME: First problem, should this be a Maybe<Function>?
         // Should we decide this, or should the caller?
@@ -41,7 +41,7 @@ module.exports = Ø
         // Spread exports
         // Spread methods -- ehhh, actually rely on the parser to do that.
     }),
-    
+
     [Ø `name`]: "Type(0)",
 
     [Ø `prototype`]: Ø(({ prototype }) => Ø
@@ -81,7 +81,15 @@ module.exports = Ø
                     (P => P[Symbols.HasInhabitant](value)))),
 
     ...Ø(({ primitives }) => Ø.from(primitives)),
-    
+
+    [Ø `inhabitantof`]: (T, V) => T[Symbols.HasInhabitant](V)
+
+    // Or is it, given((Constructor = ...)
+    // [Ø `Constructor`]:
+});
+
+
+
 /*
         primitiveof = V => primitives
             [I `::Array.prototype.find`]
@@ -91,13 +99,7 @@ module.exports = Ø
                 ...primitives
                 [Ø `primitives`, ø(primitives)],
                 [Ø `primitiveof`, primitiveof]
-            ]))),*/
-
-    // Or is it, given((Constructor = ...)
-    // [Ø `Constructor`]: 
-});
-
-/*
+            ]))),
 
     [Ø `prototype` `...`]:
     {

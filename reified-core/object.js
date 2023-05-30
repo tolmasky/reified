@@ -172,7 +172,7 @@ exports.Ø = I `Object.assign` (Ø,
         [I `::Array.prototype.map`]
             (([key, descriptor]) => [Ø(key), descriptor.value])),
 
-    Call: P(Symbols.Call),
+    Call: P(Symbols.Call).unenumerable,
     Prototype: P(Symbols.Prototype)
 });
 
