@@ -14,6 +14,8 @@ const Symbols = SymbolEnum(
     "UnannotatedCall");
 console.log(Ø);
 
+// FIXME: Should we do Type(N) => So that Type(0) HAS fields, but Type(1)
+// doesn't?
 module.exports = Ø
 ({
     [Ø.Call]: (Type_0, _, [definition = { }]) => Ø
@@ -30,14 +32,6 @@ module.exports = Ø
             [I `::Array.prototype.map`]
                 (S => [Ø(S) .unenumerable, definition[S]]))
 
-        // FIXME: First problem, should this be a Maybe<Function>?
-        // Should we decide this, or should the caller?
-        /*
-        [Ø.PrivateSlot `DesignatedCall`]:
-            definition.exports
-                [I `::Array.prototype.find`]
-                    (exported => exported.name === name) || false;*/
-
         // Spread exports
         // Spread methods -- ehhh, actually rely on the parser to do that.
     }),
@@ -48,6 +42,8 @@ module.exports = Ø
     ({
         ...Ø.from(prototype),
 
+        // FIXME: We're expecting UnannotatedCall to exist to avoid using
+        // Maybe<Function>.
         [Ø.Call]: (T, thisArg, args) => IsAnnotation(args) ?
             annotate(args, T) :
             GetMethod(T, Symbols.UnannotatedCall)(T, thisArg, args),
@@ -87,26 +83,3 @@ module.exports = Ø
     // Or is it, given((Constructor = ...)
     // [Ø `Constructor`]:
 });
-
-
-
-/*
-        primitiveof = V => primitives
-            [I `::Array.prototype.find`]
-                (P => P[Symbols.HasInhabitant](V))) =>
-            ø
-            ([
-                ...primitives
-                [Ø `primitives`, ø(primitives)],
-                [Ø `primitiveof`, primitiveof]
-            ]))),
-
-    [Ø `prototype` `...`]:
-    {
-        [Ø.Call]: (T, thisArg, args) => IsAnnotation(args) ?
-            annotate(args, T) :
-            GetMethod(T, Symbols.UnannotatedCall)(T, thisArg, args),
-
-        // Spread methods... Or is this the job of the class builder?...
-    },
-*/
