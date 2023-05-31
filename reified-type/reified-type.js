@@ -18,105 +18,30 @@ const
     GetOwnPropertyDescriptorEntries
 } = require("@reified/ecma-262");
 const fail = require("@reified/core/fail");
-const { ø } = require("@reified/object");
-
 const
 {
-    ƒnamed,
-    ƒextending,
     IsTaggedCall,
     ToResolvedString
 } = require("@reified/core/function-objects");
 
-const BasicFactory = require("./basic-factory");
-const Declaration = require("./declaration");
-const { FieldValueDefinition } = require("./field");
-const { ValueConstructorDeclaration, ValueConstructorDefinition } = require("./value-constructor");
+const { Symbols, Type0 } = require("./type-0");
 
-const { caseof, IsCaseofPropertyKey } = require("./caseof");
+const { ø } = require("@reified/object");
 
-
-const annotated = (annotation, T) =>
-    annotation === "=" ?
-        fallback => FieldValueDefinition({ type: T, default: fallback }) :
-
-    // annotation === "?" ?  maybe(T) :
-    // annotation === "[]") ? List(T) :
-
-    fail (`Unrecognized annotation: ${annotation} on type ${T}`)
+const DataHasInhabitant = (T, V) => V instanceof T;
 
 
-const TypeDefinition = BasicFactory `TypeDefinition` (declaration => given((
-    { binding, ...rest } = declaration,
-    constructors = ø(rest.constructors)) =>
-({
-    binding,
-    constructors,
-    implementation: ƒnamed(binding, function T(...args)
-    {
-        if (IsTaggedCall(args))
-            return annotated(ToResolvedString(args), T);
-
-        if (!HasOwnProperty(constructors, binding))
-            fail(
-                `${binding} cannot be directly instantiated, use one of its ` +
-                `constructors instead:\n` +
-                I `Object.keys` (constructors)
-                    [ I `::Array.prototype.join`] (`\n`));
-
-        return constructors[binding](...args);
-    }, constructors)
-})));
-
-const type = Declaration `type` (({ binding, body }) => given((
-    descriptors = GetOwnPropertyDescriptorEntries (body),
-    caseofs = descriptors
-        [I `::Array.prototype.filter`]
-            (([key]) => IsCaseofPropertyKey(key))
-        [I `::Array.prototype.map`]
-            (([key, descriptor]) => ([caseof(key).binding, descriptor.value])),
-    constructors = I `Object.fromEntries` (
-        (caseofs.length <= 0 ? [[binding, body]] : caseofs)
-            [I `::Array.prototype.map`]
-                (declaration => ValueConstructorDeclaration(...declaration))
-            [I `::Array.prototype.map`]
-                (ValueConstructorDefinition.parse)
-            [I `::Array.prototype.map`]
-                (({ binding, implementation }) => [binding, implementation]))) =>
-    TypeDefinition
-    ({
-        binding,
-        constructors,
-    }).implementation));
-
-
-const primitive = Declaration `primitive`
-    (({ binding, body: hasInstance }) => given((
-        T = TypeDefinition({ binding }).implementation) =>
-            I `Object.defineProperty` (
-                T,
-                Symbol.hasInstance,
-                { value: hasInstance })));
-
-// FIXME: Should Declaration only set the prototype if it's not Object or Function?
-I `Object.setPrototypeOf` (primitive.prototype, type.prototype);
-
-type.any = primitive `any` (() => true);
-type.undefined = primitive `undefined` (IsUndefined);
-type.null = primitive `null` (IsNull);
-type.boolean = primitive `boolean` (IsBoolean);
-type.string = primitive `string` (IsString);
-type.symbol = primitive `symbol` (IsSymbol);
-type.numeric = primitive `numeric` (IsNumeric);
-type.number = primitive `number` (IsNumber);
-type.bigint = primitive `bigint` (IsBigInt);
-type.integer = primitive `integer` (IsIntegralNumber);
-type.function = primitive `function` (IsFunctionObject);
-
-type.PropertyKey = primitive `PropertyKey` (IsPropertyKey);
-
-type.caseof = caseof;
-
-type.type = type;
-
-module.exports = type;
+module.exports = function type(...args)
+{
+    return IsTaggedCall(args) ?
+        declaration => type(ToResolvedString(args), declaration) :
+        Type0
+        ({
+            [Symbols.Name]: args[0],
+            [Symbols.Constructors]: [],
+            [Symbols.Exports]: [],
+            [Symbols.Methods]: [],
+            [Symbols.HasInhabitant]: DataHasInhabitant,
+            [Symbols.UnannotatedCall]: () => console.log("hi")
+        });
+}

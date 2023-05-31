@@ -78,13 +78,15 @@ module.exports = Ø
         primitives = I `Object.values` (Type0.primitives)) =>
             value => primitives
                 [I `::Array.prototype.find`]
-                    (P => P[Symbols.HasInhabitant](value)))),
+                    (P => P[Symbols.HasInhabitant](P, value)))),
 
 // FIXME: this overrides the Prototype...
 //    ...Ø(({ primitives }) => Ø.from(primitives)),
 
-    [Ø `inhabitantof`]: (T, V) => T[Symbols.HasInhabitant](V)
+    [Ø `inhabitantof`]: (T, V) => T[Symbols.HasInhabitant](T, V),
 
     // Or is it, given((Constructor = ...)
     // [Ø `Constructor`]:
+
+    [Ø `Type0`]: Ø(Type0 => Type0)
 });

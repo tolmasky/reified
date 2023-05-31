@@ -14,6 +14,7 @@ const
 
 const { ø } = require("@reified/core/object");
 const ToCallForm = F => (target, thisArg, args) => F(...args);
+const ToHasInhabitant = F => (T, V) => F(V);
 
 
 module.exports = ø
@@ -27,5 +28,10 @@ module.exports = ø
     ["bigint", [V => BigInt(V), IsBigInt]],
     ["function", [V => V, IsFunctionObject]],
     ["object", [V => Object(V), IsObject]],
-].map(([name, [UnannotatedCall, ...rest]]) =>
-    [name, [ToCallForm(UnannotatedCall), ...rest]]));
+].map(([name, [UnannotatedCall, HasInhabitant]]) =>
+[
+    name,
+    [
+        ToCallForm(UnannotatedCall),
+        ToHasInhabitant(HasInhabitant)]
+]));
