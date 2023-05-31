@@ -14,6 +14,9 @@ const Symbols = SymbolEnum(
     "HasInhabitant",
     "UnannotatedCall");
 
+// FIXME: Is this actaully Type(Infinity), and we should then make Type(N)
+// where somehow, Type(N + 1) is lazy?...
+
 // FIXME: Should we do Type(N) => So that Type(0) HAS fields, but Type(1)
 // doesn't?
 module.exports = Ø
@@ -28,9 +31,11 @@ module.exports = Ø
 
         ...ø([...Symbols]
             [I `::Array.prototype.map`]
-                (S => [Ø(S) .unenumerable, definition[S]]))
+                (S => [Ø(S) .unenumerable, definition[S]])),
 
-        // Spread exports
+        ...ø(definition[Symbols.Exports]
+            [I `::Array.prototype.map`] (({ key, value }) => [Ø(key), value]))
+
         // Spread methods -- ehhh, actually rely on the parser to do that.
     }),
 
@@ -47,8 +52,6 @@ module.exports = Ø
         [Ø.Call]: (T, thisArg, args) => IsTypeAnnotation(args) ?
             TypeAnnotate(args, T) :
             GetMethod(T, Symbols.UnannotatedCall)(T, thisArg, args),
-
-        // Spread methods... Or is this the job of the class builder?...
     })),
 
     [Ø `Symbols`]: ø(Symbols),
@@ -64,8 +67,8 @@ module.exports = Ø
                         [Symbols.Name]: name,
                         // FIXME: Should it show up here too?
                         [Symbols.Constructors]: [],
-                        [Symbols.Exports]: ø(),
-                        [Symbols.Methods]: ø(),
+                        [Symbols.Exports]: [],
+                        [Symbols.Methods]: [],
                         [Symbols.HasInhabitant]: HasInhabitant,
                         [Symbols.UnannotatedCall]: UnannotatedCall
                     })
