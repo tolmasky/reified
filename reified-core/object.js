@@ -4,11 +4,13 @@ const
 {
     I,
     IsArray,
+    IsCallable,
     IsFunctionObject,
     IsString,
     IsSymbol,
     GetOwnPropertyDescriptorEntries,
     GetOwnValues,
+    HasProperty,
     HasOwnProperty,
     OrdinaryObjectCreate,
     OrdinaryFunctionCreate
@@ -131,28 +133,43 @@ function RecursiveDefinition(definition)
 
 RecursiveDefinition.prototype[Symbol("...")];
 
-const Ø = I `Object.assign` ((...args) =>
-    IsTaggedCall(args) ? P(ToResolvedString(args)) :
-    IsString(args[0]) ? P(args[0]) :
-    IsSymbol(args[0]) ? P(args[0]) :
-    IsFunctionObject(args[0]) ? new RecursiveDefinition(args[0]) : given((
+const ToKeyedObjectElements = GetOwnPropertyPlans;
+
+const ToParsedObjectElements = declaration =>
+    GetOwnPropertyDescriptorEntries(declaration)
+        [I `::Array.prototype.map`]
+            (([key, { value }]) =>
+                ({ ...ToPartialPropertyPlan(key).contents, value }));
+
+/*
+const ØFunctionCreate = given((
+    ForwardCall = (F, thisArg, args) => F[Symbols.Call](F, thisArg, args)) =>
+    functionPrototype =>
+        OrdinaryFunctionCreate(functionPrototype, false, false, ForwardCall));
+
+
+// Have to create function and copy... no need to deal with prototype?
+
+const CreateObjectFromObjectElements_ = (unparsed, existingO) => given((
     {
-        [Symbols.Prototype]: PrototypePropertyPlan,
-        ...plans
-    } = GetOwnPropertyPlans(args[0]),
-    { [Symbols.Call]: CallPropertyPlan } = plans,
-    Prototype =
-        PrototypePropertyPlan ? PrototypePropertyPlan.value :
-        CallPropertyPlan ? I `Function.prototype` :
-        I `Object.prototype`,
-    O = CallPropertyPlan ?
-        OrdinaryFunctionCreate(Prototype, false, false, CallPropertyPlan.value) :
-        OrdinaryObjectCreate(Prototype),
-    DefineElements = (O, elements) => GetOwnValues(elements, "every")
+        [Symbols.Prototype]: PrototypeElement,
+        ...elements
+    } = ToKeyedObjectElements(unparsed),
+    Prototype = PrototypeElement ? PrototypeElement.value : null,
+    hadCallProperty = !!existingO && HasProperty(existingO, Symbols.Call),
+    hasCallProperty =
+        hadCallProperty ||
+        HasOwnProperty(elements, Symbols.Call) ||
+        HasProperty(PrototypeElement.value, Symbols.Call),
+    O = !existingO && hasCallProperty ? ØFunctionCreate(Prototype) :
+        !existingO && !hasCallProperty ? OrdinaryObjectCreate(Prototype) :
+        existingO && !hadCallProperty && hasCallProperty ? fromObjectElements(Ø.from(existingO)) :
+        existingO) =>
+    GetOwnValues(elements, "every")
         [I `::Array.prototype.reduce`]
             ((O, { key, value, ...rest }) =>
                 IsSymbol(key) && key.description === "..." ?
-                    DefineElements(O, GetOwnPropertyPlans(value.definition(O))) :
+                    CreateObjFromObjectElements(value.definition(O), O) :
                     I `Object.defineProperty` (O, key,
                     {
                         value: value instanceof RecursiveDefinition ?
@@ -161,16 +178,104 @@ const Ø = I `Object.assign` ((...args) =>
                         configurable: toPropertyDesctiptorOption(key, "configurable", rest, O),
                         enumerable: toPropertyDesctiptorOption(key, "enumerable", rest, O),
                         writable: toPropertyDesctiptorOption(key, "writable", rest, O),
-                    }), O)) => DefineElements(O, plans)),
+                    }), O));
+
+// FIXME: We need them extracted in their original order (!!).
+// We also need to be able to get them keyed...
+// We *DO* need, [extracted, rest] = split(elements, keys)
+const CreateObjectFromObjectElements = (elements, existingO) => given((
+    {
+        [Symbols.Prototype]: PrototypeElement,
+        ...rest
+    } = elements,
+    Prototype = PrototypeElement ? PrototypeElement.value : null,
+    hadCallProperty = !!existingO && HasProperty(existingO, Symbols.Call),
+    hasCallProperty =
+        hadCallProperty ||
+        HasOwnProperty(rest, Symbols.Call) ||
+        HasProperty(PrototypeElement.value, Symbols.Call),
+    O = !existingO && hasCallProperty ? ØFunctionCreate(Prototype) :
+        !existingO && !hasCallProperty ? OrdinaryObjectCreate(Prototype) :
+        existingO && !hadCallProperty && hasCallProperty ? console.log("YIKES!") :
+        existingO) =>
+    GetOwnValues(rest, "every")
+        [I `::Array.prototype.map`](x => (console.log("gonna do", x), x))
+        [I `::Array.prototype.reduce`]
+            ((O, { key, value, ...rest }) =>
+                IsSymbol(key) && key.description === "..." ?
+                    CreateObjectFromDeclaration(value.definition(O), O) :
+                    I `Object.defineProperty` (O, key,
+                    {
+                        value: value instanceof RecursiveDefinition ?
+                            value.definition(O) :
+                            value,
+                        configurable: toPropertyDesctiptorOption(key, "configurable", rest, O),
+                        enumerable: toPropertyDesctiptorOption(key, "enumerable", rest, O),
+                        writable: toPropertyDesctiptorOption(key, "writable", rest, O),
+                    }), O));
+
+*/
+const ObjectAssignPropertyDescriptors = (toO, fromO) =>
+    I `Object.defineProperties` (toO, I `Object.getOwnPropertyDescriptors` (fromO));
+
+const CreateObjectFromObjectElements = given((
+    IsPrototypeElement = ({ key }) => key === Symbols.Prototype,
+    IsSpreadElement = ({ key }) => IsSymbol(key) && key.description === "...",
+    ForwardCall = (F, thisArg, args) => F[Symbols.Call](F, thisArg, args),
+    AccommodateCallability = O =>
+        IsCallable(O) ? O :
+        !HasProperty(O, Symbols.Call) ? O :
+        ObjectAssignPropertyDescriptors(
+            OrdinaryFunctionCreate(
+                I `Object.getPrototypeOf` (O),
+                false,
+                false,
+                ForwardCall), O)) =>
+    (elements, existingO) => elements
+        [I `::Array.prototype.reduce`]
+            ((O, element) => AccommodateCallability(
+                IsPrototypeElement(element) ? I `Object.setPrototypeOf` (O, element.value) :
+                IsSpreadElement(element) ? CreateObjectFromDeclaration(element.value.definition(O), O) :
+                given((
+                    { key, value, ...rest } = element) =>
+                I `Object.defineProperty` (O, element.key,
+                {
+                    value: value instanceof RecursiveDefinition ?
+                        value.definition(O) :
+                        value,
+                    configurable: toPropertyDesctiptorOption(key, "configurable", rest, O),
+                    enumerable: toPropertyDesctiptorOption(key, "enumerable", rest, O),
+                    writable: toPropertyDesctiptorOption(key, "writable", rest, O),
+                }))), existingO || I `Object.create` (null)));
+
+const CreateObjectFromDeclaration = (declaration, existingO) =>
+    CreateObjectFromObjectElements(ToParsedObjectElements(declaration), existingO);
+
+const Ø = I `Object.assign` ((...args) =>
+    IsTaggedCall(args) ? P(ToResolvedString(args)) :
+    IsString(args[0]) ? P(args[0]) :
+    IsSymbol(args[0]) ? P(args[0]) :
+    IsFunctionObject(args[0]) ? new RecursiveDefinition(args[0]) :
+    CreateObjectFromDeclaration(args[0]),
     { Symbols });
 
+const GetOwnObjectElements = O => ø(
+    GetOwnPropertyDescriptorEntries(O)
+        [I `::Array.prototype.map`]
+            (([key, descriptor]) => [key, { key, ...descriptor }])
+        [I `::Array.prototype.concat`]
+            ([[Symbols.Prototype, { value: I `Object.getPrototypeOf` (O) }]]));
 
 
 exports.Ø = I `Object.assign` (Ø,
 {
+    // Do we want the Prototype from this?... YES
+    // FIXME: Need ot make sure the property has the same properties, instead of just Ø()ing it
     from: O => ø(GetOwnPropertyDescriptorEntries(O)
         [I `::Array.prototype.map`]
-            (([key, descriptor]) => [Ø(key), descriptor.value])),
+            (([key, descriptor]) => [Ø(key), descriptor.value])
+        [I `::Array.prototype.concat`]
+            ([[Ø.Prototype, I `Object.getPrototypeOf` (O)]])),
 
     Call: P(Symbols.Call).unenumerable,
     Prototype: P(Symbols.Prototype)

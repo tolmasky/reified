@@ -14,6 +14,14 @@ const IsArray = argument => I `Array.isArray` (argument);
 exports.IsArray = IsArray;
 
 
+// 7.2.3 IsCallable ( argument )
+// https://tc39.es/ecma262/#sec-iscallable
+
+const IsCallable = argument => typeof argument === "function";
+
+exports.IsCallable = IsCallable;
+
+
 // 7.2.4 IsConstructor ( argument )
 // https://tc39.es/ecma262/#sec-isconstructor
 

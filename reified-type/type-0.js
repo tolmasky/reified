@@ -20,8 +20,6 @@ module.exports = Ø
 ({
     [Ø.Call]: (Type_0, _, [definition = { }]) => Ø
     ({
-        [Ø.Call]: () => console.log("hi..."),
-
         [Ø.Prototype]: I `Object.create` (Type_0.prototype),
 
         // Should we automatically make this unenumerated since it's a function?
@@ -37,6 +35,8 @@ module.exports = Ø
     }),
 
     [Ø `name`]: "Type(0)",
+
+    [Ø.Prototype]: I `Function.prototype`,
 
     [Ø `prototype`]: Ø(({ prototype }) => Ø
     ({
@@ -76,7 +76,8 @@ module.exports = Ø
                 [I `::Array.prototype.find`]
                     (P => P[Symbols.HasInhabitant](value)))),
 
-    ...Ø(({ primitives }) => Ø.from(primitives)),
+// FIXME: this overrides the Prototype...
+//    ...Ø(({ primitives }) => Ø.from(primitives)),
 
     [Ø `inhabitantof`]: (T, V) => T[Symbols.HasInhabitant](V)
 
