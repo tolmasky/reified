@@ -12,7 +12,6 @@ const Symbols = SymbolEnum(
     "Methods",
     "HasInhabitant",
     "UnannotatedCall");
-console.log(Ø);
 
 // FIXME: Should we do Type(N) => So that Type(0) HAS fields, but Type(1)
 // doesn't?

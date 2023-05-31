@@ -12,7 +12,6 @@ const
     GetOwnValues,
     HasProperty,
     HasOwnProperty,
-    OrdinaryObjectCreate,
     OrdinaryFunctionCreate
 } = require("@reified/ecma-262");
 
@@ -116,14 +115,6 @@ const ToPartialPropertyPlan = key =>
         PropertyPlanSymbols.forSymbol(key) :
         P(key);
 
-const GetOwnPropertyPlans = O => ø(
-    GetOwnPropertyDescriptorEntries(O)
-        [I `::Array.prototype.map`]
-            (([key, { value }]) =>
-                ({ ...ToPartialPropertyPlan(key).contents, value }))
-        [I `::Array.prototype.map`]
-            (plan => [plan.key, plan]));
-
 function RecursiveDefinition(definition)
 {
     I `Object.defineProperty` (this, "definition", { value: definition });
@@ -133,88 +124,12 @@ function RecursiveDefinition(definition)
 
 RecursiveDefinition.prototype[Symbol("...")];
 
-const ToKeyedObjectElements = GetOwnPropertyPlans;
-
 const ToParsedObjectElements = declaration =>
     GetOwnPropertyDescriptorEntries(declaration)
         [I `::Array.prototype.map`]
             (([key, { value }]) =>
                 ({ ...ToPartialPropertyPlan(key).contents, value }));
 
-/*
-const ØFunctionCreate = given((
-    ForwardCall = (F, thisArg, args) => F[Symbols.Call](F, thisArg, args)) =>
-    functionPrototype =>
-        OrdinaryFunctionCreate(functionPrototype, false, false, ForwardCall));
-
-
-// Have to create function and copy... no need to deal with prototype?
-
-const CreateObjectFromObjectElements_ = (unparsed, existingO) => given((
-    {
-        [Symbols.Prototype]: PrototypeElement,
-        ...elements
-    } = ToKeyedObjectElements(unparsed),
-    Prototype = PrototypeElement ? PrototypeElement.value : null,
-    hadCallProperty = !!existingO && HasProperty(existingO, Symbols.Call),
-    hasCallProperty =
-        hadCallProperty ||
-        HasOwnProperty(elements, Symbols.Call) ||
-        HasProperty(PrototypeElement.value, Symbols.Call),
-    O = !existingO && hasCallProperty ? ØFunctionCreate(Prototype) :
-        !existingO && !hasCallProperty ? OrdinaryObjectCreate(Prototype) :
-        existingO && !hadCallProperty && hasCallProperty ? fromObjectElements(Ø.from(existingO)) :
-        existingO) =>
-    GetOwnValues(elements, "every")
-        [I `::Array.prototype.reduce`]
-            ((O, { key, value, ...rest }) =>
-                IsSymbol(key) && key.description === "..." ?
-                    CreateObjFromObjectElements(value.definition(O), O) :
-                    I `Object.defineProperty` (O, key,
-                    {
-                        value: value instanceof RecursiveDefinition ?
-                            value.definition(O) :
-                            value,
-                        configurable: toPropertyDesctiptorOption(key, "configurable", rest, O),
-                        enumerable: toPropertyDesctiptorOption(key, "enumerable", rest, O),
-                        writable: toPropertyDesctiptorOption(key, "writable", rest, O),
-                    }), O));
-
-// FIXME: We need them extracted in their original order (!!).
-// We also need to be able to get them keyed...
-// We *DO* need, [extracted, rest] = split(elements, keys)
-const CreateObjectFromObjectElements = (elements, existingO) => given((
-    {
-        [Symbols.Prototype]: PrototypeElement,
-        ...rest
-    } = elements,
-    Prototype = PrototypeElement ? PrototypeElement.value : null,
-    hadCallProperty = !!existingO && HasProperty(existingO, Symbols.Call),
-    hasCallProperty =
-        hadCallProperty ||
-        HasOwnProperty(rest, Symbols.Call) ||
-        HasProperty(PrototypeElement.value, Symbols.Call),
-    O = !existingO && hasCallProperty ? ØFunctionCreate(Prototype) :
-        !existingO && !hasCallProperty ? OrdinaryObjectCreate(Prototype) :
-        existingO && !hadCallProperty && hasCallProperty ? console.log("YIKES!") :
-        existingO) =>
-    GetOwnValues(rest, "every")
-        [I `::Array.prototype.map`](x => (console.log("gonna do", x), x))
-        [I `::Array.prototype.reduce`]
-            ((O, { key, value, ...rest }) =>
-                IsSymbol(key) && key.description === "..." ?
-                    CreateObjectFromDeclaration(value.definition(O), O) :
-                    I `Object.defineProperty` (O, key,
-                    {
-                        value: value instanceof RecursiveDefinition ?
-                            value.definition(O) :
-                            value,
-                        configurable: toPropertyDesctiptorOption(key, "configurable", rest, O),
-                        enumerable: toPropertyDesctiptorOption(key, "enumerable", rest, O),
-                        writable: toPropertyDesctiptorOption(key, "writable", rest, O),
-                    }), O));
-
-*/
 const ObjectAssignPropertyDescriptors = (toO, fromO) =>
     I `Object.defineProperties` (toO, I `Object.getOwnPropertyDescriptors` (fromO));
 
@@ -234,8 +149,10 @@ const CreateObjectFromObjectElements = given((
     (elements, existingO) => elements
         [I `::Array.prototype.reduce`]
             ((O, element) => AccommodateCallability(
-                IsPrototypeElement(element) ? I `Object.setPrototypeOf` (O, element.value) :
-                IsSpreadElement(element) ? CreateObjectFromDeclaration(element.value.definition(O), O) :
+                IsPrototypeElement(element) ?
+                    I `Object.setPrototypeOf` (O, element.value) :
+                IsSpreadElement(element) ?
+                    CreateObjectFromDeclaration(element.value.definition(O), O) :
                 given((
                     { key, value, ...rest } = element) =>
                 I `Object.defineProperty` (O, element.key,
