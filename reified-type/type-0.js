@@ -1,9 +1,10 @@
 const given = f => f();
 
-const { I } = require("@reified/ecma-262");
+const { I, GetMethod } = require("@reified/ecma-262");
 const { ø, Ø, SymbolEnum } = require("@reified/core");
 
-const PrimitiveHasInhabitants = require("./primitive-has-inhabitants");
+const { IsTypeAnnotation, TypeAnnotate } = require("./type-annotation");
+const PrimitiveDefinitions = require("./primitive-definitions");
 
 const Symbols = SymbolEnum(
     "Name",
@@ -43,8 +44,8 @@ module.exports = Ø
 
         // FIXME: We're expecting UnannotatedCall to exist to avoid using
         // Maybe<Function>.
-        [Ø.Call]: (T, thisArg, args) => IsAnnotation(args) ?
-            annotate(args, T) :
+        [Ø.Call]: (T, thisArg, args) => IsTypeAnnotation(args) ?
+            TypeAnnotate(args, T) :
             GetMethod(T, Symbols.UnannotatedCall)(T, thisArg, args),
 
         // Spread methods... Or is this the job of the class builder?...
@@ -53,21 +54,22 @@ module.exports = Ø
     [Ø `Symbols`]: ø(Symbols),
 
     [Ø `primitives`]: Ø(Type_0 => Ø(ø(
-        I `Object.entries` (PrimitiveHasInhabitants)
-            [I `::Array.prototype.map`] (([name, HasInhabitant]) =>
-            [
-                Ø(name),
-                Type_0
-                ({
-                    [Symbols.Name]: name,
-                    // Should we just do V => check(self, V)?
-                    [Symbols.Constructors]: [],
-                    [Symbols.Exports]: ø(),
-                    [Symbols.Methods]: ø(),
-                    [Symbols.HasInhabitant]: HasInhabitant,
-                    [Symbols.UnannotatedCall]: () => console.log("BAD")
-                })
-            ])))),
+        I `Object.entries` (PrimitiveDefinitions)
+            [I `::Array.prototype.map`]
+                (([name, [UnannotatedCall, HasInhabitant]]) =>
+                [
+                    Ø(name),
+                    Type_0
+                    ({
+                        [Symbols.Name]: name,
+                        // FIXME: Should it show up here too?
+                        [Symbols.Constructors]: [],
+                        [Symbols.Exports]: ø(),
+                        [Symbols.Methods]: ø(),
+                        [Symbols.HasInhabitant]: HasInhabitant,
+                        [Symbols.UnannotatedCall]: UnannotatedCall
+                    })
+                ])))),
 
     [Ø `primitiveof`]: Ø(Type0 => given((
         primitives = I `Object.values` (Type0.primitives)) =>
