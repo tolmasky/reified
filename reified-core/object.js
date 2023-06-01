@@ -194,6 +194,12 @@ exports.Ø = I `Object.assign` (Ø,
         [I `::Array.prototype.concat`]
             ([[Ø.Prototype, I `Object.getPrototypeOf` (O)]])),
 
+    enumerables: O => ø(GetOwnPropertyDescriptorEntries(O)
+        [I `::Array.prototype.filter`]
+            (([key, descriptor]) => descriptor.enumerable)
+        [I `::Array.prototype.map`]
+            (([key, descriptor]) => [Ø(key), descriptor.value])),
+
     Call: P(Symbols.Call).unenumerable,
     Prototype: P(Symbols.Prototype)
 });

@@ -80,8 +80,7 @@ module.exports = Ø
                 [I `::Array.prototype.find`]
                     (P => P[Symbols.HasInhabitant](P, value)))),
 
-// FIXME: this overrides the Prototype...
-//    ...Ø(({ primitives }) => Ø.from(primitives)),
+    ...Ø(({ primitives }) => Ø.enumerables(primitives)),
 
     [Ø `inhabitantof`]: (T, V) => T[Symbols.HasInhabitant](T, V),
 
