@@ -8,7 +8,7 @@ const PrimitiveDefinitions = require("./primitive-definitions");
 
 const Symbols = SymbolEnum(
     "Name",
-    "Constructors",
+    "Cases",
     "Exports",
     "Methods",
     "HasInhabitant",
@@ -66,7 +66,7 @@ module.exports = Ø
                     ({
                         [Symbols.Name]: name,
                         // FIXME: Should it show up here too?
-                        [Symbols.Constructors]: [],
+                        [Symbols.Cases]: [],
                         [Symbols.Exports]: [],
                         [Symbols.Methods]: [],
                         [Symbols.HasInhabitant]: HasInhabitant,
@@ -87,5 +87,10 @@ module.exports = Ø
     // Or is it, given((Constructor = ...)
     // [Ø `Constructor`]:
 
-    [Ø `Type0`]: Ø(Type0 => Type0)
+    [Ø `Type0`]: Ø(Type0 => Type0),
+
+    [Ø `Case`]: require("./type-data-case")
 });
+
+
+
