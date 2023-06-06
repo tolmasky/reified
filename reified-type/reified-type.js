@@ -47,7 +47,7 @@ const parseTypeData = (name, body) => Type
     [Symbols.Exports]: [],
     [Symbols.Methods]: [],
     [Symbols.HasInhabitant]: DataHasInhabitant,
-    [Symbols.UnannotatedCall]: (T, _, args) => construct(T, T[Symbols.Cases][0])
+    [Symbols.UnannotatedCall]: (T, _, args) => ConstructData(T, T[Symbols.Cases][0])
 });
 
 const toPrototypeM = M((T, C) => Ø
@@ -64,4 +64,10 @@ const toPrototypeM = M((T, C) => Ø
     }))
 }).prototype);
 
-const construct = (T, C) => Ø({ [Ø.Prototype]: toPrototypeM(T, C) });
+
+const ConstructData = given((
+    ConstructVariableData = (T, C) => Ø({ [Ø.Prototype]: toPrototypeM(T, C) }),
+    ConstructConstantData = M(ConstructVariableData)) =>
+        (T, C) => C.isConstant ?
+            ConstructConstantData(T, C) :
+            ConstructVariableData(T, C));

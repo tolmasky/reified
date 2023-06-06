@@ -16,6 +16,7 @@ module.exports = Ø(({ Type0, Symbols: TS }) => Type0
         [Ø.Prototype]: I `Object.create` (Case.prototype),
 
         [Ø `name`]: definition.name,
-        [Ø `symbol`]: Symbol(definition.name)
+        [Ø `symbol`]: Symbol(definition.name),
+        [Ø `isConstant`]: true
     })
 }));
