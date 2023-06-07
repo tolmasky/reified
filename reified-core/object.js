@@ -23,7 +23,7 @@ const
 
 const SymbolEnum = require("./symbol-enum");
 
-const M = require("./cached");
+const M = require("./memoized");
 const SymbolBijection = require("./symbol-bijection");
 
 const ø = (...sources) => sources
@@ -186,7 +186,6 @@ const GetOwnObjectElements = O => ø(
 
 exports.Ø = I `Object.assign` (Ø,
 {
-    // Do we want the Prototype from this?... YES
     // FIXME: Need ot make sure the property has the same properties, instead of just Ø()ing it
     from: O => ø(GetOwnPropertyDescriptorEntries(O)
         [I `::Array.prototype.map`]
