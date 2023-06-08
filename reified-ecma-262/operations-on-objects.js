@@ -3,7 +3,8 @@ const given = f => f();
 const I = require("./intrinsics");
 const { IsNull, IsUndefined, IsFunctionObject } = require("./types-and-values");
 
-const fail = require("@reified/core/fail");
+// FIXME: Avoid circular dependencies...
+const fail = { type: message => { throw TypeError(message) } };//require("@reified/core/fail");
 
 
 // https://tc39.es/ecma262/#sec-getv
