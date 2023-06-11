@@ -15,16 +15,9 @@ const
     OrdinaryFunctionCreate
 } = require("@reified/ecma-262");
 
-const
-{
-    IsTaggedCall,
-    ToResolvedString
-} = require("./function-objects");
-
-const SymbolEnum = require("./symbol-enum");
-
 const M = require("./memoized");
 const SymbolBijection = require("./symbol-bijection");
+
 
 const ø = (...sources) => sources
     [I `::Array.prototype.reduce`] ((O, source) =>
@@ -37,6 +30,15 @@ const ø = (...sources) => sources
         I `Object.create` (null));
 
 exports.ø = ø;
+
+// These have to come afterexporting ø so they can see it.
+const
+{
+    IsTaggedCall,
+    ToResolvedString
+} = require("./function-objects");
+
+const SymbolEnum = require("./symbol-enum");
 
 const Symbols = SymbolEnum("Call", "Prototype");
 
