@@ -16,8 +16,6 @@ const
 } = require("@reified/ecma-262");
 
 const M = require("./memoized");
-const SymbolBijection = require("./symbol-bijection");
-
 
 const ø = (...sources) => sources
     [I `::Array.prototype.reduce`] ((O, source) =>
@@ -30,6 +28,8 @@ const ø = (...sources) => sources
         I `Object.create` (null));
 
 exports.ø = ø;
+
+const SymbolBijection = require("./symbol-bijection");
 
 // These have to come afterexporting ø so they can see it.
 const
