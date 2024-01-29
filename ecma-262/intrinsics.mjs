@@ -1,5 +1,18 @@
 import { ArrayMap, ArrayFlatMap, ArrayFilter, SetHas, StringLastIndexOf, StringSubstr } from "./bootstrap.mjs";
-import { IsPrimitive, IsString } from "./types-and-values.mjs";
+import
+{
+    IsPrimitive,
+    IsBoolean,
+    IsString,
+    IsSymbol,
+    IsNumber,
+    IsBigInt,
+    IsObject
+} from "./types-and-values.mjs";
+import
+{
+    "Array.isArray" as IsArray
+} from "./array-objects.mjs";
 import
 {
     GetOwnPropertyDescriptorEntries,
@@ -48,15 +61,25 @@ const toI = given((
                         ...toIEntries(V, uPrefix, uVisited)
                     ]))))) => O => ObjectFromEntries(toIEntries(O, "", new Set())));
 
-const CLASSES = { "string": "String" };
-
-export default ObjectAssign(function I(strings, self)
-{
-    return  strings[0] !== "" ? I[strings[0]] :
-            StringLastIndexOf(strings[1], ".") === 0 ?
-                (...args) => Call(I[`${CLASSES[typeof self]}.prototype${strings[1]}`], self, ...args) :
-            (...args) => Call(I[StringSubstr(strings[1], 1)], self, ...args);
-}, toI(globalThis, "global"));
+export default given((
+    toTypedPrefix = value =>
+        IsBoolean(value) ? "Boolean.prototype" :
+        IsString(value) ? "String.prototype" :
+        IsSymbol(value) ? "Symbol.prototype" :
+        IsNumber(value) ? "Number.prototype" :
+        IsBigInt(value) ? "BigInt.prototype" :
+        IsArray(value) ? "Array.prototype" :
+        IsObject(value) ? "Object.prototype" :
+        fail("OH NO"),
+    I = (strings, self) =>
+        strings[0] !== "" ? I[strings[0]] : given((
+            explicit = StringLastIndexOf(strings[1], ".") !== 0,
+            signature = explicit ?
+                StringSubstr(strings[1], 1) :
+                `${toTypedPrefix(self)}${strings[1]}`,
+            f = I[signature]) =>
+                (...args) => Call(f, self, ...args))) =>
+    ObjectAssign(I, toI(globalThis)));
 
 /*
 const I = [{ Element }).map
