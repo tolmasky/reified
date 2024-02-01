@@ -12,7 +12,8 @@ import
 } from "./types-and-values.mjs";
 import
 {
-    "Array.prototype.filter" as ArrayPrototypeFilter
+    "Array.prototype.filter" as ArrayPrototypeFilter,
+    "Array.prototype.map" as ArrayPrototypeMap
 } from "./array-objects.mjs";
 import
 {
@@ -24,6 +25,7 @@ import
     "Object.freeze" as ObjectFreeze,
     "Object.fromEntries" as ObjectFromEntries,
     "Object.hasOwn" as ObjectHasOwn,
+    "Object.prototype" as ObjectPrototype,
     "Function.prototype.call" as FunctionPrototypeCall,
     "Function.prototype.bind" as FunctionPrototypeBind,
 } from "./fundamental-objects.mjs";
@@ -87,8 +89,9 @@ const Iƒ = given((
                 ObjectFromEntries(ArrayFlatMap(ObjectEntries(I), toƒCallOnEntry)));
 
 ObjectDefineProperties(
-    I["Object.prototype"],
-    ObjectFromEntries(ArrayMap(
+    ObjectPrototype,
+    ObjectFromEntries(ƒCall(
+        ArrayPrototypeMap,
         ObjectEntries(Iƒ),
         ([key, F]) =>
         [

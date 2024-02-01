@@ -30,3 +30,11 @@ export { ArrayPrototype as "Array.prototype" };
 const ArrayPrototypeFilter = Array.prototype.filter;
 
 export { ArrayPrototypeFilter as "Array.prototype.filter" };
+
+
+// 23.1.3.21 Array.prototype.map ( callbackfn [ , thisArg ] )
+// https://tc39.es/ecma262/#sec-array.prototype.map
+
+const ArrayPrototypeMap = Array.prototype.map;
+
+export { ArrayPrototypeMap as "Array.prototype.map" };

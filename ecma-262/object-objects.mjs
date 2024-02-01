@@ -122,3 +122,11 @@ export const GetOwnPropertyDescriptorEntries = (O, type) =>
 const ObjectHasOwn = Object.hasOwn;
 
 export { ObjectHasOwn as "Object.hasOwn" };
+
+
+// 20.1.3 Properties of the Object Prototype Object
+// https://tc39.es/ecma262/#sec-properties-of-the-object-prototype-object
+
+const ObjectPrototype = Object.prototype;
+
+export { ObjectPrototype as "Object.prototype" };
