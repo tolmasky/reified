@@ -109,16 +109,6 @@ export const GetOwnPropertyKeys = (O, type) =>
     ] :
     fail("oh no...");
 
-// Convenience method.
-// FIXME: Let's get rid of the ArrayMap dependency. Either this shouldn't be in
-// this file since it's not a real method, or we should just use
-// ArrayPrototypeMap, since it will exist by the time this is called. I guess
-// we could also pass map in.
-export const GetOwnPropertyDescriptorEntries = (O, type) =>
-    ArrayMap(
-        GetOwnPropertyKeys(O, type),
-        K => [K, ObjectGetOwnPropertyDescriptor(O, K)]);
-
 
 // 20.1.2.14 Object.hasOwn ( O, P )
 // https://tc39.es/ecma262/#sec-object.hasown

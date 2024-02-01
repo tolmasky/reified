@@ -4,10 +4,8 @@ import
 {
     IsArray,
     IsCallable,
-    IsFunctionObject,
     IsString,
     IsSymbol,
-    GetOwnPropertyDescriptorEntries,
     HasProperty,
     HasOwnProperty,
     OrdinaryFunctionCreate
@@ -15,6 +13,7 @@ import
 
 import
 {
+    GetOwnPropertyDescriptorEntries,
     GetOwnValues,
     IsTaggedCall,
     ToResolvedString
@@ -33,3 +32,13 @@ export const ø = (...sources) => sources
                 (Oø, I `Object.getOwnPropertyDescriptors` (source)),
         I `Object.create` (null));
 
+
+export const Ø = I `Object.assign` ((...args) =>
+    IsTaggedCall(args) ? P(ToResolvedString(args)) :
+    IsString(args[0]) ? P(args[0]) :
+    IsSymbol(args[0]) ? P(args[0]) :
+    IsCallable(args[0]) ? new RecursiveDefinition(args[0]) :
+    CreateObjectFromDeclaration(args[0]),
+    { /*Symbols*/ });
+
+export default Ø;

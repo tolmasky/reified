@@ -11,6 +11,7 @@ import
     IsNull,
     IsString,
     IsUndefined,
+    "Object.getOwnPropertyDescriptor" as ObjectGetOwnPropertyDescriptor,
     "Object.hasOwn" as ObjectHasOwn
 } from "./ecma-262.mjs";
 
@@ -22,6 +23,14 @@ export const GetOwnValues = (O, type) => ƒCall(
     GetOwnPropertyKeys(O, type),
     key => O[key]);
 
+// GetOwnPropertyDescriptorEntries ( O, type )
+export const GetOwnPropertyDescriptorEntries = (O, type) => ƒCall(
+    ArrayPrototypeMap,
+    GetOwnPropertyKeys(O, type),
+    K => [K, ObjectGetOwnPropertyDescriptor(O, K)]);
+
+
+// HasMethod ( V, P )
 export const HasMethod = (V, P) => given((
     value = GetV(V, P)) =>
     IsNull(value) || IsUndefined(value) ? false :

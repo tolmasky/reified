@@ -1,17 +1,16 @@
 import
 {
-    IsPrimitive,
     IsBoolean,
+    IsCallable,
+    IsPrimitive,
     IsString,
     IsSymbol,
     IsNumber,
     IsBigInt,
     IsObject,
-    IsFunctionObject,
     "Array.prototype.filter" as ArrayPrototypeFilter,
     "Array.prototype.flatMap" as ArrayPrototypeFlatMap,
     "Array.prototype.map" as ArrayPrototypeMap,
-    GetOwnPropertyDescriptorEntries,
     "Object.assign" as ObjectAssign,
     "Object.create" as ObjectCreate,
     "Object.defineProperties" as ObjectDefineProperties,
@@ -26,6 +25,12 @@ import
     "Set.prototype.add" as SetPrototypeAdd,
     "Set.prototype.has" as SetPrototypeHas
 } from "@reified/ecma-262";
+
+import
+{
+    GetOwnPropertyDescriptorEntries
+} from "@reified/ecma-262/extensions.mjs";
+
 
 const given = f => f();
 
@@ -67,7 +72,7 @@ const I = given((
 const Iƒ = given((
     Aø = [],
     toƒCallOnEntry = ([key, value]) =>
-        !IsFunctionObject(value) ? Aø : given((
+        !IsCallable(value) ? Aø : given((
             S = Symbol(key),
             toPrimitive = { value: () => S },
             name = { value: `::${key}` },

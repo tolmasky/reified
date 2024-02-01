@@ -46,8 +46,8 @@ export const IsObject = value =>
 
 export const IsPlainObject = value => !IsNull(value) && typeof value === "object";
 
-// FIXME: Do we need this given that we can IsCallable?
-export const IsFunctionObject = value => typeof value === "function";
+// FIXME: Use IsCallable here.
+const IsFunctionObject = value => typeof value === "function";
 
 const ObjectGetPrototypeOf = Object.getPrototypeOf;
 
