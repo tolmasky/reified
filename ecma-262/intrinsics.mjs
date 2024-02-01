@@ -32,9 +32,9 @@ const given = f => f();
 const SetAppended = (set, item) => (set.add(item), set);
 
 const ø = properties => ObjectCreate(null, properties);
-const Aø = ObjectFreeze([]);
 
 const I = given((
+    Aø = [],
     toAccess = (hasPrefix, K) =>
         K === false ? "" :
         IsString(K) ? hasPrefix ? `.${K}` : K :
@@ -77,22 +77,25 @@ const Iƒ = given((
             F = ObjectDefineProperties(
                 (...args) => ƒCall(value, ...args),
                 { [I["Symbol.toPrimitive"]]: toPrimitive, name })) =>
-            [[key, [S, F]]])) =>
+            [[key, F]])) =>
                 ObjectFromEntries(ArrayFlatMap(ObjectEntries(I), toƒCallOnEntry)));
 
 ObjectDefineProperties(
     I["Object.prototype"],
     ObjectFromEntries(ArrayMap(
         ObjectEntries(Iƒ),
-        ([key, [S, F]]) =>
-        [S, { get() { return (...args) => F(this, ...args) } }])));
+        ([key, F]) =>
+        [
+            F[I["Symbol.toPrimitive"]](),
+            { get() { return (...args) => F(this, ...args) } }
+        ])));
 
 export default given((
-    StringPrototypeStartsWith = Iƒ["String.prototype.startsWith"][1],
-    StringPrototypeSubstr = Iƒ["String.prototype.substr"][1]) =>
+    StringPrototypeStartsWith = Iƒ["String.prototype.startsWith"],
+    StringPrototypeSubstr = Iƒ["String.prototype.substr"]) =>
     ([key]) =>
         StringPrototypeStartsWith(key, "::") ?
-            Iƒ[StringPrototypeSubstr(key, 2)][1] :
+            Iƒ[StringPrototypeSubstr(key, 2)] :
             I[key]);
 
 /*
