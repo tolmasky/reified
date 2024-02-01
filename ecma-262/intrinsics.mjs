@@ -7,16 +7,10 @@ import
     IsNumber,
     IsBigInt,
     IsObject,
-    IsFunctionObject
-} from "./types-and-values.mjs";
-import
-{
+    IsFunctionObject,
     "Array.prototype.filter" as ArrayPrototypeFilter,
     "Array.prototype.flatMap" as ArrayPrototypeFlatMap,
-    "Array.prototype.map" as ArrayPrototypeMap
-} from "./array-objects.mjs";
-import
-{
+    "Array.prototype.map" as ArrayPrototypeMap,
     GetOwnPropertyDescriptorEntries,
     "Object.assign" as ObjectAssign,
     "Object.create" as ObjectCreate,
@@ -28,13 +22,10 @@ import
     "Object.prototype" as ObjectPrototype,
     "Function.prototype.call" as FunctionPrototypeCall,
     "Function.prototype.bind" as FunctionPrototypeBind,
-} from "./fundamental-objects.mjs";
-import
-{
     Set,
     "Set.prototype.add" as SetPrototypeAdd,
     "Set.prototype.has" as SetPrototypeHas
-} from "./set-objects.mjs";
+} from "./ecma-262.mjs";
 
 const given = f => f();
 

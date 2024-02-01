@@ -31,5 +31,3 @@ const StringPrototypeSubstr = String.prototype.substr;
 // const StringPrototypeLastIndexOf = String.prototype.lastIndexOf;
 
 export const StringLastIndexOf = (...args) => Call(StringPrototypeLastIndexOf, ...args);
-
-export * from "./types-and-values.mjs";
