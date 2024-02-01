@@ -9,6 +9,11 @@ export * from "./6-ecmascript-data-types-and-values.mjs";
 export * from "./7-abstract-operations.mjs";
 
 
+// 10 Ordinary and Exotic Object Behaviors
+// https://tc39.es/ecma262/#sec-ordinary-and-exotic-objects-behaviours
+export * from "./10-ordinary-and-exotic-object-behaviors.mjs";
+
+
 // 20 Fundamental Objects
 // https://tc39.es/ecma262/#sec-fundamental-objects
 export * from "./20-fundamental-objects.mjs";

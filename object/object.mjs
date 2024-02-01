@@ -21,7 +21,7 @@ import
     GetOwnPropertyDescriptorEntries,
     HasProperty,
     HasOwnProperty,
-//    OrdinaryFunctionCreate
+    OrdinaryFunctionCreate
 } from "@reified/ecma-262";
 import { GetOwnValues } from "@reified/ecma-262/extensions.mjs";
 
