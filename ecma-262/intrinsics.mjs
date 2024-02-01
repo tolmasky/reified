@@ -1,4 +1,3 @@
-import { ArrayMap, ArrayFlatMap } from "./bootstrap.mjs";
 import
 {
     IsPrimitive,
@@ -13,6 +12,7 @@ import
 import
 {
     "Array.prototype.filter" as ArrayPrototypeFilter,
+    "Array.prototype.flatMap" as ArrayPrototypeFlatMap,
     "Array.prototype.map" as ArrayPrototypeMap
 } from "./array-objects.mjs";
 import
@@ -61,13 +61,14 @@ const I = given((
     toIEntries = (V, prefix, visited) =>
         IsPrimitive(V) ? Aø :
         ƒCall(SetPrototypeHas, visited, V) ? Aø : given((
-        uVisited = SetAppended(visited, V)) =>
-            ArrayFlatMap(
-                GetOwnPropertyDescriptorEntries(V, "STRING+SYMBOL"),
-                ([K, D]) => ArrayFlatMap(
-                    fromDescriptor(D),
-                    ([DK, V]) => given((
-                        uPrefix = toAccessPath(prefix, K, DK)) =>
+        uVisited = SetAppended(visited, V)) => ƒCall(
+            ArrayPrototypeFlatMap,
+            GetOwnPropertyDescriptorEntries(V, "STRING+SYMBOL"),
+            ([K, D]) => ƒCall(
+                ArrayPrototypeFlatMap,
+                fromDescriptor(D),
+                ([DK, V]) => given((
+                    uPrefix = toAccessPath(prefix, K, DK)) =>
                     [
                         [uPrefix, V],
                         ...toIEntries(V, uPrefix, uVisited)
@@ -86,7 +87,10 @@ const Iƒ = given((
                 (...args) => ƒCall(value, ...args),
                 { [I["Symbol.toPrimitive"]]: toPrimitive, name })) =>
             [[key, F]])) =>
-                ObjectFromEntries(ArrayFlatMap(ObjectEntries(I), toƒCallOnEntry)));
+                ObjectFromEntries(ƒCall(
+                    ArrayPrototypeFlatMap,
+                    ObjectEntries(I),
+                    toƒCallOnEntry)));
 
 ObjectDefineProperties(
     ObjectPrototype,

@@ -32,6 +32,14 @@ const ArrayPrototypeFilter = Array.prototype.filter;
 export { ArrayPrototypeFilter as "Array.prototype.filter" };
 
 
+// 23.1.3.14 Array.prototype.flatMap ( mapperFunction [ , thisArg ] )
+// https://tc39.es/ecma262/#sec-array.prototype.flatmap
+
+const ArrayPrototypeFlatMap = Array.prototype.flatMap;
+
+export { ArrayPrototypeFlatMap as "Array.prototype.flatMap" };
+
+
 // 23.1.3.21 Array.prototype.map ( callbackfn [ , thisArg ] )
 // https://tc39.es/ecma262/#sec-array.prototype.map
 
