@@ -2,7 +2,13 @@
 // https://tc39.es/ecma262/#sec-testing-and-comparison-operations
 
 import { given, ƒCall, ƒCopy } from "./utilities.mjs";
-import { IsObject, IsString, IsSymbol } from "./6-ecmascript-data-types-and-values.mjs";
+import
+{
+    IsObject,
+    IsString,
+    IsSymbol
+} from "./6-ecmascript-data-types-and-values.mjs";
+
 
 // 7.2.2 IsArray ( argument )
 // https://tc39.es/ecma262/#sec-isarray
