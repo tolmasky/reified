@@ -98,8 +98,8 @@ ObjectDefineProperties(
 
 export default given((
     StringPrototypeStartsWith = Iƒ["String.prototype.startsWith"],
-    StringPrototypeSubstr = Iƒ["String.prototype.substr"]) =>
+    StringPrototypeSubstring = Iƒ["String.prototype.substring"]) =>
     ([key]) =>
         StringPrototypeStartsWith(key, "::") ?
-            Iƒ[StringPrototypeSubstr(key, 2)] :
+            Iƒ[StringPrototypeSubstring(key, 2)] :
             I[key]);

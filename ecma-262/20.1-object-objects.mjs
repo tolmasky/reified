@@ -1,8 +1,6 @@
 // 20.1 Object Objects
 // https://tc39.es/ecma262/#sec-object-objects
 
-import { ArrayMap } from "./bootstrap.mjs";
-
 
 // 20.1.1.1 Object ( [ value ] )
 // https://tc39.es/ecma262/#sec-object-value
