@@ -1,7 +1,12 @@
+// 20.1 Object Objects
+// https://tc39.es/ecma262/#sec-object-objects
+
 import { ArrayMap } from "./bootstrap.mjs";
 
 
-const Object = globalThis.Object;
+// 20.1.1.1 Object ( [ value ] )
+// https://tc39.es/ecma262/#sec-object-value
+export const Object = globalThis.Object;
 
 
 // 20.1.2.1 Object.assign ( target, ...sources )

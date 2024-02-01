@@ -1,4 +1,4 @@
-import { ArrayMap, ArrayFlatMap, ArrayFilter, SetHas, StringLastIndexOf, StringSubstr } from "./bootstrap.mjs";
+import { ArrayMap, ArrayFlatMap, ArrayFilter, StringLastIndexOf } from "./bootstrap.mjs";
 import
 {
     IsPrimitive,
@@ -23,11 +23,19 @@ import
     "Object.entries" as ObjectEntries,
     "Object.freeze" as ObjectFreeze,
     "Object.fromEntries" as ObjectFromEntries,
-    "Object.hasOwn" as ObjectHasOwn
-} from "./object-objects.mjs";
-import { Set } from "./set-objects.mjs";
+    "Object.hasOwn" as ObjectHasOwn,
+    "Function.prototype.call" as FunctionPrototypeCall,
+    "Function.prototype.bind" as FunctionPrototypeBind,
+} from "./fundamental-objects.mjs";
+import
+{
+    Set,
+    "Set.prototype.has" as SetPrototypeHas
+} from "./set-objects.mjs";
 
 const given = f => f();
+
+const ƒCall = FunctionPrototypeCall.bind(FunctionPrototypeCall);
 
 const SetAppended = (set, item) => (set.add(item), set);
 
@@ -49,7 +57,7 @@ const I = given((
     ], x => !!x),
     toIEntries = (V, prefix, visited) =>
         IsPrimitive(V) ? Aø :
-        SetHas(visited, V) ? Aø : given((
+        ƒCall(SetPrototypeHas, visited, V) ? Aø : given((
         uVisited = SetAppended(visited, V)) =>
             ArrayFlatMap(
                 GetOwnPropertyDescriptorEntries(V, "STRING+SYMBOL"),
@@ -66,9 +74,6 @@ const I = given((
 
 const Iƒ = given((
     Aø = [],
-    FunctionPrototypeCall = I["Function.prototype.call"],
-    FunctionPrototypeBind = I["Function.prototype.bind"],
-    ƒCall = FunctionPrototypeCall.bind(FunctionPrototypeCall),
     toƒCallOnEntry = ([key, value]) =>
         !IsFunctionObject(value) ? Aø : given((
             S = Symbol(key),
@@ -97,107 +102,3 @@ export default given((
         StringPrototypeStartsWith(key, "::") ?
             Iƒ[StringPrototypeSubstr(key, 2)] :
             I[key]);
-
-/*
-
-        // FIXME: Do we want this still? It is a shorthand for
-        StringPrototypeStartsWith(key, ".") ?
-            (...args) => ƒCall(StringPrototypeSubstr(key, 1), ...args) :
-
-/*        ArrayFlatMap(
-            ArrayFilter(
-                ObjectEntries(I),
-                ([key, value]) => IsFunctionObject(value)),
-            ([key, value]) => [key, [Symbol(key), ƒCallOn(value)]])));*/
-console.log(Iƒ);
-
-/*
-
-
-export default given((
-    called = false,
-    toBind = null,
-    Bind = global.Symbol && Symbol("Bind"),
-    FunctionPrototypeCall = I["Function.prototype.call"],
-    FunctionPrototypeBind = I["Function.prototype.bind"],
-    ƒCall = FunctionPrototypeCall.bind(FunctionPrototypeCall),
-    ƒCallOn = F => (...args) => ƒCall(F, ...args);
-    // In the past, we did this at initial call time, but since this should only
-    // be used for debug, just do it immediately.
-    I["Object.defineProperty"](
-        I["Object.prototype"],
-        Bind,
-        { get () { return 𝑏Call(FunctionPrototypeBind, toBind, this); } }),
-    StringPrototypeStartsWith = ƒCallOn(I["String.prototype.startsWith"]),
-    StringPrototypeSubstr = ƒCallOn(I["String.prototype.substr"]),
-    ) => (
-    ([key]) => (
-        StringPrototypeStartsWith(key, "::") ?
-            (toBind = I[StringPrototypeSubstr(key, 2)], Bind) :
-        // FIXME: Do we want this still? It is a shorthand for
-        StringPrototypeStartsWith(key, ".") ?
-            (...args) => ƒCall(StringPrototypeSubstr(key, 1), ...args) :
-        I[key])));
-
-/*
-
-
-const Call = (Function.prototype.call).bind(Function.prototype.call);
-
-export default given((
-    toTypedPrefix = value =>
-        IsBoolean(value) ? "Boolean.prototype" :
-        IsString(value) ? "String.prototype" :
-        IsSymbol(value) ? "Symbol.prototype" :
-        IsNumber(value) ? "Number.prototype" :
-        IsBigInt(value) ? "BigInt.prototype" :
-        IsArray(value) ? "Array.prototype" :
-        IsObject(value) ? "Object.prototype" :
-        fail("OH NO"),
-    I = (strings, self) =>
-        strings[0] !== "" ? I[strings[0]] : given((
-            explicit = StringLastIndexOf(strings[1], ".") !== 0,
-            signature = explicit ?
-                StringSubstr(strings[1], 1) :
-                `${toTypedPrefix(self)}${strings[1]}`,
-            f = I[signature]) =>
-                (...args) => Call(f, self, ...args))) =>
-    ObjectAssign(I, toI(globalThis)));
-
-/*
-const I = [{ Element }).map
-{
-    "Element.prototype.hasAttribute": Element.prototype.hasAttribute,
-    "Element.prototype.setAttribute": Element.prototype.setAttribute
-}*/
-
-/*
-
-
-
-
-
-exports.GetOwnPropertyDescriptorEntries = GetOwnPropertyDescriptorEntries;
-
-const I = given((
-    called = false,
-    toBind = null,
-    Bind = global.Symbol && Symbol("Bind")) => (
-    ([key]) => (
-        !called && I["Object.defineProperty"](
-            I["Object.prototype"],
-            Bind,
-            { get () { return I.Call(I["Function.prototype.bind"], toBind, this); } }),
-        called = true,
-        I.Call(I["String.prototype.startsWith"], key, "::") ?
-            ((toBind = I[key.substr(2)]), Bind) :
-        I.Call(I["String.prototype.startsWith"], key, ".") ?
-            (...args) => I.Call(I[key.substr(1)], ...args) :
-        I[key])));
-
-const ArrayPrototypeMap = Arrat.prototype.map;
-const ObjectGetOwnEntries = Object.entries;
-
-
-const ObjectGetOwnPropertyNames = Object.prototype.getOwnPropertyNames;
-*/
