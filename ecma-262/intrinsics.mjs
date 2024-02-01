@@ -73,7 +73,7 @@ const Iƒ = given((
         !IsFunctionObject(value) ? Aø : given((
             S = Symbol(key),
             toPrimitive = { value: () => S },
-            name = { value: key },
+            name = { value: `::${key}` },
             F = ObjectDefineProperties(
                 (...args) => ƒCall(value, ...args),
                 { [I["Symbol.toPrimitive"]]: toPrimitive, name })) =>
