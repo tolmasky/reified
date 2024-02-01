@@ -7,7 +7,8 @@ import
     IsSymbol,
     IsNumber,
     IsBigInt,
-    IsObject
+    IsObject,
+    IsFunctionObject
 } from "./types-and-values.mjs";
 import
 {
@@ -18,6 +19,8 @@ import
     GetOwnPropertyDescriptorEntries,
     "Object.assign" as ObjectAssign,
     "Object.create" as ObjectCreate,
+    "Object.defineProperties" as ObjectDefineProperties,
+    "Object.entries" as ObjectEntries,
     "Object.freeze" as ObjectFreeze,
     "Object.fromEntries" as ObjectFromEntries,
     "Object.hasOwn" as ObjectHasOwn
@@ -26,14 +29,12 @@ import { Set } from "./set-objects.mjs";
 
 const given = f => f();
 
-const Call = (Function.prototype.call).bind(Function.prototype.call);
-
 const SetAppended = (set, item) => (set.add(item), set);
 
 const ø = properties => ObjectCreate(null, properties);
 const Aø = ObjectFreeze([]);
 
-const toI = given((
+const I = given((
     toAccess = (hasPrefix, K) =>
         K === false ? "" :
         IsString(K) ? hasPrefix ? `.${K}` : K :
@@ -59,7 +60,86 @@ const toI = given((
                     [
                         [uPrefix, V],
                         ...toIEntries(V, uPrefix, uVisited)
-                    ]))))) => O => ObjectFromEntries(toIEntries(O, "", new Set())));
+                    ])))),
+    toI = O => ObjectFromEntries(toIEntries(O, "", new Set()))) =>
+    toI(globalThis));
+
+const Iƒ = given((
+    Aø = [],
+    FunctionPrototypeCall = I["Function.prototype.call"],
+    FunctionPrototypeBind = I["Function.prototype.bind"],
+    ƒCall = FunctionPrototypeCall.bind(FunctionPrototypeCall),
+    toƒCallOnEntry = ([key, value]) =>
+        !IsFunctionObject(value) ? Aø : given((
+            S = Symbol(key),
+            toPrimitive = { value: () => S },
+            name = { value: key },
+            F = ObjectDefineProperties(
+                (...args) => ƒCall(value, ...args),
+                { [I["Symbol.toPrimitive"]]: toPrimitive, name })) =>
+            [[key, [S, F]]])) =>
+                ObjectFromEntries(ArrayFlatMap(ObjectEntries(I), toƒCallOnEntry)));
+
+ObjectDefineProperties(
+    I["Object.prototype"],
+    ObjectFromEntries(ArrayMap(
+        ObjectEntries(Iƒ),
+        ([key, [S, F]]) =>
+        [S, { get() { return (...args) => F(this, ...args) } }])));
+
+export default given((
+    StringPrototypeStartsWith = Iƒ["String.prototype.startsWith"][1],
+    StringPrototypeSubstr = Iƒ["String.prototype.substr"][1]) =>
+    ([key]) =>
+        StringPrototypeStartsWith(key, "::") ?
+            Iƒ[StringPrototypeSubstr(key, 2)][1] :
+            I[key]);
+
+/*
+
+        // FIXME: Do we want this still? It is a shorthand for
+        StringPrototypeStartsWith(key, ".") ?
+            (...args) => ƒCall(StringPrototypeSubstr(key, 1), ...args) :
+
+/*        ArrayFlatMap(
+            ArrayFilter(
+                ObjectEntries(I),
+                ([key, value]) => IsFunctionObject(value)),
+            ([key, value]) => [key, [Symbol(key), ƒCallOn(value)]])));*/
+console.log(Iƒ);
+
+/*
+
+
+export default given((
+    called = false,
+    toBind = null,
+    Bind = global.Symbol && Symbol("Bind"),
+    FunctionPrototypeCall = I["Function.prototype.call"],
+    FunctionPrototypeBind = I["Function.prototype.bind"],
+    ƒCall = FunctionPrototypeCall.bind(FunctionPrototypeCall),
+    ƒCallOn = F => (...args) => ƒCall(F, ...args);
+    // In the past, we did this at initial call time, but since this should only
+    // be used for debug, just do it immediately.
+    I["Object.defineProperty"](
+        I["Object.prototype"],
+        Bind,
+        { get () { return 𝑏Call(FunctionPrototypeBind, toBind, this); } }),
+    StringPrototypeStartsWith = ƒCallOn(I["String.prototype.startsWith"]),
+    StringPrototypeSubstr = ƒCallOn(I["String.prototype.substr"]),
+    ) => (
+    ([key]) => (
+        StringPrototypeStartsWith(key, "::") ?
+            (toBind = I[StringPrototypeSubstr(key, 2)], Bind) :
+        // FIXME: Do we want this still? It is a shorthand for
+        StringPrototypeStartsWith(key, ".") ?
+            (...args) => ƒCall(StringPrototypeSubstr(key, 1), ...args) :
+        I[key])));
+
+/*
+
+
+const Call = (Function.prototype.call).bind(Function.prototype.call);
 
 export default given((
     toTypedPrefix = value =>
