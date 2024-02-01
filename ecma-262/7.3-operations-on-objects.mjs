@@ -9,6 +9,7 @@ import
 } from "./6-ecmascript-data-types-and-values.mjs";
 import { IsCallable } from "./7.2-testing-and-comparison-operations.mjs";
 
+
 // 7.3.3 Get ( O, P )
 // https://tc39.es/ecma262/#sec-get-o-p
 // FIXME: Do we need to do anything here to make sure O is an object?
