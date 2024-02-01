@@ -1,4 +1,4 @@
-import { ArrayMap, ArrayFlatMap, ArrayFilter, StringLastIndexOf } from "./bootstrap.mjs";
+import { ArrayMap, ArrayFlatMap } from "./bootstrap.mjs";
 import
 {
     IsPrimitive,
@@ -12,7 +12,7 @@ import
 } from "./types-and-values.mjs";
 import
 {
-    "Array.isArray" as IsArray
+    "Array.prototype.filter" as ArrayPrototypeFilter
 } from "./array-objects.mjs";
 import
 {
@@ -49,12 +49,13 @@ const I = given((
         `[@@${K.description.substr("Symbol.".length)}]`,
     toAccessPath = (prefix, K, DK) =>
         `${prefix}${toAccess(!!prefix, K)}${toAccess(true, DK)}`,
-    fromDescriptor = D => ArrayFilter
+    toExtantItems = array => ƒCall(ArrayPrototypeFilter, array, x => !!x),
+    fromDescriptor = D => toExtantItems
     ([
         ObjectHasOwn(D, "value") && [false, D.value],
         ObjectHasOwn(D, "get") && ["[[Get]]", D.get],
         ObjectHasOwn(D, "set") && ["[[Set]]", D.set]
-    ], x => !!x),
+    ]),
     toIEntries = (V, prefix, visited) =>
         IsPrimitive(V) ? Aø :
         ƒCall(SetPrototypeHas, visited, V) ? Aø : given((
