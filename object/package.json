@@ -1,8 +1,8 @@
 {
-  "name": "@reified/host",
+  "name": "@reified/object",
   "version": "1.0.0-alpha.4",
   "description": "",
-  "main": "host.mjs",
+  "main": "object.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

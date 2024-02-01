@@ -1,6 +1,4 @@
-const given = f => f();
-
-const
+import
 {
     I,
     IsArray,
@@ -14,6 +12,13 @@ const
     HasOwnProperty,
     OrdinaryFunctionCreate
 } = require("@reified/ecma-262");
+
+import { I } from "@reified/host/intrinsics.mjs";
+
+import { ø } from "./null-prototype.mjs";
+
+const given = f => f();
+
 
 const M = require("./memoized");
 
