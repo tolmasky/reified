@@ -18,3 +18,5 @@ export const ƒCopy = F => ObjectDefineProperties(function (...args)
 {
     return ƒCall(F, this, ...args);
 }, { name: ObjectGetOwnPropertyDescriptor(F, "name") });
+
+export const fail = { type: message => { throw TypeError(message) } };
