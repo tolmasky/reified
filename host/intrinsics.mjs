@@ -25,7 +25,7 @@ import
     Set,
     "Set.prototype.add" as SetPrototypeAdd,
     "Set.prototype.has" as SetPrototypeHas
-} from "./ecma-262.mjs";
+} from "@reified/ecma-262";
 
 const given = f => f();
 
