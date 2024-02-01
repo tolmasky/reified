@@ -1,2 +1,2 @@
 
-export * as I from "./intrinsics.mjs";
+export { default as I } from "./intrinsics.mjs";
