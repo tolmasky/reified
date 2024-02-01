@@ -8,6 +8,14 @@
 export const Set = globalThis.Set;
 
 
+// 24.2.3.1 Set.prototype.add ( value )
+// https://tc39.es/ecma262/#sec-set.prototype.add
+
+const SetPrototypeAdd = Set.prototype.add;
+
+export { SetPrototypeAdd as "Set.prototype.add" };
+
+
 // 24.2.3.7 Set.prototype.has
 // https://tc39.es/ecma262/#sec-set.prototype.has
 

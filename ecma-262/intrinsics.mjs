@@ -32,16 +32,13 @@ import
 import
 {
     Set,
+    "Set.prototype.add" as SetPrototypeAdd,
     "Set.prototype.has" as SetPrototypeHas
 } from "./set-objects.mjs";
 
 const given = f => f();
 
 const ƒCall = FunctionPrototypeCall.bind(FunctionPrototypeCall);
-
-const SetAppended = (set, item) => (set.add(item), set);
-
-const ø = properties => ObjectCreate(null, properties);
 
 const I = given((
     Aø = [],
@@ -61,7 +58,7 @@ const I = given((
     toIEntries = (V, prefix, visited) =>
         IsPrimitive(V) ? Aø :
         ƒCall(SetPrototypeHas, visited, V) ? Aø : given((
-        uVisited = SetAppended(visited, V)) => ƒCall(
+        uVisited = (ƒCall(SetPrototypeAdd, visited, V), visited)) => ƒCall(
             ArrayPrototypeFlatMap,
             GetOwnPropertyDescriptorEntries(V, "STRING+SYMBOL"),
             ([K, D]) => ƒCall(
